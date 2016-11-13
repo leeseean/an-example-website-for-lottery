@@ -1,0 +1,27 @@
+<h3 class="conversion-header bg-header">●{{dialog.title}}</h3>
+<div class="conversion-form order-query-form">
+	<div class="elements-wrapper">
+		<div class="form-element">
+			<label>起始日期</label>
+			<input type="date" class="input input-element" ng-model="edu.beginTime"/>
+		</div>
+		<div class="form-element">
+			<label>截至日期</label>
+			<input type="date" class="input input-element" ng-model="edu.endTime"/>
+		</div>
+		<div class="form-element">
+			<label>所属厅</label>
+			<select class="input input-element" ng-options="flat.value as flat.label for flat in dialog.eduFlatNames" ng-model="edu.flatName"></select>
+		</div>
+		<div class="form-element">
+			<label>转换类型</label>
+			<select ng-options="type.value as type.label for type in dialog.eduTypes" ng-model="edu.eduType" class="input input-element"></select>
+		</div>
+		<button class="btn bg-submit btn-submit" ng-click="go('edu_log')"><i class="icon icon-btn-submit"></i>提交</button>
+	</div>
+</div>
+
+
+
+
+

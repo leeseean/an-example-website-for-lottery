@@ -1,0 +1,25 @@
+<div class="header-top bg-2">
+	<div class="wrapper clearfix">
+		<a ng-if="isHome == false || isHome == undefined" class="back" ng-click="back()"><img ng-src="{{staticURL('/misc/back.png')}}" alt="" /></a>
+		<a ng-if="isHome == true" class="back" ng-href="{{ baseURI + '/m/main' }}"><img ng-src="{{staticURL('/misc/back.png')}}" alt="" /></a>
+		<p >{{title}}</p>
+		
+		<div class="links-header-quick links-user">
+			<ul class="clearfix">
+				<li><a class="link-bg-a white" ng-click="goMainHome()">主页</a></li>
+				<li ng-if="account.user_name != ''"><a ng-click="logout()" class="link-bg-a white" >登出</a></li>
+			</ul>
+		</div>
+		
+		<div ng-class="{'links': true, 'links-user': true, logged: account.user_name != '', 'not-logged': account.user_name == ''}">
+			<ul class="clearfix" ng-if="account.user_name == ''">
+				<li><a ng-click="redirectToLogin()" class="link-bg-a">登陆</a></li>
+				<li><a ng-Click="redirectToRegister()" class="link-bg-a">注册</a></li>
+			</ul>
+			<ul class="clearfix" ng-if="account.user_name != ''">
+				<li><span>余额: <span><span class="color-red">{{account.balance}}</span></li>
+				<li><span>用户名: <span><span class="color-red">{{account.user_name}}</span></li>
+			</ul>
+		</div>
+	</div>
+</div>

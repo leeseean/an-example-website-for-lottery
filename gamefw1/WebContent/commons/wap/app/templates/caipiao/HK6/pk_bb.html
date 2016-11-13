@@ -1,0 +1,715 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/hk6_header.html')"></div>
+
+<!-- BB -->
+<div class="ui-table" ng-if="subType == 'BB'">
+	<div class="ui-body-son">
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-red">红单</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-RED_ODD']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-RED_ODD'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-RED_ODD'] = selectedPeiyu['BB-'+subType+'-RED_ODD'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="01" class="small"></ball>
+						<ball number="07" class="small"></ball>
+						<ball number="13" class="small"></ball>
+						<ball number="19" class="small"></ball>
+						<ball number="23" class="small"></ball>
+						<ball number="29" class="small"></ball>
+						<ball number="35" class="small"></ball>
+						<ball number="45" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-red">红双</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-RED_EVEN']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-RED_EVEN'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-RED_EVEN'] = selectedPeiyu['BB-'+subType+'-RED_EVEN'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="02" class="small"></ball>
+						<ball number="08" class="small"></ball>
+						<ball number="12" class="small"></ball>
+						<ball number="18" class="small"></ball>
+						<ball number="24" class="small"></ball>
+						<ball number="30" class="small"></ball>
+						<ball number="34" class="small"></ball>
+						<ball number="40" class="small"></ball>
+						<ball number="46" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-red">红大</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-RED_BIG']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-RED_BIG'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-RED_BIG'] = selectedPeiyu['BB-'+subType+'-RED_BIG'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="29" class="small"></ball>
+						<ball number="30" class="small"></ball>
+						<ball number="34" class="small"></ball>
+						<ball number="35" class="small"></ball>
+						<ball number="40" class="small"></ball>
+						<ball number="45" class="small"></ball>
+						<ball number="46" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div>
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-red">红小</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-RED_SMALL']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g"  ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-RED_SMALL'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-RED_SMALL'] = selectedPeiyu['BB-'+subType+'-RED_SMALL'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="01" class="small"></ball>
+						<ball number="02" class="small"></ball>
+						<ball number="07" class="small"></ball>
+						<ball number="08" class="small"></ball>
+						<ball number="12" class="small"></ball>
+						<ball number="13" class="small"></ball>
+						<ball number="18" class="small"></ball>
+						<ball number="19" class="small"></ball>
+						<ball number="23" class="small"></ball>
+						<ball number="24" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div>
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-green">绿单</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-GREEN_ODD']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g"  ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-GREEN_ODD'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-GREEN_ODD'] = selectedPeiyu['BB-'+subType+'-GREEN_ODD'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="05" class="small"></ball>
+						<ball number="11" class="small"></ball>
+						<ball number="17" class="small"></ball>
+						<ball number="21" class="small"></ball>
+						<ball number="27" class="small"></ball>
+						<ball number="33" class="small"></ball>
+						<ball number="39" class="small"></ball>
+						<ball number="43" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-green">绿双</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-GREEN_EVEN']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-GREEN_EVEN'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-GREEN_EVEN'] = selectedPeiyu['BB-'+subType+'-GREEN_EVEN'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="06" class="small"></ball>
+						<ball number="16" class="small"></ball>
+						<ball number="22" class="small"></ball>
+						<ball number="28" class="small"></ball>
+						<ball number="32" class="small"></ball>
+						<ball number="38" class="small"></ball>
+						<ball number="44" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-green">绿大</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-GREEN_BIG']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-GREEN_BIG'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-GREEN_BIG'] = selectedPeiyu['BB-'+subType+'-GREEN_BIG'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="27" class="small"></ball>
+						<ball number="28" class="small"></ball>
+						<ball number="32" class="small"></ball>
+						<ball number="33" class="small"></ball>
+						<ball number="38" class="small"></ball>
+						<ball number="39" class="small"></ball>
+						<ball number="43" class="small"></ball>
+						<ball number="44" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-green">绿小</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-GREEN_SMALL']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-GREEN_SMALL'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-GREEN_SMALL'] = selectedPeiyu['BB-'+subType+'-GREEN_SMALL'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="05" class="small"></ball>
+						<ball number="06" class="small"></ball>
+						<ball number="11" class="small"></ball>
+						<ball number="16" class="small"></ball>
+						<ball number="17" class="small"></ball>
+						<ball number="21" class="small"></ball>
+						<ball number="22" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-blue">蓝单</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-BLUE_ODD']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-BLUE_ODD'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-BLUE_ODD'] = selectedPeiyu['BB-'+subType+'-BLUE_ODD'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="03" class="small"></ball>
+						<ball number="09" class="small"></ball>
+						<ball number="15" class="small"></ball>
+						<ball number="25" class="small"></ball>
+						<ball number="31" class="small"></ball>
+						<ball number="37" class="small"></ball>
+						<ball number="41" class="small"></ball>
+						<ball number="47" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-blue">蓝双</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-BLUE_ODD']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-BLUE_EVEN'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-BLUE_EVEN'] = selectedPeiyu['BB-'+subType+'-BLUE_EVEN'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="04" class="small"></ball>
+						<ball number="10" class="small"></ball>
+						<ball number="14" class="small"></ball>
+						<ball number="20" class="small"></ball>
+						<ball number="26" class="small"></ball>
+						<ball number="36" class="small"></ball>
+						<ball number="42" class="small"></ball>
+						<ball number="48" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-blue">蓝大</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-BLUE_BIG']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-BLUE_BIG'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-BLUE_BIG'] = selectedPeiyu['BB-'+subType+'-BLUE_BIG'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="25" class="small"></ball>
+						<ball number="26" class="small"></ball>
+						<ball number="31" class="small"></ball>
+						<ball number="36" class="small"></ball>
+						<ball number="37" class="small"></ball>
+						<ball number="41" class="small"></ball>
+						<ball number="42" class="small"></ball>
+						<ball number="47" class="small"></ball>
+						<ball number="48" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-blue">蓝小</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-BLUE_SMALL']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-BLUE_SMALL'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-BLUE_SMALL'] = selectedPeiyu['BB-'+subType+'-BLUE_SMALL'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="03" class="small"></ball>
+						<ball number="04" class="small"></ball>
+						<ball number="09" class="small"></ball>
+						<ball number="10" class="small"></ball>
+						<ball number="14" class="small"></ball>
+						<ball number="15" class="small"></ball>
+						<ball number="20" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- BB END -->
+
+<!-- BBB -->
+<div class="ui-table" ng-if="subType == 'BBB'">
+	<div class="ui-body-son">
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-red">红大单</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-RED_BIG_ODD']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-RED_BIG_ODD'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-RED_BIG_ODD'] = selectedPeiyu['BB-'+subType+'-RED_BIG_ODD'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="29" class="small"></ball>
+						<ball number="35" class="small"></ball>
+						<ball number="45" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-red">红大双</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-RED_BIG_EVEN']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-RED_BIG_EVEN'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-RED_BIG_EVEN'] = selectedPeiyu['BB-'+subType+'-RED_BIG_EVEN'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="30" class="small"></ball>
+						<ball number="34" class="small"></ball>
+						<ball number="40" class="small"></ball>
+						<ball number="46" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-red">红小单</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-RED_SMALL_ODD']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-RED_SMALL_ODD'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-RED_SMALL_ODD'] = selectedPeiyu['BB-'+subType+'-RED_SMALL_ODD'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="01" class="small"></ball>
+						<ball number="07" class="small"></ball>
+						<ball number="13" class="small"></ball>
+						<ball number="19" class="small"></ball>
+						<ball number="23" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-red">红小双</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-RED_SMALL_EVEN']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-RED_SMALL_EVEN'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-RED_SMALL_EVEN'] = selectedPeiyu['BB-'+subType+'-RED_SMALL_EVEN'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="02" class="small"></ball>
+						<ball number="08" class="small"></ball>
+						<ball number="12" class="small"></ball>
+						<ball number="18" class="small"></ball>
+						<ball number="24" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-green">绿大单</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-GREEN_BIG_ODD']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-GREEN_BIG_ODD'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-GREEN_BIG_ODD'] = selectedPeiyu['BB-'+subType+'-GREEN_BIG_ODD'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="27" class="small"></ball>
+						<ball number="33" class="small"></ball>
+						<ball number="39" class="small"></ball>
+						<ball number="43" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-green">绿大双</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-GREEN_BIG_EVEN']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-GREEN_BIG_EVEN'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-GREEN_BIG_EVEN'] = selectedPeiyu['BB-'+subType+'-GREEN_BIG_EVEN'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="28" class="small"></ball>
+						<ball number="32" class="small"></ball>
+						<ball number="38" class="small"></ball>
+						<ball number="44" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-green">绿小单</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-GREEN_SMALL_ODD']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-GREEN_SMALL_ODD'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-GREEN_SMALL_ODD'] = selectedPeiyu['BB-'+subType+'-GREEN_SMALL_ODD'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="05" class="small"></ball>
+						<ball number="11" class="small"></ball>
+						<ball number="17" class="small"></ball>
+						<ball number="21" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-green">绿小双</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-GREEN_SMALL_EVEN']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-GREEN_SMALL_EVEN'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-GREEN_SMALL_EVEN'] = selectedPeiyu['BB-'+subType+'-GREEN_SMALL_EVEN'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="06" class="small"></ball>
+						<ball number="16" class="small"></ball>
+						<ball number="22" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-blue">蓝大单</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-BLUE_BIG_ODD']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-BLUE_BIG_ODD'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-BLUE_BIG_ODD'] = selectedPeiyu['BB-'+subType+'-BLUE_BIG_ODD'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="25" class="small"></ball>
+						<ball number="31" class="small"></ball>
+						<ball number="37" class="small"></ball>
+						<ball number="41" class="small"></ball>
+						<ball number="47" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-blue">蓝大双</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-BLUE_BIG_EVEN']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-BLUE_BIG_EVEN'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-BLUE_BIG_EVEN'] = selectedPeiyu['BB-'+subType+'-BLUE_BIG_EVEN'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="26" class="small"></ball>
+						<ball number="36" class="small"></ball>
+						<ball number="42" class="small"></ball>
+						<ball number="48" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div >
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-blue">蓝小单</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-BLUE_SMALL_ODD']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g" ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-BLUE_SMALL_ODD'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-BLUE_SMALL_ODD'] = selectedPeiyu['BB-'+subType+'-BLUE_SMALL_ODD'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="03" class="small"></ball>
+						<ball number="09" class="small"></ball>
+						<ball number="15" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div>
+			<div class="pure-g">
+				<div class="pure-u-6-24"><div class="ui-item-son">号码 / 赔率</div></div>	
+				<div class="pure-u-18-24">
+					<div class="ui-item-son">
+						<div class="pure-g">
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="color-blue">蓝小双</span></div>
+							</div>
+							<div class="pure-u-12-24">
+								<div class="ui-item-son"><span class="white">{{peiyu['BB-'+subType+'-BLUE_SMALL_EVEN']}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pure-g"  ng-class="{wrapper: true, 'bg-red': selectedPeiyu['BB-'+subType+'-BLUE_SMALL_EVEN'] == true}" ng-click="selectedPeiyu['BB-'+subType+'-BLUE_SMALL_EVEN'] = selectedPeiyu['BB-'+subType+'-BLUE_SMALL_EVEN'] == true ? false: true">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son ui-item-bold">
+						<ball number="04" class="small"></ball>
+						<ball number="10" class="small"></ball>
+						<ball number="14" class="small"></ball>
+						<ball number="20" class="small"></ball>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- BBB END -->

@@ -1,0 +1,99 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper" ng-if="userinfo.userName">
+	<div class="user-info-wrapper white">
+		<ul class="links update-user-links clearfix">
+			<li class="update-icon bg-4" ng-click="go('updatepwd')"><i class="icon"></i><span>修改密码</span></li>
+			<li class="update-icon bg-4" ng-click="go('updatedeposit')"><i class="icon"></i><span>修改取款密码</span></li>
+		</ul>
+		
+		<div class="block block-user-info white">
+			<h3 class="block-title bg-header">●个人信息&nbsp;&nbsp;&nbsp;&nbsp;<span class="block-sub-title">PERSONAL INFORMATION</span></h3>
+			<div class="block-content bg-4">
+				<table>
+					<tbody>
+						<tr>
+							<td class="text-right">用户名&nbsp;:</td>
+							<td class="text-left">&nbsp;&nbsp;{{userinfo.userName}}</td>
+						</tr>
+						<tr>
+							<td class="text-right">姓名&nbsp;:</td>
+							<td class="text-left">&nbsp;&nbsp;{{userinfo.userRealName}}</td>
+						</tr>
+						<tr>
+							<td class="text-right">账户余额&nbsp;:</td>
+							<td class="text-left">&nbsp;&nbsp;{{userinfo.userMoney}}</td>
+						</tr>
+						<tr>
+							<td class="text-right">电子邮箱&nbsp;:</td>
+							<td class="text-left">&nbsp;&nbsp;{{userinfo.userMail}}</td>
+						</tr>
+						<tr>
+							<td class="text-right">QQ号码&nbsp;:</td>
+							<td class="text-left">&nbsp;&nbsp;{{userinfo.userQQ}}</td>
+						</tr>
+						<tr>
+							<td class="text-right">手机&nbsp;:</td>
+							<td class="text-left">&nbsp;&nbsp;{{userinfo.userMobile}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div class="block block-user-info white">
+			<h3 class="block-title bg-header">●银行卡信息&nbsp;&nbsp;&nbsp;&nbsp;<span class="block-sub-title">BANK CARD INFORMATION</span></h3>
+			<div class="block-content bg-4">
+				<button ng-if="!userinfo.userBankCard" ng-click="go('bankcard')" class="btn btn-submit bg-submit"><i class="icon"></i>绑定银行卡</button>
+				<table ng-if="userinfo.userBankCard">
+					<tbody>
+						<tr>
+							<td class="text-right">开户银行&nbsp;:</td>
+							<td class="text-left">&nbsp;&nbsp;{{userinfo.userBankType}}</td>
+						</tr>
+						<tr>
+							<td class="text-right">银行户名&nbsp;:</td>
+							<td class="text-left">&nbsp;&nbsp;{{userinfo.userRealName}}</td>
+						</tr>
+						<tr>
+							<td class="text-right">银行帐号&nbsp;:</td>
+							<td class="text-left">&nbsp;&nbsp;{{userinfo.userBankCard}}</td>
+						</tr>
+						<tr>
+							<td class="text-right">开户地址&nbsp;:</td>
+							<td class="text-left">&nbsp;&nbsp;{{userinfo.userBankAddress}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div class="block block-user-info white">
+			<h3 class="block-title bg-header">●安全信息&nbsp;&nbsp;&nbsp;&nbsp;<span class="block-sub-title">SECURTY INFORMATION</span></h3>
+			<div class="block-content bg-4">
+				<table >
+					<tbody>
+						<tr>
+							<td class="text-right">上次登录时间&nbsp;:</td>
+							<td class="text-left">&nbsp;&nbsp;{{userinfo.userLastLoginTime | date: "yyyy-MM-dd"}}</td>
+						</tr>
+						<tr>
+							<td class="text-right">上次登录IP&nbsp;:</td>
+							<td class="text-left">&nbsp;&nbsp;{{userinfo.userLastLoginIp}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+	</div>
+
+</div>
+
+
+
+
+
+
+
+

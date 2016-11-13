@@ -1,0 +1,194 @@
+<div>
+	<div class="ui-table">
+		<div class="ui-head-son">
+			<div class="pure-g">
+				<div class="pure-u-8-24">
+					<div class="ui-item-son">
+						<span ng-click="weizhi='QSW'; reset();" ng-class="{ block: true, 'bg-red' : weizhi == 'QSW'}">前三位</span>
+					</div> 
+				</div>
+				<div class="pure-u-8-24">
+					<div class="ui-item-son">
+						<span ng-click="weizhi='ZSW'; reset();" ng-class="{ block: true, 'bg-red' : weizhi == 'ZSW'}">中三位</span>
+					</div>
+				</div>
+				<div class="pure-u-8-24">
+					<div class="ui-item-son">
+						<span ng-click="weizhi='HSW'; reset();" ng-class="{block: true, 'bg-red' : weizhi == 'HSW'}">后三位</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-24-24"><div class="ui-item-son">和数</div></div>
+		</div>
+	</div>
+	
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ui-body-son">
+		<div class="pure-g" ng-repeat="number in range(6, 20, 2)">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span>{{number == 6 ? '0~6': number}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span
+						ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( number == 6? '0_6': number ) ] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( number == 6 ? '0_6': number ) ]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+ '-' + (subType | uppercase)+ '-' + weizhi + '-' + ( number == 6 ? '0_6': number ) ]}" 
+						ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+ '-' + weizhi + '-' + ( number == 6 ? '0_6': number ) }}" > {{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( number == 6 ? '0_6': number  ) ]}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span>{{number + 1}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+				<span 
+								ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( number + 1 ) ] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( number + 1 ) ]  == true ? false: true" 
+								ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+ '-' + (subType | uppercase)+ '-' + weizhi + '-' + ( number + 1 ) ]}" 
+								ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+ '-' + weizhi + '-' + ( number + 1 ) }}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( number + 1) ]}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="pure-g">
+			<div class="pure-u-6-24"><div class="ui-item-son">21~27</div></div>
+			<div class="pure-u-6-24"><div class="ui-item-son">
+			<span 
+								ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( '21_27' ) ] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( '21_27' ) ]  == true ? false: true" 
+								ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+ '-' + (subType | uppercase)+ '-' + weizhi + '-' + ( '21_27' ) ]}" 
+								ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+ '-' + weizhi + '-' + ( '21_27' ) }}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( '21_27') ]}}</span>
+			</div></div>
+		</div>
+	</div>
+	
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-24-24"><div class="ui-item-son">尾数</div></div>
+		</div>
+	</div>
+	
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ui-body-son">
+		<div class="pure-g" ng-repeat="number in range(0, 10, 2)">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span>{{number}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span
+						ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-WS' + ( number ) ] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-WS' + (  number ) ]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+ '-' + (subType | uppercase)+ '-' + weizhi + '-WS' + (  number ) ]}" 
+						ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+ '-' + weizhi + '-WS' + (  number ) }}" > {{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-WS' + (  number  ) ]}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span>{{number + 1}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+				<span 
+								ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-WS' + ( number + 1 ) ] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-WS' + ( number + 1 ) ]  == true ? false: true" 
+								ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+ '-' + (subType | uppercase)+ '-' + weizhi + '-WS' + ( number + 1 ) ]}" 
+								ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+ '-' + weizhi + '-WS' + ( number + 1 ) }}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-WS' + ( number + 1) ]}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-24-24"><div class="ui-item-son">尾数双面</div></div>
+		</div>
+	</div>
+	
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ui-body-son" ng-init="ids = ['BIG', 'SMALL', 'ODD', 'EVEN', 'ZHI', 'HE']; names = ['大', '小', '单', '双', '质', '合']">
+		<div class="pure-g" ng-repeat="number in range(0, 6, 2)">
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span>{{ names[number] }}</span>
+					</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span 
+								ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( ids[number ] ) ] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( ids[number] ) ]  == true ? false: true" 
+								ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+ '-' + (subType | uppercase)+ '-' + weizhi + '-' + ( ids[number ] ) ]}" 
+								ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+ '-' + weizhi + '-' + ( ids[number] ) }}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( ids[number] ) ]}}</span>
+					</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span>{{names[number+1]}}</span>
+					</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span 
+								ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( ids[number + 1] ) ] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( ids[number + 1] ) ]  == true ? false: true" 
+								ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+ '-' + (subType | uppercase)+ '-' + weizhi + '-' + ( ids[number + 1] ) ]}" 
+								ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+ '-' + weizhi + '-' + ( ids[number + 1] ) }}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase) + '-' + weizhi + '-' + ( ids[number + 1] ) ]}}</span>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>

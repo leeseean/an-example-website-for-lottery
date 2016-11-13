@@ -1,0 +1,45 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper">
+	<div class="messages-wrapper query-log-wrapper">
+		
+		<div class="elements-wrapper" ng-if="eduLogs.length <= 0">
+			<p class="warning">当前查询条件下没有转换数据</p>
+		</div>
+		
+		<div class="elements-wrapper" ng-repeat="eduLog in eduLogs" ng-if="eduLogs.length  > 0">
+			<ul class="header clearfix bg-submit">
+				<li style="width: 100%; text-align:left;text-indent: 1rem;">
+					<span class="white">{{eduLog.flat_name}} {{eduLog.edu_type ==  1 ? '转出': '转入'}} {{eduLog.edu_points}}￥  {{eduLog.edu_status == '0' ? '失败': ( eduLog.edu_status == 2 ? '作废': '成功') }}</span>
+				</li>
+			</ul>
+			<div class="form form-deposit">
+				<div class="form-element">
+					<table >
+						<tr>
+							<td><span class="white">订单号:&nbsp;&nbsp;{{eduLog.edu_order}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">操作类型:&nbsp;&nbsp;{{eduLog.edu_type ==  1 ? '转出': '转入'}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">转换时间:&nbsp;&nbsp;{{eduLog.create_time | date: 'yyyy-MM-dd hh:mm:ss'}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">转换金额:&nbsp;&nbsp;{{eduLog.edu_points}}￥</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">转换详情:&nbsp;&nbsp;{{eduLog.edu_forward_remark}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">转换状态:&nbsp;&nbsp;{{eduLog.edu_status == '0' ? '失败': ( eduLog.edu_status == 2 ? '作废': '成功') }}</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<pager load-data="dataHandler()"></pager>
+	</div>
+</div>
+
+

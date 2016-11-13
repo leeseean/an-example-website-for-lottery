@@ -1,0 +1,830 @@
+[{"3_38":1}]
+êêê
+<div class="pure-g lotto-result">
+	<div class="pure-u-1-3">
+		<div class="info">
+			<div class="ui-row row-one">
+				<span id="gameBetName" >--</span>&nbsp;今日输赢<strong class="red" id="betUsrWin">--</strong>
+			</div>
+			<p class="ui-row row-two">
+				当前期：<strong class="green" id="currentQs">--</strong> 期&nbsp;&nbsp;<strong class="blue" id="typeBetName">--</strong>
+			</p>
+		</div>
+	</div>
+	<!-- /left -->
+	<div class="pure-u-2-3">
+		<div class="result">
+			<div class="ui-row row-one cf">
+				<div class="ui-head">
+					<span class="b red" id="lastQs">--</span>期
+				</div>
+				<div class="ui-body">
+					<ul class="ball-group center" id="lastResult"></ul>
+				</div>
+			</div>
+			<div class="ui-row row-two">
+				<!-- 开奖or封盘时间 -->
+				<div class="result-time">
+					<div class="ui-item item-ssc">
+						<ul class="cf">
+							<li class="ui-item-gson">距离封盘：<strong class="red" id="closeTime">--:--</strong></li>
+							<li class="ui-item-gson">距离开奖：<strong class="red" id="openTime">--:--</strong></li>
+						</ul>
+					</div>
+				</div>
+				<!-- / 开奖or封盘时间 -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 快捷下注 -->
+<div class="pure-g">
+	<div class="pure-u-1">
+		<div class="bet-form-action cf">
+			<ul class="order r cf">
+				<li class="ui-item">快速下注</li>
+				<li class="ui-item">
+					<input type="text" id="fastbet_input"  class="ui-input ui-hand" maxlength="11" />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="下注" onclick="checkOrder();" class="button button-small button-raised button-primary" />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="betForm" class="bet-form">
+	<div class="ui-form">
+		<div class="ui-mod ui-tabs">
+			<div id="tab_bet" class="ui-mod-head ui-tabs-head nav-mode-play">
+				<ul class="cf">
+					<li class="ui-item ui-item-first ui-active"><a href="javascript:void(0);" data-url="#Qsw" class="ui-link">前三位</a></li>
+					<li class="ui-item"><a href="javascript:void(0);" data-url="#Zsw" class="ui-link">中三位</a></li>
+					<li class="ui-item"><a href="javascript:void(0);" data-url="#Hsw" class="ui-link">后三位</a></li>
+				</ul>
+			</div>
+			<div class="ui-mod-body ui-tabs-body mt10">
+				<div class="ui-mod-item ui-tabs-item" id="Qsw">
+					<div class="pure-u-1-3">
+						<div class="ui-table-loop">
+							<div class="pure-u-1"><div class="ui-item-son"><span >百0XX</span></div></div>
+							<!-- / 表单标题 -->
+							<div class="ui-body-son ui-body-ball">
+								<div class="pure-g">
+									<!-- 循环行 -->
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-BOXX-ODD">单</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-QSW-BOXX-ODD" value="YZGG-QSW-BOXX-ODD">
+											<span id="pl_YZGG-QSW-BOXX-ODD" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-BOXX-EVEN">双</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-QSW-BOXX-EVEN" value="YZGG-QSW-BOXX-EVEN">
+											<span id="pl_YZGG-QSW-BOXX-EVEN" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-BOXX-BIG">大</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-QSW-BOXX-BIG" value="YZGG-QSW-BOXX-BIG">
+											<span id="pl_YZGG-QSW-BOXX-BIG" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-BOXX-SMALL">小</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-QSW-BOXX-SMALL" value="YZGG-QSW-BOXX-SMALL">
+											<span id="pl_YZGG-QSW-BOXX-SMALL" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-BOXX-ZHI">质</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-QSW-BOXX-ZHI" value="YZGG-QSW-BOXX-ZHI">
+											<span id="pl_YZGG-QSW-BOXX-ZHI" class="red">-</span>
+										</div>
+									</div>
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-BOXX-HE">合</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-QSW-BOXX-HE" value="YZGG-QSW-BOXX-HE">
+											<span id="pl_YZGG-QSW-BOXX-HE" class="red">-</span>
+										</div>
+									</div>
+									<!-- / 循环行 -->
+								</div>
+							</div>
+							<!-- / 表单主体 -->
+						</div>
+					</div>
+					
+					<div class="pure-u-1-3">
+						<div class="ui-table-loop">
+							<div class="pure-u-1"><div class="ui-item-son"><span >拾X0X</span></div></div>
+							<!-- / 表单标题 -->
+							<div class="ui-body-son ui-body-ball">
+								<div class="pure-g">
+									<!-- 循环行 -->
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-SXOX-ODD">单</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-QSW-SXOX-ODD" value="YZGG-QSW-SXOX-ODD">
+											<span id="pl_YZGG-QSW-SXOX-ODD" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-SXOX-EVEN">双</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-QSW-SXOX-EVEN" value="YZGG-QSW-SXOX-EVEN">
+											<span id="pl_YZGG-QSW-SXOX-EVEN" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-SXOX-BIG">大</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-QSW-SXOX-BIG" value="YZGG-QSW-SXOX-BIG">
+											<span id="pl_YZGG-QSW-SXOX-BIG" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-SXOX-SMALL">小</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-QSW-SXOX-SMALL" value="YZGG-QSW-SXOX-SMALL">
+											<span id="pl_YZGG-QSW-SXOX-SMALL" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-SXOX-ZHI">质</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-QSW-SXOX-ZHI" value="YZGG-QSW-SXOX-ZHI">
+											<span id="pl_YZGG-QSW-SXOX-ZHI" class="red">-</span>
+										</div>
+									</div>
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-SXOX-HE">合</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-QSW-SXOX-HE" value="YZGG-QSW-SXOX-HE">
+											<span id="pl_YZGG-QSW-SXOX-HE" class="red">-</span>
+										</div>
+									</div>
+									<!-- / 循环行 -->
+								</div>
+							</div>
+							<!-- / 表单主体 -->
+						</div>
+					</div>
+					
+					<div class="pure-u-1-3">
+						<div class="ui-table-loop">
+							<div class="pure-u-1"><div class="ui-item-son"><span >个XX0</span></div></div>
+							<!-- / 表单标题 -->
+							<div class="ui-body-son ui-body-ball">
+								<div class="pure-g">
+									<!-- 循环行 -->
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-GXXO-ODD">单</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-QSW-GXXO-ODD" value="YZGG-QSW-GXXO-ODD">
+											<span id="pl_YZGG-QSW-GXXO-ODD" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-GXXO-EVEN">双</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-QSW-GXXO-EVEN" value="YZGG-QSW-GXXO-EVEN">
+											<span id="pl_YZGG-QSW-GXXO-EVEN" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-GXXO-BIG">大</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-QSW-GXXO-BIG" value="YZGG-QSW-GXXO-BIG">
+											<span id="pl_YZGG-QSW-GXXO-BIG" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-GXXO-SMALL">小</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-QSW-GXXO-SMALL" value="YZGG-QSW-GXXO-SMALL">
+											<span id="pl_YZGG-QSW-GXXO-SMALL" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-GXXO-ZHI">质</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-QSW-GXXO-ZHI" value="YZGG-QSW-GXXO-ZHI">
+											<span id="pl_YZGG-QSW-GXXO-ZHI" class="red">-</span>
+										</div>
+									</div>
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-QSW-GXXO-HE">合</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-QSW-GXXO-HE" value="YZGG-QSW-GXXO-HE">
+											<span id="pl_YZGG-QSW-GXXO-HE" class="red">-</span>
+										</div>
+									</div>
+									<!-- / 循环行 -->
+								</div>
+							</div>
+							<!-- / 表单主体 -->
+						</div>
+					</div>
+				
+				</div>
+				<div class="ui-mod-item ui-tabs-item" id="Zsw" style=" display: none;">
+					<div class="pure-u-1-3">
+						<div class="ui-table-loop">
+							<div class="pure-u-1"><div class="ui-item-son"><span >百0XX</span></div></div>
+							<!-- / 表单标题 -->
+							<div class="ui-body-son ui-body-ball">
+								<div class="pure-g">
+									<!-- 循环行 -->
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-BOXX-ODD">单</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-ZSW-BOXX-ODD" value="YZGG-ZSW-BOXX-ODD">
+											<span id="pl_YZGG-ZSW-BOXX-ODD" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-BOXX-EVEN">双</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-ZSW-BOXX-EVEN" value="YZGG-ZSW-BOXX-EVEN">
+											<span id="pl_YZGG-ZSW-BOXX-EVEN" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-BOXX-BIG">大</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-ZSW-BOXX-BIG" value="YZGG-ZSW-BOXX-BIG">
+											<span id="pl_YZGG-ZSW-BOXX-BIG" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-BOXX-SMALL">小</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-ZSW-BOXX-SMALL" value="YZGG-ZSW-BOXX-SMALL">
+											<span id="pl_YZGG-ZSW-BOXX-SMALL" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-BOXX-ZHI">质</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-ZSW-BOXX-ZHI" value="YZGG-ZSW-BOXX-ZHI"/>
+											<span id="pl_YZGG-ZSW-BOXX-ZHI" class="red">-</span>
+										</div>
+									</div>
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-BOXX-HE">合</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-ZSW-BOXX-HE" value="YZGG-ZSW-BOXX-HE"/>
+											<span id="pl_YZGG-ZSW-BOXX-HE" class="red">-</span>
+										</div>
+									</div>
+									<!-- / 循环行 -->
+								</div>
+							</div>
+							<!-- / 表单主体 -->
+						</div>
+					</div>
+					
+					<div class="pure-u-1-3">
+						<div class="ui-table-loop">
+							<div class="pure-u-1"><div class="ui-item-son"><span >拾X0X</span></div></div>
+							<!-- / 表单标题 -->
+							<div class="ui-body-son ui-body-ball">
+								<div class="pure-g">
+									<!-- 循环行 -->
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-SXOX-ODD">单</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-ZSW-SXOX-ODD" value="YZGG-ZSW-SXOX-ODD"/>
+											<span id="pl_YZGG-ZSW-SXOX-ODD" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-SXOX-EVEN">双</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-ZSW-SXOX-EVEN" value="YZGG-ZSW-SXOX-EVEN"/>
+											<span id="pl_YZGG-ZSW-SXOX-EVEN" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-SXOX-BIG">大</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-ZSW-SXOX-BIG" value="YZGG-ZSW-SXOX-BIG"/>
+											<span id="pl_YZGG-ZSW-SXOX-BIG" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-SXOX-SMALL">小</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-ZSW-SXOX-SMALL" value="YZGG-ZSW-SXOX-SMALL"/>
+											<span id="pl_YZGG-ZSW-SXOX-SMALL" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-SXOX-ZHI">质</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-ZSW-SXOX-ZHI" value="YZGG-ZSW-SXOX-ZHI"/>
+											<span id="pl_YZGG-ZSW-SXOX-ZHI" class="red">-</span>
+										</div>
+									</div>
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-SXOX-HE">合</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-ZSW-SXOX-HE" value="YZGG-ZSW-SXOX-HE"/>
+											<span id="pl_YZGG-ZSW-SXOX-HE" class="red">-</span>
+										</div>
+									</div>
+									<!-- / 循环行 -->
+								</div>
+							</div>
+							<!-- / 表单主体 -->
+						</div>
+					</div>
+					
+					<div class="pure-u-1-3">
+						<div class="ui-table-loop">
+							<div class="pure-u-1"><div class="ui-item-son"><span >个XX0</span></div></div>
+							<!-- / 表单标题 -->
+							<div class="ui-body-son ui-body-ball">
+								<div class="pure-g">
+									<!-- 循环行 -->
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-GXXO-ODD">单</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-ZSW-GXXO-ODD" value="YZGG-ZSW-GXXO-ODD"/>
+											<span id="pl_YZGG-ZSW-GXXO-ODD" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-GXXO-EVEN">双</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-ZSW-GXXO-EVEN" value="YZGG-ZSW-GXXO-EVEN"/>
+											<span id="pl_YZGG-ZSW-GXXO-EVEN" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-GXXO-BIG">大</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-ZSW-GXXO-BIG" value="YZGG-ZSW-GXXO-BIG"/>
+											<span id="pl_YZGG-ZSW-GXXO-BIG" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-GXXO-SMALL">小</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-ZSW-GXXO-SMALL" value="YZGG-ZSW-GXXO-SMALL"/>
+											<span id="pl_YZGG-ZSW-GXXO-SMALL" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-GXXO-ZHI">质</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-ZSW-GXXO-ZHI" value="YZGG-ZSW-GXXO-ZHI"/>
+											<span id="pl_YZGG-ZSW-GXXO-ZHI" class="red">-</span>
+										</div>
+									</div>
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-ZSW-GXXO-HE">合</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-ZSW-GXXO-HE" value="YZGG-ZSW-GXXO-HE"/>
+											<span id="pl_YZGG-ZSW-GXXO-HE" class="red">-</span>
+										</div>
+									</div>
+									<!-- / 循环行 -->
+								</div>
+							</div>
+							<!-- / 表单主体 -->
+						</div>
+					</div>
+				
+				</div>
+				<div class="ui-mod-item ui-tabs-item" id="Hsw" style=" display: none;">
+					<div class="pure-u-1-3">
+						<div class="ui-table-loop">
+							<div class="pure-u-1"><div class="ui-item-son"><span >百0XX</span></div></div>
+							<!-- / 表单标题 -->
+							<div class="ui-body-son ui-body-ball">
+								<div class="pure-g">
+									<!-- 循环行 -->
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-BOXX-ODD">单</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-HSW-BOXX-ODD" value="YZGG-HSW-BOXX-ODD"/>
+											<span id="pl_YZGG-HSW-BOXX-ODD" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-BOXX-EVEN">双</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-HSW-BOXX-EVEN" value="YZGG-HSW-BOXX-EVEN"/>
+											<span id="pl_YZGG-HSW-BOXX-EVEN" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-BOXX-BIG">大</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-HSW-BOXX-BIG" value="YZGG-HSW-BOXX-BIG"/>
+											<span id="pl_YZGG-HSW-BOXX-BIG" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-BOXX-SMALL">小</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-HSW-BOXX-SMALL" value="YZGG-HSW-BOXX-SMALL"/>
+											<span id="pl_YZGG-HSW-BOXX-SMALL" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-BOXX-ZHI">质</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-HSW-BOXX-ZHI" value="YZGG-HSW-BOXX-ZHI"/>
+											<span id="pl_YZGG-HSW-BOXX-ZHI" class="red">-</span>
+										</div>
+									</div>
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-BOXX-HE">合</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_1" id="YZGG-HSW-BOXX-HE" value="YZGG-HSW-BOXX-HE"/>
+											<span id="pl_YZGG-HSW-BOXX-HE" class="red">-</span>
+										</div>
+									</div>
+									<!-- / 循环行 -->
+								</div>
+							</div>
+							<!-- / 表单主体 -->
+						</div>
+					</div>
+					
+					<div class="pure-u-1-3">
+						<div class="ui-table-loop">
+							<div class="pure-u-1"><div class="ui-item-son"><span >拾X0X</span></div></div>
+							<!-- / 表单标题 -->
+							<div class="ui-body-son ui-body-ball">
+								<div class="pure-g">
+									<!-- 循环行 -->
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-SXOX-ODD">单</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-HSW-SXOX-ODD" value="YZGG-HSW-SXOX-ODD"/>
+											<span id="pl_YZGG-HSW-SXOX-ODD" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-SXOX-EVEN">双</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-HSW-SXOX-EVEN" value="YZGG-HSW-SXOX-EVEN"/>
+											<span id="pl_YZGG-HSW-SXOX-EVEN" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-SXOX-BIG">大</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-HSW-SXOX-BIG" value="YZGG-HSW-SXOX-BIG"/>
+											<span id="pl_YZGG-HSW-SXOX-BIG" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-SXOX-SMALL">小</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-HSW-SXOX-SMALL" value="YZGG-HSW-SXOX-SMALL"/>
+											<span id="pl_YZGG-HSW-SXOX-SMALL" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-SXOX-ZHI">质</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-HSW-SXOX-ZHI" value="YZGG-HSW-SXOX-ZHI"/>
+											<span id="pl_YZGG-HSW-SXOX-ZHI" class="red">-</span>
+										</div>
+									</div>
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-SXOX-HE">合</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_2" id="YZGG-HSW-SXOX-HE" value="YZGG-HSW-SXOX-HE"/>
+											<span id="pl_YZGG-HSW-SXOX-HE" class="red">-</span>
+										</div>
+									</div>
+									<!-- / 循环行 -->
+								</div>
+							</div>
+							<!-- / 表单主体 -->
+						</div>
+					</div>
+					
+					<div class="pure-u-1-3">
+						<div class="ui-table-loop">
+							<div class="pure-u-1"><div class="ui-item-son"><span >个XX0</span></div></div>
+							<!-- / 表单标题 -->
+							<div class="ui-body-son ui-body-ball">
+								<div class="pure-g">
+									<!-- 循环行 -->
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-GXXO-ODD">单</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-HSW-GXXO-ODD" value="YZGG-HSW-GXXO-ODD"/>
+											<span id="pl_YZGG-HSW-GXXO-ODD" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-GXXO-EVEN">双</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-HSW-GXXO-EVEN" value="YZGG-HSW-GXXO-EVEN"/>
+											<span id="pl_YZGG-HSW-GXXO-EVEN" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-GXXO-BIG">大</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-HSW-GXXO-BIG" value="YZGG-HSW-GXXO-BIG"/>
+											<span id="pl_YZGG-HSW-GXXO-BIG" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-GXXO-SMALL">小</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-HSW-GXXO-SMALL" value="YZGG-HSW-GXXO-SMALL"/>
+											<span id="pl_YZGG-HSW-GXXO-SMALL" class="red">-</span>
+										</div>
+									</div>
+									
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-GXXO-ZHI">质</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-HSW-GXXO-ZHI" value="YZGG-HSW-GXXO-ZHI"/>
+											<span id="pl_YZGG-HSW-GXXO-ZHI" class="red">-</span>
+										</div>
+									</div>
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" id="num_YZGG-HSW-GXXO-HE">合</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="ui-item-son">
+											<input type="radio" class="ui-radio" name="Num_3" id="YZGG-HSW-GXXO-HE" value="YZGG-HSW-GXXO-HE"/>
+											<span id="pl_YZGG-HSW-GXXO-HE" class="red">-</span>
+										</div>
+									</div>
+									<!-- / 循环行 -->
+								</div>
+							</div>
+							<!-- / 表单主体 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 快捷下注 -->
+<div class="pure-g">
+	<div class="pure-u-1">
+		<div class="bet-form-action cf">
+			<ul class="order r cf">
+				<li class="ui-item">快速下注</li>
+				<li class="ui-item">
+					<input type="text" id="back_fastbet_input"  class="ui-input ui-hand" maxlength="11" />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="下注" onclick="checkOrder();" class="button button-small button-raised button-primary" />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	function checkOrder() {
+		var _xzje = $("#fastbet_input").val();
+		if($.trim(_xzje)==''){
+			showMessage("提示","请输入下注金额！");
+			return;
+		}
+		if(parseFloat(_xzje)<parseFloat(minMoney)){
+			showMessage("提示","单笔最小投注金额："+minMoney+"元!");
+			return;
+		}
+		if(parseFloat(_xzje)>parseFloat(maxMoney)){
+			showMessage("提示","单笔最大投注金额："+maxMoney+"元!");
+			return;
+		}
+		
+ 
+		var json = "{token: '{0}', xzje: {1},typeCode:'{2}',cateCode:'{3}'}";
+		var trHtml = "";
+		var typeCode = "YZGG";
+		var cateCode = "QSW";
+		$("#tab_bet ul li.ui-active").each(function(index,value){
+			var data_url=$(this).find("a").attr("data-url");
+			if(data_url=="#Qsw"){
+				cateCode="QSW";
+			}else if(data_url=="#Zsw"){
+				cateCode="ZSW";
+			}else if(data_url=="#Hsw"){
+				cateCode="HSW";
+			}
+		});
+		
+	 
+		var bwArr = new Array();
+		var swArr = new Array();
+		var gwArr = new Array();
+		var total=0;
+		$("#betForm input[type='radio'][name^='Num_1']:checked").each(function() {
+			bwArr.push($(this).val());
+			total = total+1;
+		});
+		$("#betForm input[type='radio'][name^='Num_2']:checked").each(function() {
+			swArr.push($(this).val());
+			total = total+1;
+		});
+		$("#betForm input[type='radio'][name^='Num_3']:checked").each(function() {
+			gwArr.push($(this).val());
+			total = total+1;
+		});
+		if(total<2){
+			showMessage("提示","至少需要选择两组号码！");
+			return;
+		}
+		
+		$.ajax({
+		    url:rootPath+"/cpOrder/getGroupOrderList", 
+		    data:{"bwNum":bwArr.toString(),"swNum":swArr.toString(),"gwNum":gwArr.toString(),"gameCode":cp_gameTypeCode_temp,"typeCode":typeCode,"cateCode":cateCode,"multilen":88},
+		    type:'post',
+		    cache:false,
+		    timeout : 30000,
+		    dataType:'json',
+		    success:function(data){
+		    	var orderList = data.orderList;
+		    	if(orderList.length>0){
+		    		for(var i=0;i<orderList.length;i++){
+		    			var _rate = orderList[i].rate;
+		    			var _number = orderList[i].number;
+		    			var _cateName = orderList[i].cateName;
+		    			trHtml += getTrTtml(_cateName, _number, _rate, _xzje);
+		    		}
+		    		var buffer = json.format(data.token,_xzje,typeCode,cateCode);
+		    		var totalMoney =  parseFloat(_xzje)*orderList.length;
+		    		doOrderSubmitShow(getOrderDivHtml(orderList.length, totalMoney, trHtml), buffer,"yzgg");
+		    	}else{
+		    		showMessage("提示","下注异常！");
+		    	}
+		     }, 
+		     error : function(){
+		    	 showMessage("提示","下注异常！");
+		     }    
+		});  
+	}
+	
+</script>

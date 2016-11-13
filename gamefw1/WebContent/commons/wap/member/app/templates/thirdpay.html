@@ -1,0 +1,52 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+<div class="main-content-wrapper">
+    <div class="user-info-wrapper white">
+        <p class="warning" ng-if="!thirdPay">
+            暂时不能使用&nbsp;<b ng-if="thirdType == 2">支付宝支付</b>
+            <b ng-if="thirdType == 1">微信支付</b> &nbsp;支付
+        </p>
+        <div class="block block-user-info white" ng-if="thirdPay">
+            <h3 class="block-title bg-header">
+				●&nbsp; <b ng-if="thirdType == 2">支付宝支付</b> <b
+					ng-if="thirdType == 1">微信支付</b>
+			</h3>
+            <div class="block-content bg-4">
+                <table class="bank-list-table">
+                    <tbody ng-if="thirdType == 2">
+                        <tr>
+                            <td class="text-center"><img ng-src="{{baseURI}}/member/getPayImg?paytype={{thirdType}}" alt="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">支付宝账号&nbsp;:&nbsp;&nbsp;{{payRname}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">支付宝昵称&nbsp;:&nbsp;&nbsp;{{payNname}}</td>
+                        </tr>
+                        <tr style="display: none">
+                            <td class="text-left">向支付宝帐号转账即可充值</td>
+                        </tr>
+                    </tbody>
+                    <tbody ng-if="thirdType == 1">
+                        <tr>
+                            <td class="text-center"><img ng-src="{{baseURI}}/member/getPayImg?paytype={{thirdType}}" alt="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">微信账号&nbsp;:&nbsp;&nbsp;{{payRname}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">微信昵称&nbsp;:&nbsp;&nbsp;{{payNname}}</td>
+                        </tr>
+                        <tr style="display: none">
+                            <td class="text-left">向微信帐号转账即可充值</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="bank-intro">通过扫描以上二维码或转账进行充值，完成后进入入款表单页面提交入款信息即可完成充值。</p>
+            <button class="btn btn-submit bg-submit" ng-click="go('thirdpay_deposit_form1', {type: thirdType,payRname:payRname,payNo:payNo,payNname:payNname})" ng-if="thirdType == 1">
+                <i class="icon icon-btn-submit"></i>入款表单</button>
+            <button class="btn btn-submit bg-submit" ng-click="go('thirdpay_deposit_form1', {type: thirdType,payRname:payRname,payNo:payNo,payNname:payNname})" ng-if="thirdType == 2">
+                <i class="icon icon-btn-submit"></i>入款表单</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="selector select-filter day-filter clearfix">
+	<div class="wrapper">
+		<ul class="clearfix">
+			<li ng-repeat="day in days track by $index" ng-click="onChange($index)"">
+				<span>{{day.label}}</span>
+			</li>
+		</ul>
+	</div>
+</div>

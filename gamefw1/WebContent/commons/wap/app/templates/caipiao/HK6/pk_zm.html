@@ -1,0 +1,112 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/hk6_header.html')"></div>
+
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-head-son"  ng-init="numberGroup = [ 
+					['01', '01', '02', '02'], 
+					['03' ,'03' , '04', '04'],
+					['05' ,'05' , '06', '06'],
+					['07' ,'07' ,'08' ,'08' ,],
+					[ '09', '09', '10' ,'10'],
+					[ '11', '11' , '12' ,'12' ],
+					['13', '13' , '14' ,'14'],
+					['15', '15' ,  '16' ,'16'],
+					['17', '17' ,  '18' ,'18'],
+					['19', '19' ,  '20' ,'20'],
+					['21', '21' ,  '22' ,'22'],
+					['23', '23' ,  '24' ,'24'],
+					['25', '25' ,  '26' ,'26'],
+					['27', '27',  '28' ,'28'],
+					['29', '29' ,  '30' ,'30'],
+					['31', '31' ,  '32' ,'32'],
+					['33', '33' ,  '34' ,'34'],
+					['35', '35' ,  '36' ,'36' ],
+					['37', '37',  '38' ,'38'],
+					['39', '39' ,  '40' ,'40'],
+					['41', '41' ,  '42' ,'42'],
+					['43', '43' ,  '44' ,'44'],
+					['45', '45' ,  '46' ,'46'],
+					['47', '47' ,  '48' ,'48'],
+					['49', '49'],
+				]">
+		<div class="pure-g" ng-repeat="(key, numbers) in numberGroup">
+			<div class="pure-u-6-24" ng-repeat="number in numbers track by $index">
+				<div class="ui-item-son" ng-if="$index % 2 == 0"><ball number="number"></ball></div>
+				<div class="ui-item-son" ng-if="$index % 2 != 0">
+					<span 
+						ng-click="selectedPeiyu['ZM-ZM_'+subType+'-'+number] = selectedPeiyu['ZM-ZM_'+subType+'-'+number]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu['ZM-ZM_'+subType+'-'+number]}" 
+						ng-attr-id="{{'ZM-ZM_'+subType+'-'+number}}" >{{peiyu['ZM-ZM_'+subType+'-'+number]}}</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">总单</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span ng-click="selectedPeiyu['ZM-ZM_'+subType+'-SUM_ODD'] = selectedPeiyu['ZM-ZM_'+subType+'-SUM_ODD']  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu['ZM-ZM_'+subType+'-SUM_ODD']}" 
+					ng-attr-id="{{'ZM-ZM_'+subType+'-SUM_ODD'}}" >{{peiyu['ZM-ZM_'+subType+'-SUM_ODD']}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">总双</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span ng-click="selectedPeiyu['ZM-ZM_'+subType+'-SUM_EVEN'] = selectedPeiyu['ZM-ZM_'+subType+'-SUM_EVEN']  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu['ZM-ZM_'+subType+'-SUM_EVEN']}" 
+						 ng-attr-id="{{'ZM-ZM_'+subType+'-SUM_EVEN'}}" >{{peiyu['ZM-ZM_'+subType+'-SUM_EVEN']}}</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">总大</div>
+			</div>
+			<div class="pure-u-6-24"> 
+				<div class="ui-item-son">
+					<span ng-click="selectedPeiyu['ZM-ZM_'+subType+'-SUM_BIG'] = selectedPeiyu['ZM-ZM_'+subType+'-SUM_BIG']  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu['ZM-ZM_'+subType+'-SUM_BIG']}" 
+						 ng-attr-id="{{'ZM-ZM_'+subType+'-SUM_BIG'" >{{peiyu['ZM-ZM_'+subType+'-SUM_BIG']}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">总小</div>
+			</div> 
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span ng-if='subType == "A"' 
+						 ng-click="selectedPeiyu['ZM-ZM_'+subType+'-SUM_SAMLL'] = selectedPeiyu['ZM-ZM_'+subType+'-SUM_SAMLL']  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu['ZM-ZM_'+subType+'-SUM_SAMLL']}" 
+						ng-attr-id="{{'ZM-ZM_'+subType+'-SUM_SAMLL'}}" >{{peiyu['ZM-ZM_'+subType+'-SUM_SAMLL']}}</span>
+					<span ng-if='subType == "B"' 
+						ng-click="selectedPeiyu['ZM-ZM_'+subType+'-SUM_SMALL'] = selectedPeiyu['ZM-ZM_'+subType+'-SUM_SMALL']  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu['ZM-ZM_'+subType+'-SUM_SMALL']}"  
+						ng-attr-id="{{'ZM-ZM_'+subType+'-SUM_SMALL'}}" >{{peiyu['ZM-ZM_'+subType+'-SUM_SMALL']}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

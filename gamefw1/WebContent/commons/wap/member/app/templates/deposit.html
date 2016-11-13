@@ -1,0 +1,42 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper">
+	<div class="form-wrapper">
+		<form class="form form-deposit">
+			<div class="elements-wrapper">
+				<div class="form-element">
+					<label>●充值金额 <span>AMOUNT OF CHARGE</span></label>
+					<input type="number" ng-model="hkMoney" class="input input-element" />
+				</div>
+				<div class="form-element">
+					<label>●汇入银行<span>REMITTANCE BANK</span></label>
+					<select ng-model="hkCompanyBank"
+						 ng-options="bank.label for bank in bankList track by bank.id"  class="input select-element"> 
+					</select>
+				</div>
+				<div class="form-element">
+					<label>●汇入日期<span>PAYMENT DATE</span></label>
+					<input type="date" ng-model="createTime" class="input input-element" />
+				</div>
+				<div class="form-element">
+					<label>●汇入时间</label>
+					<select class="input select-element inline-block input-hour" ng-options="item.value as item.label for item in hours" ng-model="hour"></select>
+					<span class="white colon">:</span>
+					<select class="input select-element inline-block input-min" ng-options="item.value as item.label for item in mins" ng-model="min"></select>
+				</div>
+				<div class="form-element">
+					<label>●汇款方式<span>REMITTANCE METHOD</span></label>
+					<select class="input select-element" ng-model="hkType" 
+						ng-options="transfer.label for transfer in transferFrom">
+					</select>
+				</div>
+				<div class="form-element">
+					<label>●汇款人姓名<span>NAME OF REMITTANCE</span></label>
+					<input ng-model="hkUserName" type="text" class="input input-element" />
+				</div>
+			</div>
+			<button class="btn btn-submit bg-submit" ng-click="submitDepositForm()"><i class="icon icon-btn-submit"></i>提交表单</button>
+		</form>
+	</div>
+</div>
+

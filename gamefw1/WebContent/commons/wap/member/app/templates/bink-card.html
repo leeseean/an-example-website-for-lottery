@@ -1,0 +1,28 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper">
+	<div class="form-wrapper">
+		<form class="form form-deposit">
+			<div class="elements-wrapper">
+				<div class="form-element">
+					<label>●收款银行 <span>COLLECTION BANK</span></label>
+					<select ng-model="bankType" ng-options="bank.value as bank.label for bank in allowBankes" class="input input-element"></select>
+				</div>
+				<div class="form-element">
+					<label>●银行卡号<span>BANK CARD NUMBER</span></label>
+					<input ng-model="bankCard"  type="text"  class="input input-element"/>
+				</div>
+				<div class="form-element">
+					<label>●开户行地址<span>BANK ADDRESS</span></label>
+					<input ng-model="bankAddress" type="input" class="input input-element" />
+				</div>
+				<div class="form-element">
+					<label>●取款密码<span>WITHDRAWAL PASSWORD</span></label>
+					<input ng-model="bankWithdrawPwd" type="password" class="input input-element" />
+				</div>
+			</div>
+			<button class="btn btn-submit bg-submit" ng-click="saveBankInfo()"><i class="icon icon-btn-submit"></i>确认提交</button>
+		</form>
+	</div>
+</div>
+

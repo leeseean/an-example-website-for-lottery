@@ -1,0 +1,146 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper">
+	<div class="conversion-wrapper messages-wrapper">
+		<div class="elements-wrapper">
+			<div class="form form-deposit">
+				<div class="form-element">
+					<ul class="clearfix">
+						<li><span class="white">账户余额:</span></li>
+						<li><a class="white">{{account.balance}}元</a></li>
+					</ul>
+				</div>
+				<div class="form-element">
+					<ul class="clearfix">
+						<li><span class="white">AG余额:</span></li>
+						<li  ng-click="view('ag')">
+							<a ng-if="money_ag === ''" class="color-1">查看</a>
+							<a ng-if="money_ag !== ''" class="color-1">{{money_ag | number}}元</a>
+						</li>
+						<li class="btn-item">
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionIn('ag')">转入</button>
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionOut('ag')">转出</button>
+						</li>
+					</ul>
+				</div>
+				<div class="form-element">
+					<ul class="clearfix">
+						<li><span class="white">MG余额:</span></li>
+						<li  ng-click="view('mg')" >
+							<a ng-if="money_mg === ''" class="color-1">查看</a>
+							<a ng-if="money_mg !== ''" class="color-1">{{money_mg | number}}元</a>
+						</li>
+						<li class="btn-item">
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionIn('mg')">转入</button>
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionOut('mg')">转出</button>
+						</li>
+					</ul>
+				</div>
+				<div class="form-element">
+					<ul class="clearfix">
+						<li><span class="white">PT余额:</span></li>
+						<li ng-click="view('pt')">
+							<a ng-if="money_pt === ''" class="color-1">查看</a>
+							<a ng-if="money_pt !== ''" class="color-1">{{money_pt | number}}元</a>
+						</li>
+						<li class="btn-item">
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionIn('pt')">转入</button>
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionOut('pt')">转出</button>
+						</li>
+					</ul>
+				</div>
+				<div class="form-element">
+					<ul class="clearfix">
+						<li><span class="white">BBIN余额:</span></li>
+						<li ng-click="view('bbin')">
+							<a ng-if="money_bbin === ''" class="color-1">查看</a>
+							<a ng-if="money_bbin !== ''" class="color-1">{{money_bbin | number }}元</a>
+						</li>
+						<li class="btn-item">
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionIn('bbin')">转入</button>
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionOut('bbin')">转出</button>
+						</li>
+					</ul>
+				</div>
+				<div class="form-element">
+					<ul class="clearfix">
+						<li><span class="white">OS余额:</span></li>
+						<li ng-click="view('os')">
+							<a ng-if="money_os === ''" class="color-1">查看</a>
+							<a ng-if="money_os !== ''" class="color-1">{{ money_os | number }}元</a>
+						</li>
+						<li class="btn-item">
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionIn('os')">转入</button>
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionOut('os')">转出</button>
+						</li>
+					</ul>
+				</div>
+				<div class="form-element">
+					<ul class="clearfix">
+						<li><span class="white">TTG余额:</span></li>
+						<li ng-click="view('ttg')">
+							<a ng-if="money_ttg === ''" class="color-1">查看</a>
+							<a ng-if="money_ttg !== ''" class="color-1">{{money_ttg | number}}元</a>
+						</li>
+						<li class="btn-item">
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionIn('ttg')">转入</button>
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionOut('ttg')">转出</button>
+						</li>
+					</ul>
+				</div>
+				<div class="form-element">
+					<ul class="clearfix">
+						<li><span class="white">SA余额:</span></li>
+						<li ng-click="view('sa')">
+							<a ng-if="money_sa === ''" class="color-1">查看</a>
+							<a ng-if="money_sa !== ''" class="color-1">{{money_sa | number}}元</a>
+						</li>
+						<li class="btn-item">
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionIn('sa')">转入</button>
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionOut('sa')">转出</button>
+						</li>
+					</ul>
+				</div>
+				<div class="form-element">
+					<ul class="clearfix">
+						<li><span class="white">HG余额:</span></li>
+						<li ng-click="view('hg')">
+							<a ng-if="money_hg === ''" class="color-1">查看</a>
+							<a ng-if="money_hg !== ''" class="color-1">{{money_hg | number}}元</a>
+						</li>
+						<li class="btn-item">
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionIn('hg')">转入</button>
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionOut('hg')">转出</button>
+						</li>
+					</ul>
+				</div>
+				<div class="form-element">
+					<ul class="clearfix">
+						<li><span class="white">沙巴余额:</span></li>
+						<li  ng-click="view('sb')">
+							<a ng-if="money_sb === ''" class="color-1">查看</a>
+							<a ng-if="money_sb !== ''" class="color-1">{{money_sb | number }}元</a>
+						</li>
+						<li class="btn-item">
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionIn('sb')">转入</button>
+							<button class="btn bg-submit btn-view-conversion" ng-click="conversionOut('sb')">转出</button>
+						</li>
+					</ul>
+				</div>
+                <div class="form-element">
+                    <ul class="clearfix">
+                        <li><span class="white">DS余额:</span></li>
+                        <li  ng-click="view('ds')">
+                            <a ng-if="money_ds === ''" class="color-1">查看</a>
+                            <a ng-if="money_ds !== ''" class="color-1">{{money_ds | number }}元</a>
+                        </li>
+                        <li class="btn-item">
+                            <button class="btn bg-submit btn-view-conversion" ng-click="conversionIn('ds')">转入</button>
+                            <button class="btn bg-submit btn-view-conversion" ng-click="conversionOut('ds')">转出</button>
+                        </li>
+                    </ul>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>

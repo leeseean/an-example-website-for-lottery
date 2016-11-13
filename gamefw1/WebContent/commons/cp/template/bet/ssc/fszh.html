@@ -1,0 +1,1446 @@
+[{"3_42":1}]
+êêê
+<div class="pure-g lotto-result">
+	<div class="pure-u-1-3">
+		<div class="info">
+			<div class="ui-row row-one">
+				<span id="gameBetName" >--</span>&nbsp;今日输赢<strong class="red" id="betUsrWin">--</strong>
+			</div>
+			<p class="ui-row row-two">
+				当前期：<strong class="green" id="currentQs">--</strong> 期&nbsp;&nbsp;<strong class="blue" id="typeBetName">--</strong>
+			</p>
+		</div>
+	</div>
+	<!-- /left -->
+	<div class="pure-u-2-3">
+		<div class="result">
+			<div class="ui-row row-one cf">
+				<div class="ui-head">
+					<span class="b red" id="lastQs">--</span>期
+				</div>
+				<div class="ui-body">
+					<ul class="ball-group center" id="lastResult"></ul>
+				</div>
+			</div>
+			<div class="ui-row row-two">
+				<!-- 开奖or封盘时间 -->
+				<div class="result-time">
+					<div class="ui-item item-ssc">
+						<ul class="cf">
+							<li class="ui-item-gson">距离封盘：<strong class="red" id="closeTime">--:--</strong></li>
+							<li class="ui-item-gson">距离开奖：<strong class="red" id="openTime">--:--</strong></li>
+						</ul>
+					</div>
+				</div>
+				<!-- / 开奖or封盘时间 -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 快捷下注 -->
+<div class="pure-g">
+	<div class="pure-u-1">
+		<div class="bet-form-action cf">
+			<ul class="order r cf">
+				<li class="ui-item">快速下注</li>
+				<li class="ui-item">
+					<input type="text" id="fastbet_input"  class="ui-input ui-hand" maxlength="11" />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="下注" onclick="checkOrder();" class="button button-small button-raised button-primary" />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="betForm" class="bet-form mg-m4">
+	<div class="ui-form">
+		<div class="ui-mod ui-tabs">
+			<div id="tab_bet" class="ui-mod-head ui-tabs-head nav-mode-play">
+				<ul class="cf">
+					<li class="ui-item ui-item-first ui-active"><a href="javascript:void(0);" data-url="#QSW" class="ui-link">前三位</a></li>
+					<li class="ui-item"><a href="javascript:void(0);" data-url="#ZSW" class="ui-link">中三位</a></li>
+					<li class="ui-item"><a href="javascript:void(0);" data-url="#HSW" class="ui-link">后三位</a></li>
+				</ul>
+			</div>
+			<div class="ui-mod-body ui-tabs-body mt10">
+				<div class="ui-mod-item ui-tabs-item" id="QSW">
+					<div class="ui-table">
+						<div class="pure-g">
+							<div class="pure-u-1-3">
+								<div class="ui-table-loop">
+									<div class="ui-head-son">
+										<div class="pure-g">
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">百XX</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">勾选</div>
+											</div>
+										</div>
+									</div>
+									<!-- / 表单标题 -->
+									<div class="ui-body-son ui-body-ball">
+										<div class="pure-g">
+											<!-- 循环行 -->
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">0</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_0" onclick="counts(this,0)" name="bwNum_0" value="0">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">1</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_1" onclick="counts(this,1)" name="bwNum_1" value="1">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">2</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_2" onclick="counts(this,2)" name="bwNum_2" value="2">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">3</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_3" onclick="counts(this,3)" name="bwNum_3" value="3">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">4</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_4" onclick="counts(this,4)" name="bwNum_4" value="4">
+												</div>
+											</div>
+															
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">5</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_5" onclick="counts(this,5)" name="bwNum_5" value="5">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">6</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_6" onclick="counts(this,6)" name="bwNum_6" value="6">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">7</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_7" onclick="counts(this,7)" name="bwNum_7" value="7">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">8</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_8" onclick="counts(this,8)" name="bwNum_8" value="8">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">9</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_9" onclick="counts(this,9)" name="bwNum_9" value="9">
+												</div>
+											</div>
+											
+											<!-- / 循环行 -->
+										</div>
+									</div>
+									<!-- / 表单主体 -->
+								</div>
+							</div>
+							<!-- / 循环列 -->
+							
+							<div class="pure-u-1-3">
+								<div class="ui-table-loop">
+									<div class="ui-head-son">
+										<div class="pure-g">
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">X拾X</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">勾选</div>
+											</div>
+										</div>
+									</div>
+									<!-- / 表单标题 -->
+									<div class="ui-body-son ui-body-ball">
+										<div class="pure-g">
+											<!-- 循环行 -->
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">0</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_0" onclick="counts(this,0)" name="swNum_0" value="0">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">1</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_1" onclick="counts(this,1)" name="swNum_1" value="1">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">2</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_2" onclick="counts(this,2)" name="swNum_2" value="2">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">3</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_3" onclick="counts(this,3)" name="swNum_3" value="3">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">4</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_4" onclick="counts(this,4)" name="swNum_4" value="4">
+												</div>
+											</div>
+															
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">5</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_5" onclick="counts(this,5)" name="swNum_5" value="5">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">6</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_6" onclick="counts(this,6)" name="swNum_6" value="6">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">7</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_7" onclick="counts(this,7)" name="swNum_7" value="7">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">8</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_8" onclick="counts(this,8)" name="swNum_8" value="8">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">9</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_9" onclick="counts(this,9)" name="swNum_9" value="9">
+												</div>
+											</div>
+											<!-- / 循环行 -->
+										</div>
+									</div>
+									<!-- / 表单主体 -->
+								</div>
+							</div>
+							
+							<div class="pure-u-1-3">
+								<div class="ui-table-loop">
+									<div class="ui-head-son">
+										<div class="pure-g">
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">XX个</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">勾选</div>
+											</div>
+										</div>
+									</div>
+									<!-- / 表单标题 -->
+									<div class="ui-body-son ui-body-ball">
+										<div class="pure-g">
+											<!-- 循环行 -->
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">0</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_0" onclick="counts(this,0)" name="gwNum_0" value="0">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">1</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_1" onclick="counts(this,1)" name="gwNum_1" value="1">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">2</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_2" onclick="counts(this,2)" name="gwNum_2" value="2">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">3</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_3" onclick="counts(this,3)" name="gwNum_3" value="3">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">4</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_4" onclick="counts(this,4)" name="gwNum_4" value="4">
+												</div>
+											</div>
+															
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">5</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_5" onclick="counts(this,5)" name="gwNum_5" value="5">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">6</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_6" onclick="counts(this,6)" name="gwNum_6" value="6">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">7</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_7" onclick="counts(this,7)" name="gwNum_7" value="7">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">8</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_8" onclick="counts(this,8)" name="gwNum_8" value="8">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">9</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_9" onclick="counts(this,9)" name="gwNum_9" value="9">
+												</div>
+											</div>
+											<!-- / 循环行 -->
+										</div>
+									</div>
+									<!-- / 表单主体 -->
+								</div>
+							</div>
+						</div>
+						<div class="ui-body-son">
+							<div class="pure-g">
+								<div class="pure-u-5-5">
+									<div class="ui-item-son" style="height: 36px; border-top: 0; border-bottom-width: 1px;">
+ 										赔率： <span id="QSW_betInfo"></span> <span id="QSW_betRate"  class="red"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- / ui-table -->
+				
+				</div>
+				<div class="ui-mod-item ui-tabs-item" id="ZSW" style=" display: none;">
+					<div class="ui-table">
+						<div class="pure-g">
+							<div class="pure-u-1-3">
+								<div class="ui-table-loop">
+									<div class="ui-head-son">
+										<div class="pure-g">
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">百XX</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">勾选</div>
+											</div>
+										</div>
+									</div>
+									<!-- / 表单标题 -->
+									<div class="ui-body-son ui-body-ball">
+										<div class="pure-g">
+											<!-- 循环行 -->
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">0</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_0" onclick="counts(this,0)" name="bwNum_0" value="0">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">1</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_1" onclick="counts(this,1)" name="bwNum_1" value="1">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">2</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_2" onclick="counts(this,2)" name="bwNum_2" value="2">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">3</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_3" onclick="counts(this,3)" name="bwNum_3" value="3">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">4</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_4" onclick="counts(this,4)" name="bwNum_4" value="4">
+												</div>
+											</div>
+															
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">5</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_5" onclick="counts(this,5)" name="bwNum_5" value="5">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">6</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_6" onclick="counts(this,6)" name="bwNum_6" value="6">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">7</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_7" onclick="counts(this,7)" name="bwNum_7" value="7">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">8</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_8" onclick="counts(this,8)" name="bwNum_8" value="8">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">9</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_9" onclick="counts(this,9)" name="bwNum_9" value="9">
+												</div>
+											</div>
+											
+											<!-- / 循环行 -->
+										</div>
+									</div>
+									<!-- / 表单主体 -->
+								</div>
+							</div>
+							<!-- / 循环列 -->
+							
+							<div class="pure-u-1-3">
+								<div class="ui-table-loop">
+									<div class="ui-head-son">
+										<div class="pure-g">
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">X拾X</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">勾选</div>
+											</div>
+										</div>
+									</div>
+									<!-- / 表单标题 -->
+									<div class="ui-body-son ui-body-ball">
+										<div class="pure-g">
+											<!-- 循环行 -->
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">0</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_0" onclick="counts(this,0)" name="swNum_0" value="0">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">1</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_1" onclick="counts(this,1)" name="swNum_1" value="1">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">2</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_2" onclick="counts(this,2)" name="swNum_2" value="2">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">3</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_3" onclick="counts(this,3)" name="swNum_3" value="3">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">4</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_4" onclick="counts(this,4)" name="swNum_4" value="4">
+												</div>
+											</div>
+															
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">5</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_5" onclick="counts(this,5)" name="swNum_5" value="5">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">6</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_6" onclick="counts(this,6)" name="swNum_6" value="6">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">7</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_7" onclick="counts(this,7)" name="swNum_7" value="7">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">8</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_8" onclick="counts(this,8)" name="swNum_8" value="8">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">9</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_9" onclick="counts(this,9)" name="swNum_9" value="9">
+												</div>
+											</div>
+											<!-- / 循环行 -->
+										</div>
+									</div>
+									<!-- / 表单主体 -->
+								</div>
+							</div>
+							
+							<div class="pure-u-1-3">
+								<div class="ui-table-loop">
+									<div class="ui-head-son">
+										<div class="pure-g">
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">XX个</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">勾选</div>
+											</div>
+										</div>
+									</div>
+									<!-- / 表单标题 -->
+									<div class="ui-body-son ui-body-ball">
+										<div class="pure-g">
+											<!-- 循环行 -->
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">0</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_0" onclick="counts(this,0)" name="gwNum_0" value="0">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">1</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_1" onclick="counts(this,1)" name="gwNum_1" value="1">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">2</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_2" onclick="counts(this,2)" name="gwNum_2" value="2">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">3</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_3" onclick="counts(this,3)" name="gwNum_3" value="3">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">4</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_4" onclick="counts(this,4)" name="gwNum_4" value="4">
+												</div>
+											</div>
+															
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">5</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_5" onclick="counts(this,5)" name="gwNum_5" value="5">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">6</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_6" onclick="counts(this,6)" name="gwNum_6" value="6">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">7</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_7" onclick="counts(this,7)" name="gwNum_7" value="7">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">8</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_8" onclick="counts(this,8)" name="gwNum_8" value="8">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">9</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_9" onclick="counts(this,9)" name="gwNum_9" value="9">
+												</div>
+											</div>
+											<!-- / 循环行 -->
+										</div>
+									</div>
+									<!-- / 表单主体 -->
+								</div>
+							</div>
+						</div>
+						<div class="ui-body-son">
+							<div class="pure-g">
+								<div class="pure-u-5-5">
+									<div class="ui-item-son" style="height: 36px; border-top: 0; border-bottom-width: 1px;">
+ 										赔率： <span id="ZSW_betInfo"></span> <span id="ZSW_betRate"  class="red"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- / ui-table -->
+				
+				</div>
+				<div class="ui-mod-item ui-tabs-item" id="HSW" style=" display: none;">
+					<div class="ui-table">
+						<div class="pure-g">
+							<div class="pure-u-1-3">
+								<div class="ui-table-loop">
+									<div class="ui-head-son">
+										<div class="pure-g">
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">百XX</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">勾选</div>
+											</div>
+										</div>
+									</div>
+									<!-- / 表单标题 -->
+									<div class="ui-body-son ui-body-ball">
+										<div class="pure-g">
+											<!-- 循环行 -->
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">0</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_0" onclick="counts(this,0)" name="bwNum_0" value="0">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">1</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_1" onclick="counts(this,1)" name="bwNum_1" value="1">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">2</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_2" onclick="counts(this,2)" name="bwNum_2" value="2">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">3</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_3" onclick="counts(this,3)" name="bwNum_3" value="3">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">4</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_4" onclick="counts(this,4)" name="bwNum_4" value="4">
+												</div>
+											</div>
+															
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">5</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_5" onclick="counts(this,5)" name="bwNum_5" value="5">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">6</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_6" onclick="counts(this,6)" name="bwNum_6" value="6">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">7</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_7" onclick="counts(this,7)" name="bwNum_7" value="7">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">8</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_8" onclick="counts(this,8)" name="bwNum_8" value="8">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">9</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="bwNum_9" onclick="counts(this,9)" name="bwNum_9" value="9">
+												</div>
+											</div>
+											
+											<!-- / 循环行 -->
+										</div>
+									</div>
+									<!-- / 表单主体 -->
+								</div>
+							</div>
+							<!-- / 循环列 -->
+							
+							<div class="pure-u-1-3">
+								<div class="ui-table-loop">
+									<div class="ui-head-son">
+										<div class="pure-g">
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">X拾X</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">勾选</div>
+											</div>
+										</div>
+									</div>
+									<!-- / 表单标题 -->
+									<div class="ui-body-son ui-body-ball">
+										<div class="pure-g">
+											<!-- 循环行 -->
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">0</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_0" onclick="counts(this,0)" name="swNum_0" value="0">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">1</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_1" onclick="counts(this,1)" name="swNum_1" value="1">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">2</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_2" onclick="counts(this,2)" name="swNum_2" value="2">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">3</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_3" onclick="counts(this,3)" name="swNum_3" value="3">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">4</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_4" onclick="counts(this,4)" name="swNum_4" value="4">
+												</div>
+											</div>
+															
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">5</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_5" onclick="counts(this,5)" name="swNum_5" value="5">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">6</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_6" onclick="counts(this,6)" name="swNum_6" value="6">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">7</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_7" onclick="counts(this,7)" name="swNum_7" value="7">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">8</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_8" onclick="counts(this,8)" name="swNum_8" value="8">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">9</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="swNum_9" onclick="counts(this,9)" name="swNum_9" value="9">
+												</div>
+											</div>
+											<!-- / 循环行 -->
+										</div>
+									</div>
+									<!-- / 表单主体 -->
+								</div>
+							</div>
+							
+							<div class="pure-u-1-3">
+								<div class="ui-table-loop">
+									<div class="ui-head-son">
+										<div class="pure-g">
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">XX个</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">勾选</div>
+											</div>
+										</div>
+									</div>
+									<!-- / 表单标题 -->
+									<div class="ui-body-son ui-body-ball">
+										<div class="pure-g">
+											<!-- 循环行 -->
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">0</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_0" onclick="counts(this,0)" name="gwNum_0" value="0">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">1</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_1" onclick="counts(this,1)" name="gwNum_1" value="1">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">2</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_2" onclick="counts(this,2)" name="gwNum_2" value="2">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">3</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_3" onclick="counts(this,3)" name="gwNum_3" value="3">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">4</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_4" onclick="counts(this,4)" name="gwNum_4" value="4">
+												</div>
+											</div>
+															
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">5</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_5" onclick="counts(this,5)" name="gwNum_5" value="5">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">6</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_6" onclick="counts(this,6)" name="gwNum_6" value="6">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">7</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_7" onclick="counts(this,7)" name="gwNum_7" value="7">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">8</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_8" onclick="counts(this,8)" name="gwNum_8" value="8">
+												</div>
+											</div>
+											
+											<div class="pure-u-7-24">
+												<div class="ui-item-son">9</div>
+											</div>
+											<div class="pure-u-17-24">
+												<div class="ui-item-son">
+													<input type="checkbox" class="ui-checkbox"  id="gwNum_9" onclick="counts(this,9)" name="gwNum_9" value="9">
+												</div>
+											</div>
+											<!-- / 循环行 -->
+										</div>
+									</div>
+									<!-- / 表单主体 -->
+								</div>
+							</div>
+						</div>
+						<div class="ui-body-son">
+							<div class="pure-g">
+								<div class="pure-u-5-5">
+									<div class="ui-item-son" style="height: 36px; border-top: 0; border-bottom-width: 1px;">
+ 										赔率： <span id="HSW_betInfo"></span> <span id="HSW_betRate"  class="red"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- / ui-table -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 快捷下注 -->
+<div class="pure-g">
+	<div class="pure-u-1">
+		<div class="bet-form-action cf">
+			<ul class="order r cf">
+				<li class="ui-item">快速下注</li>
+				<li class="ui-item">
+					<input type="text" id="back_fastbet_input"  class="ui-input ui-hand" maxlength="11" />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="下注" onclick="checkOrder();" class="button button-small button-raised button-primary" />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var selectNumsA = "";
+	var selectNumsB = "";
+	var selectNumsC = "";
+	var ftime = 15000;
+	var lang_gbh = "百";
+	var lang_gsh = "拾";
+	var lang_ggh = "个";
+	var lang_js_err4 = "请选择号码！";
+	var lang_js_err5 = "所挑选组数太多";
+	var betRate = 0;
+	var wt = new Array(0, 0, 0, 0, 0, 0);
+	var zrate = new Array(800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800, 800,
+			800, 800, 800, 800, 800, 800, 800);
+	var alStr = "";
+	
+	function checkUsrChecked(cateCode,obj) {
+		alStr = "";
+		var countA = 0;
+		var countB = 0;
+		var countC = 0;
+		selectNumsA = "";
+		selectNumsB = "";
+		selectNumsC = "";
+
+		var selArr1 = new Array();
+		var selArr2 = new Array();
+		var selArr3 = new Array();
+		$("#betForm input[type='checkbox'][name^='bwNum_']:checked").each(function() {
+			countA++;
+			selArr1.push($(this).val());
+		});
+ 
+		$("#betForm input[type='checkbox'][name ^='swNum_']:checked").each(function() {
+			countB++;
+			selArr2.push($(this).val());
+		});
+		$("#betForm input[type='checkbox'][name ^='gwNum_']:checked").each(function() {
+			countC++;
+			selArr3.push($(this).val());
+		});
+		
+		selArr1.sort();
+		selArr2.sort();
+		selArr3.sort();
+		for(var i=0;i<selArr1.length;i++){
+			selectNumsA +=selArr1[i] + ' ';
+		}
+		for(var i=0;i<selArr2.length;i++){
+			selectNumsB +=selArr2[i] + ' ';
+		}
+		for(var i=0;i<selArr3.length;i++){
+			selectNumsC +=selArr3[i] + ' ';
+		}
+	 
+		if (countC < 1 || countA < 1 || countB < 1) {
+			if (countA < 1)
+				alStr += "百位,";
+			if (countB < 1)
+				alStr += "拾位,";
+			if (countC < 1)
+				alStr += "个位,";
+			alStr += "未选择号码，复式组合下注每位数最少选一个号码";
+			return false;
+		}
+ 
+		if ((countA + countB + countC) > 21) {
+			alStr = "三个位数选取号码不得超过21个，请确认选择号码少於21个";
+			alert(alStr);
+ 
+			return false;
+		}
+		if ((countA + countB + countC) < 9) {
+			alStr = "三个位数选取号码不得少於9个，请继续选择";
+			return false;
+		}
+ 
+		return true;
+	}
+
+ 
+	function counts(obj, key) {
+		var cateCode="QSW";
+		$("#tab_bet ul li.ui-active").each(function(index,value){
+			var data_url=$(this).find("a").attr("data-url");
+			cateCode=data_url.substr(1);
+		});
+	
+		betRate = 0;
+		var betInfo = document.getElementById(cateCode+"_betInfo");
+		document.getElementById(cateCode+"_betRate").value = "";
+ 		if (!checkUsrChecked(cateCode,obj)) {
+			return;
+		}
+		var ItemRate = 0;
+		var betCount = 0;
+		var TempRate = 0;
+		selectNumsA = selectNumsA.split(" ");
+		selectNumsB = selectNumsB.split(" ");
+		selectNumsC = selectNumsC.split(" ");
+		for (i = 0; i < selectNumsA.length - 1; i++){
+			for (j = 0; j < selectNumsB.length - 1; j++){
+				for (k = 0; k < selectNumsC.length - 1; k++){
+					tnum = selectNumsA[i] + selectNumsB[j] + selectNumsC[k];
+					ItemRate += parseFloat(zrate[parseFloat(tnum)]);
+					betCount++;
+				}
+			}
+		}
+ 
+ 
+		if (ItemRate > -1 && betCount >= 9){
+			betRate = Math.round(ItemRate/(betCount * betCount) * 100) / 100.0;
+			selectNumsA = selectNumsA.toString();
+			selectNumsA = selectNumsA.substring(0,selectNumsA.length - 1);
+			selectNumsB = selectNumsB.toString();
+			selectNumsB = selectNumsB.substring(0,selectNumsB.length - 1);
+			selectNumsC = selectNumsC.toString();
+			selectNumsC = selectNumsC.substring(0,selectNumsC.length - 1);
+			betInfo.innerHTML = "(" + lang_gbh + selectNumsA + ") x (" + lang_gsh + selectNumsB + ") x (" + lang_ggh + selectNumsC + ")";
+			document.getElementById(cateCode+"_betRate").innerHTML = betRate;
+		}
+	}
+	
+	function checkOrder() {
+		var _xzje = $("#fastbet_input").val();
+		if($.trim(_xzje)==''){
+			showMessage("提示","请输入下注金额！");
+			return;
+		}
+		if(parseFloat(_xzje)<parseFloat(minMoney)){
+			showMessage("提示","单笔最小投注金额："+minMoney+"元!");
+			return;
+		}
+		if(parseFloat(_xzje)>parseFloat(maxMoney)){
+			showMessage("提示","单笔最大投注金额："+maxMoney+"元!");
+			return;
+		}
+		var typeCode = "FSZH";
+		var cateCode = "QSW";
+		$("#tab_bet ul li.ui-active").each(function(index,value){
+			var data_url=$(this).find("a").attr("data-url");
+			cateCode=data_url.substr(1);
+		});
+	
+		if (!checkUsrChecked(cateCode)) {
+			showMessage("提示",alStr);
+			return;
+		}
+		
+		var bwArr = new Array();
+		var swArr = new Array();
+		var gwArr = new Array();
+		
+		$("#betForm input[type='checkbox'][name^='bwNum_']:checked").each(function() {
+			bwArr.push($(this).val());
+		});
+ 
+		$("#betForm input[type='checkbox'][name ^='swNum_']:checked").each(function() {
+			swArr.push($(this).val());
+		});
+		$("#betForm input[type='checkbox'][name ^='gwNum_']:checked").each(function() {
+			gwArr.push($(this).val());
+		});
+ 
+		var json = "{token: '{0}', xzje: {1},typeCode:'{2}',cateCode:'{3}'}";
+		var trHtml = "";
+		
+ 
+		$.ajax({
+		    url:rootPath+"/cpOrder/getGroupOrderList", 
+		    data:{"bwNum":bwArr.toString(),"swNum":swArr.toString(),"gwNum":gwArr.toString(),"gameCode":cp_gameTypeCode_temp,"typeCode":typeCode,"cateCode":cateCode,"multilen":99},
+		    type:'post',
+		    cache:false,
+		    timeout : 30000,
+		    dataType:'json',
+		    success:function(data){
+		    	var orderList = data.orderList;
+		    	if(orderList.length>0){
+		    		for(var i=0;i<orderList.length;i++){
+		    			var _rate = orderList[i].rate;
+		    			var _number = orderList[i].number;
+		    			var _cateName = orderList[i].cateName;
+		    			trHtml += getTrTtml(_cateName, _number, _rate, _xzje);
+		    		}
+		    		var buffer = json.format(data.token,_xzje,typeCode,cateCode);
+		    		var totalMoney =  parseFloat(_xzje)*orderList.length;
+		    		doOrderSubmitShow(getOrderDivHtml(orderList.length, totalMoney, trHtml), buffer,"group");
+		    	}else{
+		    		showMessage("提示","下注异常！");
+		    	}
+		     }, 
+		     error : function(){
+		    	 showMessage("提示","下注异常！");
+		     }    
+		});  
+	}
+	
+	$(window).bind('ui-tab:ui-link:clicked', function (event, url) {
+		if(typeof url =='undefined'){
+			return;
+		}
+	 	var xzlx = url.substr(1);
+	 	$("#"+xzlx+"_betInfo").html("");
+	 	$("#"+xzlx+"_betRate").html("");
+	 	selectNums = "";
+	 });
+	
+	
+</script>

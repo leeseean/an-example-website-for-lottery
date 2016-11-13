@@ -1,0 +1,80 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/klsf_header.html')"></div>
+
+<div class="ui-table">
+	<div class="ui-body-son" ng-init="numberGroup = [ 
+					['01', '01', '02', '02'], 
+					['03' ,'03' , '04', '04'],
+					['05' ,'05' , '06', '06'],
+					['07' ,'07' , '08', '08'],
+					['09' ,'09' , '10', '10'],
+					['11' ,'11' , '12', '12'],
+					['13' ,'13' , '14', '14'],
+					['15' ,'15' , '16', '16'],
+					['17' ,'17' , '18', '18'],
+					['19' ,'19' , '20', '20'],
+					
+				]">
+		<div class="pure-g">
+			<div class="pure-u-24-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+		</div>
+		<div class="pure-g" ng-repeat="numbers in numberGroup">
+			<div class="pure-u-6-24" ng-repeat="number in numbers track by $index">
+				<div class="ui-item-son" ng-if="$index % 2 == 0 "><span class=" fbold">{{number}}</span></div>
+				<div class="ui-item-son" ng-if="$index % 2 != 0">
+					<span ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[pankou+'-HM-'+number] == true}" 
+						ng-click="selectedPeiyu[pankou+'-HM-'+number] = selectedPeiyu[pankou+'-HM-'+number] == true ? false: true" 
+						ng-attr-id="{{ pankou+'-HM-'+number}}" >{{peiyu[pankou+ '-HM-'+number]}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ui-body-son" ng-init="codeGroup = [ 
+				['BIG', 'BIG', 'SMALL', 'SMALL'], 
+				['ODD' ,'ODD' , 'EVEN', 'EVEN'],
+				['TAIL_BIG' ,'TAIL_BIG' , 'TAIL_SMALL', 'TAIL_SMALL'],
+				['SUM_ODD' ,'SUM_ODD' , 'SUM_EVEN', 'SUM_EVEN'],
+				['EAST' ,'EAST' , 'SOUTH', 'SOUTH'],
+				['WEST' ,'WEST' , 'NORTH', 'NORTH'],
+				['MIDDLE' ,'MIDDLE' , 'FA', 'FA'],
+				['BAI' ,'BAI' ],
+				
+			]; codeNames= {BIG: '大', 
+					'SMALL': '小', 
+					'ODD': '单', 
+					'EVEN': '双', 
+					'TAIL_BIG': '尾大', 
+					'TAIL_SMALL': '尾小', 
+					'SUM_ODD': '合单', 
+					'SUM_EVEN': '合双', 
+					'EAST': '东', 
+					'SOUTH': '南', 
+					'WEST': '西', 
+					'NORTH': '北', 
+					'MIDDLE': '中', 
+					'FA': '发', 
+					'BAI': '白', 
+					}">
+	<div class="pure-g">
+		<div class="pure-u-24-24">
+			<div class="ui-item-son">双面</div>
+		</div>
+	</div>
+	<div class="pure-g" ng-repeat="numbers in codeGroup">
+		<div class="pure-u-6-24" ng-repeat="number in numbers track by $index">
+			
+			<div class="ui-item-son" ng-if="$index % 2 == 0 "><span class=" fbold">{{codeNames[number]}}</span></div>
+			<div class="ui-item-son" ng-if="$index % 2 != 0">
+				<span 
+					ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[pankou+'-SM-'+number] == true}" 
+					ng-click="selectedPeiyu[pankou+'-SM-'+number] = selectedPeiyu[pankou+'-SM-'+number] == true ? false: true" 
+					ng-attr-id="{{ pankou+'-SM-'+number}}" >{{peiyu[pankou+ '-SM-'+number]}}</span>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

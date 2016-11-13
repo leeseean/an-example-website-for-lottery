@@ -1,0 +1,45 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/hk6_header.html')"></div>
+
+<p class="help white mtb10 ml5">点击号码选择玩法</p>
+
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-4-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-4-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-16-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-body-son">
+		<div ng-class="{'pure-g': true, 'bg-red': hxCpSelected[subType+'-'+key.substr(1)] == true}" 
+			ng-click="hxCpSelected[subType+'-'+key.substr(1)] = hxCpSelected[subType+'-'+key.substr(1)] == true ? false: true;"  
+			ng-attr-id="{{subType+'-'+key.substr(1)}}" 
+			ng-repeat="(key, name) in shengXiaoNames track by $index">
+			<div class="pure-u-4-24" >
+				<div class="ui-item-son" >{{name}}</div>
+			</div>
+			<div class="pure-u-4-24">
+				<div class="ui-item-son">{{peiyu[subType+'-'+key.substr(1)]}}</div>
+			</div>
+			<div class="pure-u-16-24">
+				<div class="ui-item-son">
+					<ball ng-repeat="subVal in shengXiaoMap[key.substr(1)] track by $index" number="subVal"></ball>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+

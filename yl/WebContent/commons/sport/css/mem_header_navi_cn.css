@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/*Reset*/
+body, div, ul,  li,
+h1, h2, h3, h4, h5, h6, p, table {
+	margin: 0;
+	padding: 0;
+	}
+address, em, strong {
+	font-style: inherit;
+	font-weight: inherit;
+	}
+li {
+	list-style: none;
+	}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+	}
+
+
+/**//**/
+div#back ul {z-index:990;
+	font-size:12px;
+	}
+
+div#back ul li {
+	width:85px;/*change*/  /*需個別設定*/
+	height:25px;/*change*/
+	float:left;
+	line-height:25px;/*change*/
+	position:relative;
+	}
+		div#back ul li.lang_top li {height:24px;line-height:24px;}/*子層高度*/
+		div#back ul li.qa li {height:23px;line-height:23px;}/*子層高度*/
+		div#back ul li.qa_on {background-position:0 -25px;}
+	/* ~~~~~~~~~~主圖寬度~~~~~~~~~~ */
+	div#back ul li.lang_top {width:85px;background:url(head_lang_cn.gif) no-repeat; text-align:left;}
+	div#back ul li.mail {width:70px;background:url(head_mail.gif) no-repeat;text-align:center;}
+	div#back ul li.qa {width:70px;background:url(head_qa.gif) no-repeat;text-align:left;}
+	div#back ul li.home {width:54px;background:url(head_home.gif) no-repeat;text-align:center;}
+	
+div#back a {
+	display:block;
+	height:25px;/*change*/
+	text-decoration:none;
+	color:#FFF;/*change*/
+	}
+	div#back a:link, div#back a:visited { color:#FFF;}
+	
+	div#back li.lang_top li a {height:24px;/*子層高度*/}
+	div#back li.qa li a {height:23px;/*子層高度*/}
+	/*有次層之連結*/
+	div#back li.qa a:link {color:#FFF;}
+	div#back li.lang_top a:link {color:#FFF;}
+div#back a:hover {
+	background-position:0 -25px;/*change*//*需個別設定*/
+	color:#303030;/*change*/
+	}
+	/* ~~~~~~~~~~Menu Top img~~~~~~~~~~ */
+	div#back .lang_top a:link, div#back .lang_top a:visited { color:#FFF;}
+	div#back .lang_top a {background:url(head_lang_cn.gif) no-repeat; padding-left:35px!important;}
+	div#back .mail a {background:url(head_mail.gif) no-repeat; padding-top:1px;}
+	div#back .qa a {background:url(head_qa.gif) no-repeat; padding-left:24px;}
+	div#back .home a {background:url(head_home.gif) no-repeat; padding-top:1px;}
+	/*div#back .lang_top a:hover, */div#back .mail a:hover, /*div#back .qa a:hover,*/ div#back .home a:hover
+	{background-position:0 -25px;}
+		
+/*Menu Level2*/
+ul.pd { top:0;}/*change*/
+div#back ul ul.pd {
+	display:none;
+	font-size:100%;
+	padding:0;
+	}
+div#back ul li:hover ul.pd {
+	display:block;
+	position:absolute;
+	z-index:10;
+	}
+div#back ul ul.pd li {
+	float:none;
+	}
+	
+/*IE6 Hack*//**/
+div#back ul li a:hover ul.pd {
+	display:block;
+	position:absolute;
+	top:0px;/*change*/
+	z-index:1000; margin-top:0; margin-left:-1px;
+	}
+div#back ul li table {
+	border-collapse:collapse;
+	border:none;
+	position:absolute;
+	top:0;
+	left:0;
+	}
+
+
+/* 語系下拉圖片設定 */
+div#back ul ul.pd a:link, div#back ul ul.pd a:visited { color:#303030;}
+div#back ul ul.pd a:hover {color:#CC6600; }
+
+div#back ul ul.pd li.vi a:hover {  background-position: 0 -514px;}
+div#back ul ul.pd li.vi a { background: url(head_lang.gif) no-repeat 0 -490px; width:71px; height:24px;}/*該語系使用父層圖*/
+
+div#back ul ul.pd li.cn a:hover {color:#303030; }
+div#back ul ul.pd li.cn a { background: url(head_lang_cn.gif) no-repeat 0 -25px;}/*該語系使用父層圖*/
+/*div#back ul ul.pd li.tw a:hover { color:#CC6600; background-position: -106px 0;}*/
+div#back ul ul.pd li.tw a { background: url(head_lang.gif) no-repeat 0 -70px; width:71px; height:24px;}
+div#back ul ul.pd li.tw a:hover {  background-position: 0 -94px;}
+
+/*div#back ul ul.pd li.cn a { background: url(head_lang.gif) no-repeat; width:71px; height:24px;}
+div#back ul ul.pd li.cn a:hover {  background-position: 0 -24px;}*/
+div#back ul ul.pd li.us a { background: url(head_lang.gif) no-repeat 0 -560px; width:71px; height:24px;}
+div#back ul ul.pd li.us a:hover {  background-position: 0 -584px;}
+/* 幫助下拉圖片設定 */
+div#back ul ul.pd li.qa_on a { width:50px; background: url(head_qa.gif) no-repeat 0 -25px;}/*該語系使用父層圖*/
+div#back ul ul.pd li.msg a { background: url(head_qa_sub.gif) no-repeat;}
+div#back ul ul.pd li.msg a:hover { background-position: 0 -23px;}
+div#back ul ul.pd li.roul a , div#back ul ul.pd li.wap a {background: url(head_qa_sub.gif) no-repeat 0 -70px;}
+div#back ul ul.pd li.roul a:hover , div#back ul ul.pd li.wap a:hover {background-position: 0 -93px;}
+div#back ul ul.pd li.odd a { background: url(head_qa_sub.gif) no-repeat 0 -140px;width:112px; height:24px; padding-left:12px; text-align: left;}
+div#back ul ul.pd li.odd a:hover {  background-position: 0 -164px;}
+/*共同寬度設定*/
+div#back ul ul.pd li.msg a , div#back ul ul.pd li.roul a , div#back ul ul.pd li.wap a
+{ width:112px; height:23px; padding-left:12px; text-align: left;}
+
+
+/*height*/
+.vi { display:none;}

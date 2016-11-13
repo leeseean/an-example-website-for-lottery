@@ -1,0 +1,531 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper">
+	<div class="messages-wrapper query-log-wrapper">
+		
+		<div class="elements-wrapper" ng-if="orderLogs.length <= 0">
+			<p class="warning">当前查询条件下没有注单数据</p>
+		</div>
+		
+		<div class="elements-wrapper" ng-repeat="orderLog in orderLogs" ng-if="orderLogs.length > 0 && order.platform == 'sport'">
+			<div class="sport-log-wrapper" ng-if="orderLog.matchRtype != 'p3'">
+				<div ng-repeat="detail in orderLog.details">
+					<ul class="header clearfix bg-submit">
+						<li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white" ng-init="timeTypeLabels={'roll': '滚球', 'today': '今日赛事', 'tom': '早盘'}">
+						{{detail.matchType == 'FT' ? '足球': (detail.matchType == 'BK' ? '篮球': '')}}  <font ng-if="timeTypeLabels[detail.timeType]">[{{timeTypeLabels[detail.timeType]}}]</font><font>&nbsp;&nbsp;{{detail.betWagersId}}</font>
+						</span></li>
+					</ul>
+					<div class="form form-deposit">
+						<div class="form-element">
+							<table>
+								<tr>
+									<td><span class="white" ng-bind-html="detail.league | trust_html"></span></td>
+								</tr>
+								<tr>
+									<td>
+										<font class="white" ng-bind-html="detail.betVs | trust_html"></font>
+										<font class="color-red" ng-if="detail.timeType == 'roll'">({{detail.betScoreHCur}}:{{detail.betScoreCCur}})</font>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="inline-block fl" ng-if="orderLog.status == 2 && detail.matchType == 'FT' && (detail.betRqTeam == 'C' && detail.btype == 'rq' ) ">
+											<span class="color-green">上半场 :&nbsp;<font ng-bind-html="detail.score.hrScoreC|trust_html"></font>:<font ng-bind-html="detail.score.hrScoreH|trust_html"></font></span>
+										</div>
+										<div class="inline-block fl" ng-if="orderLog.status == 2 && detail.matchType == 'FT' && (detail.betRqTeam == 'C' && detail.btype == 'rq' ) ">
+											<span class="color-green">全场 :&nbsp;<font ng-bind-html="detail.score.flScoreC|trust_html"></font>:<font ng-bind-html="detail.score.flScoreH|trust_html"></font></span>
+										</div>
+										<div class="inline-block fl" ng-if="orderLog.status == 2 && detail.matchType == 'FT' && !(detail.betRqTeam == 'C' && detail.btype == 'rq' ) ">
+											<span class="color-green">上半场:&nbsp;<font ng-bind-html="detail.score.hrScoreH|trust_html"></font>:<font ng-bind-html="detail.score.hrScoreC|trust_html"></font></span>
+										</div>
+										<div class="inline-block fl" ng-if="orderLog.status == 2 && detail.matchType == 'FT' && !(detail.betRqTeam == 'C' && detail.btype == 'rq' ) ">
+											<span class="color-green">全场:&nbsp;<font ng-bind-html="detail.score.flScoreH|trust_html"></font>:<font ng-bind-html="detail.score.flScoreC|trust_html"></font></span>
+										</div>
+										<div class="inline-block fl" ng-if="orderLog.status == 2 && detail.matchType != 'FT' && (detail.betRqTeam == 'C' && detail.btype == 'rf') ">
+											<span class="color-green">全场:&nbsp;<font ng-bind-html="detail.score.stageCF|trust_html"></font>:<font ng-bind-html="detail.score.stageHF|trust_html"></font></span>
+										</div>
+										<div class="inline-block fl" ng-if="orderLog.status == 2 && detail.matchType != 'FT' && !(detail.betRqTeam == 'C' && detail.btype == 'rf') ">
+											<span class="color-green">全场:&nbsp;<font ng-bind-html="detail.score.stageHF|trust_html"></font>:<font ng-bind-html="detail.score.stageCF|trust_html"></font></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td><span class="color-red"> <font ng-bind-html="detail.betOddsDes | trust_html"></font></span></td>
+								</tr>
+								<tr>
+									<td><span class="white"> <font class="color-red" ng-bind-html="detail.betOddsName | trust_html"></font> @ <font class="color-red" ng-bind-html="detail.betOdds | trust_html"></font></span></td>
+								</tr>
+								<tr>
+									<td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.betIn}}￥</span></td>
+								</tr>
+								<tr>
+									<td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.orderTime | date: "MM-dd hh:mm:ss"}}</span></td>
+								</tr>
+								<tr>
+									<td><span class="white">比赛时间:&nbsp;&nbsp;{{detail.matchTime|date: "MM-dd hh:mm:ss" }}</span></td>
+								</tr>
+								<tr ng-init="statusLabels = {1: '赢', 2: '输', 3: '赢一半', 4: '输一半', 5: '和局退款', 6: '比赛取消', 7: '赔率错误', 8: '比分错误', 9:'盘口错误', 10: '队名错误', 11: '和局取消', 12: '赛事延赛', 13: '赛事腰斩', 14: '进球取消', 15: '正在确认', 16: '未接受注单', 17: '未结算'}">
+									<td>
+										<font class="color-yellow inline">结果:&nbsp; {{statusLabels[orderLog['betStatus']]}}</font>
+										<font class="color-yellow inline" ng-if="orderLog.betStatus == 1 || orderLog.betStatus == 2 || orderLog.betStatus == 3 || orderLog.betStatus == 4">({{orderLog.betUsrWin}}￥)</font>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="sport-log-wrapper" ng-if="orderLog.matchRtype == 'p3'">
+				<ul class="header clearfix bg-submit">
+					<li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white">
+					[串 关] {{orderLog.details.length}}&nbsp;&nbsp;{{orderLog.betWagersId}}
+					</span></li>
+				</ul>
+				<div class="form form-deposit">
+					<div class="form-element">
+						<table>
+							<tr>
+								<td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.betIn}}￥</span></td>
+							</tr>
+							<tr>
+								<td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.createTime | date: "MM-dd hh:mm:ss"}}</span></td>
+							</tr>
+							<tr ng-if="orderLog.status == 2" ng-init="statusLabels = {1: '赢', 2: '输', 3: '赢一半', 4: '输一半', 5: '和局退款', 6: '比赛取消', 7: '赔率错误', 8: '比分错误', 9:'盘口错误', 10: '队名错误', 11: '和局取消', 12: '赛事延赛', 13: '赛事腰斩', 14: '进球取消', 15: '正在确认', 16: '未接受注单', 17: '未结算'}">
+									<td>
+										<font class="color-yellow inline">结果:&nbsp; {{statusLabels[orderLog['betStatus']]}}</font>
+										<font class="color-yellow inline" ng-if="orderLog.betStatus == 1 || orderLog.betStatus == 2 || orderLog.betStatus == 3 || orderLog.betStatus == 4">({{orderLog.betUsrWin}}￥)</font>
+									</td>
+							</tr>
+						</table>
+						<table class="sub-table" ng-repeat="detail in orderLog.details">
+							<tr class="sub-table-head"><td ng-init="dtypeLabels={'dy': '独赢', 'rq': '让球', 'dx': '大小', 'ds': '单双', 
+								'dx_big': '积分', 'dx_small': '积分', 'rf': '让分', 'pd': '波胆'}"><span class="white">
+								{{detail.matchType == 'FT' ? '足球': (detail.matchType == 'BK' ? '篮球': '')}} 
+								{{dtypeLabels[detail.dtype]}} </span></td>
+							</tr>
+							<tr>
+								<td><span class="white" ng-bind-html="detail.league | trust_html"></span></td>
+							</tr>
+							<tr>
+								<td>
+									<font class="white" ng-bind-html="detail.betVs | trust_html"></font>
+									<font class="color-red" ng-if="orderLog.status != 2 && detail.timeType == 'roll' && detail.betRqTeam == 'H'">(<font ng-bind-html="detail.betScoreHCur | trust_html"></font>:<font ng-bind-html="detail.betScoreCCur | trust_html"></font>)</span>
+									<font class="color-red" ng-if="orderLog.status != 2 && detail.timeType == 'roll' && detail.betRqTeam == 'C'">(<font ng-bind-html="detail.betScoreCCur | trust_html"></font>:<font ng-bind-html="detail.betScoreHCur | trust_html"></font>)</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="inline-block fl" ng-if="orderLog.status == 2 && detail.matchType == 'FT' && detail.betRqTeam == 'H'">
+										<span class="color-green">上半场 <font ng-bind-html="detail.score.hrScoreH | trust_html"></font>:<font ng-bind-html="detail.score.hrScoreH | trust_html"></font></span>
+									</div>
+									<div class="inline-block fl" ng-if="orderLog.status == 2 && detail.matchType == 'FT' && detail.betRqTeam == 'H'">
+									 	<span class="color-green">全场 <font ng-bind-html="detail.score.flScoreH | trust_html"></font>:<font ng-bind-html="detail.score.flScoreC | trust_html"></font></span>
+									</div>
+									<div class="inline-block fl" ng-if="orderLog.status == 2 && detail.matchType == 'FT' && detail.betRqTeam == 'C'">
+										<span class="color-green">上半场<font ng-bind-html="detail.score.hrScoreC | trust_html"></font>:<font ng-bind-html="detail.score.hrScoreH | trust_html"></font></span>
+									</div>
+									<div class="inline-block fl" ng-if="orderLog.status == 2 && detail.matchType == 'FT' && detail.betRqTeam == 'C'">
+										<span class="color-green">全场 <font ng-bind-html="detail.score.flScoreC | trust_html"></font>:<font ng-bind-html="detail.score.flScoreH | trust_html"></font></span>
+									</div>
+									<div class="inline-block fl" ng-if="orderLog.status == 2 && detail.matchType != 'FT' && detail.betRqTeam == 'H'">
+										<span class="color-green">全场 <font ng-bind-html="detail.score.stageHF | trust_html"></font>:<font ng-bind-html="detail.score.stageCF | trust_html"></font></span>
+									</div>
+									<div class="inline-block fl" ng-if="orderLog.status == 2 && detail.matchType != 'FT' && detail.betRqTeam == 'C'">
+										<span class="color-green">全场 <font ng-bind-html="detail.score.stageCF | trust_html"></font>:<font ng-bind-html="detail.score.stageHF | trust_html"></font></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="color-red"><font ng-bind-html="detail.betOddsDes | trust_html"></font></span></td>
+							</tr>
+							<tr>
+								<td><span class="white"> <font  class="color-red" ng-bind-html="detail.betOddsName | trust_html"></font> @ <font  class="color-red" ng-bind-html="detail.betOdds | trust_html"></font></span></td>
+							</tr>
+							<tr ng-if="orderLog.status != 2 && detail.timeType == 'roll'">
+								<td>
+									<span class="white" ng-if="detail.betRqTeam == 'H'"><font ng-bind-html="detail.betScoreHCur | trust_html"></font>:<font ng-bind-html="detail.betScoreCCur | trust_html"></font></span>
+									<span class="white" ng-if="detail.betRqTeam == 'C'"><font ng-bind-html="detail.betScoreCCur | trust_html"></font>:<font ng-bind-html="detail.betScoreHCur | trust_html"></font></span>
+				          		</td>
+							</tr>
+							<tr><td><span class="white">比赛时间:&nbsp;&nbsp;{{detail.matchTime|date: "MM-dd hh:mm:ss" }}</span></td></tr>
+							
+						</table>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="elements-wrapper" ng-repeat="orderLog in orderLogs" ng-if="orderLogs.length > 0 && order.platform == 'ag'">
+			<ul class="header clearfix bg-submit">
+				<li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white">{{orderLog.bet_Wagers_id}}</span></li>
+			</ul>
+			<div class="form form-deposit">
+				<div class="form-element">
+					<table >
+						<tr>
+							<td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.bet_time | date: "yyyy-MM-dd"}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">内容:&nbsp; {{orderLog.bet_game_content}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.bet_in}}￥</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">有效投注:&nbsp;&nbsp;{{orderLog.bet_income}}￥</span></td>
+						</tr>
+						<tr>
+							<td>
+							<span class="white">结果:&nbsp;&nbsp;
+								<font class="color-green" ng-if="orderLog.bet_usr_win > 0 ">赢({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-red" ng-if="orderLog.bet_usr_win < 0  ">输({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-green" ng-if="orderLog.bet_usr_win == 0  ">合</font>
+							</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="elements-wrapper" ng-repeat="orderLog in orderLogs" ng-if="orderLogs.length > 0 && order.platform == 'mg'">
+			<ul class="header clearfix bg-submit">
+				<li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white">{{orderLog.bet_Wagers_id}}</span></li>
+			</ul>
+			<div class="form form-deposit">
+				<div class="form-element">
+					<table >
+						<tr>
+							<td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.bet_time | date: "yyyy-MM-dd"}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">内容:&nbsp; {{orderLog.bet_content}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.bet_in}}￥</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">有效投注:&nbsp;&nbsp;{{orderLog.bet_income}}￥</span></td>
+						</tr>
+						<tr>
+							<td>
+							<span class="white">结果:&nbsp;&nbsp;
+								<font class="color-green" ng-if="orderLog.bet_usr_win > 0 ">赢({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-red" ng-if="orderLog.bet_usr_win < 0  ">输({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-green" ng-if="orderLog.bet_usr_win == 0  ">合</font>
+							</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="elements-wrapper" ng-repeat="orderLog in orderLogs" ng-if="orderLogs.length > 0 && order.platform == 'os'">
+			<ul class="header clearfix bg-submit">
+				<li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white">{{orderLog.bet_Wagers_id}}</span></li>
+			</ul>
+			<div class="form form-deposit">
+				<div class="form-element">
+					<table >
+						<tr>
+							<td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.bet_time | date: "yyyy-MM-dd"}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">内容:&nbsp; {{orderLog.bet_content}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.bet_in}}￥</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">有效投注:&nbsp;&nbsp;{{orderLog.bet_income}}￥</span></td>
+						</tr>
+						<tr>
+							<td>
+							<span class="white">结果:&nbsp;&nbsp;
+								<font class="color-green" ng-if="orderLog.bet_usr_win > 0 ">赢({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-red" ng-if="orderLog.bet_usr_win < 0  ">输({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-green" ng-if="orderLog.bet_usr_win == 0  ">合</font>
+							</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="elements-wrapper" ng-repeat="orderLog in orderLogs" ng-if="orderLogs.length > 0 && order.platform == 'pt'">
+			<ul class="header clearfix bg-submit">
+				<li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white">{{orderLog.bet_Wagers_id}}</span></li>
+			</ul>
+			<div class="form form-deposit">
+				<div class="form-element">
+					<table >
+						<tr>
+							<td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.bet_time | date: "yyyy-MM-dd"}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">内容:&nbsp; {{orderLog.bet_game_content}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.bet_in}}￥</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">有效投注:&nbsp;&nbsp;{{orderLog.bet_income}}￥</span></td>
+						</tr>
+						<tr>
+							<td>
+							<span class="white">结果:&nbsp;&nbsp;
+								<font class="color-green" ng-if="orderLog.bet_usr_win > 0 ">赢({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-red" ng-if="orderLog.bet_usr_win < 0  ">输({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-green" ng-if="orderLog.bet_usr_win == 0  ">合</font>
+							</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="elements-wrapper" ng-repeat="orderLog in orderLogs" ng-if="orderLogs.length > 0 && order.platform == 'sb'">
+			
+			<div ng-if="orderLog.bet_content_mark == 'sbSport'">
+				<ul class="header clearfix bg-submit">
+					<li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white">{{orderLog.bet_game_content}}&nbsp;{{orderLog.bet_Wagers_id}}</span></li>
+				</ul>
+				
+				<div class="form form-deposit" ng-if="orderLog.bet_content == 'System Parlay'">
+					<div class="form-element">
+						<table>
+							<tr>
+								<td><span class="white sb-chuanguan" ng-bind-html="orderLog.parlay_data | trust_html"></span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				
+				<div class="form form-deposit" ng-if="orderLog.bet_content != 'System Parlay'">
+					<div class="form-element">
+						<table >
+							<tr>
+								<td><span class="white">{{orderLog.league_name}}</span></td>
+							</tr>
+							<tr>
+								<td>
+									<span class="white"><font>{{orderLog.home_team}}</font>&nbsp;VS&nbsp;<font>{{orderLog.away_team}}</font></span>
+								</td>
+							</tr>
+							<tr>
+								<td><span class="color-red">{{orderLog.bet_content}}</span></td>
+							</tr>
+							<tr>
+								<td><span class="white"><font class="color-red">{{orderLog.bet_game_table}}</font>&nbsp;@&nbsp;<font class="color-red">{{orderLog.bet_odds}}</font>&nbsp;<font class="color-red">{{orderLog.odds_type}}</font></span></td>
+							</tr>
+							<tr>
+								<td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.bet_income }}￥</span></td>
+							</tr>
+							<tr>
+								<td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.bet_time | date: "yyyy-MM-dd hh:mm"}}</span></td>
+							</tr>
+							<tr>
+								<td><span class="white">比赛时间:&nbsp;&nbsp;{{orderLog.match_time | date: "yyyy-MM-dd hh:mm"}}</span></td>
+							</tr>
+							<tr ng-init="statusLabels = {0: '未结算', 1: '已结算', 2: '注单拒绝', 3: '取消'}">
+								<td><span class="white"><font>状态:&nbsp;&nbsp;{{statusLabels[orderLog.status]}}</font>
+								<font ng-if="orderLog.status== 1 && orderLog.bet_game_result == 'WON'">(赢{{orderLog.bet_usr_win}}￥)</font>
+								<font ng-if="orderLog.status== 1 && orderLog.bet_game_result == 'LOST'">(输{{orderLog.bet_usr_win}}￥)</font>
+								</span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+			<div ng-if="orderLog.bet_content_mark == 'sbCasion'">
+				<ul class="header clearfix bg-submit">
+					<li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white">真人视讯&nbsp;{{orderLog.bet_Wagers_id}}</span></li>
+				</ul>
+				<div class="form form-deposit">
+					<div class="form-element">
+						<table >
+							<tr>
+								<td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.bet_time | date: "yyyy-MM-dd"}}</span></td>
+							</tr>
+							<tr>
+								<td><span class="white">内容:&nbsp; {{orderLog.bet_game_content}}&nbsp;{{orderLog.bet_content}}</span></td>
+							</tr>
+							<tr>
+								<td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.bet_in}}￥</span></td>
+							</tr>
+							<tr>
+								<td><span class="white">有效投注:&nbsp;&nbsp;{{orderLog.bet_income}}￥</span></td>
+							</tr>
+							<tr>
+								<td>
+								<span class="white">结果:&nbsp;&nbsp;
+								<font class="color-green" ng-if="orderLog.bet_usr_win > 0 ">赢({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-red" ng-if="orderLog.bet_usr_win < 0  ">输({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-green" ng-if="orderLog.bet_usr_win == 0  ">合</font>
+								</span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="elements-wrapper" ng-repeat="orderLog in orderLogs" ng-if="orderLogs.length > 0 && order.platform == 'bbin'">
+			<ul class="header clearfix bg-submit">
+				<li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white">{{orderLog.bet_Wagers_id}}</span></li>
+			</ul>
+			<div class="form form-deposit">
+				<div class="form-element">
+					<table >
+						<tr>
+							<td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.bet_time | date: "yyyy-MM-dd"}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">内容:&nbsp; {{orderLog.bet_game_content}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.bet_in}}￥</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">有效投注:&nbsp;&nbsp;{{orderLog.bet_income}}￥</span></td>
+						</tr>
+						<tr>
+							<td>
+							<span class="white">结果:&nbsp;&nbsp;
+								<font class="color-green" ng-if="orderLog.bet_usr_win > 0 ">赢({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-red" ng-if="orderLog.bet_usr_win < 0  ">输({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-green" ng-if="orderLog.bet_usr_win == 0  ">合</font>
+							</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="elements-wrapper" ng-repeat="orderLog in orderLogs" ng-if="orderLogs.length > 0 && order.platform == 'ttg'">
+			<ul class="header clearfix bg-submit">
+				<li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white">{{orderLog.bet_Wagers_id}}</span></li>
+			</ul>
+			<div class="form form-deposit">
+				<div class="form-element">
+					<table >
+						<tr>
+							<td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.bet_time | date: "yyyy-MM-dd"}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">内容:&nbsp; {{orderLog.bet_content}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.bet_in}}￥</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">有效投注:&nbsp;&nbsp;{{orderLog.bet_income}}￥</span></td>
+						</tr>
+						<tr>
+							<td>
+							<span class="white">结果:&nbsp;&nbsp;
+								<font class="color-green" ng-if="orderLog.bet_usr_win > 0 ">赢({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-red" ng-if="orderLog.bet_usr_win < 0  ">输({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-green" ng-if="orderLog.bet_usr_win == 0  ">合</font>
+							</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="elements-wrapper" ng-repeat="orderLog in orderLogs" ng-if="orderLogs.length > 0 && order.platform == 'hg'">
+			<ul class="header clearfix bg-submit">
+				<li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white">{{orderLog.bet_Wagers_id}}</span></li>
+			</ul>
+			<div class="form form-deposit">
+				<div class="form-element">
+					<table >
+						<tr>
+							<td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.bet_time | date: "yyyy-MM-dd"}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">内容:&nbsp; {{orderLog.bet_game_content}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.bet_in}}￥</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">有效投注:&nbsp;&nbsp;{{orderLog.bet_income}}￥</span></td>
+						</tr>
+						<tr>
+							<td>
+							<span class="white">结果:&nbsp;&nbsp;
+								<font class="color-green" ng-if="orderLog.bet_usr_win > 0 ">赢({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-red" ng-if="orderLog.bet_usr_win < 0  ">输({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-green" ng-if="orderLog.bet_usr_win == 0  ">合</font>
+							</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="elements-wrapper" ng-repeat="orderLog in orderLogs" ng-if="orderLogs.length > 0 && order.platform == 'sa'">
+			<ul class="header clearfix bg-submit">
+				<li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white">{{orderLog.bet_Wagers_id}}</span></li>
+			</ul>
+			<div class="form form-deposit">
+				<div class="form-element">
+					<table >
+						<tr>
+							<td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.bet_time | date: "yyyy-MM-dd"}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">内容:&nbsp; {{orderLog.bet_game_content}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.bet_in}}￥</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">有效投注:&nbsp;&nbsp;{{orderLog.bet_income}}￥</span></td>
+						</tr>
+						<tr>
+							<td>
+							<span class="white">结果:&nbsp;&nbsp;
+								<font class="color-green" ng-if="orderLog.bet_usr_win > 0 ">赢({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-red" ng-if="orderLog.bet_usr_win < 0  ">输({{orderLog.bet_usr_win}}￥)</font>
+								<font class="color-green" ng-if="orderLog.bet_usr_win == 0  ">合</font>
+							</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="elements-wrapper" ng-repeat="orderLog in orderLogs" ng-if="orderLogs.length > 0 && order.platform == 'ds'">
+            <ul class="header clearfix bg-submit">
+                <li style="width: 100%; text-align:left;text-indent: 1rem;"><span class="white">{{orderLog.bet_Wagers_id}}</span></li>
+            </ul>
+            <div class="form form-deposit">
+                <div class="form-element">
+                    <table >
+                        <tr>
+                            <td><span class="white">下注时间:&nbsp;&nbsp;{{orderLog.bet_time | date: "yyyy-MM-dd"}}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="white">内容:&nbsp; {{orderLog.bet_game_content}}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="white">下注金额:&nbsp;&nbsp;{{orderLog.bet_in}}￥</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="white">有效投注:&nbsp;&nbsp;{{orderLog.bet_income}}￥</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <span class="white">结果:&nbsp;&nbsp;
+                                <font class="color-green" ng-if="orderLog.bet_usr_win > 0 ">赢({{orderLog.bet_usr_win}}￥)</font>
+                                <font class="color-red" ng-if="orderLog.bet_usr_win < 0  ">输({{orderLog.bet_usr_win}}￥)</font>
+                                <font class="color-green" ng-if="orderLog.bet_usr_win == 0  ">合</font>
+                            </span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+		
+		<pager load-data="init()"></pager>
+	</div>
+</div>
+
+

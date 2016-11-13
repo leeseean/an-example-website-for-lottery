@@ -1,0 +1,43 @@
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-24-24"><div class="ui-item-son">全五字组合</div></div>
+		</div>
+		<div class="pure-g">
+			<div class="pure-u-6-24"><div class="ui-item-son">号码</div></div>
+			<div class="pure-u-6-24"><div class="ui-item-son">赔率</div></div>
+			<div class="pure-u-6-24"><div class="ui-item-son">号码</div></div>
+			<div class="pure-u-6-24"><div class="ui-item-son">赔率</div></div>
+		</div>
+	</div>
+	<div class="ui-body-son">
+		<div class="pure-g" ng-repeat="number in range(0, 10, 2)">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span>{{number}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span 
+						ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-QW_'+number] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-QW_'+number]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-QW_'+number]}" 
+						ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+'-QW_'+number}}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-QW_'+number]}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span>{{number+1}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span 
+						ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-QW_' + (number + 1)] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-QW_'+ (number + 1)]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-QW_' + (number + 1)]}" 
+						ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+'-QW_' + (number + 1)}}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-QW_' + (number + 1)]}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

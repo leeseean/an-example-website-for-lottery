@@ -1,0 +1,810 @@
+body {
+	background: rgb(245, 245, 245); margin: 0px; padding: 0px; color: rgb(70, 70, 70); font-family: Î¢ÈíÑÅºÚ,ºÚÌå, Verdana, Airal,ËÎÌå, Helvetica; font-size: 12px;
+}
+p {
+	margin: 0px; padding: 0px;
+}
+h1 {
+	margin: 0px; padding: 0px;
+}
+h2 {
+	margin: 0px; padding: 0px;
+}
+h3 {
+	margin: 0px; padding: 0px;
+}
+h4 {
+	margin: 0px; padding: 0px;
+}
+h5 {
+	margin: 0px; padding: 0px;
+}
+h6 {
+	margin: 0px; padding: 0px;
+}
+ul {
+	margin: 0px; padding: 0px;
+}
+li {
+	margin: 0px; padding: 0px;
+}
+dd {
+	margin: 0px; padding: 0px;
+}
+dl {
+	margin: 0px; padding: 0px;
+}
+img {
+	border: currentColor;
+}
+a {
+	color: rgb(166, 154, 142); text-decoration: none;
+}
+a:hover {
+	color: rgb(193, 5, 0); text-decoration: underline;
+}
+li {
+	list-style: none; vertical-align: middle;
+}
+a {
+	
+}
+a:active {
+	
+}
+:focus {
+	outline: 0px;
+}
+.clear {
+	height: 1px; overflow: hidden; clear: both;
+}
+button {
+	cursor: pointer;
+}
+em {
+	font-style: normal;
+}
+.off {
+	display: none;
+}
+.on {
+	display: block;
+}
+.hidden {
+	visibility: hidden;
+}
+.visible {
+	visibility: visible;
+}
+.select {
+	border: 1px solid rgb(204, 204, 204); width: 200px; height: 40px;
+}
+option {
+	border: 1px solid rgb(204, 204, 204); width: 200px; height: 40px;
+}
+.list-content {
+	
+}
+.list-tabs {
+	background: url("../images/list-tabs-bg.png") no-repeat left 3px; margin: 0px 6px; padding: 0px 8px; height: 41px;
+}
+.list-tabs li {
+	width: 100px; height: 41px; text-align: center; color: rgb(103, 103, 103); line-height: 41px; font-weight: bold; float: left; cursor: pointer;
+}
+.list-tabs li.active {
+	background: url("../images/list-tab-menu.png") no-repeat left top; color: white;
+}
+.list-tabs li:hover {
+	background: url("../images/list-tab-menu.png") no-repeat left top; color: white;
+}
+.list-tabContent {
+	padding: 0px;
+}
+.list-tabContent .btn-field {
+	width: 800px; text-align: right; margin-right: 20px; float: right;
+}
+.list-tabContent .btn-field button {
+	background: url("../images/type.png") no-repeat left top; margin: 0px 2px; border: currentColor; width: 80px; height: 26px; line-height: 26px;
+}
+.list-tabContent .btn-field button.active {
+	background: url("../images/type.png") no-repeat left -53px; border: currentColor; color: rgb(255, 255, 255);
+}
+.list-tabContent .search-field {
+	border: 0px solid rgb(255, 0, 0); width: 95%; height: 38px; line-height: 38px; margin-left: 20px;
+}
+.list-tabContent .search-field p {
+	height: 30px; line-height: 30px;
+}
+.list-tabContent .search-field p label {
+	float: left;
+}
+.list-tabContent .search-field p input {
+	float: left;
+}
+.list-tabContent .search-field p button {
+	float: left;
+}
+.list-tabContent .search-field input[type='text'] {
+	background: url("../images/search3.png") no-repeat left top; margin: 0px; border: 0px currentColor; width: 123px; height: 26px; color: rgb(132, 132, 132); line-height: 26px; padding-left: 6px; font-size: 14px;
+}
+.list-tabContent .search-field input[type='password'] {
+	background: url("../images/search3.png") no-repeat left top; margin: 0px; border: 0px currentColor; width: 123px; height: 26px; color: rgb(132, 132, 132); line-height: 26px; padding-left: 6px; font-size: 14px;
+}
+.list-tabContent .search-field #timestart {
+	background: url("../images/search5.png") no-repeat left top; border: 0px solid rgb(255, 0, 0); width: 155px; height: 28px; color: rgb(132, 132, 132); line-height: 28px; padding-left: 6px; font-size: 13px; margin-top: 5px;
+}
+#timeend {
+	background: url("../images/search5.png") no-repeat left top; border: 0px solid rgb(255, 0, 0); width: 155px; height: 28px; color: rgb(132, 132, 132); line-height: 28px; padding-left: 6px; font-size: 13px; margin-top: 5px;
+}
+.list-tabContent .search-field input.searchbtn {
+	background: url("../images/searchbtn.png") no-repeat left top; border: 0px solid rgb(255, 0, 0); width: 42px; height: 26px; margin-top: -7px; margin-left: 10px; vertical-align: middle; cursor: pointer;
+}
+.list-tabContent .list {
+	width: 100%; color: rgb(34, 17, 0);
+}
+.list-tabContent .list table {
+	width: 100%; text-align: center;
+}
+.list-tabContent .list tr.tb-title {
+	background: url("../images/bg-listTitle.png") repeat-x; padding: 0px 10px; color: rgb(255, 255, 255); line-height: 20px; text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
+}
+.list-tabContent .list tr.tb-title td {
+	height: 25px; text-align: center; color: rgb(255, 255, 255); line-height: 25px;
+}
+.list-tabContent .list tr {
+	background: rgb(232, 232, 232); padding: 10px;
+}
+.list-tabContent .list table {
+	padding-bottom: 8px; padding-left: 0px; float: left; display: block;
+}
+.list-tabContent .list td {
+	height: 35px; text-align: center; color: rgb(34, 17, 0); font-size: 12px; border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(221, 221, 221); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.list-tabContent .list a {
+	color: rgb(34, 17, 0);
+}
+.list-tabContent .list tr.tb-title td {
+	border: 0px solid rgb(255, 255, 255);
+}
+.list-tabContent .list .tongji {
+	background: url("../images/tj-bg.gif") repeat-x left top; height: 30px; text-align: right; line-height: 30px; border-right-color: rgb(110, 76, 51); border-left-color: rgb(110, 76, 51); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.list-tabContent .list .green {
+	color: rgb(1, 68, 41); font-weight: bold;
+}
+.list-tabContent .list .red {
+	color: rgb(165, 13, 39); font-weight: bold;
+}
+.noonlines {
+	color: rgb(165, 13, 39); font-weight: bold;
+}
+.list-tabContent .lists {
+	width: 100%; color: rgb(34, 17, 0); font-size: 12px; margin-top: 0px; margin-left: 0px; border-top-color: rgb(215, 215, 215); border-top-width: 0px; border-top-style: solid;
+}
+.list-tabContent .lists table {
+	width: 100%;
+}
+.list-tabContent .lists tr {
+	height: 20px; line-height: 20px;
+}
+.list-tabContent .lists .db {
+	border-bottom-color: rgb(255, 255, 255); border-bottom-width: 0px; border-bottom-style: solid;
+}
+.list-tabContent .lists .db td {
+	border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(215, 215, 215); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.list table input[type='text'] {
+	background: rgb(231, 231, 231); margin: 0px 5px; padding: 5px; border: 1px inset rgb(255, 255, 255); width: 100px; color: rgb(40, 40, 40); vertical-align: middle; box-shadow: inset 1px 1px 3px; -webkit-border-radius: 5px 5px; -webkit-box-shadow: 1px 1px 3px inset; -moz-box-shadow: 1px 1px 3px inset;
+}
+.list table input[type='password'] {
+	background: rgb(231, 231, 231); margin: 0px 5px; padding: 5px; border: 1px inset rgb(255, 255, 255); width: 100px; color: rgb(40, 40, 40); vertical-align: middle; box-shadow: inset 1px 1px 3px; -webkit-border-radius: 5px 5px; -webkit-box-shadow: 1px 1px 3px inset; -moz-box-shadow: 1px 1px 3px inset;
+}
+.list table textarea {
+	background: rgb(231, 231, 231); margin: 0px 5px; padding: 5px; border: 1px inset rgb(255, 255, 255); width: 100px; color: rgb(40, 40, 40); vertical-align: middle; box-shadow: inset 1px 1px 3px; -webkit-border-radius: 5px 5px; -webkit-box-shadow: 1px 1px 3px inset; -moz-box-shadow: 1px 1px 3px inset;
+}
+.list-tabContent .lists .zhtx td {
+	padding-left: 60px;
+}
+.list-tabContent .lists .bdzl td {
+	margin: 0px; padding: 0px; height: 50px;
+}
+.list-tabContent .lists .tjxj {
+	margin: 0px; padding: 0px;
+}
+.list-tabContent .lists tr.tb-title {
+	height: 33px; color: rgb(0, 0, 0); line-height: 33px; font-weight: bold;
+}
+.list-tabContent .lists td {
+	padding-top: 8px; padding-bottom: 8px;
+}
+.list-tabContent .lists .tongji {
+	background: url("../images/tj-bg.gif") repeat-x left top; height: 30px; text-align: right; line-height: 30px; border-right-color: rgb(110, 76, 51); border-left-color: rgb(110, 76, 51); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.list-tabContent .lists .green {
+	color: rgb(1, 110, 66); font-weight: bold;
+}
+.list-tabContent .lists .red {
+	color: rgb(165, 13, 39); font-weight: bold;
+}
+.list-tabContent .lists .dbs td {
+	border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 0px; border-bottom-width: 0px; border-top-style: solid; border-bottom-style: solid;
+}
+.list-tabContent .lists .dbs tr:hover {
+	background: rgb(241, 241, 241); color: rgb(103, 103, 103);
+}
+.list-tabContent .listsz {
+	background: url("../images/list-table-t.gif") repeat-x left top; padding: 0px; width: 986px; height: 220px; color: rgb(103, 103, 103); overflow-y: auto; _height: auto;
+}
+.list-tabContent .listsz table {
+	width: 100%; text-align: center;
+}
+.list-tabContent .listsz tr {
+	height: 32px; line-height: 32px;
+}
+.list-tabContent .listsz .db {
+	border-bottom-color: rgb(255, 255, 255); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.list-tabContent .listsz tr.tb-title {
+	height: 33px; color: rgb(103, 103, 103); line-height: 33px; font-weight: normal;
+}
+.list-tabContent .listsz tr.tb-title:hover {
+	color: rgb(103, 103, 103);
+}
+.list-tabContent .listsz tr:hover {
+	background: rgb(227, 227, 227); color: rgb(52, 48, 48);
+}
+.list-tabContent .listsz td {
+	border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(215, 215, 215); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.list-tabContent .listsz .odd {
+	background: rgb(232, 232, 232); padding: 10px; border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(221, 221, 221); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.list-tabContent .listsz .even {
+	
+}
+.list-tabContent .listsz .tongji {
+	background: url("../images/tj-bg.gif") repeat-x left top; height: 30px; text-align: right; line-height: 30px; border-right-color: rgb(110, 76, 51); border-left-color: rgb(110, 76, 51); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.list-tabContent .listsz .green {
+	color: rgb(1, 110, 66); font-weight: bold;
+}
+.list-tabContent .listsz .red {
+	color: rgb(165, 13, 39); font-weight: bold;
+}
+.list-tabContent .listsz1 {
+	padding: 0px; border: 0px solid rgb(215, 215, 215); width: 98%; height: 455px; text-align: center; color: rgb(91, 55, 21); overflow: hidden; margin-top: 10px; margin-left: 10px; display: block; overflow-y: auto; _height: auto;
+}
+.list-tabContent .listsz1 table {
+	width: 100%; text-align: center; display: block; border-collapse: collapse;
+}
+.list-tabContent .listsz1 tr {
+	height: 20px; line-height: 20px;
+}
+.list-tabContent .listsz1 .db {
+	border-bottom-color: rgb(255, 255, 255); border-bottom-width: 0px; border-bottom-style: solid;
+}
+.list-tabContent .listsz1 tr.tb-title {
+	height: 20px; color: rgb(34, 17, 0); line-height: 20px; font-weight: normal;
+}
+.list-tabContent .listsz1 td {
+	padding: 15px; border: 1px solid rgb(199, 199, 199); text-align: left; color: rgb(34, 17, 0);
+}
+.list-tabContent .listsz1 .tongji {
+	background: url("../images/tj-bg.gif") repeat-x left top; height: 30px; text-align: right; line-height: 30px; border-right-color: rgb(34, 17, 0); border-left-color: rgb(110, 76, 51); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.list-tabContent .listsz1 .green {
+	color: rgb(1, 110, 66); font-weight: bold;
+}
+.list-tabContent .listsz1 .red {
+	color: rgb(165, 13, 39); font-weight: bold;
+}
+.singlelineText {
+	background: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); height: 20px; color: rgb(0, 0, 0); line-height: 20px; vertical-align: middle; float: left;
+}
+.singlelineText_a {
+	background: rgb(204, 204, 204); border: 1px solid rgb(215, 215, 215); height: 22px;
+}
+.multilineText {
+	background: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); color: rgb(0, 0, 0); font-weight: bold; vertical-align: middle;
+}
+.wordLeave {
+	width: 485px;
+}
+.list-tabContent .page {
+	height: 30px; text-align: right; color: rgb(0, 0, 0); line-height: 30px; font-size: 12px; margin-top: 5px; margin-right: 20px; display: block;
+}
+.list-tabContent .page a {
+	background: no-repeat; padding: 0px 3px; height: 24px; text-align: center; color: rgb(0, 0, 0); line-height: 24px; display: inline-block;
+}
+.list-tabContent .page a.active {
+	color: rgb(250, 205, 138); text-decoration: none;
+}
+.list-tabContent .page a:hover {
+	color: rgb(250, 205, 138); text-decoration: none;
+}
+.list-tabContent .page .page-text {
+	background: rgb(231, 231, 231); margin: 0px 2px; padding: 3px; border-radius: 3px; border: 0px solid rgb(255, 255, 255); color: rgb(111, 66, 0); vertical-align: middle; box-shadow: inset 1px 1px 3px; -webkit-box-shadow: 1px 1px 3px inset; -moz-box-shadow: 1px 1px 3px inset;
+}
+.list-tabContent .page input {
+	border: 1px solid rgb(149, 149, 149); color: rgb(0, 0, 0); font-size: 12px;
+}
+.list-tabContent .page input[type='text'] {
+	width: 30px; margin-left: 7px;
+}
+.list-tabContent .page input[type='submit'] {
+	margin-right: 10px; margin-left: 8px;
+}
+.list-bt {
+	background: url("../images/list-bt.png") no-repeat left top; height: 26px;
+}
+.editbutton {
+	text-align: left; margin-top: 15px;
+}
+.m_btn {
+	background: url("input2.png"); margin: 0px auto; border: 0px currentColor; width: 88px; height: 35px; display: block; cursor: pointer;
+}
+.m_btn1 {
+	background: url("input3.png"); margin: 0px auto; border: 0px currentColor; width: 88px; height: 24px; font-weight: bold; display: block; cursor: pointer;
+}
+.m_btn_big {
+	background: url("input3.png") no-repeat left; border: currentColor; width: 88px; height: 35px; color: rgb(0, 0, 0); line-height: 35px; font-size: 12px; vertical-align: middle; cursor: pointer;
+}
+.m_btn_qk {
+	background: url("tx.png"); margin: 0px auto; border: 0px currentColor; width: 137px; height: 47px; font-weight: bold; display: block; cursor: pointer;
+}
+.m_btn_cz {
+	background: url("input1.png"); border: 0px currentColor; width: 100px; height: 40px; text-align: center; line-height: 40px; font-size: 14px; font-weight: bold; float: right; cursor: pointer;
+}
+.m_btn3 {
+	background: url("input3.png"); margin: 0px auto; border: 0px currentColor; width: 88px; height: 24px; text-align: center; line-height: 24px; font-size: 14px; font-weight: bold; display: block; cursor: pointer;
+}
+.m_btn_btc {
+	background: url("m_btn_btc.png"); margin: 0px auto 0px 20px; border: 0px currentColor; width: 131px; height: 35px; display: inline; cursor: pointer;
+}
+.msg_tip {
+	width: 24%; text-align: right; padding-right: 30px !important; display: inline-block;
+}
+.dblist td {
+	height: 40px; color: rgb(0, 0, 0); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(215, 215, 215); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.dblist .content td {
+	border-bottom-color: rgb(208, 167, 106) !important; border-bottom-width: 0px !important; border-bottom-style: solid !important;
+}
+.dialog {
+	font-size: 12px;
+}
+.online {
+	width: 350px; height: 20px; line-height: 20px; overflow: hidden; display: block;
+}
+.per {
+	height: 140px; margin-top: 15px;
+}
+.per {
+	color: rgb(203, 185, 157); line-height: 24px; font-size: 14px;
+}
+.per p {
+	padding: 0px; color: rgb(203, 185, 157); line-height: 24px; font-size: 14px;
+}
+.bd-nw {
+	width: 20px;
+}
+#scrollDiv {
+	border: 0px solid rgb(0, 255, 0); width: 400px; height: 130px; overflow: hidden;
+}
+#scrollDiv span {
+	text-align: center; display: inline-block;
+}
+#scrollDiv span.c1 {
+	width: 120px;
+}
+#scrollDiv span.c2 {
+	width: 136px;
+}
+#scrollDiv span.c3 {
+	width: 136px;
+}
+.ui-page {
+	background: rgb(0, 0, 0); left: 0px; top: 0px; width: 100%; height: 100%; filter: alpha(opacity=50); position: absolute; z-index: 1; opacity: 0.5; _height: 503px; -moz-opacity: 0.5;
+}
+.ui-popBox1 {
+	background: url("popbg.png"); border: 4px solid rgb(0, 84, 98); left: 50%; top: 10%; width: 400px; height: 675px; margin-left: -360px; position: absolute; z-index: 2; box-shadow: 0px 0px 30px rgba(0,0,0,0.5);
+}
+.ui-popBox {
+	margin: 5.5% auto; border: 4px solid rgb(12, 75, 88); width: 400px; height: 675px; position: relative; box-shadow: 0px 0px 30px rgba(0,0,0,0.5);
+}
+.ui-popMain {
+	background: url("popbg.png") repeat-x; position: relative;
+}
+.ui-poptitle {
+	background: url("poptitle.png") repeat-x; padding: 10px; height: 21px; color: rgb(255, 255, 255); font-size: 14px; font-weight: bold;
+}
+.ui-table {
+	padding: 2px 0px 0px; width: 100%; height: 194px;
+}
+.ui-table table {
+	border: 1px solid rgb(221, 221, 221); width: 100%;
+}
+.ui-table table td {
+	background: rgb(255, 255, 255); padding: 10px; border-bottom-color: rgb(226, 237, 239); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.ui-table table td.ui-blue {
+	background: rgb(238, 250, 252); width: 80px; text-align: center; color: rgb(67, 139, 153); border-right-color: rgb(221, 221, 221); border-right-width: 1px; border-right-style: solid;
+}
+.ui-table input {
+	background: url("input1.png"); margin: 5px auto; width: 100px; height: 40px; font-weight: bold; display: block;
+}
+.ui-table input:hover {
+	background: url("input1s.png");
+}
+.ui-announcement {
+	top: 12%; width: 800px; height: 500px; margin-left: -400px;
+}
+.ui-annouceBox {
+	margin: 18px auto; width: 760px; height: 420px;
+}
+.ui-annouceList {
+	background: rgb(229, 229, 229); border: 1px solid rgb(200, 198, 198); width: 220px; height: 420px; float: left; position: relative;
+}
+.ui-annouceList p {
+	background: url("gg.png") repeat-x; top: 0px; width: 210px; height: 41px; line-height: 41px; padding-left: 10px; font-size: 14px; font-weight: bold; position: absolute;
+}
+.ui-annouceList ul {
+	position: absolute;
+}
+.ui-annouceList li {
+	padding: 8px 0px 8px 10px; font-size: 11px; font-weight: bold; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid; cursor: pointer;
+}
+.ui-annouceList li:hover {
+	background: rgb(18, 118, 135);
+}
+.ui-annouceList li.ui-annouceHover {
+	background: rgb(18, 118, 135);
+}
+.ui-annouceList li:hover a {
+	color: rgb(255, 255, 255);
+}
+.ui-annouceList li.ui-annouceHover a {
+	color: rgb(255, 255, 255);
+}
+.ui-annouceList ul {
+	width: 220px; height: 379px; overflow: auto; margin-top: 41px;
+}
+.ui-ui-annouceContent {
+	background: rgb(229, 229, 229); border: 1px solid rgb(200, 198, 198); width: 525px; height: 420px; float: right; position: relative;
+}
+.ui-ui-annouceContent p.ui-title {
+	background: url("gg.png") repeat-x; top: 0px; width: 515px; height: 41px; line-height: 41px; padding-left: 10px; font-size: 14px; font-weight: bold; position: relative;
+}
+.ui-annouceShow {
+	padding: 5px; border: 0px solid rgb(255, 0, 0); width: 513px; height: 362px; margin-top: 0px; position: relative; overflow-x: hidden; overflow-y: scroll;
+}
+.ui-annouceShow h2 {
+	text-align: center; line-height: 30px; font-size: 14px; font-weight: normal;
+}
+.ui-annouceShow p {
+	line-height: 20px; margin-top: 0px;
+}
+.ui-annouceShow p.ui-text {
+	text-indent: 2em;
+}
+.ui-annouceShow p.ui-bottom {
+	text-align: center;
+}
+.ui-annouceShow img {
+	
+}
+.ui-annouceShow table {
+	border-collapse: collapse;
+}
+#topImg {
+	margin-left: 4px; display: block;
+}
+.announce_text {
+	text-align: left; line-height: 1.8em; padding-left: 10px; margin-top: 15px; display: block;
+}
+.announce_text p {
+	line-height: 1.8em;
+}
+.ui-rechargeMain {
+	background: url("boxbg.png") repeat-x;
+}
+.ui-rechargeBox {
+	background: url("mainbg.png"); margin: 17px auto; border-radius: 3px; width: 900px; height: 441px;
+}
+.ui-bank {
+	margin: 0px 0px 0px 10px; height: 39px;
+}
+.ui-bank a {
+	padding: 5px; border-radius: 2px; border: 1px solid rgb(193, 192, 192); width: 125px; height: 28px; margin-top: 25px; margin-left: 10px; float: left;
+}
+.ui-banka {
+	margin: 0px 0px 0px 10px; height: 39px;
+}
+.ui-banka span {
+	padding: 5px; border-radius: 2px; width: 900px; height: 28px; font-size: 14px; margin-top: 25px; margin-left: 10px; float: left;
+}
+.ui-bank input {
+	margin-top: 37px; margin-left: 10px; float: left;
+}
+.ui-rechargeBox li {
+	width: 550px; height: 40px; line-height: 40px; margin-top: 5px;
+}
+.ui-rechargeBox ul {
+	margin: 30px auto; width: 900px; height: 140px;
+}
+.ui-rechargeBox li a {
+	background: url("input1.png"); width: 100px; height: 40px; text-align: center; line-height: 40px; font-size: 14px; font-weight: bold; float: right;
+}
+.ui-rechargeBox li span {
+	width: 150px; text-align: right; font-size: 14px; font-weight: bold; float: left;
+}
+.ui-rechargeBox li strong {
+	text-align: left; padding-left: 10px; font-size: 14px; font-weight: normal; margin-left: 10px; float: left;
+}
+.ui-rechargeBox li a:hover {
+	background: url("input1s.png");
+}
+.ui-attention {
+	margin: 20px auto; width: 840px; height: 120px;
+}
+.ui-attention h2 {
+	font-size: 16px;
+}
+.ui-attention p {
+	line-height: 18px; margin-top: 5px;
+}
+.ui-address {
+	margin: 20px auto; width: 840px; height: 50px;
+}
+.ui-address span {
+	font-size: 14px; font-weight: bold; margin-top: 15px; float: left;
+}
+.ui-address a {
+	padding: 5px; border-radius: 2px; border: 1px solid rgb(193, 192, 192); width: 125px; height: 28px; margin-left: 10px; float: left;
+}
+.ui-yl {
+	margin-left: 60px;
+}
+.ui-address a.ui-dk {
+	border: currentColor; width: 137px; height: 47px; margin-top: -5px;
+}
+.ui-moneyBox_s {
+	background: url("mainbg.png"); margin: 17px auto; border-radius: 3px; width: 900px; height: 271px;
+}
+.ui-moneyBox_s ul {
+	width: 900px;
+}
+* + html .ui-moneyBox_s ul li {
+	padding: 8px; margin-top: -1px;
+}
+.ui-moneyBox_s ul li {
+	padding: 1px; width: 895px; border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(221, 221, 221); border-top-width: 1px; border-bottom-width: 0px; border-top-style: solid; border-bottom-style: solid;
+}
+.ui-moneyBox_s ul li.ui-xm {
+	border-top-color: currentColor; border-top-width: medium; border-top-style: none;
+}
+.ui-moneyBox_s ul li table {
+	width: 100%;
+}
+.ui-moneyBox_s ul td {
+	padding-left: 20px; font-size: 14px;
+}
+.ui-moneyBox_s ul td input {
+	padding: 1px; margin-right: 5px; display: inline-block;
+}
+.ui-moneyBox_s ul td.ui-bt {
+	width: 85px; text-align: right;
+}
+.ui-instruction td {
+	line-height: 15px;
+}
+.ui-moneyBox_s ul li.ui-sureTx {
+	border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+.ui-moneyBox_s ul li.ui-sureTx td {
+	text-align: right; padding-right: 50px;
+}
+.ui-moneyBox {
+	background: url("mainbg1.png"); margin: 13px auto; border-radius: 3px; width: 970px; height: 451px; overflow-x: hidden; overflow-y: auto;
+}
+.ui-moneyBox ul {
+	width: 969px; border-top-color: rgb(221, 221, 221); border-left-color: rgb(221, 221, 221); border-top-width: 1px; border-left-width: 1px; border-top-style: solid; border-left-style: solid; display: block;
+}
+* + html .ui-moneyBox ul li {
+	padding: 8px; margin-top: -1px;
+}
+.ui-moneyBox ul li {
+	padding: 9px; width: 880px; border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(221, 221, 221); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.ui-moneyBox ul li.ui-xm {
+	border-top-color: currentColor; border-top-width: medium; border-top-style: none;
+}
+.ui-moneyBox ul li table {
+	border-left-color: rgb(221, 221, 221); border-left-width: 1px; border-left-style: solid;
+}
+.ui-moneyBox ul th {
+	border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255) rgb(221, 221, 221) rgb(221, 221, 221) rgb(255, 255, 255); font-size: 12px;
+}
+.ui-moneyBox ul td {
+	border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255) rgb(221, 221, 221) rgb(221, 221, 221) rgb(255, 255, 255); line-height: 22px; font-size: 12px;
+}
+.ui-moneyBox ul td input {
+	padding: 1px; margin-right: 5px; display: inline-block;
+}
+.ui-moneyBox ul td.ui-bt {
+	width: 85px; text-align: right;
+}
+.ui-instruction td {
+	line-height: 15px;
+}
+.ui-moneyBox ul li.ui-sureTx {
+	border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+.ui-moneyBox ul li.ui-sureTx td {
+	text-align: right; padding-right: 50px;
+}
+.ui-nav {
+	margin: 0px 0px 10px; padding: 0px; border: 0px currentColor; float: left;
+}
+.ui-nav li {
+	border: 0px currentColor; width: 98px; height: 29px; margin-right: 10px; float: left; display: inline;
+}
+.ui-nav li a {
+	background: url("../Theme/search2.png"); width: 98px; height: 29px; text-align: center; color: rgb(0, 0, 0); line-height: 29px; float: left;
+}
+.ui-nav li a:hover {
+	background: url("../Theme/search1.png"); color: rgb(255, 255, 255); text-decoration: none;
+}
+.ui-nav li.ui-nav-hover a {
+	background: url("../Theme/search1.png"); color: rgb(255, 255, 255); text-decoration: none;
+}
+.ui-recordBox {
+	margin: 0px auto; border-radius: 3px; border: 1px solid rgb(214, 214, 214); width: 900px; height: 441px;
+}
+.ui-recordTabel ul {
+	height: 356px;
+}
+.ui-recordTabel ul td {
+	text-align: left;
+}
+.ui-pool {
+	background: rgb(240, 240, 240); top: 95px; width: 500px; height: 720px; right: -100px; position: absolute; z-index: 9999; box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+.ui-pool h2 {
+	background: url("pooltitle.png") repeat-x; height: 38px; color: rgb(255, 255, 255); line-height: 38px; padding-left: 20px; font-size: 14px;
+}
+.ui-poolnum {
+	background: url("poolnum.png"); height: 260px; padding-top: 40px;
+}
+.ui-rewordpool {
+	background: url("pool.png"); margin: 0px auto; width: 406px; height: 85px; padding-left: 4px;
+}
+.ui-rewordpool ul {
+	margin-top: 22px; margin-left: 3px; float: left; display: inline;
+}
+.ui-rewordpool ul li {
+	font-size: 28px; font-weight: bold; margin-left: 21px; float: left;
+}
+.ui-rewordpool .ui-pool2 {
+	margin-left: 17px;
+}
+.ui-rewordpool .ui-pool2 li {
+	margin-left: 21px;
+}
+.ui-rewordpool .ui-pool3 {
+	margin-left: 17px;
+}
+.ui-rewordpool .ui-pool3 li {
+	margin-left: 20px;
+}
+.ui-poolOut {
+	background: url("pooltext1.png"); margin: 6px auto 0px; width: 330px; height: 75px; text-align: center; color: rgb(255, 255, 255); line-height: 75px; font-size: 18px;
+}
+.ui-pooltips {
+	background: url("pooltips.png") no-repeat; padding: 20px; width: 418px; height: 64px; color: rgb(255, 255, 255); line-height: 25px; text-indent: 2em; margin-left: 28px;
+}
+.ui-poollist1 div {
+	background: url("pooltable1.png"); width: 418px; height: 186px;
+}
+.ui-poollist1 h3 {
+	color: rgb(31, 127, 143); font-size: 14px;
+}
+.ui-poollist1 {
+	margin: 16px auto 0px; width: 418px; height: 220px;
+}
+.ui-poollist1 div table {
+	width: 100%;
+}
+.ui-poollist1 div table th {
+	color: rgb(255, 255, 255); line-height: 34px; font-size: 14px;
+}
+.ui-poollist1 div table td {
+	text-align: center; line-height: 26px; font-size: 14px;
+}
+.ui-poollist2 {
+	margin-top: -5px;
+}
+* + html .ui-pool {
+	position: absolute; z-index: 9999 !important;
+}
+.tip-twitter {
+	padding: 8px; border-radius: 4px; color: rgb(255, 255, 255); min-width: 50px; opacity: 0.8; background-color: rgb(0, 0, 0); -webkit-border-radius: 4px; ext-align: left; -moz-border-radius: 4px;
+}
+.tip-yellowsimple {
+	padding: 6px 8px; border-radius: 4px; border: 1px solid rgb(199, 191, 147); text-align: left; color: rgb(0, 0, 0); min-width: 50px; max-width: 300px; background-color: rgb(255, 249, 201); -webkit-border-radius: 4px; -moz-border-radius: 4px;
+}
+span#loading {
+	background: url("loading2.gif") no-repeat; width: 24px; height: 24px; text-align: center; line-height: 24px; font-size: 12px; display: inline-block;
+}
+.btn-btc {
+	background: rgb(209, 160, 12); padding: 10px 20px; border-radius: 7px; color: rgb(0, 0, 0); font-family: Arial; font-size: 15px; font-weight: bold; text-decoration: none; margin-left: 30px; display: inline; cursor: pointer; -webkit-border-radius: 7; -moz-border-radius: 7;
+}
+.btn-btc:hover {
+	text-decoration: none;
+}
+.Pagination {
+	margin: 0px auto; padding: 5px 0px; width: 900px; height: 25px; text-align: center; line-height: 25px; overflow: hidden;
+}
+.Pagination a {
+	padding: 3px 7px; margin-left: 2px;
+}
+.Pagination .dot {
+	padding: 4px 8px; border: currentColor;
+}
+.Pagination a:link {
+	border: 1px solid rgb(222, 222, 222); color: rgb(105, 105, 105); text-decoration: none;
+}
+.Pagination a:visited {
+	border: 1px solid rgb(222, 222, 222); color: rgb(105, 105, 105); text-decoration: none;
+}
+.Pagination a:hover {
+	border: 1px solid rgb(56, 73, 103); color: rgb(255, 255, 255); background-image: none; background-color: rgb(56, 73, 103);
+}
+.Pagination a:active {
+	border: 1px solid rgb(56, 73, 103); color: rgb(255, 255, 255); background-image: none; background-color: rgb(56, 73, 103);
+}
+.Pagination a.current:link {
+	border: 1px solid rgb(56, 73, 103); color: rgb(255, 255, 255); background-image: none; background-color: rgb(56, 73, 103);
+}
+.Pagination a.current:visited {
+	border: 1px solid rgb(56, 73, 103); color: rgb(255, 255, 255); background-image: none; background-color: rgb(56, 73, 103);
+}
+.Pagination .selectBar {
+	border: 1px solid rgb(222, 222, 222); width: 95px; height: 21px; line-height: 21px; font-size: 12px; margin-left: 10px; display: inline;
+}
+.Pagination a.tips {
+	_padding: 4px 7px 1px;
+}
+.Int_Money {
+	height: 40px; color: rgb(255, 0, 0); line-height: 40px; font-family: Georgia, "Times New Roman", Times, serif; font-size: 24px; display: block;
+}
+.Int_Info {
+	color: rgb(153, 153, 153); font-size: 12px;
+}
+.Int_Money_old {
+	height: 40px; color: rgb(0, 0, 255); font-family: Georgia, "Times New Roman", Times, serif; font-size: 24px; display: block;
+}
+.Int_Info_old {
+	color: rgb(153, 153, 153); font-size: 12px;
+}
+.Info_User {
+	height: 40px; color: rgb(255, 0, 0); line-height: 40px; font-size: 14px; display: block;
+}
+.Input_100 {
+	background: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); width: 100px; height: 22px; color: rgb(0, 0, 0); line-height: 22px; vertical-align: middle;
+}
+.Input_200 {
+	background: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); width: 200px; height: 22px; color: rgb(0, 0, 0); line-height: 22px; vertical-align: middle;
+}
+.Input_250 {
+	background: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); width: 250px; height: 22px; color: rgb(0, 0, 0); line-height: 22px; vertical-align: middle;
+}
+.Txt_200 {
+	background: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); width: 300px; height: 100px; color: rgb(0, 0, 0); line-height: 22px; vertical-align: middle;
+}
+.S_btn {
+	margin: 0px 0px 0px 10px; padding: 0px; border: 0px currentColor; width: 42px; height: 26px; text-align: center; color: rgb(255, 255, 255); background-image: url("/styles/member/theme/searchbtn.png");
+}
+#loading {
+	border: 1px solid rgb(0, 0, 0); left: 390px; top: 150px; width: 200px; height: 60px; text-align: center; line-height: 30px; letter-spacing: 1px; overflow: hidden; padding-top: 15px; display: none; position: fixed; z-index: 7; background-color: rgb(255, 255, 255); _position: absolute;
+}

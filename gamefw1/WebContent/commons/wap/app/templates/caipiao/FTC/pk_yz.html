@@ -1,0 +1,12 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/ftc_header.html')"></div>
+
+
+<div ng-if="subType == 'yzzh'" ng-include="templateURL('/caipiao/FTC/yz/yzzh.html')"></div>
+
+<div ng-if="subType == 'bdw'" ng-include="templateURL('/caipiao/FTC/yz/bdw.html')"></div>
+
+<div ng-if="subType == 'sdw'" ng-include="templateURL('/caipiao/FTC/yz/sdw.html')"></div>
+
+<div ng-if="subType == 'gdw'" ng-include="templateURL('/caipiao/FTC/yz/gdw.html')"></div>

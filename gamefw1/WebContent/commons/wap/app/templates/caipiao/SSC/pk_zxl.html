@@ -1,0 +1,61 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/ssc_header.html')"></div>
+
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-8-24">
+				<div class="ui-item-son">
+					<span ng-click="weizhi='QSW'; reset();" ng-class="{ block: true, 'bg-red' : weizhi == 'QSW'}">前三位</span>
+				</div>
+			</div>
+			<div class="pure-u-8-24">
+				<div class="ui-item-son">
+					<span ng-click="weizhi='ZSW';reset();" ng-class="{ block: true, 'bg-red' : weizhi == 'ZSW'}">中三位</span>
+				</div>
+			</div>
+			<div class="pure-u-8-24">
+				<div class="ui-item-son">
+					<span ng-click="weizhi='HSW';reset();" ng-class="{block: true, 'bg-red' : weizhi == 'HSW'}">后三位</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ui-body-son">
+		<div class="pure-g" ng-repeat="index in range(0, 9, 2)">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">{{index}}</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son"><input type="checkbox" ng-model="selectedNumber[index]"/></div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">{{index+1}}</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son"><input type="checkbox"  ng-model="selectedNumber[index + 1]"/></div>
+			</div>
+		</div>
+	</div>
+</div>

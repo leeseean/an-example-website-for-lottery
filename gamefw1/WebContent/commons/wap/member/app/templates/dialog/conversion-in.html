@@ -1,0 +1,11 @@
+<h3 class="conversion-header bg-header">{{dialog.title}}</h3>
+<div class="conversion-form inline-form">
+	<div class="elements-wrapper">
+		<h4>{{dialog.subtitle}}</h4>
+		<div class="form-element">
+			<label>金额</label>
+			<input type="number" placeholder="最低额度10元" class="input input-element" ng-model="dialog.money"/>
+		</div>
+		<button class="btn bg-submit btn-submit" ng-click="submitConversionIn(dialog.type, dialog.money)"><i class="icon icon-btn-submit"></i>确认提交</button>
+	</div>
+</div>

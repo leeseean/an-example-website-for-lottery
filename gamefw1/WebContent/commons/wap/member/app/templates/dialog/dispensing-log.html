@@ -1,0 +1,22 @@
+<h3 class="moeny-log-header conversion-header bg-header">{{dialog.title}}</h3>
+<div class="money-log-form conversion-form">
+	<div class="elements-wrapper">
+		<div class="form-element">
+			<label>起始日期 </label>
+			<input type="date"  ng-model="beginTime" class="input input-element" />
+		</div>
+		<div class="form-element">
+			<label>截止日期 </label>
+			<input type="date" ng-model="endTime" class="input input-element" />
+		</div>
+		<div class="form-element" ng-if="dialog.type == 'in'">
+			<label>查询类型</label>
+			<select ng-options="subtype.value as subtype.label for subtype in hkTypes" class="input input-select" ng-model="withdrawLog.hkType"></select>
+		</div>
+		<div class="form-element" ng-if="dialog.type == 'out'">
+			<label>查询类型</label>
+			<select ng-options="subtype.value as subtype.label for subtype in out_hkTypes " class="input input-select" ng-model="withdrawLog.hkType"></select>
+		</div>
+		<button class="btn bg-submit btn-submit" ng-click="go('dispensinglog', {type: dialog.type, hkType: withdrawLog.hkType, beginTime: beginTime, endTime: endTime })"><i class="icon icon-btn-submit"></i>提交</button>
+	</div>
+</div>

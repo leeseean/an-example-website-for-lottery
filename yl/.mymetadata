@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="yl"
+  id="myeclipse.1456281768576"
+  context-root="/yl"
+  j2ee-spec="6.0"
+  archive="yl.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebContent" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,306 @@
+/**********************************************************
+ * Header & Nav
+ */
+
+
+/* Header */
+
+.ybb-mobile-header .r1 {
+  position: relative;
+  overflow: hidden;
+  height: 50px;
+  line-height: 50px;
+  color: #eee;
+  background: #202020;
+}
+.ybb-mobile-header .r1 a {
+  display: block;
+  height: 100%;
+}
+.ybb-mobile-header .r1 i {
+  font-size: 16px;
+  color: #999;
+}
+.ybb-mobile-header .r1 .btn-menu {
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+.ybb-mobile-logo {
+  position: absolute;
+  top: 5px;
+  left: 9em;
+  display: block;
+  margin-left: -70px;
+  width: 141px;
+  height: 40px;
+  background-position: 0 -95px;
+}
+.ybb-mobile-header .r1 .c-action {
+  padding: 14px 3px 0 0;
+}
+.ybb-mobile-header .r1 .c-action a {
+  float: left;
+  margin: 0 3px;
+  padding: 0 3px;
+  height: 22px;
+  line-height: 22px;
+  color: #aaa;
+}
+.ybb-mobile-header .r1 .c-action a:focus i {
+  color: #c60;
+}
+
+/* Nav */
+
+.ybb-mobile-nav {
+  position: relative;
+  background: #2e2e2e;
+}
+.ybb-mobile-nav li {
+  color: #bbb;
+  text-align: center;
+}
+.ybb-mobile-nav li a {
+  display: block;
+  height: 100%;
+  color: #bbb;
+}
+.ybb-mobile-nav li a:focus {
+  color: #c60;
+  background: #202020;
+}
+.ybb-mobile-nav .nav-group li {
+  float: left;
+  width: 18%;
+  height: 40px;
+  line-height: 40px;
+}
+.ybb-mobile-nav .nav-group .i-home {
+  width: 10%;
+}
+.ybb-mobile-nav .nav-group .i-home i {
+  color: #c60;
+}
+.ybb-mobile-nav .nav-group .i-more {
+  color: #c60;
+  background: #333;
+}
+.ybb-mobile-nav .nav-more {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: 7;
+  display: none;
+  width: 36%;
+  background: #333;
+}
+.ybb-mobile-nav .nav-more li {
+  position: relative;
+  margin: 0 10px;
+}
+.ybb-mobile-nav .nav-more a {
+  overflow: hidden;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  text-indent: 35px;
+  border-bottom: 1px dotted #444;
+}
+.ybb-mobile-nav .nav-more li:nth-child(4) a {
+  border: 0;
+}
+.ybb-mobile-nav .nav-more i {
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  font-size: 20px;
+  text-indent: 0;
+  color: #666;
+}
+
+/**********************************************************
+ * Footer
+ */
+
+.ybb-mobile-footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0;
+  color: #444;
+  background: #151515;
+}
+.ybb-mobile-footer ul {
+  font-size: 0;
+  text-align: center;
+}
+.ybb-mobile-footer li {
+  font-size: 12px;
+  display: inline-block;
+}
+.ybb-mobile-footer a {
+  color: #000;
+}
+.ybb-mobile-footer .r1 ul {
+  height: 30px;
+}
+.ybb-mobile-footer .r1 li {
+  height: 30px;
+  line-height: 30px;
+}
+.ybb-mobile-footer .r1 li a {
+  padding: 0 10px;
+  display: block;
+  height: 100%;
+}
+.ybb-mobile-footer .r2 ul {
+  height: 25px;
+}
+.ybb-mobile-footer .r2 li {
+  margin: 0 5px;
+  height: 25px;
+}
+.ybb-mobile-footer .r2 .a18 {
+  width: 25px;
+  background-position: -243px -70px;
+}
+.ybb-mobile-footer .r2 .ag {
+  width: 48px;
+  background-position: 0 -70px;
+}
+.ybb-mobile-footer .r2 .mg {
+  width: 101px;
+  background-position: -48px -70px;
+}
+.ybb-mobile-footer .r2 .pt {
+  width: 94px;
+  background-position: -149px -70px;
+}
+
+/**********************************************************
+ * Homepage
+ */
+
+
+/* Jackpot */
+
+.jackpot-mg {
+  margin: 10px 20px 0 20px;
+  height: 80px;
+  text-align: center;
+  border-radius: 40px;
+  border: 1px dashed #ef9503;
+  color: #ef9503;
+  background-size: 280px auto;
+}
+.jackpot-mg .title {
+  margin-top: 10px;
+  font-size: 20px;
+  -webkit-opacity: .3;
+  opacity: .3;
+}
+.jackpot-mg input#jackpotstotal {
+  overflow: hidden;
+  width: 270px;
+  color: #C87F09;
+}
+
+/* Nav */
+
+.game-nav {
+  padding: 0 20px;
+}
+.game-nav li {
+  position: relative;
+  float: left;
+  margin-top: 20px;
+  width: 50%;
+  height: 124px;
+}
+.game-nav li a {
+  position: relative;
+  display: block;
+  height: 124px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #333;
+}
+.game-nav li a i {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  margin-left: -62px;
+  width: 124px;
+  height: 124px;
+  font-size: 14px;
+  font-style: normal;
+  color: #FFD24D;
+  background-image: url(../img/spr_game_nav.png);
+  background-size: 496px auto;
+}
+.game-nav li a:focus {
+  border-color: #666;
+}
+.game-nav .item-a a {
+  margin-right: 10px;
+}
+.game-nav .item-b a {
+  margin-left: 10px;
+}
+.game-nav .i2 a i {
+  background-position: -124px 0;
+}
+.game-nav .i3 a i {
+  background-position: -248px 0;
+}
+.game-nav .i4 a i {
+  background-position: -372px 0;
+}
+.game-nav li h6 {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  margin-left: -35px;
+  padding: 0 15px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 12px;
+  font-weight: normal;
+  color: #777;
+}
+.game-nav .item-a h6 {
+  margin-left: -45px;
+}
+
+
+@keyframes navlinkitem3 {
+	0% {
+		color:#fff;
+		border-color:#fff;
+	}
+	
+	50% {
+		color:#BD621A;
+		border-color:#BD621A;
+	}
+	
+	100% {
+		color: #fff;
+		border-color:#fff;
+	}
+}
+
+.nav-link-item-3 {
+	animation-name: navlinkitem3;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease;
+    border: 1px solid #BD621A;
+    border-radius: 5px;
+    line-height: 20px;
+}
+
+
+

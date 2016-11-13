@@ -1,0 +1,544 @@
+/*!
+  YBB Lottery Custom
+*/
+
+
+/*
+ * Header
+ */
+
+
+/* top */
+.hideme {
+	display:none!important;
+}
+
+.lotto-top {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #ccc;
+}
+.lotto-top .c1 .ui-head {
+  padding: 0 5px;
+}
+.lotto-top .c1 .ui-body {
+  overflow: hidden;
+  height: 30px;
+}
+.lotto-top .c2 {
+  text-align: right;
+}
+.lotto-top .c2 .ui-item {
+  display: inline;
+  border-right: 1px solid #000;
+}
+
+.lotto-top .c2 .ui-item:last-child {
+	border-right:none;
+}
+
+.lotto-top .c2 .ui-link {
+  position: relative;
+  display: inline-block;
+  padding: 0 5px;
+}
+.lotto-top .c2 .ui-link:hover {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+/* nav */
+
+.lotto-nav {
+  margin-top: 5px;
+}
+.lotto-nav .ui-item {
+  float: left;
+}
+.lotto-nav .ui-link {
+  display: block;
+  color: #fff;
+}
+
+.lotto-nav .nav-main .ui-item {
+  margin-right: 1px;
+	border-right: 30px solid transparent;
+	border-bottom: 30px solid rgba(61, 61, 61, 0.63);
+	box-sizing: border-box;
+	height: 0px;
+    margin-right: -15px;
+}
+
+.lotto-nav .nav-main .ui-link {
+    padding: 0 30px;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.lotto-nav .nav-main .ui-active,
+.lotto-nav .nav-main .ui-item:hover {
+    border-bottom: 30px solid #a51915;
+}
+
+.lotto-nav .nav-child {
+  margin-top: 5px;
+}
+.lotto-nav .nav-child .nav-group {
+  display: none;
+  margin-left: -5px;
+  margin-top: 11px;
+}
+.lotto-nav .nav-child .ui-item {
+    margin-left: 5px;
+    width: 120px;
+    height: 37px;
+	background: rgba(0,0,0,0.7);
+    cursor: pointer;
+    position: relative;
+    border-bottom: 11px solid #F1F1F1;
+}
+.lotto-nav .nav-child .ui-link {
+    line-height: 17px;
+    text-align: center;
+}
+
+.lotto-nav .nav-child .ui-item:before {
+    content: "";
+    position: absolute;
+    height: 0px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #A51915;;
+    border-bottom: 10px solid transparent;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -10px;
+    z-index: 111;
+    display:none;
+}
+
+.lotto-nav .nav-child .ui-item.ui-active:before {
+	display:block;
+}
+
+.lotto-nav .nav-child .ui-item.ui-active,
+.lotto-nav .nav-child .ui-item:hover {
+    background: #a51915;
+}
+
+.lotto-nav .nav-child .r2 {
+  border-top: 1px solid rgba(255, 255, 255, .2);
+}
+.nav-mode {
+  margin-top: 10px;
+}
+.nav-mode ul {
+  font-size: 0;
+  text-align: center;
+}
+.nav-mode li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.nav-mode li a {
+  padding: 0 7px;
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #666;
+}
+
+.nav-mode li a:hover {
+    color: #fff !important;
+    background-color: #a51915;
+}
+
+.nav-mode .ui-active a {
+  color: #fff;
+  background-color: #4a98be;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  padding-bottom: 10px;
+}
+.sidebar .ui-mod {
+  margin-top: 10px;
+}
+.sidebar .ui-tabs-head .ui-item {
+  width: 50%;
+}
+.sidebar .ui-tabs-head .ui-item a {
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d0d0d0;
+}
+.sidebar .ui-tabs-head .ui-item-first a {
+  border-right: 0;
+}
+.sidebar .ui-tabs-head .ui-active a {
+  border-bottom-color: #fff;
+  background: #fff;
+}
+.sidebar .ui-mod-body {
+  border: 1px solid #d0d0d0;
+  border-top: 0;
+  background: #fff;
+}
+
+.sidebar .ui-mod-body .padding1 {
+	padding: 9px 5px;
+}
+
+/* bet quick */
+
+.bet-quick {
+  padding: 0 10px;
+}
+.bet-quick .ui-row {
+  padding: 10px 0;
+  border-bottom: 1px solid #d0d0d0;
+}
+.bet-quick .ui-item label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.bet-quick .ui-item label:hover {
+  color: #f70;
+}
+.bet-quick .ui-item .ui-txt {
+  position: absolute;
+  padding: 2px 0 0 5px;
+  color: #444;
+  font-size: 14px;
+  font-weight: bold;
+}
+.bet-quick .ui-item label:hover .ui-txt {
+  color: #f70;
+}
+.bet-quick .ui-item .ui-input {
+  padding: 0 5px;
+  height: 30px;
+  line-height: 30px;
+  width: 211px;
+}
+.bet-quick .ui-item input[type=checkbox],
+.bet-quick .ui-item input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+} 
+
+.bet-quick .row-number .ui-item {
+  overflow: hidden;
+  height: 24px;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "寰蒋闆呴粦",Arial,Helvetica,Tahoma,sans-serif;
+}
+.bet-quick .row-number .ui-active,
+.bet-quick .row-number .ui-item:hover {
+  background: #ffff4d;
+}
+.bet-quick h6 {
+  padding: 5px 0 0 10px;
+  color: #f70;
+   margin: 12px 0 0 0;
+   text-align: left;
+   display: block;
+   padding-bottom: 6px;
+}
+.bet-quick .row-mode .ui-item {
+  padding: 5px 0 0;
+}
+.bet-quick .row-action {
+  border: 0;
+}
+
+/* trans record */
+
+.trans-record .ui-head {
+  background: #f1f1f1;
+}
+.trans-record .ui-head .ui-item-child {
+  border-top-width: 0;
+}
+.trans-record .ui-head,
+.trans-record .ui-body {
+  margin-right: -1px;
+}
+.trans-record .ui-body .ui-item-child {
+  border-bottom-width: 0;
+}
+.trans-record .no-record .ui-body-gson {
+  padding: 15px 0;
+}
+
+/*
+ * Main
+ */
+
+.lotto-main {
+  position: relative;
+  margin: 10px 0 0 10px;
+}
+
+/* result */
+
+.lotto-result {
+  margin-top: 10px;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+}
+.lotto-result .ui-row {
+  padding: 5px 0;
+  overflow: hidden;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+}
+.lotto-result .info {
+  padding-left: 10px;
+}
+
+/*.lotto-result .bet-info .ui-row {
+  height: 40px;
+  line-height: 40px;
+}
+.lotto-result .bet-info h2 {
+  display: inline-block;
+  padding: 0 15px;
+  font-size: 20px;
+}*/
+
+.lotto-result .result .row-one .ui-head {
+  float: left;
+  padding-right: 10px;
+}
+
+/*.lotto-result .result-show .ui-col {
+  height: 80px;
+  background: #fff;
+}
+.lotto-result .result-show .col-1 {
+  width: 140px;
+  border: 1px solid #d0d0d0;
+}
+.lotto-result .result-show .col-1 .ui-row {
+  padding-top: 5px;
+}
+.lotto-result .result-show .col-1 .row-3 span {
+  display: inline-block;
+  padding: 0 10px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 12px;
+  border: 1px solid #4a98be;
+}
+.lotto-result .result-show .col-2 {
+  width: 240px;
+  border: 1px solid #d0d0d0;
+  border-left: 0;
+}
+.lotto-result .result-show .col-2 .ui-head {
+  height: 30px;
+  line-height: 30px;
+}
+.lotto-result .result-show .col-2 .ui-body ul {
+  font-size: 0;
+  padding: 9px 0;
+}
+.lotto-result .result-show .col-2 .ui-body li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  height: 32px;
+}*/
+
+
+
+.result-time {}
+
+
+.result-time .ui-item .ui-item-gson {
+  float: left;
+}
+.result-time .item-ssc .ui-item-gson {
+  padding-right: 50px;
+} 
+
+/*
+ * Bet Form
+ */
+
+.lotto-bet-form {
+  margin-top: 10px;
+}
+
+.mg-m4 {
+    margin-top: -40px;
+}
+
+/* play mode */
+
+.nav-mode-play .ui-link {
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  border-color: transparent;
+}
+.nav-mode-play .ui-link:hover {
+  border-color: #ccc;
+}
+.nav-mode-play .ui-active .ui-link {
+  color: #4a98be;
+  border-color: #4a98be;
+}
+.nav-mode-play .ui-link {
+  padding: 0 15px;
+  height: 28px;
+  line-height: 28px;
+}
+
+/* HK6 TM */
+
+.bet-form-hk6-tm .child-1,
+.bet-form-hk6-tm .child-2 {
+  width: 42px;
+}
+.bet-form-hk6-tm .child-2 {
+  margin-left: -5px;
+  border-left: 0;
+}
+.bet-form-hk6-tm .child-3 {
+  margin-left: -12px;
+  /*margin-right: -1px;*/
+}
+
+/*
+ * bet confirm
+ */
+
+.bet-form-action {
+  margin-top: 10px;
+}
+.bet-form-action .ui-item {
+  float: left;
+}
+
+/* order */
+
+.bet-form-action .order {
+  overflow: hidden;
+  height: 30px;
+}
+.bet-form-action .order .ui-item {
+  padding: 0 3px;
+  height: 30px;
+  line-height: 30px;
+  vertical-align: middle;
+}
+.bet-form-action .order .ui-input {
+  width: 100px;
+  height: 28px;
+  line-height: 28px;
+}
+
+/*
+ * 閻樿埖锟介柨浣哥暰
+ */
+
+.bet-status .ui-item {
+  padding: 100px 0;
+  height: 222px;
+  text-align: center;
+}
+.bet-status .ui-item img{
+  margin: auto;
+}
+/*.bet-status {}
+.bet-status .ui-item .ui-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 776;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.bet-status .ui-item img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 777;
+  margin: -111px 0 0 -170px;
+  width: 341px;
+  height: 222px;
+}*/
+
+/*
+ * Assist
+ */
+
+.mod-assist .ui-mod-head {
+  padding: 10px 0;
+  line-height: 30px;
+}
+.mod-assist .ui-mod-body .ui-head-son .pure-g .pure-g {
+  background: #fff;
+}
+.mod-assist .ui-pager {
+  position: relative;
+}
+.mod-assist .ui-pager .pager {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  margin: 0 0 0 -165px;
+}
+.mod-assist .ui-pager .pager a {
+  padding: 0 10px;
+  font-family: SimSun;
+  text-align: center;
+}
+
+/* history */
+
+/* result */
+
+.assist-result .ui-head-son .ui-item-colspan {
+  line-height: 44px;
+}
+.assist-result .ui-head-blank {
+  position: relative;
+  margin-top: -30px;
+}
+.assist-result .ui-head-son .ui-item-blank {
+  border-top: 0;
+  height: 14px;
+}
+
+.mb10 {
+	margin-bottom: 10px;
+}
+
+.bet-form-action.cf {
+	margin-bottom: 10px;
+}
+
+.ui-input.ui-custom1 {
+	height:30px;
+	line-height:30px;
+}

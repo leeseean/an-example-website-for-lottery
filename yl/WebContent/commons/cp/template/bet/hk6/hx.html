@@ -1,0 +1,1071 @@
+[{"1_13":1}]
+êêê
+<!-- 开奖结果 -->
+<div class="pure-g lotto-result">
+	<div class="pure-u-1-3">
+		<div class="info">
+			<div class="ui-row row-one">
+				<span id="gameBetName" >香港六合彩</span>&nbsp;<strong class="blue" id="typeBetName">合肖</strong>
+			</div>
+			<p class="ui-row row-two">
+				当前期：<strong class="blue" id="currentQs">--</strong> 期&nbsp;
+			</p>
+		</div>
+	</div>
+	<!-- /left -->
+	<div class="pure-u-2-3">
+		<div class="result">
+			<div class="ui-row row-one cf">
+				<div class="ui-head">
+					<span class="b red" id="lastQs">--</span>期
+				</div>
+				<div class="ui-body">
+					<ul class="ball-group center" id="lastResult"></ul>
+				</div>
+			</div>
+			<div class="ui-row row-two">
+				<!-- 开奖or封盘时间 -->
+				<div class="result-time">
+					<!-- 六合彩 -->
+					<div class="ui-item item-hk6 item-ssc">
+						<ul class="cf">
+							<li class="ui-item-gson">距离封盘：<strong class="red" id="closeTime">--:--</strong></li>
+							<li class="ui-item-gson">距离开奖：<strong class="red" id="openTime">--:--</strong></li>
+						</ul>
+					</div>
+					<!-- / 六合彩 -->
+				</div>
+				<!-- / 开奖or封盘时间 -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /开奖结果 -->
+<!-- 六合彩 特码 -->
+<div>
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="fastbet_input" class="ui-input ui-hand" maxlength="11" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="checkOrder();" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /快捷下注 -->
+	<!-- 下注表单 -->
+	<div  id="betForm" class="bet-form mg-m4">
+		<div class="ui-form">
+			<div class="ui-mod ui-tabs">
+				<div id="tab_bet" class="ui-mod-head ui-tabs-head nav-mode-play">
+					<ul class="cf">
+						<li class="ui-item ui-item-first ui-active">
+							<a href="javascript:void(0);" data-url="#hk62X" class="ui-link">二肖</a>
+						</li>
+						<li class="ui-item"><a href="javascript:void(0);" data-url="#hk64X" class="ui-link">四肖</a></li>
+						<li class="ui-item"><a href="javascript:void(0);" data-url="#hk66X" class="ui-link">六肖</a></li>
+					</ul>
+				</div>
+				<div class="ui-mod-body ui-tabs-body mt10">
+					<!-- 二肖 -->
+					<div class="ui-mod-item ui-tabs-item" id="hk62X">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-2">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-3-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-4-24"><div class="ui-item-son">勾选</div></div>
+												<div class="pure-u-14-24"><div class="ui-item-son">号码</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-EX-SHU">鼠</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-EX-SHU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-EX-SHU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL2_SHU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-EX-HU">虎</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-EX-HU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-EX-HU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL2_HU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-EX-LONG">龙</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-EX-LONG">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-EX-LONG">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL2_LONG">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-EX-MA">马</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-EX-MA">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-EX-MA">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL2_MA">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-EX-HOU">猴</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-EX-HOU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-EX-HOU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL2_HOU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-EX-GOU">狗</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-EX-GOU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-EX-GOU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL2_GOU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								<!-- / 循环列 -->
+								<div class="pure-u-1-2">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-3-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-4-24"><div class="ui-item-son">勾选</div></div>
+												<div class="pure-u-14-24"><div class="ui-item-son">号码</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-EX-NIU">牛</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-EX-NIU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-EX-NIU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL2_NIU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-EX-TU">兔</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-EX-TU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-EX-TU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL2_TU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-EX-SHE">蛇</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-EX-SHE">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-EX-SHE">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL2_SHE">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-EX-YANG">羊</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-EX-YANG">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-EX-YANG">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL2_YANG">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-EX-JI">鸡</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-EX-JI">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-EX-JI">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL2_JI">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+																
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-EX-ZHU">猪</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-EX-ZHU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-EX-ZHU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL2_ZHU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							
+							</div>
+						</div>
+						<!-- / ui-table -->
+
+					</div>
+					
+					
+					<!-- 四肖 -->
+					<div class="ui-mod-item ui-tabs-item" id="hk64X" style=" display: none;">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-2">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-3-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-4-24"><div class="ui-item-son">勾选</div></div>
+												<div class="pure-u-14-24"><div class="ui-item-son">号码</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-SHU">鼠</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-SX-SHU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-SX-SHU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL4_SHU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-HU">虎</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-SX-HU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-SX-HU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL4_HU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-LONG">龙</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-SX-LONG">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-SX-LONG">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL4_LONG">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-MA">马</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-SX-MA">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-SX-MA">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL4_MA">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-HOU">猴</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-SX-HOU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-SX-HOU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL4_HOU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-GOU">狗</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-SX-GOU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-SX-GOU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL4_GOU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								<!-- / 循环列 -->
+								<div class="pure-u-1-2">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-3-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-4-24"><div class="ui-item-son">勾选</div></div>
+												<div class="pure-u-14-24"><div class="ui-item-son">号码</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-NIU">牛</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-SX-NIU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-SX-NIU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL4_NIU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-TU">兔</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-SX-TU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-SX-TU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL4_TU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-SHE">蛇</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-SX-SHE">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-SX-SHE">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL4_SHE">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-YANG">羊</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-SX-YANG">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-SX-YANG">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL4_YANG">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-JI">鸡</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-SX-JI">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-SX-JI">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL4_JI">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+																
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-ZHU">猪</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-SX-ZHU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-SX-ZHU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL4_ZHU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							
+							</div>
+						</div>
+						<!-- / ui-table -->
+						
+						
+					</div>
+					<!-- 六肖 -->
+					<div class="ui-mod-item ui-tabs-item" id="hk66X" style=" display: none;">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-2">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-3-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-4-24"><div class="ui-item-son">勾选</div></div>
+												<div class="pure-u-14-24"><div class="ui-item-son">号码</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-SX-SHU">鼠</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-LX-SHU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-LX-SHU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL6_SHU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-LX-HU">虎</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-LX-HU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-LX-HU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL6_HU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-LX-LONG">龙</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-LX-LONG">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-LX-LONG">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL6_LONG">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-LX-MA">马</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-LX-MA">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-LX-MA">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL6_MA">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-LX-HOU">猴</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-LX-HOU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-LX-HOU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL6_HOU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-LX-GOU">狗</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-LX-GOU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-LX-GOU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL6_GOU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								<!-- / 循环列 -->
+								<div class="pure-u-1-2">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-3-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-4-24"><div class="ui-item-son">勾选</div></div>
+												<div class="pure-u-14-24"><div class="ui-item-son">号码</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-LX-NIU">牛</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-LX-NIU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-LX-NIU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL6_NIU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-LX-TU">兔</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-LX-TU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-LX-TU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL6_TU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-LX-SHE">蛇</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-LX-SHE">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-LX-SHE">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL6_SHE">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-LX-YANG">羊</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-LX-YANG">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-LX-YANG">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL6_YANG">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-LX-JI">鸡</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-LX-JI">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-LX-JI">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL6_JI">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+																
+												<!-- 循环行 -->
+												<div class="pure-u-3-24"><div class="ui-item-son" id="num_HX-LX-ZHU">猪</div></div>
+												<div class="pure-u-3-24"><div class="ui-item-son ui-hand red" id="pl_HX-LX-ZHU">-</div></div>
+												<div class="pure-u-4-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" id="HX-LX-ZHU">
+													</div>
+												</div>
+												<div class="pure-u-14-24">
+													<div class="ui-item-son">
+														<ul class="ball-group" id="UL6_ZHU">
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+															<li class="ui-item"><span class="ball ball-red">-</span></li>
+															<li class="ui-item"><span class="ball ball-green">-</span></li>
+														</ul>
+													</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							
+							</div>
+						</div>
+						<!-- / ui-table -->
+					</div>
+					<!-- / ui-mod-item -->
+				</div>
+				<!-- / ui-mod-body -->
+			</div>
+			<!-- / ui-mod -->
+		</div>
+		<!-- / ui-form -->
+	</div>
+	<!-- / 下注表单 -->
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="back_fastbet_input"  class="ui-input ui-hand" maxlength="11"/>
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="checkOrder();" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+ $(function(){
+ 	$.each(shengXiaoMap,function(key,val){
+    	
+    	var htmlStr = "";
+ 	 	$.each(val,function(index,number){
+ 	 		if(number!="49"){
+	 	 		htmlStr += "<li class=\"ui-item\"><span class=\"ball "+getHK6ColorClassName(number)+"\">"+number+"</span></li>";
+ 	 		}
+ 	 	});
+ 		$("#UL2_"+key).html(htmlStr);
+ 		$("#UL4_"+key).html(htmlStr);
+ 		$("#UL6_"+key).html(htmlStr);
+ 	});
+ 
+ 
+ });
+ 
+ function checkOrder(){
+ 	var _xzje = $("#fastbet_input").val();
+	if($.trim(_xzje)==''){
+		showMessage("提示","请输入下注金额！");
+		return;
+	}
+ 
+ 	var total=0;
+ 	$("#betForm input[type='checkbox']:checked").each(function(){
+		total++;
+	});
+ 	var type_min = 2;
+ 	var cpTypeCode="HX";
+ 	var cpCateCode="EX";
+ 	$("#tab_bet ul>li.ui-active").each(function(index,value){
+		var data_url=$(this).find("a").attr("data-url");
+		if(data_url=="#hk62X"){
+			type_min=2;
+			cpCateCode="EX";
+		}else if(data_url=="#hk64X"){
+			type_min=4;
+			cpCateCode="SX";
+		}else if(data_url=="#hk66X"){
+			type_min=6;
+			cpCateCode="LX";
+		}
+	});
+	if (type_min > total) {
+		showMessage("提示","至少需要选择" + type_min + "个生肖！");
+		return;
+	}
+ 	goMulitOrder(type_min,cpTypeCode,cpCateCode);
+ 
+ } 
+ 
+ 
+ </script>

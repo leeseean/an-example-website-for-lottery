@@ -1,0 +1,104 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/hk6_header.html')"></div>
+
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-24-24"><div class="ui-item-son">赔率</div></div>
+		</div>
+	</div>
+	<div class="ui-head-son" ng-init="groups = [
+		{id: 'LM-3QZ-3QZ', 'label': '三全中'}, 
+		{id: 'LM-3Z2-Z2', label: '中二 '},
+		{id: 'LM-3Z2-Z3', label: '中三'},
+		{id: 'LM-2QZ-2QZ', label: '二全中 '},
+		{id: 'LM-2ZT-ZT', label: '中特 '},
+		{id: 'LM-2ZT-TZ2', label: '中二 '},
+		{id: 'LM-TC-TC', label: '特串 '}
+		]">
+		<div class="pure-g" ng-repeat="index in range(0, groups.length, 2)">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">{{groups[index]['label']}}</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">{{peiyu[groups[index]['id']]}}</div>
+			</div><div class="pure-u-6-24">
+				<div class="ui-item-son">{{groups[index+1]['label']}}</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">{{peiyu[groups[index+1]['id']]}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-24-24">
+				<div class="ui-item-son">类别</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-1-5">
+				<div class="ui-item-son" ng-class="{'bg-red': subType == 0}" ng-click="subType = 0; resetAll();" ><span>三全中</span></div></div>
+			<div class="pure-u-1-5">
+				<div class="ui-item-son" ng-class="{'bg-red': subType == 1}" ng-click="subType = 1;resetAll();" ><span>三中二</span></div>
+			</div>
+			<div class="pure-u-1-5">
+				<div class="ui-item-son" ng-class="{'bg-red': subType == 2}" ng-click="subType = 2;resetAll();" ><span>二全中</span></div>
+			</div>
+			<div class="pure-u-1-5">
+				<div class="ui-item-son" ng-class="{'bg-red': subType == 3}" ng-click="subType = 3;resetAll();" ><span>二中特</span></div>
+			</div>
+			<div class="pure-u-1-5">
+				<div class="ui-item-son" ng-class="{'bg-red': subType == 4}" ng-click="subType = 4;resetAll();" ><span>特串</span></div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-12-24">
+				<div class="ui-item-son" ng-class="{'bg-red': pabc == 1}" ng-click="pabc = 1; resetAll();"><span>复式</span></div>
+			</div>
+			<div class="pure-u-12-24">
+				<div class="ui-item-son" ng-class="{'bg-red': pabc == 2}" ng-click="pabc = 2;resetAll();"><span>胆拖</span></div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-head-son" ng-if="pabc==2">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son"><span>胆1</span></div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son bg-black"><span class="white f15">{{dan1 | default: '请选择'}}</span></div>
+			</div>
+			<div class="pure-u-6-24" ng-if="subType != 4 && subType != 2 && subType != 3">
+				<div class="ui-item-son"><span>胆2</span></div>
+			</div>
+			<div class="pure-u-6-24" ng-if="subType != 4 && subType != 2 && subType != 3">
+				<div class="ui-item-son bg-black"><span class="white f15">{{dan2 | default: '请选择' }}</span></div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-24-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-body-son">
+		<div class="pure-g" ng-repeat="index in range(1, 49, 4)">
+			<div class="pure-u-6-24" ng-repeat="index2 in range(index, index + 4)">
+				<div class="ui-item-son" ng-class="{'bg-red': selectedPeiyu[index2] == true}" ng-click=" selectDan(index2)"><ball number="index2"></ball></div>
+			</div>
+		</div>
+		<div class="pure-g">
+			<div class="pure-u-6-24" >
+				<div class="ui-item-son" ng-class="{'bg-red': selectedPeiyu[49] == true}" ng-click="selectDan(49)"><ball number="49"></ball></div>
+			</div>
+		</div>
+	</div>
+</div>

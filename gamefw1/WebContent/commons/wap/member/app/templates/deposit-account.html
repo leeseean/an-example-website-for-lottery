@@ -1,0 +1,37 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper">
+	<div class="user-info-wrapper white">
+	
+		<div class="block block-user-info white" ng-repeat="bank in bankList">
+			<h3 class="block-title bg-header">●&nbsp;{{bank.bankType}}</h3>
+			<div class="block-content bg-4">
+				<table class="bank-list-table">
+					<tbody>
+						<tr>
+							<td class="text-left">{{bank.bankCard}}</td>
+						</tr>
+						<tr>
+							<td class="text-left">开户名&nbsp;:&nbsp;&nbsp;{{bank.bankUser}}</td>
+						</tr>
+						<tr>
+							<td class="text-left">开户行&nbsp;:&nbsp;&nbsp;{{bank.bankAddress}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<p class="bank-intro">通过以上方式向公司银行帐号（包含微信、支付宝）转账完成后进入入款表单页面提交入款信息即可完成充值。</p>
+		
+		<button class="btn btn-submit bg-submit" ng-click="go('deposit')">
+			<i class="icon icon-btn-submit"></i>入款表单</button>
+		
+	</div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div ng-class="['main-content',  code, code  + '-' + code2 ]">
+	<div class="wrapper">
+		<div ui-view="caipiao_pankou"></div>
+		<div ui-view="caipiao_confirm"></div>
+		<div ui-view="caipiao_page"></div>
+	</div>
+</div>
+
+<ng-include src="templateURL('/footer.html')"></ng-include>

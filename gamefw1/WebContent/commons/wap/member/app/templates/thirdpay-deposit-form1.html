@@ -1,0 +1,24 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper">
+	<div class="form-wrapper">
+		<form class="form form-deposit">
+			<div class="elements-wrapper">
+				<div class="form-element">
+					<label>●充值金额 <span>AMOUNT OF CHARGE</span></label>
+					<input type="number" ng-model="hkMoney" class="input input-element" />
+				</div>
+				<div class="form-element">
+					<label>●汇入日期<span>PAYMENT DATE</span></label>
+					<input type="date" ng-model="createTime" class="input input-element" />
+				</div>
+				<div class="form-element">
+					<label ng-if="thirdType == 1">●您微信昵称<span>NAME OF REMITTANCE</span></label>
+					<label ng-if="thirdType == 2">●您支付宝昵称<span>NAME OF REMITTANCE</span></label>
+					<input ng-model="hkUserName" type="text" class="input input-element" />
+				</div>
+			</div>
+			<button class="btn btn-submit bg-submit" ng-click="submitDepositForm1()"><i class="icon icon-btn-submit"></i>提交表单</button>
+		</form>
+	</div>
+</div>

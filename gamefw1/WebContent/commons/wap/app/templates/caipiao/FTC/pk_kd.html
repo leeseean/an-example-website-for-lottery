@@ -1,0 +1,56 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/ssc_header.html')"></div>
+
+<div class="wrapper" ng-init="groupItems = [ {id: 'KD', name: '跨度'} ]" ></div>
+<div  ng-repeat="group in groupItems">
+
+	<div class="ui-table">
+
+		<div class="ui-head-son">
+			<div class="pure-g">
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">号码</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">赔率</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">号码</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">赔率</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="ui-body-son" ng-repeat="index in range(0, 9, 2)">
+			<div class="pure-g">
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">{{index}}</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span 
+								ng-click="selectedPeiyu[ ( code2 | uppercase )+'-'+ ( group['id'] | uppercase) + '-'+ ( index ) ] = selectedPeiyu[ ( code2 | uppercase )+'-'+ ( group['id'] | uppercase)  + '-'+  ( index ) ]  == true ? false: true" 
+								ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[ ( code2 | uppercase )+'-'+ ( group['id'] | uppercase)  + '-'+  ( index ) ]}" 
+								ng-attr-id="{{ ( code2 | uppercase )+'-'+ ( group['id'] | uppercase)  + '-'+  ( index ) }}" >{{peiyu[ ( code2 | uppercase )+'-'+ ( group['id'] | uppercase)  + '-'+  ( index ) ]}}</span>
+					</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">{{index + 1}}</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span 
+								ng-click="selectedPeiyu[ ( code2 | uppercase )+'-'+ ( group['id'] | uppercase)  + '-'+  ( index + 1) ] = selectedPeiyu[ ( code2 | uppercase )+'-'+ ( group['id'] | uppercase)  + '-'+  ( index + 1)  ]  == true ? false: true" 
+								ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[ ( code2 | uppercase )+'-'+ ( group['id'] | uppercase)  + '-'+  ( index + 1) ]}" 
+								ng-attr-id="{{ ( code2 | uppercase )+'-'+ ( group['id'] | uppercase)  + '-'+  ( index + 1) }}" >{{peiyu[ ( code2 | uppercase )+'-'+ ( group['id'] | uppercase)  + '-'+  ( index + 1) ]}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

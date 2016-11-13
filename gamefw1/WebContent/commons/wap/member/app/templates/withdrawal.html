@@ -1,0 +1,19 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper">
+	<div class="form-wrapper">
+		<form class="form form-deposit">
+			<div class="elements-wrapper">
+				<div class="form-element">
+					<label>●提款金额 <span>WITHDRAWAL AMOUNT</span></label>
+					<input type="number" ng-model="money"  class="input input-element" />
+				</div>
+				<div class="form-element">
+					<label>●提款密码<span>WITHDRAWAL PASSWORD</span></label>
+					<input type="password" ng-model="withdrawalPwd" class="input input-element" />
+				</div>
+			</div>
+			<button class="btn btn-submit bg-submit" ng-click="submitWithdrawal()"><i class="icon icon-btn-submit"></i>确认提款</button>
+		</form>
+	</div>
+</div>

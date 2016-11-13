@@ -1,0 +1,32 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/hk6_header.html')"></div>
+
+<div class="ui-table">
+	<div class="ui-body-son">
+		<div class="pure-g">
+			<div class="pure-u-12-24" ng-repeat="(group_id, group_name) in groups">
+				<div class="ui-item-son"><span class="white f15 fbold">{{group_name}}</span></div>
+				<div class="pure-g" ng-repeat="(group_item_id, group_item_name) in groupItems track by $index">
+					<div class="pure-u-12-24">
+						<div class="ui-item-son">
+							<div class="pure-g">
+								<div class="pure-u-12-24">
+									<div class="ui-item-son"><span ng-class="['color-' + ( group_item_id | substr:1 | lowercase ) ]">{{group_item_name}}</span></div>
+								</div>
+								<div class="pure-u-12-24">
+									<div class="ui-item-son"><input type="radio" value="{{'GG-'+group_id+'-'+ ( group_item_id | substr: 1) }}" ng-model="selectedPeiyu[group_id]" ng-attr-name="{{group_id}}" /></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pure-u-12-24">
+						<div class="ui-item-son"><span
+						ng-class="['bg-hrec-gray' ]" 
+						ng-attr-id="{{'GG-'+group_id+'-'+  ( group_item_id | substr:1)}}" >{{peiyu['GG-'+group_id+'-'+ ( group_item_id | substr: 1)]}}</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

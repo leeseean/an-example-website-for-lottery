@@ -1,0 +1,753 @@
+[{"5_94":1}]
+êêê
+<div class="pure-g lotto-result">
+	<div class="pure-u-1-3">
+		<div class="info">
+			<div class="ui-row row-one">
+				<span id="gameBetName" >--</span>&nbsp;今日输赢<strong class="red" id="betUsrWin">--</strong>
+			</div>
+			<p class="ui-row row-two">
+				当前期：<strong class="green" id="currentQs">--</strong> 期&nbsp;&nbsp;<strong class="blue" id="typeBetName">--</strong>
+			</p>
+		</div>
+	</div>
+	<!-- /left -->
+	<div class="pure-u-2-3">
+		<div class="result">
+			<div class="ui-row row-one cf">
+				<div class="ui-head">
+					<span class="b red" id="lastQs">--</span>期
+				</div>
+				<div class="ui-body">
+					<ul class="ball-group center" id="lastResult"></ul>
+				</div>
+			</div>
+			<div class="ui-row row-two">
+				<!-- 开奖or封盘时间 -->
+				<div class="result-time">
+					<div class="ui-item item-ssc">
+						<ul class="cf">
+							<li class="ui-item-gson">距离封盘：<strong class="red" id="closeTime">--:--</strong></li>
+							<li class="ui-item-gson">距离开奖：<strong class="red" id="openTime">--:--</strong></li>
+						</ul>
+					</div>
+				</div>
+				<!-- / 开奖or封盘时间 -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 快捷下注 -->
+<div class="pure-g">
+	<div class="pure-u-1">
+		<div class="bet-form-action cf">
+			<ul class="order r cf">
+				<li class="ui-item">快速下注</li>
+				<li class="ui-item">
+					<input type="text" id="fastbet_input"  class="ui-input ui-hand" maxlength="11"  />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="重填" onclick="clearBetForm();"  class="button button-small button-raised" />
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- - -->
+
+<div id="betFormPk10SM">
+  <!-- 下注表单 -->
+  <div id="betForm" class="bet-form">
+    <div class="ui-form">
+      <div class="ui-mod ui-tabs">
+        <div class="ui-mod-body ui-tabs-body mt10">
+          <div class="ui-mod-item ui-tabs-item" id="">
+            <div class="ui-table">
+              <div class="pure-g">
+                <div class="pure-u-1-4">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                      	<div class="pure-u-1">
+                          <div class="ui-item-son">&nbsp;</div>
+                        </div>
+                        
+                        <div class="pure-u-1">
+                          <div class="ui-item-son">冠军</div>
+                        </div>
+                        <div class="pure-u-1">
+                          <div class="ui-item-son">亚军</div>
+                        </div>
+                        <div class="pure-u-1">
+                          <div class="ui-item-son">季军</div>
+                        </div>
+                        <div class="pure-u-1">
+                          <div class="ui-item-son">第四名</div>
+                        </div>
+                        <div class="pure-u-1">
+                          <div class="ui-item-son">第五名</div>
+                        </div>
+                        <div class="pure-u-1">
+                          <div class="ui-item-son">第六名</div>
+                        </div>
+                        <div class="pure-u-1">
+                          <div class="ui-item-son">第七名</div>
+                        </div>
+                        <div class="pure-u-1">
+                          <div class="ui-item-son">第八名</div>
+                        </div>
+                        <div class="pure-u-1">
+                          <div class="ui-item-son">第九名</div>
+                        </div>
+                        <div class="pure-u-1">
+                          <div class="ui-item-son">第十名</div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                   
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                <!-- / 循环列 -->
+                <div class="pure-u-1-8">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                		<div class="pure-g">
+	                      	<div class="pure-u-1">
+	                          <div class="ui-item-son">大</div>
+	                        </div>
+	                    </div>
+                </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-GJ-BIG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-GJ-BIG" cname="冠军-大">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-YJ-BIG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-YJ-BIG" cname="亚军-大">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-JJ-BIG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-JJ-BIG" cname="季军-大">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D4M-BIG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D4M-BIG" cname="第四名-大">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D5M-BIG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D5M-BIG" cname="第五名-大">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D6M-BIG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D6M-BIG" cname="第六名-大">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D7M-BIG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D7M-BIG" cname="第七名-大">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D8M-BIG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D8M-BIG" cname="第八名-大">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D9M-BIG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D9M-BIG" cname="第九名-大">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D10M-BIG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D10M-BIG" cname="第十名-大">
+                          </div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                <!-- / 循环列 -->
+                <div class="pure-u-1-8">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                		<div class="pure-g">
+	                      	<div class="pure-u-1">
+	                          <div class="ui-item-son">小</div>
+	                        </div>
+	                    </div>
+                </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-GJ-SMALL">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-GJ-SMALL" cname="冠军-小">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-YJ-SMALL">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-YJ-SMALL" cname="亚军-小">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-JJ-SMALL">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-JJ-SMALL" cname="季军-小">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D4M-SMALL">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D4M-SMALL" cname="第四名-小">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D5M-SMALL">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D5M-SMALL" cname="第五名-小">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D6M-SMALL">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D6M-SMALL" cname="第六名-小">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D7M-SMALL">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D7M-SMALL" cname="第七名-小">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D8M-SMALL">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D8M-SMALL" cname="第八名-小">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D9M-SMALL">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D9M-SMALL" cname="第九名-小">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D10M-SMALL">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D10M-SMALL" cname="第十名-小">
+                          </div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                <!-- / 循环列 -->
+                <div class="pure-u-1-8">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                		<div class="pure-g">
+	                      	<div class="pure-u-1">
+	                          <div class="ui-item-son">单</div>
+	                        </div>
+	                    </div>
+                </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-GJ-ODD">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-GJ-ODD" cname="冠军-单">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-YJ-ODD">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-YJ-ODD" cname="亚军-单">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-JJ-ODD">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-JJ-ODD" cname="季军-单">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D4M-ODD">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D4M-ODD" cname="第四名-单">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D5M-ODD">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D5M-ODD" cname="第五名-单">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D6M-ODD">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D6M-ODD" cname="第六名-单">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D7M-ODD">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D7M-ODD" cname="第七名-单">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D8M-ODD">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D8M-ODD" cname="第八名-单">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D9M-ODD">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D9M-ODD" cname="第九名-单">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D10M-ODD">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D10M-ODD" cname="第十名-单">
+                          </div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                <!-- / 循环列 -->
+                <div class="pure-u-1-8">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                		<div class="pure-g">
+	                      	<div class="pure-u-1">
+	                          <div class="ui-item-son">双</div>
+	                        </div>
+	                    </div>
+                </div>
+                    <!-- / 表双标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-GJ-EVEN">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-GJ-EVEN" cname="冠军-双">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-YJ-EVEN">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-YJ-EVEN" cname="亚军-双">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-JJ-EVEN">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-JJ-EVEN" cname="季军-双">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D4M-EVEN">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D4M-EVEN" cname="第四名-双">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D5M-EVEN">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D5M-EVEN" cname="第五名-双">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D6M-EVEN">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D6M-EVEN" cname="第六名-双">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D7M-EVEN">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D7M-EVEN" cname="第七名-双">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D8M-EVEN">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D8M-EVEN" cname="第八名-双">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D9M-EVEN">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D9M-EVEN" cname="第九名-双">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D10M-EVEN">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D10M-EVEN" cname="第十名-双">
+                          </div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表双主体 -->
+                  </div>
+                </div>
+                <!-- / 循环列 -->
+                <div class="pure-u-1-8">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                		<div class="pure-g">
+	                      	<div class="pure-u-1">
+	                          <div class="ui-item-son">龙</div>
+	                        </div>
+	                    </div>
+                </div>
+                    <!-- / 表龙标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-GJ-LONG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-GJ-LONG" cname="冠军-龙">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-YJ-LONG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-YJ-LONG" cname="亚军-龙">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-JJ-LONG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-JJ-LONG" cname="季军-龙">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D4M-LONG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D4M-LONG" cname="第四名-龙">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D5M-LONG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D5M-LONG" cname="第五名-龙">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D6M-LONG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D6M-LONG" cname="第六名-龙">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D7M-LONG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D7M-LONG" cname="第七名-龙">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D8M-LONG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D8M-LONG" cname="第八名-龙">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D9M-LONG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D9M-LONG" cname="第九名-龙">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D10M-LONG">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D10M-LONG" cname="第十名-龙">
+                          </div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表龙主体 -->
+                  </div>
+                </div>
+                <!-- / 循环列 -->
+                <div class="pure-u-1-8">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                		<div class="pure-g">
+	                      	<div class="pure-u-1">
+	                          <div class="ui-item-son">虎</div>
+	                        </div>
+	                    </div>
+                </div>
+                    <!-- / 表虎标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-GJ-HU">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-GJ-HU" cname="冠军-虎">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-YJ-HU">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-YJ-HU" cname="亚军-虎">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-JJ-HU">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-JJ-HU" cname="季军-虎">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D4M-HU">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D4M-HU" cname="第四名-虎">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D5M-HU">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D5M-HU" cname="第五名-虎">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D6M-HU">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D6M-HU" cname="第六名-虎">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D7M-HU">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D7M-HU" cname="第七名-虎">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D8M-HU">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D8M-HU" cname="第八名-虎">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D9M-HU">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D9M-HU" cname="第九名-虎">
+                          </div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son ui-hand red" id="pl_SM-D10M-HU">-</div>
+                        </div>
+                        <div class="pure-u-1-2">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="SM-D10M-HU" cname="第十名-虎">
+                          </div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表虎主体 -->
+                  </div>
+                </div>
+                <!-- / 循环列 -->
+              </div>
+            </div>
+            <!-- / ui-table -->
+          </div>
+          <!-- / ui-mod-item -->
+        </div>
+        <!-- / ui-mod-body -->
+      </div>
+      <!-- / ui-mod -->
+    </div>
+    <!-- / ui-form -->
+  </div>
+  <!-- / 下注表单 -->
+</div>
+<!-- / 北京PK10 双面 -->
+<!-- 快捷下注 -->
+<div class="pure-g">
+	<div class="pure-u-1">
+		<div class="bet-form-action cf">
+			<ul class="order r cf">
+				<li class="ui-item">快速下注</li>
+				<li class="ui-item">
+					<input type="text" id="back_fastbet_input"  class="ui-input ui-hand" maxlength="11" />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+				</li>
+				<li class="ui-item">
+					<input type="button" onclick="clearBetForm();" value="重填" class="button button-small button-raised" />
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+ 
+<script src="{resourceRoot}/cp/js/bet.js"></script>

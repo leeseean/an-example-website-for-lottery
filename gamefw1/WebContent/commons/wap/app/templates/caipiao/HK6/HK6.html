@@ -1,0 +1,110 @@
+<div class="play caipiao-groups">
+	<ul class="clearfix">
+		<li>
+			<i ng-class="{icon: true, 'icon-expand': true, 'icon-expanded': currentExpand==0}"></i>
+			<h3 class="f14 white" ng-click="currentExpand==0 ? currentExpand =-1: currentExpand=0;">特码</h3>
+			<div ng-class="{'sub-groups': true, 'current-expand': currentExpand == 0}">
+				<ul class="clearfix">
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'tm', type: 2})"><h4 class="f14 white">特码B</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'tm', type: 1})"><h4 class="f14 white">特码A</h4></a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<i ng-class="{icon: true, 'icon-expand': true, 'icon-expanded': currentExpand==1}"></i>
+			<h3 class="f14 white" ng-click="currentExpand==1 ? currentExpand =-1: currentExpand=1;">正特码</h3>
+			<div ng-class="{'sub-groups': true, 'current-expand': currentExpand == 1}">
+				<ul class="clearfix">
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zmt', type: 1})"><h4 class="f14 white">正1特</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zmt', type: 2})"><h4 class="f14 white">正2特</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zmt', type: 3})"><h4 class="f14 white">正3特</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zmt', type: 4})"><h4 class="f14 white">正4特</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zmt', type: 5})"><h4 class="f14 white">正5特</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zmt', type: 6})"><h4 class="f14 white">正6特</h4></a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<i ng-class="{icon: true, 'icon-expand': true, 'icon-expanded': currentExpand==2}"></i>
+			<h3 class="f14 white" ng-click="currentExpand==2 ? currentExpand =-1: currentExpand=2;">正码</h3>
+			<div ng-class="{'sub-groups': true, 'current-expand': currentExpand == 2}">
+				<ul class="clearfix">
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zm', type: 'A'})"><h4 class="f14 white">正特A</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zm', type: 'B'})"><h4 class="f14 white">正特B</h4></a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<h3 class="f14 white"><a class="white" ui-sref="caipiao.play.pankou({pankou: 'zm1t6', type: ''})">正码1-6</a></h3>
+		</li>
+		<li>
+			<h3 class="f14 white"><a class="white" ui-sref="caipiao.play.pankou({pankou: 'gg', type: ''})">过关</a></h3>
+		</li>
+		<li>
+			<h3 class="f14 white"><a class="white" ui-sref="caipiao.play.pankou({pankou: 'lm', type: '0'})">连码</a></h3>
+		</li>
+		<li>
+			<i ng-class="{icon: true, 'icon-expand': true, 'icon-expanded': currentExpand==3}"></i>
+			<h3 class="f14 white" ng-click="currentExpand==3 ? currentExpand =-1: currentExpand=3;">半波</h3>
+			<div ng-class="{'sub-groups': true, 'current-expand': currentExpand == 3}">
+				<ul class="clearfix">
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'bb', type: 'BB'})"><h4 class="f14 white">半波</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'bb', type: 'BBB'})"><h4 class="f14 white">半半波</h4></a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<h3 class="f14 white"><a class="white" ui-sref="caipiao.play.pankou({pankou: 'yxyztm', type: ''})">一肖&正特尾</a></h3>
+		</li>
+		<li>
+			<h3 class="f14 white"><a class="white" ui-sref="caipiao.play.pankou({pankou: 'txtw', type: ''})">特肖头尾</a></h3>
+		</li>
+		<li>
+			<i ng-class="{icon: true, 'icon-expand': true, 'icon-expanded': currentExpand==4}"></i>
+			<h3 class="f14 white" ng-click="currentExpand==4 ? currentExpand =-1: currentExpand=4;">中&不中</h3>
+			<div ng-class="{'sub-groups': true, 'current-expand': currentExpand == 4}">
+				<ul class="clearfix">
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zybz', type: 'WBZ'})"><h4 class="f14 white">五不中</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zybz', type: 'QBZ'})"><h4 class="f14 white">七不中</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zybz', type: 'JBZ'})"><h4 class="f14 white">九不中</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zybz', type: 'SZY'})"><h4 class="f14 white">四中一</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'zybz', type: 'LZY'})"><h4 class="f14 white">六中一</h4></a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<i ng-class="{icon: true, 'icon-expand': true, 'icon-expanded': currentExpand==5}"></i>
+			<h3 class="f14 white" ng-click="currentExpand==5 ? currentExpand =-1: currentExpand=5;">尾连数</h3>
+			<div ng-class="{'sub-groups': true, 'current-expand': currentExpand == 5}">
+				<ul class="clearfix">
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'wsl', type: 'EWL'})"><h4 class="f14 white">二尾连</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'wsl', type: 'SAWL'})"><h4 class="f14 white">三尾连</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'wsl', type: 'SIWL'})"><h4 class="f14 white">四尾连</h4></a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<i ng-class="{icon: true, 'icon-expand': true, 'icon-expanded': currentExpand==6}"></i>
+			<h3 class="f14 white" ng-click="currentExpand==6 ? currentExpand =-1: currentExpand=6;">连肖</h3>
+			<div ng-class="{'sub-groups': true, 'current-expand': currentExpand == 6}">
+				<ul class="clearfix">
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'lx', type: 'ELX'})"><h4 class="f14 white">二连肖</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'lx', type: 'SALX'})"><h4 class="f14 white">三连肖</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'lx', type: 'SILX'})"><h4 class="f14 white">四连肖</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'lx', type: 'WLX'})"><h4 class="f14 white">五连肖</h4></a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<i ng-class="{icon: true, 'icon-expand': true, 'icon-expanded': currentExpand==7}"></i>
+			<h3 class="f14 white" ng-click="currentExpand==7 ? currentExpand =-1: currentExpand=7;">合肖</h3>
+			<div ng-class="{'sub-groups': true, 'current-expand': currentExpand == 7}">
+				<ul class="clearfix">
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'hx', type: 1})"><h4 class="f14 white">二肖</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'hx', type: 2})"><h4 class="f14 white">四肖</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'hx', type: 3})"><h4 class="f14 white">六肖</h4></a></li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div>

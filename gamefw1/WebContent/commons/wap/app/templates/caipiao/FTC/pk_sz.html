@@ -1,0 +1,54 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/ftc_header.html')"></div>
+
+<div ng-include="templateURL('/caipiao/FTC/sz/bsghs.html')" ng-if="subType == 'bsghs'"></div>
+
+<div ng-if="subType == 'szzh' || subType == 'bsgdw'">
+
+	<div class="ui-table">
+		<div class="ui-head-son">
+			<div class="pure-g">
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">号码</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">赔率</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">号码</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">赔率</div>
+				</div>
+			</div>
+		</div>
+		<div class="ui-body-son" ng-init="numbers = ['000' ,'001' ,'002' ,'003' ,'004' ,'005' ,'006' ,'007' ,'008' ,'009' ,'011' ,'012' ,'013' ,'014' ,'015' ,'016' ,'017' ,'018' ,'019' ,'022' ,'023' ,'024' ,'025' ,'026' ,'027' ,'028' ,'029' ,'033' ,'034' ,'035' ,'036' ,'037' ,'038' ,'039' ,'044' ,'045' ,'046' ,'047' ,'048' ,'049' ,'055' ,'056' ,'057' ,'058' ,'059' ,'066' ,'067' ,'068' ,'069' ,'077' ,'078' ,'079' ,'088' ,'089' ,'099' ,'111' ,'112' ,'113' ,'114' ,'115' ,'116' ,'117' ,'118' ,'119' ,'122' ,'123' ,'124' ,'125' ,'126' ,'127' ,'128' ,'129' ,'133' ,'134' ,'135' ,'136' ,'137' ,'138' ,'139' ,'144' ,'145' ,'146' ,'147' ,'148' ,'149' ,'155' ,'156' ,'157' ,'158' ,'159' ,'166' ,'167' ,'168' ,'169' ,'177' ,'178' ,'179' ,'188' ,'189' ,'199' ,'222' ,'223' ,'224' ,'225' ,'226' ,'227' ,'228' ,'229' ,'233' ,'234' ,'235' ,'236' ,'237' ,'238' ,'239' ,'244' ,'245' ,'246' ,'247' ,'248' ,'249' ,'255' ,'256' ,'257' ,'258' ,'259' ,'266' ,'267' ,'268' ,'269' ,'277' ,'278' ,'279' ,'288' ,'289' ,'299' ,'333' ,'334' ,'335' ,'336' ,'337' ,'338' ,'339' ,'344' ,'345' ,'346' ,'347' ,'348' ,'349' ,'355' ,'356' ,'357' ,'358' ,'359' ,'366' ,'367' ,'368' ,'369' ,'377' ,'378' ,'379' ,'388' ,'389' ,'399' ,'444' ,'445' ,'446' ,'447' ,'448' ,'449' ,'455' ,'456' ,'457' ,'458' ,'459' ,'466' ,'467' ,'468' ,'469' ,'477' ,'478' ,'479' ,'488' ,'489' ,'499' ,'555' ,'556' ,'557' ,'558' ,'559' ,'566' ,'567' ,'568' ,'569' ,'577' ,'578' ,'579' ,'588' ,'589' ,'599' ,'666' ,'667' ,'668' ,'669' ,'677' ,'678' ,'679' ,'688' ,'689' ,'699' ,'777' ,'778' ,'779' ,'788' ,'789' ,'799' ,'888' ,'889' ,'899' ,'999' ]">
+			
+			<div class="pure-g" ng-repeat="index in range(0, 220, 2)">
+				<div class="pure-u-6-24" >
+					<div class="ui-item-son">{{numbers[index]}}</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span 
+								ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) +  '-' + ( numbers[index] ) ] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) +  '-' + ( numbers[index] ) ]  == true ? false: true" 
+								ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+ '-' + (subType | uppercase)+  '-' + ( numbers[index] ) ]}" 
+								ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+  '-' + ( numbers[index] ) }}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase) +  '-' + ( numbers[index] ) ]}}</span>
+					</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">{{numbers[index+ 1] }}</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+					<span 
+								ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) +  '-' + ( numbers[index+1] ) ] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) +  '-' + ( numbers[index+1] ) ]  == true ? false: true" 
+								ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase) +  '-' + ( numbers[index+1] ) ]}" 
+								ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase) +  '-' + ( numbers[index+1] ) }}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase) +  '-' + ( numbers[index+1] ) ]}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

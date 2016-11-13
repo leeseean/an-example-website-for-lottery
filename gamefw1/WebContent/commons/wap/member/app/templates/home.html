@@ -1,0 +1,54 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+<div class="main-content-wrapper">
+    <div class="main-content plr20">
+        <div class="wrapper">
+            <ul class="clearfix m-actions">
+                <li class="deposit bg-2" ng-click="toggelDispositTypes()">
+                    <i class="icon"></i><a href="javascript:void()">充值</a>
+                    <div class="scroll-wrapper deposit-types-wrapper" ng-class="{'animate-show': showDispositSelector,'animate-hide': !showDispositSelector}">
+                        <ul class="clearfix  bg-submit" ng-class="{'animate-show': showDispositSelector,'animate-hide': !showDispositSelector}">
+                            <li class="bank" style="height:47px">
+                                <div class="valign" style="width:110px">
+                                    <i class="icon"></i><a ng-click="go('deposit_account')">公司入款</a>
+                                </div>
+                            </li>
+                            <li class="wechat" style="height:47px" ng-show="showLists.wechat_online_show">
+                                <div class="valign" style="width:110px">
+                                    <i class="icon"></i>
+                                    <a ng-click="go('thirdpay_deposit_form', {type: 'wechat',payid:wechat_online.thirdPayId,payValue:wechat_online.payValue})">微信(在线)</a>
+                                </div>
+                            </li>
+                            <li class="alipay" style="height:47px" ng-show="showLists.alipay_online_show">
+                                <div class="valign" style="width:110px">
+                                    <i class="icon"></i>
+                                    <a ng-click="go('thirdpay_deposit_form', {type: 'alipay',payid:alipay_online.thirdPayId,payValue:alipay_online.payValue})">支付宝(在线)</a>
+                                </div>
+                            </li>
+                            <li class="wechat" style="height:47px" ng-show="showLists.wechat_culture_show">
+                                <div class="valign" style="width:110px">
+                                    <i class="icon"></i><a ui-sref="thirdpay({type: 'wechat',payRname:wechat_culture.payRname,payNo:wechat_culture.payNo,payNname:wechat_culture.payNname})">微信(传统)</a>
+                                </div>
+                            </li>
+                            <li class="alipay" style="height:47px" ng-show="showLists.alipay_culture_show">
+                                <div class="valign" style="width:110px">
+                                    <i class="icon"></i><a ui-sref="thirdpay({type:'alipay',payRname:alipay_culture.payRname,payNo:alipay_culture.payNo,payNname:alipay_culture.payNname})">支付宝(传统)</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="withdraw bg-2" ng-click="go('withdrawal_account')"><i class="icon"></i><a ui-sref="withdrawal_account">提款</a></li>
+                <li class="conversion bg-2" ng-click="go('conversion')"><i class="icon"></i><a ui-sref="conversion">额度转换</a></li>
+            </ul>
+            <ul class="clearfix m-links">
+                <li class="link-user-info bg-3" ng-click="go('userinfo')"><i class="icon"></i><a ui-sref="userinfo">会员资料<span>INFORMATION</span></a></li>
+                <li class="link-user-msg bg-3" ng-click="go('messages')"><i class="icon"></i><a ui-sref="messages">会员消息<span>MESSAGE</span></a></li>
+                <li class="link-user-deposit-log bg-3" ng-click="openDispensingDialog('入款记录', 'in')"><i class="icon"></i><a href="">入款记录<span>DEPOSIT</span></a></li>
+                <li class="link-user-withdraw-log bg-3" ng-click="openDispensingDialog('出款记录', 'out')"><i class="icon"></i><a href="">提款记录<span>WITHDRAW</span></a></li>
+                <li class="link-user-conversion-log bg-3" ng-click="openEduHistoryDialog()"><i class="icon"></i><a href="">转换记录<span>TRANSFER</span></a></li>
+                <li class="link-user-order-log bg-3" ng-click="go('order')"><i class="icon"></i><a href="">注单查询<span>ORDER</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<ng-include src="templateURL('/footer.html')"></ng-include>

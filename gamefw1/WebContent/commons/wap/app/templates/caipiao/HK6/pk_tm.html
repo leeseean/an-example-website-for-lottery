@@ -1,0 +1,144 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/hk6_header.html')"></div>
+
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-body-son">
+		<div class="pure-g" ng-repeat="number in range(1, 49, 2)">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<ball number="number"></ball>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span 
+						ng-click="selectedPeiyu['TM-TM_'+subType+'-' + ( number | ballnumber)] = selectedPeiyu['TM-TM_'+subType+'-' + ( number | ballnumber)]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray': true, 'bg-hrec-red': selectedPeiyu['TM-TM_'+subType+'-' + ( number | ballnumber)]}" 
+						ng-attr-id="{{'TM-TM_'+subType+'-' + ( number | ballnumber)}}" >{{peiyu['TM-TM_'+subType+'-' + ( number | ballnumber) ]}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<ball number="number+1"></ball>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span 
+						ng-click="selectedPeiyu['TM-TM_'+subType+'-' + ( number + 1 | ballnumber)] = selectedPeiyu['TM-TM_'+subType+'-' + ( number + 1 | ballnumber)]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray': true, 'bg-hrec-red': selectedPeiyu['TM-TM_'+subType+'-' + ( number + 1 | ballnumber)]}" 
+						ng-attr-id="{{'TM-TM_'+subType+'-' + ( number + 1 | ballnumber)}}" >{{peiyu['TM-TM_'+subType+'-' + ( number + 1 | ballnumber) ]}}</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pure-g" ng-init="number=49">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<ball number="number"></ball>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span 
+						ng-click="selectedPeiyu['TM-TM_'+subType+'-' + ( number | ballnumber)] = selectedPeiyu['TM-TM_'+subType+'-' + ( number | ballnumber)]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray': true, 'bg-hrec-red': selectedPeiyu['TM-TM_'+subType+'-' + ( number | ballnumber)]}" 
+						ng-attr-id="{{'TM-TM_'+subType+'-' + ( number | ballnumber)}}" >{{peiyu['TM-TM_'+subType+'-' + ( number | ballnumber) ]}}</span>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-body-son" ng-init="balls = [
+		{label: '单',id: 'ODD'}, 
+		{label: '双', id: 'EVEN'},
+		{label: '大', id: 'BIG'},
+		{label: '小', id: 'SMALL'},
+		{label: '合单', id: 'SUM_ODD'},
+		{label: '合双', id: 'SUM_EVEN'},
+		{label: '红波', id: 'RED'},
+		{label: '绿波', id: 'GREEN'},
+		{label: '蓝波', id: 'BLUE'},
+		{label: '家禽', id: 'FOWL'},
+		{label: '野兽', id: 'BEAST'},
+		{label: '合大', id: 'SUM_BIG'},
+		{label: '合小', id: 'SUM_SMALL'},
+		{label: '尾大', id: 'TAIL_BIG'},
+		{label: '尾小', id: 'TAIL_SMALL'},
+		{label: '大单', id: 'BIG_ODD'},
+		{label: '小单', id: 'SMALL_ODD'},
+		{label: '大双', id: 'BIG_EVEN'},
+		{label: '小双', id: 'SMALL_EVEN'},
+	]">
+		<div class="pure-g" ng-repeat="index in range(0, balls.length, 2)">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span ng-class="{white: true, 
+									'color-red': balls[index]['id'] == 'RED', 
+									'color-blue': balls[index]['id'] == 'BLUE',
+									'color-green': balls[index]['id'] == 'GREEN'}">{{balls[index]['label']}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span 
+						ng-click="selectedPeiyu['TM-TM_'+subType+'-' + ( balls[index]['id'] )] = selectedPeiyu['TM-TM_'+subType+'-' + ( balls[index]['id'] )]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray': true, 'bg-hrec-red': selectedPeiyu['TM-TM_'+subType+'-' + ( balls[index]['id'] )]}" 
+						ng-attr-id="{{'TM-TM_'+subType+'-' + ( balls[index]['id'] )}}" >{{peiyu['TM-TM_'+subType+'-' + ( balls[index]['id'] ) ]}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24" ng-if="index+1 < balls.length">
+				<div class="ui-item-son">
+					<span ng-class="{white: true, 
+									'color-red': balls[index+1]['id'] == 'RED', 
+									'color-blue': balls[index+1]['id'] == 'BLUE',
+									'color-green': balls[index+1]['id'] == 'GREEN'}">{{balls[index+1]['label']}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24" ng-if="index+1 < balls.length">
+				<div class="ui-item-son">
+					<span 
+						ng-click="selectedPeiyu['TM-TM_'+subType+'-' + ( balls[index+1]['id'] )] = selectedPeiyu['TM-TM_'+subType+'-' + ( balls[index+1]['id'] )]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray': true, 'bg-hrec-red': selectedPeiyu['TM-TM_'+subType+'-' + ( balls[index+1]['id'] )]}" 
+						ng-attr-id="{{'TM-TM_'+subType+'-' + ( balls[index+1]['id'] )}}" >{{peiyu['TM-TM_'+subType+'-' + ( balls[index+1]['id'] ) ]}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

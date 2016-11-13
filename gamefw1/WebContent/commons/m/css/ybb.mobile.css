@@ -1,0 +1,382 @@
+/**********************************************************
+ * Reset
+ */
+
+body {
+  font-size: 12px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+p {
+  -webkit-margin-before: 10px;
+  -webkit-margin-after: 10px;
+}
+img {
+  max-width: 100%;
+}
+a {
+  color: #eee;
+  text-decoration: none;
+}
+a:link,
+a:focus,
+a:active,
+a:visited {
+  color: #eee !important;
+}
+
+/**********************************************************
+ * Base
+ */
+
+.l {
+  float: left;
+}
+.r {
+  float: right;
+}
+.cf {
+  *zoom: 1;
+}
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.pt10 {
+  padding-top: 10px;
+}
+.fs12 {
+  font-size: 12px;
+}
+.ac {
+  text-align: center;
+}
+.b {
+  font-weight: bold;
+}
+.spr-common {
+  background-image: url(../img/spr_common.png);
+  background-size: 500px auto;
+  background-repeat: no-repeat;
+}
+.ui-btn {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 12px;
+}
+
+/**********************************************************
+ * Customize
+ */
+
+#loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center,#222 0,#1b1b1b 42%,#000 100%);
+}
+#loader .loading {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  font-size: 13px;
+  text-align: center;
+  color: #fff;
+}
+#loader .loading .loading-text {
+  margin-top: 10px;
+  width: 100%;
+}
+#loader .loading .version {
+  margin-top: 40px;
+  width: 100%;
+}
+.ui-page-theme-x {
+  color: #eee;
+  background: #d3d6db;
+}
+.ui-page-theme-x .ui-bar-inherit {
+  border: 0;
+}
+.ui-page-theme-x .ui-header {
+  color: #eee;
+  background: #202020;
+}
+.ui-page-theme-x .ui-header .ui-right {
+  overflow: hidden;
+  height: 50px;
+}
+.ui-page-theme-x .ui-header .ui-controlgroup .ui-btn {
+  padding: 0 10px 0 0;
+  height: 50px;
+  line-height: 50px;
+  color: #eee;
+}
+.ui-page-theme-x .ui-header .ui-controlgroup .ui-btn:after {
+  top: 0;
+  margin: 0;
+  margin-top: 0 !important;
+}
+.ui-page-theme-x .ui-header .ui-navbar {}
+.ui-page-theme-x .ui-header .ui-navbar .ui-btn {
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  color: #bbb;
+  background: #2e2e2e;
+}
+.ui-page-theme-x .ui-header .ui-navbar .ui-btn-active {
+  color: #2395c5;
+  background: #272727;
+}
+.ui-page-theme-x .ui-content {
+  padding-bottom: 20px;
+  background-color: #242424;
+}
+
+/**********************************************************
+ * Module
+ */
+
+
+/* banner */
+
+.ybb-mobile-web .banner .r1 {
+  height: auto;
+  /*height: 130px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;*/
+}
+.ybb-mobile-web .banner .r1 img {
+  width: 100%;
+  height: auto;
+}
+
+/* news */
+
+.ybb-mobile-web .news {
+  height: 30px;
+  line-height: 30px;
+}
+.ybb-mobile-web .news .c1 {
+  float: left;
+  padding: 0 10px;
+}
+.ybb-mobile-web .news .c1,
+.ybb-mobile-web .news .c2 a {
+  color: #999;
+}
+.ybb-news-main li {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+.ybb-news-main h6 {
+  margin: 0;
+  margin-top: 10px;
+  color: #999;
+}
+.ybb-news-main p {
+  margin: 0;
+  margin-top: 5px;
+}
+
+/**********************************************************
+ * Home
+ */
+
+
+/**********************************************************
+ * Live
+ */
+
+
+/* main */
+
+.ybb-main {
+  margin: auto;
+  width: 80%;
+}
+.ybb-main .r1 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 70px;
+}
+.ybb-main .r3 .ui-btn {
+  margin-top: 10px;
+  height: 40px;
+  line-height: 40px;
+}
+
+/**********************************************************
+ * Slot
+ */
+
+.ybb-slot-main .ui-navbar .ui-btn {
+  height: 30px;
+  line-height: 30px;
+  color: #666;
+  border-bottom: 1px solid #2e2e2e;
+}
+.ybb-slot-main .ui-navbar .ui-btn-active {
+  color: #bbb;
+  border-bottom: 1px solid #999;
+}
+.ybb-slot-main .slot-hall .ui-btn {
+  height: 50px;
+  line-height: 50px;
+}
+.game-group {
+  margin: 10px;
+}
+.game-group .item .r1 {
+  height: 136px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /*background-size: cover;*/
+}
+.game-group .ui-block-a {
+  padding-right: 5px;
+}
+.game-group .ui-block-b {
+  padding-left: 5px;
+}
+
+/**********************************************************
+ * Sport
+ */
+
+
+/* main */
+
+.ybb-sport-main .r1 {
+  background-position: -200px 0;
+}
+
+/**********************************************************
+ * Article
+ */
+
+.ybb-article {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/**********************************************************
+ * Customize
+ */
+
+.ui-page-theme-x {
+  color: #eee;
+  background: #d3d6db;
+}
+.ui-page-theme-x .ui-bar-inherit {
+  border: 0;
+}
+
+/*
+ * Panel
+ */
+
+.ybb-mobile-sidemenu.ui-panel .ui-panel-inner {
+  padding-top: 0;
+}
+.ybb-mobile-sidemenu.ui-panel {
+  background: #414141;
+}
+.ybb-mobile-sidemenu.ui-panel .ui-listview {
+  margin-top: 0;
+}
+.ybb-mobile-sidemenu.ui-panel .ui-listview li {
+  padding: 0;
+  padding-left: 15px;
+  font-weight: normal;
+  border: 0;
+  height: 35.594px;
+  line-height: 35.594px;
+  background: none;
+  text-shadow: none;
+  border-bottom: 1px solid #545450;
+}
+.ybb-mobile-sidemenu.ui-panel li.ui-li-divider {
+  height: 34px;
+  line-height: 32px;
+  font-size: 12px;
+  border-bottom: 0;
+  background: #343434;
+}
+.ybb-mobile-sidemenu.ui-panel .ui-btn {
+  font-size: 14px;
+  color: #fff;
+  line-height: 36px;
+  border: 0;
+}
+html body .ybb-mobile-sidemenu.ui-panel .ui-controlgroup-controls .ui-link {
+  margin: 0;
+  margin-top: 3px;
+  padding: 0;
+  border: 0;
+  background: none;
+  display: block;
+  width: 18px;
+  height: 19px;
+  box-shadow: none;
+  background: url(../img/mobile_head_icon.png) no-repeat;
+}
+html body .ybb-mobile-sidemenu.ui-panel .ui-controlgroup-controls .ui-link.ui-first-child {
+  margin-right: 22px;
+}
+html body .ybb-mobile-sidemenu.ui-panel .ybm-panel-header {
+  padding: 0 20px;
+}
+html body .ybb-mobile-sidemenu.ui-panel .ui-controlgroup-controls .ui-link::after {
+  display: none;
+}
+html body .ybb-mobile-sidemenu.ui-panel .ui-controlgroup-controls .btn-close {
+  background-position: -18px 0;
+}
+.ybb-mobile-sidemenu.ui-panel .ybm-panel-header {
+  margin: 5px 0;
+  height: 38px;
+}
+
+.ybb-live-main.ybb-main {
+	width: 90%;
+}
+
+.ybb-live-main .ui-mod-item {
+	margin-bottom: 10px;
+}
+
+.ybb-live-main .ui-mod-item a.ui-btn.ui-btn-f {
+    background-color: inherit !important;
+}
+
+.block {
+	display: block;
+}
+
+.full {
+	width: 100%;
+	height: 100%;
+}

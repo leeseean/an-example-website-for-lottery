@@ -1,0 +1,12 @@
+<div class="selector select-filter cz-filter">
+	<div class="wrapper">
+		<ul class="clearfix">
+			<li>
+				<span ng-click="onChange()">全部</span>
+			</li>
+			<li ng-repeat="game in gameList track by $index">
+				<span ng-click="onChange(game.game_code)" data-val="{{game.game_code}}">{{game.game_name}}</span>
+			</li>
+		</ul>
+	</div>
+</div>

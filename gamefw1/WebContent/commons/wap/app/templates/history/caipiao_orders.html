@@ -1,0 +1,100 @@
+<div class="wrapper">
+	<div class="history-header-top">
+		<div class="wrapper clearfix">
+			<div class="date-text w150">
+				<span class="f20 white date-1 block left">{{ date | date: 'dd'}}日</span>
+				<div class="date-2 left">
+					<span class="f13 white block">
+						{{date | date: 'yyyy' }}年{{date | date: 'MM'}}月
+					</span>
+					<span class="f13 white block">
+						{{weekName}}
+					</span>
+				</div>
+			</div>
+			<button ng-init="showFilter=false" class="btn btn-filter btn-red"  ng-click="showDayFilter = false; showFilter = showFilter == false ? true : false">
+				<span>{{crtGame.game_name == undefined ? '彩 &nbsp;&nbsp;种': crtGame.game_name}}</span>
+				<czfilter change="filterChanged()" crtgame="crtGame" ng-class="{hidden: showFilter == false}"></czfilter>
+			</button>
+			
+			<button ng-init="showDayFilter =false" ng-class="{btn: true, 'btn-cz-day':true, clicked: showDayFilter == true }" ng-click="showFilter = false; showDayFilter = showDayFilter == false ? true : false">
+				<span>{{dayObject.label == '' ? '全部': dayObject.label }}</span>
+				<day-filter change="filterChanged()" day="dayObject.day" day-label="dayObject.label" ng-class="{hidden: showDayFilter == false}"></day-filter>
+			</button>
+		</div>
+		
+		<div class="block block-history">
+			<table class="caipiao caipiao-history">
+				<thead class="bg-2 clearfix">
+					<td>彩种玩法</td>
+					<td>期号</td>
+					<td>投注金额</td>
+					<td>投单时间</td>
+				</thead>
+				<tbody>
+					<tr ng-class="{'bg-5': true, 'clearfix': true, 'bg-red': history['order_status'] == '已中奖' }" ng-repeat="history in historyList track by $index"  ng-click="showmore[$index] = showmore[$index] == undefined || showmore[$index] == false ? true: false">
+						<td>{{history['game_name']}}</td>
+						<td>{{history['qs']}}</td>
+						<td>{{history['xzje']}}</td>
+						<td>{{ history['bet_time']*1000 | date:'yyyy.MM.dd' }}</td>
+						<td ng-class="{icon: true, 'icon-expand': true, 'icon-expand-close': showmore[$index] == true}"></td>
+						
+						<td ng-class="{w100p:true, 'hidden': showmore[$index] == undefined || showmore[$index] == false }">
+							<table class="history-more">
+								<tbody>
+									<tr class="clearfix">
+										<td class="bg-red">下注时间</td>										
+										<td class="bg-4">{{history['bet_time']*1000 | date: 'yyyy.MM.dd'}}</td>
+									</tr>
+									<tr class="clearfix">
+										<td class="bg-red">玩法</td>																		
+										<td class="bg-4"> {{history['cp_type_name'] == history['cp_cate_name'] ? history['cp_type_name'] : history['cp_type_name'] + ' ' + history['cp_cate_name']}}</td>
+									</tr>
+									<tr class="clearfix">
+										<td class="bg-red">期数</td>																	
+										<td class="bg-4">{{history['qs']}}</td>									
+									</tr>
+									<tr class="clearfix">
+										<td class="bg-red">下注内容</td>							
+										<td class="bg-4">{{history['bet_number']}}</td>								
+									</tr class="clearfix">
+									<tr class="clearfix">
+										<td class="bg-red">赔率</td>						
+										<td class="bg-4">{{history['pl']}}</td>						
+									</tr>
+									<tr class="clearfix">
+										<td class="bg-red">下注金额</td>					
+										<td class="bg-4">{{history['xzje']}}</td>					
+									</tr>
+									<tr class="clearfix">
+										<td class="bg-red">可赢奖金</td>			
+										<td class="bg-4">{{history['kyje']}}</td>				
+									</tr>
+									<tr class="clearfix">
+										<td class="bg-red">返水金额</td>			
+										<td class="bg-4">{{history['back_water_money']}}</td>				
+									</tr>
+									<tr class="clearfix">
+										<td class="bg-red">订单状态</td>			
+										<td class="bg-4">{{history['order_status']}}</td>				
+									</tr>
+									<tr class="clearfix">
+										<td class="bg-red">开奖号码</td>			
+										<td class="bg-4">{{history['open_code']}}</td>				
+									</tr>
+								</tbody>
+							</table>
+							
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<div class="pager pager-history clearfix" ng-if="totalPage > 1">
+				<button ng-class="{btn: true, 'btn-red': true, 'btn-prev-page': true, 'btn-disabled': pageNo <= 1}" ng-click="prevPage()">上一页</button>
+				<button ng-class="{btn: true, 'btn-red': true, 'btn-next-page': true, 'btn-disabled': pageNo >= totalPage}" ng-click="nextPage()">下一页</button>
+			</div>
+		</div>
+		
+	</div>
+</div>

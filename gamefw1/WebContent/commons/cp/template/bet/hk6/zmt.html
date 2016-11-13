@@ -1,0 +1,3159 @@
+[{"1_2":1}]
+êêê
+<!-- 开奖结果 -->
+<div class="pure-g lotto-result">
+	<div class="pure-u-1-3">
+		<div class="info">
+			<div class="ui-row row-one">
+				<span id="gameBetName" >香港六合彩</span>&nbsp;<strong class="blue" id="typeBetName">正码特</strong>
+			</div>
+			<p class="ui-row row-two">
+				当前期：<strong class="blue" id="currentQs">--</strong> 期&nbsp;
+			</p>
+		</div>
+	</div>
+	<!-- /left -->
+	<div class="pure-u-2-3">
+		<div class="result">
+			<div class="ui-row row-one cf">
+				<div class="ui-head">
+					<span class="b red" id="lastQs">--</span>期
+				</div>
+				<div class="ui-body">
+					<ul class="ball-group center" id="lastResult"></ul>
+				</div>
+			</div>
+			<div class="ui-row row-two">
+				<!-- 开奖or封盘时间 -->
+				<div class="result-time">
+					<!-- 六合彩 -->
+					<div class="ui-item item-hk6 item-ssc">
+						<ul class="cf">
+							<li class="ui-item-gson">距离封盘：<strong class="red" id="closeTime">--:--</strong></li>
+							<li class="ui-item-gson">距离开奖：<strong class="red" id="openTime">--:--</strong></li>
+						</ul>
+					</div>
+					<!-- / 六合彩 -->
+				</div>
+				<!-- / 开奖or封盘时间 -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /开奖结果 -->
+<!-- 六合彩 特码 -->
+<div>
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="fastbet_input" class="ui-input ui-hand" maxlength="11" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填"  onclick="clearBetForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /快捷下注 -->
+	
+	<!-- 下注表单 -->
+	<div  id="betForm" class="bet-form mg-m4">
+		<div class="ui-form">
+			<div class="ui-mod ui-tabs">
+				<div class="ui-mod-head ui-tabs-head nav-mode-play">
+					<ul class="cf">
+						<li class="ui-item ui-item-first ui-active">
+							<a href="javascript:void(0);" data-url="#hk6ZMT1" class="ui-link">正1特</a>
+						</li>
+						<li class="ui-item"><a href="javascript:void(0);" data-url="#hk6ZMT2" class="ui-link">正2特</a></li>
+						<li class="ui-item"><a href="javascript:void(0);" data-url="#hk6ZMT3" class="ui-link">正3特</a></li>
+						<li class="ui-item"><a href="javascript:void(0);" data-url="#hk6ZMT4" class="ui-link">正4特</a></li>
+						<li class="ui-item"><a href="javascript:void(0);" data-url="#hk6ZMT5" class="ui-link">正5特</a></li>
+						<li class="ui-item"><a href="javascript:void(0);" data-url="#hk6ZMT6" class="ui-link">正6特</a></li>
+					</ul>
+				</div>
+				<div class="ui-mod-body ui-tabs-body mt10">
+					<div class="ui-mod-item ui-tabs-item" id="hk6ZMT1">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-01">01</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-01">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="ZMT-Z1T-01">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-02">02</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-02">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-02">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-03">03</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-03">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-03">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-04">04</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-04">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-04">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-05">05</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-05">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-05">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-06">06</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-06">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-06">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-07">07</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-07">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-07">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-08">08</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-08">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-08">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-09">09</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-09">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-09">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-10">10</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-10">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-10">
+													</div>
+												</div>
+										 		
+										 		
+										 		
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-11">11</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-11">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z1T-11">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-12">12</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-12">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-12">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-13">13</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-13">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-13">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-14">14</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-14">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-14">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-15">15</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-15">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-15">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-16">16</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-16">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-16">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-17">17</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-17">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-17">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-18">18</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-18">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-18">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-19">19</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-19">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-19">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-20">20</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-20">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-20">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-21">21</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-21">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z1T-21">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-22">22</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-22">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-22">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-23">23</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-23">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-23">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-24">24</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-24">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-24">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-25">25</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-25">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-25">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-26">26</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-26">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-26">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-27">27</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-27">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-27">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-28">28</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-28">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-28">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-29">29</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-29">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-29">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-30">30</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-30">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-30">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-31">31</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-31">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z1T-31">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-32">32</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-32">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-32">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-33">33</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-33">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-33">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-34">34</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-34">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-34">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-35">35</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-35">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-35">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-36">36</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-36">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-36">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-37">37</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-37">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-37">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-38">38</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-38">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-38">
+													</div>
+												</div>
+												
+														
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-39">39</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-39">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-39">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-40">40</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-40">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-40">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-41">41</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-41">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z1T-41">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-42">42</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-42">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-42">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-43">43</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-43">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-43">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-44">44</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-44">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-44">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-45">45</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-45">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-45">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z1T-46">46</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-46">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-46">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-47">47</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-47">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-47">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z1T-48">48</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-48">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-48">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z1T-48">49</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z1T-49">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z1T-49">
+													</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+						</div>
+						<!-- / ui-table -->
+					</div>
+					<!-- / ui-mod-item -->
+					
+					<div class="ui-mod-item ui-tabs-item" id="hk6ZMT2" style=" display: none;">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-01">01</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-01">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="ZMT-Z2T-01">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-02">02</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-02">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-02">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-03">03</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-03">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-03">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-04">04</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-04">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-04">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-05">05</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-05">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-05">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-06">06</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-06">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-06">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-07">07</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-07">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-07">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-08">08</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-08">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-08">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-09">09</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-09">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-09">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-10">10</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-10">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-10">
+													</div>
+												</div>
+										 		
+										 		
+										 		
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-11">11</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-11">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z2T-11">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-12">12</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-12">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-12">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-13">13</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-13">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-13">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-14">14</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-14">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-14">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-15">15</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-15">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-15">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-16">16</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-16">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-16">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-17">17</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-17">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-17">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-18">18</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-18">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-18">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-19">19</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-19">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-19">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-20">20</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-20">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-20">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-21">21</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-21">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z2T-21">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-22">22</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-22">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-22">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-23">23</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-23">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-23">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-24">24</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-24">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-24">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-25">25</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-25">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-25">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-26">26</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-26">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-26">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-27">27</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-27">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-27">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-28">28</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-28">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-28">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-29">29</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-29">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-29">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-30">30</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-30">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-30">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-31">31</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-31">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z2T-31">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-32">32</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-32">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-32">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-33">33</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-33">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-33">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-34">34</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-34">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-34">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-35">35</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-35">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-35">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-36">36</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-36">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-36">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-37">37</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-37">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-37">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-38">38</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-38">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-38">
+													</div>
+												</div>
+												
+														
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-39">39</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-39">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-39">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-40">40</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-40">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-40">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-41">41</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-41">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z2T-41">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-42">42</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-42">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-42">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-43">43</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-43">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-43">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-44">44</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-44">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-44">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-45">45</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-45">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-45">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z2T-46">46</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-46">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-46">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-47">47</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-47">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-47">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z2T-48">48</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-48">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-48">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z2T-48">49</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z2T-49">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z2T-49">
+													</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+						</div>
+					</div>
+					<div class="ui-mod-item ui-tabs-item" id="hk6ZMT3" style=" display: none;">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-01">01</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-01">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="ZMT-Z3T-01">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-02">02</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-02">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-02">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-03">03</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-03">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-03">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-04">04</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-04">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-04">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-05">05</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-05">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-05">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-06">06</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-06">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-06">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-07">07</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-07">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-07">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-08">08</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-08">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-08">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-09">09</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-09">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-09">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-10">10</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-10">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-10">
+													</div>
+												</div>
+										 		
+										 		
+										 		
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-11">11</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-11">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z3T-11">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-12">12</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-12">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-12">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-13">13</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-13">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-13">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-14">14</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-14">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-14">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-15">15</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-15">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-15">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-16">16</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-16">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-16">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-17">17</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-17">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-17">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-18">18</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-18">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-18">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-19">19</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-19">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-19">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-20">20</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-20">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-20">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-21">21</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-21">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z3T-21">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-22">22</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-22">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-22">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-23">23</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-23">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-23">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-24">24</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-24">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-24">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-25">25</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-25">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-25">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-26">26</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-26">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-26">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-27">27</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-27">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-27">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-28">28</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-28">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-28">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-29">29</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-29">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-29">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-30">30</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-30">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-30">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-31">31</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-31">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z3T-31">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-32">32</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-32">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-32">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-33">33</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-33">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-33">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-34">34</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-34">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-34">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-35">35</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-35">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-35">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-36">36</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-36">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-36">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-37">37</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-37">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-37">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-38">38</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-38">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-38">
+													</div>
+												</div>
+												
+														
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-39">39</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-39">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-39">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-40">40</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-40">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-40">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-41">41</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-41">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z3T-41">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-42">42</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-42">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-42">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-43">43</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-43">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-43">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-44">44</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-44">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-44">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-45">45</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-45">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-45">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z3T-46">46</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-46">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-46">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-47">47</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-47">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-47">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z3T-48">48</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-48">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-48">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z3T-48">49</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z3T-49">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z3T-49">
+													</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+						</div>
+					</div>
+					<div class="ui-mod-item ui-tabs-item" id="hk6ZMT4" style=" display: none;">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-01">01</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-01">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="ZMT-Z4T-01">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-02">02</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-02">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-02">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-03">03</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-03">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-03">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-04">04</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-04">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-04">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-05">05</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-05">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-05">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-06">06</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-06">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-06">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-07">07</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-07">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-07">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-08">08</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-08">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-08">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-09">09</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-09">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-09">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-10">10</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-10">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-10">
+													</div>
+												</div>
+										 		
+										 		
+										 		
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-11">11</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-11">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z4T-11">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-12">12</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-12">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-12">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-13">13</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-13">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-13">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-14">14</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-14">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-14">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-15">15</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-15">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-15">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-16">16</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-16">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-16">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-17">17</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-17">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-17">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-18">18</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-18">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-18">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-19">19</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-19">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-19">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-20">20</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-20">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-20">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-21">21</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-21">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z4T-21">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-22">22</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-22">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-22">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-23">23</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-23">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-23">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-24">24</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-24">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-24">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-25">25</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-25">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-25">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-26">26</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-26">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-26">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-27">27</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-27">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-27">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-28">28</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-28">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-28">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-29">29</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-29">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-29">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-30">30</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-30">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-30">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-31">31</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-31">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z4T-31">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-32">32</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-32">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-32">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-33">33</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-33">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-33">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-34">34</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-34">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-34">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-35">35</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-35">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-35">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-36">36</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-36">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-36">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-37">37</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-37">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-37">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-38">38</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-38">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-38">
+													</div>
+												</div>
+												
+														
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-39">39</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-39">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-39">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-40">40</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-40">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-40">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-41">41</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-41">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z4T-41">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-42">42</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-42">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-42">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-43">43</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-43">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-43">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-44">44</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-44">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-44">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-45">45</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-45">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-45">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z4T-46">46</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-46">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-46">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-47">47</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-47">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-47">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z4T-48">48</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-48">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-48">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z4T-48">49</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z4T-49">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z4T-49">
+													</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+						</div>
+					</div>
+					<div class="ui-mod-item ui-tabs-item" id="hk6ZMT5" style=" display: none;">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-01">01</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-01">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="ZMT-Z5T-01">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-02">02</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-02">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-02">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-03">03</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-03">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-03">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-04">04</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-04">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-04">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-05">05</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-05">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-05">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-06">06</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-06">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-06">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-07">07</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-07">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-07">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-08">08</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-08">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-08">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-09">09</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-09">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-09">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-10">10</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-10">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-10">
+													</div>
+												</div>
+										 		
+										 		
+										 		
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-11">11</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-11">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z5T-11">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-12">12</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-12">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-12">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-13">13</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-13">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-13">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-14">14</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-14">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-14">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-15">15</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-15">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-15">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-16">16</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-16">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-16">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-17">17</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-17">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-17">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-18">18</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-18">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-18">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-19">19</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-19">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-19">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-20">20</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-20">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-20">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-21">21</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-21">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z5T-21">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-22">22</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-22">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-22">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-23">23</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-23">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-23">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-24">24</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-24">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-24">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-25">25</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-25">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-25">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-26">26</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-26">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-26">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-27">27</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-27">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-27">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-28">28</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-28">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-28">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-29">29</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-29">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-29">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-30">30</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-30">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-30">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-31">31</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-31">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z5T-31">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-32">32</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-32">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-32">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-33">33</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-33">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-33">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-34">34</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-34">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-34">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-35">35</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-35">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-35">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-36">36</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-36">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-36">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-37">37</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-37">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-37">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-38">38</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-38">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-38">
+													</div>
+												</div>
+												
+														
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-39">39</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-39">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-39">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-40">40</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-40">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-40">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-41">41</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-41">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z5T-41">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-42">42</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-42">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-42">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-43">43</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-43">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-43">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-44">44</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-44">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-44">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-45">45</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-45">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-45">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z5T-46">46</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-46">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-46">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-47">47</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-47">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-47">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z5T-48">48</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-48">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-48">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z5T-48">49</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z5T-49">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z5T-49">
+													</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+						</div>
+					</div>
+					<div class="ui-mod-item ui-tabs-item" id="hk6ZMT6" style=" display: none;">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-01">01</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-01">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="ZMT-Z6T-01">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-02">02</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-02">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-02">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-03">03</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-03">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-03">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-04">04</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-04">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-04">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-05">05</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-05">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-05">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-06">06</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-06">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-06">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-07">07</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-07">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-07">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-08">08</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-08">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-08">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-09">09</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-09">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-09">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-10">10</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-10">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-10">
+													</div>
+												</div>
+										 		
+										 		
+										 		
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-11">11</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-11">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z6T-11">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-12">12</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-12">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-12">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-13">13</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-13">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-13">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-14">14</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-14">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-14">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-15">15</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-15">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-15">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-16">16</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-16">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-16">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-17">17</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-17">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-17">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-18">18</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-18">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-18">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-19">19</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-19">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-19">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-20">20</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-20">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-20">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-21">21</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-21">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z6T-21">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-22">22</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-22">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-22">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-23">23</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-23">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-23">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-24">24</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-24">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-24">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-25">25</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-25">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-25">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-26">26</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-26">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-26">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-27">27</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-27">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-27">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-28">28</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-28">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-28">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-29">29</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-29">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-29">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-30">30</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-30">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-30">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-31">31</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-31">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z6T-31">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-32">32</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-32">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-32">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-33">33</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-33">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-33">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-34">34</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-34">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-34">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-35">35</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-35">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-35">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-36">36</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-36">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-36">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-37">37</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-37">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-37">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-38">38</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-38">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-38">
+													</div>
+												</div>
+												
+														
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-39">39</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-39">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-39">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-40">40</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-40">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-40">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-41">41</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-41">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="ZMT-Z6T-41">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-42">42</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-42">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-42">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-43">43</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-43">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-43">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-44">44</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-44">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-44">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-45">45</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-45">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-45">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_ZMT-Z6T-46">46</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-46">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-46">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-47">47</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-47">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-47">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_ZMT-Z6T-48">48</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-48">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-48">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_ZMT-Z6T-48">49</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_ZMT-Z6T-49">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZMT-Z6T-49">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son ui-item-blank"></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-item-blank"></div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-item-blank"></div>
+												</div> 
+												
+												<!-- / 循环行  -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+						</div>
+					</div>
+					<!-- / ui-mod-item -->
+				</div>
+				<!-- / ui-mod-body -->
+			</div>
+			<!-- / ui-mod -->
+		</div>
+		<!-- / ui-form -->
+	</div>
+	<!-- / 下注表单 -->
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="back_fastbet_input"  class="ui-input ui-hand" maxlength="11"/>
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填"  onclick="clearBetForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="{resourceRoot}/cp/js/bet.js"></script>

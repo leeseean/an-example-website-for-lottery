@@ -1,0 +1,35 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper">
+	<div class="messages-wrapper">
+		<div class="elements-wrapper" ng-if="messages.length <= 0">
+			<p class="white text-center mt10 pd10">暂无消息</p>
+		</div>
+		<div class="elements-wrapper" ng-class="{'system-message-wrapper': type == 'system'}" ng-if="messages.length > 0">
+			<ul class="header clearfix bg-submit">
+				<li><span class="white">标题</span></li>
+				<li><span class="white">日期</span></li>
+				<li ng-if="type == 'user'"><span class="white">操作</span></li>
+			</ul>
+			<div class="form form-deposit">
+				<div class="form-element" ng-repeat="message in messages">
+					<ul class="clearfix message-item" ng-class="{'has-read': message.readStatus == 1}">
+						<li ng-click="showMessage(message)"><span class="color-1"><img ng-src="{{staticURI}}/misc/msg-icon.png" class="msg-icon" alt="" />{{message['msgTitle']}}</span></li>
+						<li><span class="white">{{message['createTime'] | date: 'yyyy-MM-dd'}}</span></li>
+						<li ng-if="type == 'user'" ng-click="delMessage(message)"><a class="white">删除</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="footer-nav messages-footer-nav">
+		<div class="wrapper">
+			<ul class="clearfix">
+				<li ng-click="type = 'user'; messages = [];" ng-class="{'bg-submit': type == 'user', 'bg-1': type != 'user'}"><a href=""><i class="icon icon-user-msg"></i>个人信息</a></li>
+				<li ng-click="type = 'system';messages = [];" ng-class="{'bg-submit': type == 'system', 'bg-1': type != 'system'}"><a href=""><i class="icon icon-system-msg"></i>系统消息</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+

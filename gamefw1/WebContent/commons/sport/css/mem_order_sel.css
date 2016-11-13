@@ -1,0 +1,90 @@
+/*----------------------------------------*/
+/*2010-10-01-For NewSI2*/
+/*----------------------------------------*/
+/*@charset "UTF-8";*/
+html #OSEL, body#OSEL { margin:0;text-align: center;	padding: 10px 0 0;	background-color: #493721;behavior:url(../images/csshover.htc);}
+#main {	margin: 0 auto;}/*�m���]�w*/
+form {	margin: 0px;	padding: 0px;}
+a:link, a:visited {	color: #FFF;}
+a:hover {	color: #FC0; text-decoration:none;}
+/*��ñ*/
+#menu {	width: 216px;	background-color:#FEF6E4;	*padding-bottom: 0px/*IE Hack*/;	font: 0.75em Arial, Helvetica, sans-serif;}
+html>body #menu { height:42px; }/*Mac Hack*/
+
+
+#menu .ord_btn {padding-top: 13px;	cursor: hand;	float: left; width:99px;	height: 32px;color: #E9B567;	font-weight:bold!important; background: url(../images/order_ord_btn_out.gif) no-repeat left top;}
+#menu .record_btn {padding-top: 13px;	cursor: hand;float: right;width: 117px;	height: 32px;color: #E9B567; font-weight:bold!important; background: url(../images/order_record_btn_out.gif) no-repeat right top;}
+html>body #menu .ord_btn { padding-top: 12px;	height: 30px;}/*Mac Hack*/
+html>body #menu .record_btn { padding-top: 12px;	height: 30px;}/*Mac Hack*/
+#order_div {	clear: both;margin-bottom:0px;width: 216px;}
+/* �U�`�����O�Jbody�]�w *//**/
+.bet_info { margin:0; padding:0; background-color:#E3CFAA!important;left:0;top:0;}
+/*����ñ����*/
+/*-------Thie is for IE Hack notes ,Don't delete-----*/
+#menu .ord_on {padding-top: 11px;	cursor: hand;	float: left; width: 99px;	height: 32px;color: #3B2D1B;	font-weight:bold!important; background: url(../images/order_ord_btn_on.gif) no-repeat left top;}
+#menu .record_on {padding-top: 11px;	cursor: hand;float: right;width: 117px;	height: 32px;color: #3B2D1B;font-weight:bold!important; background: url(../images/order_record_btn_on.gif) no-repeat right top;}
+#menu .ord_btn, #menu .record_btn , #menu .ord_on , #menu .record_on { cursor:pointer;}
+html>body #menu .ord_on { padding-top: 10px;	height: 32px;}/*Mac Hack*/
+html>body #menu .record_on { padding-top: 10px;	height: 32px;}/*Mac Hack*/
+/*��ñ�ƹL�ܦ�*//**/
+/*div#menu div.ord_btn:hover ,  div#menu div.record_btn:hover  { color:#FF0;} */
+
+/*���i*/
+#bet_div {z-index: 1000;}
+#info_div {/*height:50;*/*left:2; clear: both;}
+
+/*  2012-06-13���B�ק���  */
+#info_div .msg_box { clear:both;color: #FFF;	width: 216px; height:128px;
+margin-bottom: 5px;
+margin-left:0px;
+}
+html>body #info_div .msg_box {margin-left:0px;}
+
+/*   2012-06-13���B�ק��e
+#info_div .msg_box {	color: #FFF;	width: 216px; height:118px;
+position: fixed !important;
+bottom: 5px; *bottom:0%;
+_position:absolute;
+left:10px; *left:0px;
+}*/
+#info_div .msg_box h2 {	margin:11px 0 0 0;	padding: 11px 0 0 11px; height: 34px; text-align:left;font: 0.75em Arial, Helvetica, sans-serif; color:#E9B567; font-weight:bold;	background: url(../images/order_msg_h2.gif) no-repeat left top;}
+#info_div .msg_box h2 .more {	float: right;	*margin-top: -14px/*IE Hack*/;	margin-right: 11px;font-weight:normal;}
+#info_div .msg_box .msg_main { clear:right;	padding: 5px 10px; font: 0.75em Arial, Helvetica, sans-serif; color:#2F2F2F;	background-color: #DFCCA8;}
+html>body #info_div .msg_box .msg_main{ margin-top:-10px; text-align:left;}/*Mac Hack*/
+/*iframe ���Z�]�w*/
+#order_div #bet_div, #order_div #rec5_div {	width: 100%;	display: block; left:0; top:0;}
+/*LiveTV*/
+#live_box { margin-top:6px;	color: #FFF;	width: 216px;}
+#live_box h2 {margin: 0px;	padding: 10px 0 0 32px;	height: 34px; text-align:left;font: 0.75em Arial, Helvetica, sans-serif; color:#E9B567; font-weight:bold;	background: url(../images/order_live_h2.gif) no-repeat left top;	 }
+html>body #live_box h2 {margin-bottom:-10px;}/*Mac Hack*/
+#live_box h2 .more {float: right;	*margin-top: -13px/*IE Hack*/;	margin-right: 11px; font-weight:normal;}
+#live_box .live_main { padding-bottom:2px;color:#2F2F2F;	background-color: #DFCCA8;}
+#live_box .live_main ul.live_list{ width:198px; margin:0; padding:0;}
+#live_box .live_main li { margin-bottom:-5px;/*���äU���u*/ padding:6px 0px 3px 0px;	list-style-type: none; border-bottom: 1px dotted #2F2F2F;height: 2em; line-height:2em;font: 0.75em Arial, Helvetica, sans-serif;  display:block; clear:left;}
+html>body #live_box .live_main li {line-height: 180%; height:inherit;margin-bottom:-1px; padding-bottom:0px;}
+html>body #live_box .live_main ul.live_list {overflow:auto; zoom:1; margin-bottom:2px;}
+#live_box .live_main span {	display: block;}
+#live_box .live_main .time {	float: left;width: 40px;}
+#live_box .live_main .team {float: left;	padding-left: 0px;	text-align: left; display:inline;	}
+html>body #live_box .live_main ul.live_list { padding: 2px 10px 14px;}
+
+/*�p���º���*//**/
+#switch_web { cursor:hand \9; cursor:pointer; width:216px; height:43px; margin:0 0 10px 0; background: url(../images/NewtoOld_chs.gif) no-repeat;}
+/*html>body #switch_web {height:44px; margin-left:-8px;}
+/*#switch_web a:link, #switch_web a:visited {	color: #FFF; text-decoration:none;}
+#switch_web a:hover {	color: #F8C100;}*/
+
+/*20140120-left banner*/
+.left_banner { margin-top:8px; margin-bottom:8px;}
+.banner_tw { background:url(../images/433sitebanner_tw.jpg) no-repeat 0 0; width:215px; height:60px; display:block; cursor:pointer;}
+.banner_cn { background:url(../images/433sitebanner_cn.jpg) no-repeat 0 0; width:215px; height:60px; display:block; cursor:pointer;}
+/*20140122-select����*/
+.main { overflow-y:auto; width:233px; width:238px\9; height:100%; padding-left:8px; padding-left:0px\9;}
+
+/*141202-�����s�i*/
+.new_banner { width:216px; margin:11px 0; font-size:12px; font-family:simsun; text-align:left;}
+.banner_title { height: 20px; height:30px\9; background: url(../images/banner_title.gif) no-repeat left top; display:block; padding:10px 0 0 11px; color:#E9B467;}
+.banner_con { padding:11px; background:#E5CB74;}
+.banner_pic_tw { display:block; background:url(../images/banner_pic_tw.jpg) no-repeat 0 0; width:194px; height:235px; margin-bottom:11px;}
+.banner_pic_cn { display:block; background:url(../images/banner_pic_cn.jpg) no-repeat 0 0; width:194px; height:235px; margin-bottom:11px;}
+.text_color { color:#730B00; font-weight: bold;}

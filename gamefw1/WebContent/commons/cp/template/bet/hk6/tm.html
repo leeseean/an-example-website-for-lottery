@@ -1,0 +1,1406 @@
+[{"1_1":1}]
+êêê
+<!-- 开奖结果   <!-- 上面的1说明：1:cp_bigtype表 db is id  1:cp_type db is id    -->
+<div class="pure-g lotto-result">
+	<div class="pure-u-1-3">
+		<div class="info">
+			<div class="ui-row row-one">
+				<span id="gameBetName" >香港六合彩</span>&nbsp;<strong class="blue" id="typeBetName">特码</strong>
+			</div>
+			<p class="ui-row row-two">
+				当前期：<strong class="blue" id="currentQs">--</strong> 期&nbsp;
+			</p>
+		</div>
+	</div>
+	<!-- /left -->
+	<div class="pure-u-2-3">
+		<div class="result">
+			<div class="ui-row row-one cf">
+				<div class="ui-head">
+					<span class="b red" id="lastQs">--</span>期
+				</div>
+				<div class="ui-body">
+					<ul class="ball-group center" id="lastResult"></ul>
+				</div>
+			</div>
+			<div class="ui-row row-two">
+				<!-- 开奖or封盘时间 -->
+				<div class="result-time">
+					<!-- 六合彩 -->
+					<div class="ui-item item-hk6 item-ssc">
+						<ul class="cf">
+							<li class="ui-item-gson">距离封盘：<strong class="red" id="closeTime">--:--</strong></li>
+							<li class="ui-item-gson">距离开奖：<strong class="red" id="openTime">--:--</strong></li>
+						</ul>
+						
+					</div>
+					<!-- / 六合彩 -->
+				</div>
+				<!-- / 开奖or封盘时间 -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /开奖结果 -->
+<!-- 六合彩 特码 -->
+<div>
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="fastbet_input" class="ui-input ui-hand" maxlength="11"   />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /快捷下注 -->
+	<!-- 下注表单 -->
+	<div  id="betForm" class="bet-form">
+		<div class="ui-form">
+			<div class="ui-mod ui-tabs">
+				<div class="ui-mod-head ui-tabs-head nav-mode-play">
+					<ul class="cf">
+						<li class="ui-item ui-item-first ui-active">
+							<a href="javascript:void(0);" data-url="#hk6TM2" class="ui-link">特码B</a>
+						</li>
+						<li class="ui-item"><a href="javascript:void(0);" data-url="#hk6TM1" class="ui-link">特码A</a></li>
+					</ul>
+				</div>
+				<div class="ui-mod-body ui-tabs-body mt10">
+					<div class="ui-mod-item ui-tabs-item" id="hk6TM1" style=" display: none;">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-01">01</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-01">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="TM-TM_A-01">
+													</div>
+												</div>
+												 
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-02">02</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-02">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-02">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-03">03</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-03">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-03">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-04">04</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-04">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-04">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-05">05</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-05">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-05">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-06">06</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-06">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-06">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-07">07</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-07">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-07">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-08">08</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-08">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-08">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-09">09</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-09">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-09">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-10">10</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-10">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-10">
+													</div>
+												</div>
+										 		
+										 		
+										 		<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TM-TM_A-ODD">单</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-ODD">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-ODD">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TM-TM_A-EVEN">双</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-EVEN">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-EVEN">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-FOWL">家禽</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-FOWL">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-FOWL">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-TAIL_SMALL">尾小</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-TAIL_SMALL">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-TAIL_SMALL">
+													</div>
+												</div>
+										 		
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-11">11</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-11">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TM-TM_A-11">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-12">12</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-12">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-12">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-13">13</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-13">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-13">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-14">14</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-14">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-14">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-15">15</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-15">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-15">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-16">16</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-16">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-16">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-17">17</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-17">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-17">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-18">18</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-18">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-18">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-19">19</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-19">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-19">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-20">20</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-20">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-20">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-BIG">大</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-BIG">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-BIG">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-SMALL">小</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-SMALL">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-SMALL">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-BEAST">野兽</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-BEAST">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-BEAST">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-BIG_ODD">大单</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-BIG_ODD">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-BIG_ODD">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-21">21</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-21">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TM-TM_A-21">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-22">22</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-22">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-22">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-23">23</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-23">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-23">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-24">24</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-24">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-24">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-25">25</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-25">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-25">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-26">26</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-26">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-26">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-27">27</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-27">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-27">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-28">28</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-28">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-28">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-29">29</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-29">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-29">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-30">30</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-30">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-30">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-SUM_ODD">合单</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-SUM_ODD">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-SUM_ODD">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-SUM_EVEN">合双</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-SUM_EVEN">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-SUM_EVEN">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-SUM_BIG">合大</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-SUM_BIG">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-SUM_BIG">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-SMALL_ODD">小单</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-SMALL_ODD">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-SMALL_ODD">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-31">31</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-31">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TM-TM_A-31">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-32">32</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-32">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-32">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-33">33</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-33">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-33">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-34">34</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-34">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-34">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-35">35</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-35">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-35">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-36">36</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-36">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-36">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-37">37</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-37">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-37">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-38">38</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-38">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-38">
+													</div>
+												</div>
+												
+														
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-39">39</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-39">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-39">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-40">40</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-40">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-40">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son red"><span  id="num_TM-TM_A-RED">红波</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-RED">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-RED">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son green"><span  id="num_TM-TM_A-GREEN">绿波</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-GREEN">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-GREEN">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-SUM_SMALL">合小</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-SUM_SMALL">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-SUM_SMALL">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-BIG_EVEN">大双</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-BIG_EVEN">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-BIG_EVEN">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-41">41</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-41">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TM-TM_A-41">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-42">42</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-42">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-42">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-43">43</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-43">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-43">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-44">44</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-44">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-44">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-45">45</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-45">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-45">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_A-46">46</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-46">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-46">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-47">47</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-47">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-47">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_A-48">48</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-48">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-48">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_A-48">49</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-49">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-49">
+													</div>
+												</div>
+												
+												<div class="pure-u-1"><div class="ui-item-son"></div></div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son blue"><span  id="num_TM-TM_A-BLUE">蓝波</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-BLUE">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-BLUE">
+													</div>
+												</div>
+												<div class="pure-u-1"><div class="ui-item-son"></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-TAIL_BIG">尾大</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-TAIL_BIG">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-TAIL_BIG">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_A-SMALL_EVEN">小双</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_A-SMALL_EVEN">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_A-SMALL_EVEN">
+													</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								
+								
+								
+								</div>
+								
+								<!-- / 循环列 -->
+							</div>
+					</div>
+						<!-- / ui-table -->
+					
+					<!-- / ui-mod-item -->
+					<div class="ui-mod-item ui-tabs-item" id="hk6TM2" >
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-01">01</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-01">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="TM-TM_B-01">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-02">02</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-02">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-02">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-03">03</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-03">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-03">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-04">04</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-04">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-04">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-05">05</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-05">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-05">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-06">06</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-06">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-06">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-07">07</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-07">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-07">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-08">08</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-08">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-08">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-09">09</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-09">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-09">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-10">10</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-10">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-10">
+													</div>
+												</div>
+										 		
+										 		
+										 		<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TM-TM_B-ODD">单</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-ODD">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-ODD">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TM-TM_B-EVEN">双</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-EVEN">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-EVEN">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-FOWL">家禽</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-FOWL">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-FOWL">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-TAIL_SMALL">尾小</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-TAIL_SMALL">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-TAIL_SMALL">
+													</div>
+												</div>
+										 		
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-11">11</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-11">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TM-TM_B-11">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-12">12</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-12">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-12">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-13">13</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-13">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-13">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-14">14</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-14">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-14">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-15">15</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-15">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-15">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-16">16</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-16">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-16">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-17">17</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-17">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-17">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-18">18</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-18">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-18">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-19">19</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-19">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-19">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-20">20</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-20">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-20">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-BIG">大</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-BIG">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-BIG">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-SMALL">小</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-SMALL">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-SMALL">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-BEAST">野兽</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-BEAST">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-BEAST">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-BIG_ODD">大单</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-BIG_ODD">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-BIG_ODD">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-21">21</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-21">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TM-TM_B-21">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-22">22</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-22">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-22">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-23">23</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-23">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-23">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-24">24</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-24">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-24">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-25">25</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-25">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-25">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-26">26</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-26">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-26">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-27">27</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-27">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-27">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-28">28</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-28">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-28">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-29">29</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-29">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-29">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-30">30</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-30">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-30">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-SUM_ODD">合单</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-SUM_ODD">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-SUM_ODD">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-SUM_EVEN">合双</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-SUM_EVEN">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-SUM_EVEN">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-SUM_BIG">合大</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-SUM_BIG">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-SUM_BIG">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-SMALL_ODD">小单</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-SMALL_ODD">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-SMALL_ODD">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-31">31</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-31">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TM-TM_B-31">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-32">32</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-32">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-32">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-33">33</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-33">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-33">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-34">34</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-34">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-34">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-35">35</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-35">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-35">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-36">36</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-36">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-36">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-37">37</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-37">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-37">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-38">38</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-38">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-38">
+													</div>
+												</div>
+												
+														
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-39">39</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-39">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-39">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-40">40</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-40">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-40">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son red"><span  id="num_TM-TM_B-RED">红波</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-RED">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-RED">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son green"><span  id="num_TM-TM_B-GREEN">绿波</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-GREEN">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-GREEN">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-SUM_SMALL">合小</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-SUM_SMALL">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-SUM_SMALL">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-BIG_EVEN">大双</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-BIG_EVEN">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-BIG_EVEN">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-41">41</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-41">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TM-TM_B-41">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-42">42</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-42">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-42">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-43">43</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-43">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-43">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-44">44</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-44">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-44">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-45">45</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-45">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-45">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-red" id="num_TM-TM_B-46">46</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-46">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-46">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-47">47</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-47">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-47">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-blue" id="num_TM-TM_B-48">48</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-48">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-48">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span class="ball ball-green" id="num_TM-TM_B-48">49</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-49">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-49">
+													</div>
+												</div>
+												
+												<div class="pure-u-1"><div class="ui-item-son"></div></div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son blue"><span  id="num_TM-TM_B-BLUE">蓝波</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-BLUE">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-BLUE">
+													</div>
+												</div>
+												<div class="pure-u-1"><div class="ui-item-son"></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-TAIL_BIG">尾大</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-TAIL_BIG">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="TM-TM_B-TAIL_BIG">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span  id="num_TM-TM_B-SMALL_EVEN">小双</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TM-TM_B-SMALL_EVEN">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text"   class="ui-input" name="number[]" id="TM-TM_B-SMALL_EVEN">
+													</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+							</div>
+							<!-- / 循环列 -->
+						</div>
+						
+					</div>
+
+					<!-- / ui-mod-item -->
+				</div>
+				<!-- / ui-mod-body -->
+			</div>
+			<!-- / ui-mod -->
+		</div>
+		<!-- / ui-form -->
+	</div>
+	<!-- / 下注表单 -->
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="back_fastbet_input"  class="ui-input ui-hand" maxlength="11"/>
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="{resourceRoot}/cp/js/bet.js"></script>

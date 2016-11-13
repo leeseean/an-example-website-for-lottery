@@ -1,0 +1,43 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+<style>
+	div.ngdialog-content{
+		width: 74% !important;
+	    position: fixed;
+	    left: 13%;
+	    top: 16%;
+	}
+	div.ngdialog-close{
+		position: absolute;
+	    right: 0px;
+	    top: 0px;
+	    font-size: 20px;
+	    border-radius: 10px;
+	    background: red;
+	    width: 20px;
+	    height: 20px;
+	    line-height: 20px;
+	    text-align: center;
+	}
+</style>
+<div class="main-content-wrapper">
+	<div class="form-wrapper">
+		<form id="payForm" name="payForm" action="{{action}}" class="form form-deposit" method="post" accept-charset="utf-8" >
+			<div class="elements-wrapper">
+				<div class="form-element">
+					<label>
+						●充值金额
+						<span>AMOUNT OF CHARGE</span>
+					</label>
+					<input type="number" ng-model="hkMoney" class="input input-element" />
+					<label style="padding:0">
+						●单笔支付
+						（{{thirdMinEdu}}~{{thirdMaxEdu}}）元
+					</label>
+				</div>
+			</div>
+			<input type="hidden" name="sendParams" value="{{sendParams}}">
+			<!-- <input type="hidden" name="pay_url" value="{{action}}"> -->
+			<input type="button" class="btn btn-submit bg-submit" value="提交表单" ng-click="submitDepositForm()" style="width: 90%;text-indent: 0"><!-- <i class="icon icon-btn-submit"></i> -->
+		</form>
+	</div>
+</div>

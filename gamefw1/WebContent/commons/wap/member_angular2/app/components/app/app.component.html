@@ -1,0 +1,18 @@
+<main>
+	<div class="row">
+		<label for="">version: {{appState.version}}</label>
+		<input type="text" [(ngModel)]="appState.version"  placeholder="version" />
+	</div>
+	
+	<div class="heros">
+		<li *ngFor="let hero of heros" (click)="heroSelected(hero)" [class.selected]="hero === selectedHero">
+			<label for="">Name: {{hero['name']}}</label>
+			<label for="">Age: {{hero['age']}}</label>
+		</li>
+	</div>
+	
+	<div class="selected-hero" *ngIf="selectedHero">
+		<h3>当前选择</h3>
+		<hero-detail [hero]="selectedHero"></hero-detail>
+	</div>
+</main>

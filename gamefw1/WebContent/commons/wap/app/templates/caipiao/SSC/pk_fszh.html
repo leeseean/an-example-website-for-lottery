@@ -1,0 +1,69 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/ssc_header.html')"></div>
+
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-8-24">
+					<div class="ui-item-son">
+						<span ng-click="weizhi='QSW'; reset();" ng-class="{ block: true, 'bg-red' : weizhi == 'QSW'}">前三位</span>
+					</div>
+			</div>
+			<div class="pure-u-8-24">
+				<div class="ui-item-son">
+					<span ng-click="weizhi='ZSW'; reset();" ng-class="{ block: true, 'bg-red' : weizhi == 'ZSW'}">中三位</span>
+				</div>
+			</div>
+			<div class="pure-u-8-24">
+				<div class="ui-item-son">
+					<span ng-click="weizhi='HSW'; reset();" ng-class="{block: true, 'bg-red' : weizhi == 'HSW'}">后三位</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="wrapper" ng-init="groups = [ {id: 'bwNum', name: '百XX'}, {id: 'swNum', name: 'X拾X'}, {id: 'gwNum', name: 'XX个'} ]"></div>
+
+<div class="ui-table" ng-repeat="group in groups">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-24-24">
+				<div class="ui-item-son">
+					<span class="white">{{group['name']}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-body-son">
+		<div class="pure-g">
+			<div class="pure-u-24-24">
+			<div class="ui-table">
+				<div class="ui-head-son">
+					<div class="pure-g">
+						<div class="pure-u-12-24">
+							<div class="ui-item-son">号码</div>
+						</div>
+						<div class="pure-u-12-24">
+							<div class="ui-item-son">赔率</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="ui-body-son">
+					<div class="pure-g" ng-repeat="index in range(0, 10, 1)">
+						<div class="pure-u-12-24">
+							<div class="ui-item-son">{{index}}</div>
+						</div>
+						<div class="pure-u-12-24">
+							<div class="ui-item-son"><input type="checkbox" ng-model="groupSelectedNumber[group['id']][index]"/></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+

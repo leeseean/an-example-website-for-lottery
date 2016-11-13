@@ -1,0 +1,41 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/ftc_header.html')"></div>
+
+
+<div ng-init="group = [ {id: 'BOXX', name: '百0XX'}, {id: 'SXOX', name: '拾X0X'}, {id: 'GXXO', name: '个XX0'} ]; items= [ 
+	{id: 'ODD', name: '单'}, 
+	{id: 'EVEN', name: '双'},
+	{id: 'BIG', name: '大'}, 
+	{id: 'SMALL', name: '小'},
+	{id: 'ZHI', name: '质'}, 
+	{id: 'HE', name: '合'}]; " >
+	<div class="ui-table" ng-repeat="groupItem in group">
+		<div class="ui-head-son">
+			<div class="pure-g">
+				<div class="pure-u-24-24">
+					<div class="ui-item-son">{{groupItem['name']}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="ui-body-son">
+			<div class="pure-g" ng-repeat="item in items ">
+				<div class="pure-u-12-24">
+					<div class="ui-item-son">
+						<span class="white">{{item.name}}</span>
+					</div>
+				</div>
+				<div class="pure-u-12-24">
+					<div class="ui-item-son">
+						<span 
+							ng-click="selectedPeiyu[( code2 | uppercase ) + '-' + weizhi + '-' + groupItem['id']  ] = selectedPeiyu[ (code2 | uppercase ) + '-' + weizhi + '-' + groupItem['id']   ]  == item['id'] ? false: item['id']" 
+							ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[ ( code2 | uppercase ) + '-' + weizhi + '-' + groupItem['id'] ] == item['id'] }" 
+							ng-attr-id="{{ (code2 | uppercase ) + '-' + weizhi + '-' + groupItem['id'] + '-' + item['id']  }}" >{{peiyu[ (code2 | uppercase ) + '-' + weizhi + '-' + groupItem['id'] + '-' + item['id']  ]}}</span>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,105 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper">
+	<div class="messages-wrapper query-log-wrapper">
+		
+		<div class="elements-wrapper" ng-if="logs.length <= 0">
+			<p class="warning">当前查询条件下没有转换数据</p>
+		</div>
+		
+		<div class="elements-wrapper" ng-repeat="log in logs" ng-if="logs.length  > 0 && type == 'out'">
+			<ul class="header clearfix bg-submit">
+				<li style="width: 100%; text-align:left;text-indent: 1rem;">
+					<span class="white">{{ log.withdraw_type == 11 ?  '会员提款': '系统扣款' }}</span>
+				</li>
+			</ul>
+			<div class="form form-deposit">
+				<div class="form-element">
+					<table >
+						<tr>
+							<td><span class="white">订单号:&nbsp;&nbsp;{{log.user_order}}</span></td>
+						</tr>
+						<tr ng-if="log.withdraw_type == 12">						
+							<td><span class="white">扣款金额:&nbsp;&nbsp;{{log.user_withdraw_money}}￥</span></td>
+						</tr>
+						<tr ng-if="log.withdraw_type == 11">
+							<td><span class="white">提款金额:&nbsp;&nbsp;{{log.user_withdraw_money}}￥</span></td>
+						</tr>  
+						<tr ng-if="log.withdraw_type == 12">
+							<td><span class="white">状态:&nbsp;&nbsp;已审核</span></td>
+						</tr>
+						
+						<tr ng-if="log.withdraw_type == 11">
+							<td><span class="white">状态:&nbsp;&nbsp;
+							<font ng-if="log.status == 0">待审核</font>
+							<font ng-if="log.status == 1 && log.check_status == 1">已审核(已出款)</font>
+							<font ng-if="log.status == 1 && log.check_status == 2">已审核(拒绝提款)</font>
+							<font ng-if="log.status == 1 && log.check_status == 0">已审核(未通过)</font></span></td>
+						</tr> 
+						<tr ng-if="log.withdraw_type == 11">
+							<td><span class="white">提交时间:&nbsp;{{log.create_time | date: "yyyy-MM-dd HH:mm"}}</span></td>
+						</tr>
+						
+						<tr ng-if="log.status == 1 && log.withdraw_type == 12">
+							<td><span class="white">扣款时间:&nbsp;{{log.check_time | date: "yyyy-MM-dd HH:mm"}}</span></td>
+						</tr>
+						
+						<tr ng-if="log.status == 1  && log.withdraw_type == 11">
+							<td><span class="white">审核时间:&nbsp;{{log.check_time | date: "yyyy-MM-dd HH:mm"}}</span></td>
+						</tr>
+						
+						<tr ng-if="log.status == 1  && log.withdraw_type == 11">
+							<td><span class="white">备注:&nbsp;&nbsp;{{ log.remark }}</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<div class="elements-wrapper" ng-repeat="log in logs" ng-if="logs.length  > 0 && type == 'in'">
+			<ul class="header clearfix bg-submit">
+				<li style="width: 100%; text-align:left;text-indent: 1rem;">
+					<span class="white" ng-init="modelLabels = {1: '公司入款', 2: '线上支付', 3: '红利赠送', 4: '后台入款', 5: '投注返水', 6: '免费彩金', 7: '存款赠送', 9: '存款优惠'}">{{modelLabels[log.hk_model]}}</span>
+				</li>
+			</ul>
+			<div class="form form-deposit">
+				<div class="form-element">
+					<table >
+						<tr>
+							<td><span class="white">订单号:&nbsp;&nbsp;{{log.hk_order}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">金额:&nbsp;&nbsp;{{log.hk_money}}￥</span></td>
+						</tr>
+						<tr ng-if="log.hk_status != 1 ">
+							<td><span class="white">状态:&nbsp;待审核</span></td> 
+						</tr>
+						<tr ng-if="log.hk_status == 1 && log.hk_check_status != 1">
+							<td><span class="white">状态:&nbsp;审核(未通过)</span></td>
+						</tr>
+						<tr ng-if="log.hk_status == 1 && log.hk_check_status == 1">
+							<td><span class="white">状态:&nbsp;审核(通过)</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">汇款时间:&nbsp;{{log.hk_time | date: "yyyy-MM-dd HH:mm"}}</span></td>
+						</tr>
+						<tr>
+							<td><span class="white">提交时间:&nbsp;{{log.create_time | date: "yyyy-MM-dd HH:mm"}}</span></td> 
+						</tr>
+						<tr ng-if="log.hk_status == 1">
+							<td><span class="white">审核时间:&nbsp;{{log.hk_check_time | date: "yyyy-MM-dd HH:mm"}}</span></td>
+						</tr>
+						<tr ng-if="log.hk_status == 1">
+							<td><span class="white">备注:&nbsp;&nbsp;{{ log.remark }}</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<pager load-data="dataHandler()"></pager>
+	
+	</div>
+</div>
+
+

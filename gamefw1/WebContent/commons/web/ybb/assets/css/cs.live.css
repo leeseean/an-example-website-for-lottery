@@ -1,0 +1,236 @@
+.game-list {
+  margin: 20px -10px 0 -10px;
+  overflow: hidden;
+}
+.game-list > .item {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  float: left;
+  background-color: #00a8e9;
+  margin: 0 10px;
+  cursor: default;
+}
+.game-list > .item.top {
+  margin-bottom: 20px;
+}
+.game-list > .item.big {
+  width: 370px;
+  height: 520px;
+  background-color: #00a8e9;
+}
+.game-list > .item > .img {
+  font-size: 0;
+}
+.game-list > .item > .logo {
+  position: absolute;
+  width: 50%;
+  height: 100px;
+  background-color: rgba(0, 168, 233, 0.8);
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-image: url("../img/live/lottery_logo_icon.png");
+  background-repeat: no-repeat;
+}
+
+/* live ab */
+
+.game-list > .item > .logo.ab {
+  background-position: center -500px;
+}
+.game-list > .item > .hover > .logo.ab {
+  background-position: center -500px;
+}
+
+/* live og */
+
+.game-list > .item > .logo.ogt {
+  background-position: center -600px;
+}
+.game-list > .item > .hover > .logo.ogt {
+  background-position: center -600px;
+}
+
+/* live pt */
+
+.game-list > .item > .logo.pt {
+  background-position: center -700px;
+}
+.game-list > .item > .hover > .logo.pt {
+  background-position: center -700px;
+}
+
+/* live ag */
+
+.game-list > .item > .logo.ag {
+  background-position: center 0;
+}
+.game-list > .item > .hover > .logo.ag {
+  background-position: center 0;
+}
+.game-list > .item > .logo.bbin {
+  background-position: center -100px;
+}
+.game-list > .item > .logo.ea {
+  background-position: center -200px;
+}
+.game-list > .item > .logo.hg {
+  background-position: center -300px;
+}
+.game-list > .item > .logo.og {
+  background-position: center -400px;
+}
+.game-list > .item > .money {
+  position: absolute;
+  width: 50%;
+  height: 50px;
+  line-height: 48px;
+  background-color: rgba(0, 168, 233, 0.8);
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+.game-list > .item > .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+.game-list > .item > .hover > .logo {
+  width: 150px;
+  height: 100px;
+  margin: 0 auto;
+  background-image: url("../img/live/lottery_logo_icon.png");
+  background-repeat: no-repeat;
+}
+.game-list > .item > .hover > .logo.bbin {
+  background-position: center -100px;
+}
+.game-list > .item > .hover > .logo.ea {
+  background-position: center -200px;
+}
+.game-list > .item > .hover > .logo.hg {
+  background-position: center -300px;
+}
+.game-list > .item > .hover > .logo.og {
+  background-position: center -400px;
+}
+.game-list > .item > .hover > .text {
+  color: #fff;
+  line-height: 20px;
+  font-size: 13px;
+  padding: 0 36px;
+}
+.game-list > .item > .hover > .money {
+  position: absolute;
+  height: 36px;
+  bottom: 60px;
+  left: 36px;
+  right: 36px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  background-color: #00a8e9;
+  border-radius: 12px;
+}
+.game-list > .item > .hover > .actions {
+  position: absolute;
+  height: 36px;
+  bottom: 15px;
+  left: 36px;
+  right: 36px;
+}
+.game-list > .item > .hover > .actions > .transfers {
+  width: 46%;
+  height: 36px;
+  line-height: 34px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  background-color: #26b69d;
+  border-radius: 12px;
+  float: left;
+  cursor: pointer;
+}
+.game-list > .item > .hover > .actions > .transfers > i {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: -5px;
+  margin-left: 10px;
+  background-image: url("../img/live/game_live_icon.png");
+  background-repeat: no-repeat;
+  background-position: -80px -80px;
+}
+.game-list > .item > .hover > .actions > .transfers:hover {
+  background-color: #2cc6ab;
+}
+.game-list > .item > .hover > .actions > .enter {
+  width: 46%;
+  height: 36px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  background-color: #90d554;
+  border-radius: 12px;
+  float: right;
+  cursor: pointer;
+}
+.game-list > .item > .hover > .actions > .enter > i {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: -5px;
+  margin-left: 10px;
+  background-image: url("../img/live/game_live_icon.png");
+  background-repeat: no-repeat;
+  background-position: -102px -80px;
+}
+.game-list > .item > .hover > .actions > .enter:hover {
+  background-color: #90ea39;
+}
+.game-list > .item.big > .hover > .logo {
+  margin-top: 80px;
+}
+.game-list > .item.big > .hover > .text {
+  line-height: 24px;
+  font-size: 14px;
+}
+.game-list > .item.big > .hover > .money {
+  height: 50px;
+  bottom: 100px;
+  left: 36px;
+  right: 36px;
+  line-height: 48px;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.game-list > .item.big > .hover > .actions {
+  height: 50px;
+  bottom: 30px;
+  left: 36px;
+  right: 36px;
+}
+.game-list > .item.big > .hover > .actions > .transfers {
+  height: 50px;
+  line-height: 48px;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.game-list > .item.big > .hover > .actions > .enter {
+  height: 50px;
+  line-height: 48px;
+  font-size: 18px;
+  border-radius: 20px;
+}

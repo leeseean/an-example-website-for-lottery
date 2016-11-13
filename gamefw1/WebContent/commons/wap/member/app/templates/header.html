@@ -1,0 +1,22 @@
+<div class="header-top header-fixed-top bg-2">
+	<div class="wrapper clearfix">
+		<div class="plr20  bg-1 fixed-top">
+			<ul class="header-links clearfix">
+				<li class="back" ng-click="back()"><a class="text-1">{{title}}</a></li>
+				<li class="logout" ng-if="isLogged()" ng-click="logout()"><a class="text-1" >登出</a></li>
+				<li class="online-service"><a class="text-1" target="_blank" ng-href="{{onlineServiceLink}}">在线客服</a></li>
+			</ul>
+		</div>
+		<div class="user-info">
+			<div class="user-info-detail clearfix">
+				<i class="user-icon"></i>
+				<div class="details">
+					<h3 class="white"><img class="header-label-img" ng-src="{{staticURI}}/misc/user-name.png" alt="" />&nbsp;{{account.userName}}</h3>
+					<h3 class="white"><img class="header-label-img" ng-src="{{staticURI}}/misc/realname.png" alt="" />&nbsp;{{account.userRealName}}</h3>
+					<h3 class="white"><img class="header-label-img" ng-src="{{staticURI}}/misc/level.png" alt="" />&nbsp;{{account.level}}</h3>
+					<h3 class="white"><img class="header-label-img" ng-src="{{staticURI}}/misc/balance.png" alt="" />&nbsp;<font class="color-yellow">{{account.balance}}</font>元</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

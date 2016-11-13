@@ -1,0 +1,643 @@
+[{"2_23":1}]
+êêê
+<div class="pure-g lotto-result">
+	<div class="pure-u-1-3">
+		<div class="info">
+			<div class="ui-row row-one">
+				<span id="gameBetName" >--</span>&nbsp;<strong class="blue" id="typeBetName">--</strong>
+			</div>
+			<p class="ui-row row-two">
+				当前期：<strong class="blue" id="currentQs">--</strong> 期&nbsp;
+			</p>
+		</div>
+	</div>
+	<!-- /left -->
+	<div class="pure-u-2-3">
+		<div class="result">
+			<div class="ui-row row-one cf">
+				<div class="ui-head">
+					<span class="b red" id="lastQs">--</span>期
+				</div>
+				<div class="ui-body">
+					<ul class="ball-group center" id="lastResult"></ul>
+				</div>
+			</div>
+			<div class="ui-row row-two">
+				<!-- 开奖or封盘时间 -->
+				<div class="result-time">
+					<div class="ui-item item-ssc">
+						<ul class="cf">
+							<li class="ui-item-gson">距离封盘：<strong class="red" id="closeTime">--:--</strong></li>
+							<li class="ui-item-gson">距离开奖：<strong class="red" id="openTime">--:--</strong></li>
+						</ul>
+					</div>
+				</div>
+				<!-- / 开奖or封盘时间 -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="fastbet_input"  class="ui-input ui-hand" maxlength="11" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- - -->
+
+<div id="betFormPk10SM">
+  <!-- 下注表单 -->
+  <div id="betForm" class="bet-form">
+    <div class="ui-form">
+      <div class="ui-mod ui-tabs">
+        <div class="ui-mod-body ui-tabs-body mt10">
+          <div class="ui-mod-item ui-tabs-item" id="">
+          
+          	<div class="ui-table">
+          		<div class="pure-g">
+                <div class="pure-u-1">
+	                  	<div class="ui-head-son"><div class="ui-item-son">其它</div></div>
+	            </div>
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-QT-BAOZI">豹子</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-QT-BAOZI">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-QT-BAOZI" /></div>
+                        </div>
+                        
+                        
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-QT-SHUNZI">顺子</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-QT-SHUNZI">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-QT-SHUNZI" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-QT-DUIZI">对子</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-QT-DUIZI">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-QT-DUIZI" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-QT-BANSHUN">半顺</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-QT-BANSHUN">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-QT-BANSHUN" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-QT-ZAILIU">杂六</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-QT-ZAILIU">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-QT-ZAILIU" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                <!-- / 循环列 -->
+              </div>
+          	</div>
+          	<div class="ui-table">
+          		<div class="pure-g">
+                <div class="pure-u-1">
+	                 <div class="ui-head-son"><div class="ui-item-son">准对</div></div>
+	            </div>
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-ZD-0">0</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-ZD-0">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-ZD-0" /></div>
+                        </div>
+                        
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-ZD-5">5</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-ZD-5">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-ZD-5" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-ZD-1">1</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-ZD-1">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-ZD-1" /></div>
+                        </div>
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-ZD-6">6</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-ZD-6">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-ZD-6" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-ZD-2">2</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-ZD-2">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-ZD-2" /></div>
+                        </div>
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-ZD-7">7</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-ZD-7">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-ZD-7" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-ZD-3">3</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-ZD-3">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-ZD-3" /></div>
+                        </div>
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-ZD-8">8</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-ZD-8">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-ZD-8" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-ZD-4">4</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-ZD-4">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-ZD-4" /></div>
+                        </div>
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-ZD-9">9</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-ZD-9">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-ZD-9" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                <!-- / 循环列 -->
+              </div>
+          	</div>
+            <div class="ui-table">
+          		<div class="pure-g">
+                <div class="pure-u-1">
+	                <div class="ui-head-son"><div class="ui-item-son">不出号</div></div>
+	            </div>
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-BCH-0">0</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-BCH-0">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-BCH-0" /></div>
+                        </div>
+                        
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-BCH-5">5</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-BCH-5">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-BCH-5" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-BCH-1">1</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-BCH-1">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-BCH-1" /></div>
+                        </div>
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-BCH-6">6</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-BCH-6">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-BCH-6" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-BCH-2">2</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-BCH-2">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-BCH-2" /></div>
+                        </div>
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-BCH-7">7</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-BCH-7">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-BCH-7" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-BCH-3">3</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-BCH-3">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-BCH-3" /></div>
+                        </div>
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-BCH-8">8</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-BCH-8">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-BCH-8" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                
+                <div class="pure-u-1-5">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-BCH-4">4</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-BCH-4">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-BCH-4" /></div>
+                        </div>
+                        <div class="pure-u-1-3"><div class="ui-item-son" id="num_QT-BCH-9">9</div></div>
+                        <div class="pure-u-1-3"><div class="ui-item-son ui-hand red" id="pl_QT-BCH-9">-</div></div>
+                        <div class="pure-u-1-3">
+                          <div class="ui-item-son"><input type="text" class="ui-input" name="number[]" id="QT-BCH-9" /></div>
+                        </div>
+                        <!-- / 循环行 -->
+                      </div>
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+                <!-- / 循环列 -->
+              </div>
+          	</div>
+            <!-- / ui-table -->
+          </div>
+          <!-- / ui-mod-item -->
+        </div>
+        <!-- / ui-mod-body -->
+      </div>
+      <!-- / ui-mod -->
+    </div>
+    <!-- / ui-form -->
+  </div>
+  <!-- / 下注表单 -->
+</div>
+<!-- / 北京PK10 双面 -->
+<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="back_fastbet_input"  class="ui-input ui-hand" maxlength="11" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();"  class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- - -->
+<script src="{resourceRoot}/cp/js/bet.js"></script>

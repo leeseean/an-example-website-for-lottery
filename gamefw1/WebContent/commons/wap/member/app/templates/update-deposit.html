@@ -1,0 +1,28 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper">
+	<div class="block block-update-pwd white">
+		<h3 class="block-title bg-header">●修改提款密码</h3>
+		<div class="block-content bg-4">
+			<form class="form form-update-pwd inline-form">
+				<div class="elements-wrapper">
+					<div class="form-element">
+						<label>旧密码</label>
+						<input type="password" ng-model="oldpwd"  class="input input-element" />
+					</div>
+					<div class="form-element">
+						<label>新密码</label>
+						<input type="password" ng-model="newpwd" class="input input-element" />
+					</div>
+					<div class="form-element">
+						<label>确认密码</label>
+						<input type="password" ng-model="confirmpwd" class="input input-element" />
+					</div>
+				</div>
+				<button class="btn btn-submit bg-submit" ng-click="submitUpdatePwd()"><i class="icon icon-btn-submit"></i>确认修改</button>
+			</form>
+		</div>
+	</div>
+
+</div>
+

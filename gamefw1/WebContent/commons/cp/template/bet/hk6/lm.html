@@ -1,0 +1,1026 @@
+[{"1_6":1}]
+êêê
+<!-- 开奖结果 -->
+<div class="pure-g lotto-result">
+	<div class="pure-u-1-3">
+		<div class="info">
+			<div class="ui-row row-one">
+				<span id="gameBetName" >香港六合彩</span>&nbsp;<strong class="blue" id="typeBetName">连码</strong>
+			</div>
+			<p class="ui-row row-two">
+				当前期：<strong class="blue" id="currentQs">--</strong> 期&nbsp;
+			</p>
+		</div>
+	</div>
+	<!-- /left -->
+	<div class="pure-u-2-3">
+		<div class="result">
+			<div class="ui-row row-one cf">
+				<div class="ui-head">
+					<span class="b red" id="lastQs">--</span>期
+				</div>
+				<div class="ui-body">
+					<ul class="ball-group center" id="lastResult"></ul>
+				</div>
+			</div>
+			<div class="ui-row row-two">
+				<!-- 开奖or封盘时间 -->
+				<div class="result-time">
+					<!-- 六合彩 -->
+					<div class="ui-item item-hk6 item-ssc">
+						<ul class="cf">
+							<li class="ui-item-gson">距离封盘：<strong class="red" id="closeTime">--:--</strong></li>
+							<li class="ui-item-gson">距离开奖：<strong class="red" id="openTime">--:--</strong></li>
+						</ul>
+					</div>
+					<!-- / 六合彩 -->
+				</div>
+				<!-- / 开奖or封盘时间 -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /开奖结果 -->
+<!-- 六合彩 特码 -->
+<div>
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="fastbet_input" class="ui-input ui-hand" maxlength="11" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createLmOrder();" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /快捷下注 -->
+	<!-- 下注表单 -->
+	<div id="betForm"  class="bet-form">
+		<div class="ui-form">
+			<div class="ui-mod ui-tabs">
+				<div class="ui-mod-body ui-tabs-body mt10">
+					<div class="ui-mod-item ui-tabs-item">
+						<div class="pure-g">
+							<div class="pure-u-1">
+							    <input type="hidden"  id="rrtype"name="rrtype" value="0" />
+								<ul class="ui-group-ac cf">
+								
+									<li class="ui-item b">类别：</li>
+									<li class="ui-item"><label for="hk6LMc1"><input type="radio" onclick="select_types(0);" name="rtype" id="rtype_0" value="0" checked="checked" class="ui-radio"> 三全中</label></li>
+									<li class="ui-item"><label for="hk6LMc2"><input type="radio" onclick="select_types(1);" name="rtype" id="rtype_1" value="1"  class="ui-radio"> 三中二</label></li>
+									<li class="ui-item"><label for="hk6LMc3"><input type="radio" onclick="select_types(2);" name="rtype" id="rtype_2" value="2" class="ui-radio"> 二全中</label></li>
+									<li class="ui-item"><label for="hk6LMc4"><input type="radio" onclick="select_types(3);" name="rtype" id="rtype_3" value="3" class="ui-radio"> 二中特</label></li>
+									<li class="ui-item"><label for="hk6LMc5"><input type="radio" onclick="select_types(4);" name="rtype" id="rtype_4" value="4" class="ui-radio"> 特串</label></li>
+								</ul>
+							</div>
+							<div class="pure-u-1">
+								<ul class="ui-group-ac cf">
+									<li class="ui-item b">赔率：</li>
+									<li class="ui-item">三全中 <strong class="red" id="pl_LM-3QZ-3QZ">-</strong></li>
+									<li class="ui-item">中二 <strong class="red" id="pl_LM-3Z2-Z2">-</strong></li>
+									<li class="ui-item">中三 <strong class="red" id="pl_LM-3Z2-Z3">-</strong></li>
+									<li class="ui-item">二全中 <strong class="red" id="pl_LM-2QZ-2QZ">-</strong></li>
+									<li class="ui-item">中特 <strong class="red" id="pl_LM-2ZT-ZT">-</strong></li>
+									<li class="ui-item">中二 <strong class="red" id="pl_LM-2ZT-TZ2">-</strong></li>
+									<li class="ui-item">特串 <strong class="red" id="pl_LM-TC-TC">-</strong></li>
+								</ul>
+							</div>
+						</div>
+						<div class="ui-table mt10">
+							<div class="pure-g">
+								<!-- 循环列 -->
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-3-5"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-2-5"><div class="ui-item-son">勾选</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">01</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'01')" id="num01" name="number[]"  value="01" />
+													</div>
+												</div>
+										 
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">02</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'02')" name="number[]" id="num02"    value="02"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">03</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'03')" name="number[]" id="num03"    value="03"/>
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">04</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'04')" name="number[]" id="num04"    value="04"/>
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">05</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'05')" name="number[]" id="num05"    value="05"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">06</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'06')" name="number[]" id="num06"    value="06"/>
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">07</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'07')" name="number[]" id="num07"    value="07"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">08</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'08')" name="number[]" id="num08"    value="08"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">09</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'09')" name="number[]" id="num09"    value="09"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">10</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'10')" name="number[]" id="num10"    value="10"/>
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								<!-- 循环列 -->
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-3-5"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-2-5"><div class="ui-item-son">勾选</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">11</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'11')" name="number[]" id="num11"    value="11"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">12</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'12')" name="number[]" id="num12"    value="12"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">13</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'13')" name="number[]" id="num13"    value="13"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">14</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'14')" name="number[]" id="num14"    value="14"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">15</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'15')" name="number[]" id="num15"    value="15"/>
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">16</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'16')" name="number[]" id="num16"    value="16"/>
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">17</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'17')" name="number[]" id="num17"    value="17"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">18</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'18')" name="number[]" id="num18"    value="18"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">19</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'19')" name="number[]" id="num19"    value="19"/>
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">20</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'20')" name="number[]" id="num20"    value="20"/>
+													</div>
+												</div>
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								<!-- 循环列 -->
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-3-5"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-2-5"><div class="ui-item-son">勾选</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">21</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'21')" name="number[]" id="num21"    value="21"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">22</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'22')" name="number[]" id="num22"    value="22"/>
+													</div>
+												</div>
+												
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">23</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'23')" name="number[]" id="num23"    value="23"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">24</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'24')" name="number[]" id="num24"    value="24"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">25</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'25')" name="number[]" id="num25"    value="25"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">26</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'26')" name="number[]" id="num26"    value="26"/>
+													</div>
+												</div>
+														
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">27</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'27')" name="number[]" id="num27"    value="27"/>
+													</div>
+												</div>
+												
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">28</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'28')" name="number[]" id="num28"    value="28"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">29</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'29')" name="number[]" id="num29"    value="29"/>
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">30</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'30')" name="number[]" id="num30"    value="30"/>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								<!-- 循环列 -->
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-3-5"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-2-5"><div class="ui-item-son">勾选</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">31</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'31')" name="number[]" id="num31"    value="31"/>
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">32</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'32')" name="number[]" id="num32"    value="32"/>
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">33</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'33')" name="number[]" id="num33"    value="33"/>
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">34</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'34')" name="number[]" id="num34"    value="34" />
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">35</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'35')" name="number[]" id="num35"    value="35"  />
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">36</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'36')" name="number[]" id="num36"    value="36"  />
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">37</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'37')" name="number[]" id="num37"    value="37"  />
+													</div>
+												</div>
+												 <div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">38</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'38')" name="number[]" id="num38"    value="38"  />
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">39</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'39')" name="number[]" id="num39"    value="39"  />
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">40</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'40')" name="number[]" id="num40"    value="40"  />
+													</div>
+												</div>
+												
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								<!-- 循环列 -->
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-3-5"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-2-5"><div class="ui-item-son">勾选</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">41</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'41')" name="number[]" id="num41"    value="41" />
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">42</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'42')" name="number[]" id="num42"    value="42" />
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">43</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'43')" name="number[]" id="num43"    value="43" />
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">44</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'44')" name="number[]" id="num44"    value="44" />
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">45</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'45')" name="number[]" id="num45"    value="45" />
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-red">46</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'46')" name="number[]" id="num46"    value="46" />
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">47</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'47')" name="number[]" id="num47"    value="47" />
+													</div>
+												</div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-blue">48</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'48')" name="number[]" id="num48"    value="48" />
+													</div>
+												</div>
+												
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<span class="ball ball-green">49</span>
+													</div>
+												</div>
+												<div class="pure-u-2-5">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" onclick="SubChkBox(this,'49')" name="number[]" id="num49"    value="49" />
+													</div>
+												</div>
+												<div class="pure-u-1"><div class="ui-item-son"></div></div>
+												
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+							<div class="ui-body-son">
+								<div class="pure-g">
+									<div class="pure-u-3-5">
+										<input type="hidden" name="pabc"  id="pabc" value="1">
+										<div class="ui-item-son" style=" height: 36px; border-top: 0; border-bottom-width: 1px;">
+											<ul class="ui-group-ac cf">
+												<li class="ui-item"><label for="hk6LMc1"><input type="radio" name="pabc" id="pabc1"  onclick="selectCate(1);"  value="1" class="ui-radio" checked="checked" /> 复式</label></li>
+												<li class="ui-item"><label for="hk6LMc2"><input type="radio" name="pabc" id="pabc2"   onclick="selectCate(2);" value="2" class="ui-radio" /> 胆拖</label></li>
+											</ul>
+										</div>
+									</div>
+									<div class="pure-u-2-5">
+										<div class="ui-item-son" style=" height: 36px; border-top: 0; border-bottom-width: 1px;">
+											<ul class="ui-group-ac cf">
+												<li class="ui-item">胆1 <input type="text" class="ui-input"  name="dm1"  readonly="readonly" id="dm1"  style="width: 45px;"/></li>
+												<li class="ui-item">胆2 <input type="text" class="ui-input"  name="dm2"  readonly="readonly" id="dm2" style="width: 45px;"/></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- / ui-table -->
+					</div>
+					<!-- / ui-mod-item -->
+				</div>
+				<!-- / ui-mod-body -->
+			</div>
+			<!-- / ui-mod -->
+		</div>
+		<!-- / ui-form -->
+	</div>
+	<!-- / 下注表单 -->
+	<!-- / 下注表单 -->
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="back_fastbet_input"  class="ui-input ui-hand" maxlength="11"/>
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createLmOrder()" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+var type_nums = 10; 
+var type_min = 3;
+var cb_num = 1;
+
+$(function(){
+	$(window).bind('clearedResetForm', function () {
+		reset();
+	});
+	
+	reset();
+	
+	function reset() {
+	   type_nums = 10; 
+	   type_min = 3;
+	   cb_num = 1;
+	   $("#rrtype").val("0");
+	   $("#pabc").val("1");
+	   $("#dm1").val("");
+	   $("#dm2").val("");
+	}
+});
+
+function select_types(type) {
+	cb_num=1;
+	if (type == 0 || type == 1) {
+		type_nums = 10;
+		type_min = 3;
+	} else{
+		type_nums = 10;
+		type_min = 2;
+	}
+	
+	$("#rrtype").val(type);
+	
+	$("#dm1").val("");
+	$("#dm2").val("");
+	
+	
+	$("#betForm input[type='checkbox']").each(function(index,value){
+		$(this).removeAttr("disabled");
+		$(this).removeAttr("checked");
+	});
+	
+	$("input[type='radio'][name='rtype']").each(function(index,value){
+		if(index == type){
+			$(this).attr("checked","checked");
+		}else{
+			$(this).removeAttr("checked");		
+		}
+	});
+	$("#pabc").val("1");
+	$("#pabc1").prop("checked","true");
+	$("#pabc2").removeAttr("checked");
+	
+}
+
+function clearForm(){
+	cb_num=1;
+	type_nums = 10;
+	type_min = 3;
+	$("#rrtype").val("0");
+	$("#dm1").val("");
+	$("#dm2").val("");
+	
+	$("#rtype_0").attr("checked","checked");
+	$("#rtype_0").prop("checked","true");
+	$("#rtype_1").removeAttr("checked");
+	$("#rtype_2").removeAttr("checked");
+	$("#rtype_3").removeAttr("checked");
+	$("#rtype_4").removeAttr("checked");
+	
+	
+	$("#betForm input[type='checkbox']").each(function(index,value){
+		$(this).removeAttr("disabled");
+		$(this).removeAttr("checked");
+	});
+	
+	$("#pabc").val("1");
+	$("#pabc1").prop("checked","true");
+	$("#pabc2").removeAttr("checked");
+
+}
+
+ 
+
+function SubChkBox(obj,bmbm) {
+ 
+	if(obj.checked == false){
+		cb_num--;
+	}
+	if(obj.checked == true){
+		if ( cb_num > type_nums ){
+			alert("最多只能选择"+type_nums+"个号码");
+			cb_num--;
+			obj.checked = false;
+		}
+		cb_num++;
+	}
+	var pabc = $("#pabc").val();
+	if(pabc=="2"){
+		var rrtype = $("#rrtype").val();
+		var dm1 = $("#dm1").val();
+		var dm2 = $("#dm2").val();
+		if(rrtype=="0" || rrtype=="1"){
+			if(dm1==""){
+				$("#num"+bmbm).prop("disabled",true);
+				$("#dm1").val(bmbm);
+			}else{
+				if(dm2==""){
+					$("#num"+bmbm).prop("disabled",true);
+					$("#dm2").val(bmbm);
+				}	
+			}
+		}else{
+			if(dm1==""){
+				$("#num"+bmbm).prop("disabled",true);
+				$("#dm1").val(bmbm);
+			}
+		}	
+	}
+}
+
+function selectCate(type) {
+	cb_num=1;
+	$("#dm1").val("");
+	$("#dm2").val("");
+	$("#pabc").val(type);
+	$("#betForm input[type='checkbox']").each(function(index,value){
+		$(this).removeAttr("disabled");
+		$(this).removeAttr("checked");
+	});
+}
+
+
+
+ 
+function createLmOrder(){
+	var sValue;
+	var val=$("input[type='radio'][name='rtype'][checked='checked']").val();
+	if(val<=1){
+		sValue=3;
+	}
+	if(val>=2){
+		sValue=2;
+	}
+	var _xzje = $("#fastbet_input").val();
+	if($.trim(_xzje)==''){
+		showMessage("提示","请输入下注金额！");
+		return;
+	}
+	if(parseFloat(_xzje)<parseFloat(minMoney)){
+		showMessage("提示","单笔最小投注金额："+minMoney+"元!");
+		return;
+	}
+	if(parseFloat(_xzje)>parseFloat(maxMoney)){
+		showMessage("提示","单笔最大投注金额："+maxMoney+"元!");
+		return;
+	}
+	var numArr = new Array();
+	$("#betForm input[type='checkbox']:checked").each(function(){
+		numArr.push($(this).val());
+	});
+	if(numArr.length<=0){
+		showMessage("提示","请选择下注号码！");
+		return;
+	}
+	if(numArr.length<sValue){
+		showMessage("提示","请选择至少"+sValue+"个号码下注");
+		return;
+	}
+	var nums = numArr.toString();
+	var json = "{token: '{0}', xzje: {1}}";
+	var trHtml = "";
+	$.ajax({
+	    url:rootPath+"/cpOrder/goLmOrder", 
+	    data:{"nums":nums,"gameCode":cp_gameTypeCode_temp,"rrtype":$("#rrtype").val(),"pabc":$("#pabc").val(),"dm1":$("#dm1").val(),"dm2":$("#dm2").val()},
+	    type:'post',
+	    cache:false,
+	    timeout : 30000,
+	    dataType:'json',
+	    success:function(data){
+	    	var orderList = data.orderList;
+	    	if(orderList.length>0){
+	    		for(var i=0;i<orderList.length;i++){
+	    			var _rate = orderList[i].rate;
+	    			var _number = orderList[i].number;
+	    			var _cateName = orderList[i].cateName;
+	    			trHtml += "<tr><td>"+_number+"</td><td>"+_rate+"</td><td>"+_xzje+"</td></tr>";
+	    			
+	    		}
+	    		var buffer = json.format(data.token,_xzje);
+	    		var totalMoney =  parseFloat(_xzje)*orderList.length;
+	    		doLmOrderSubmitShow(getOrderDivHtml(orderList.length, totalMoney, trHtml), buffer,"lm");
+	    	}else{
+	    		showMessage("提示","下注异常！");
+	    	}
+	     }, 
+	     error : function(){
+	    	 showMessage("提示","下注异常！");
+	     }    
+	});
+
+}
+
+
+ 
+function doLmOrderSubmitShow(divHtml,jsons,orderFlag){
+	art.dialog({
+		title:"下注明细（请确认注单）",
+		id: 'zhudanId',
+		fixed: true,
+	    lock: true,
+	    background: '#000000', 
+	    opacity: 0.7,	 
+	    content: divHtml,
+	    ok: function (){
+ 
+			if($("input[id = 'oddsAdapt']").attr("checked")=='checked'){
+				oddsAdapt = true;
+			}else{
+				oddsAdapt = false;
+			}
+ 
+			if(jsons!=""){
+		    	jsons="["+jsons+"]";
+			}
+			$.ajax({
+			    url:rootPath+"/cpOrder/saveOrder", 
+			    data:{"jsons":jsons,"gameCode":cp_gameTypeCode_temp,"orderFlag":orderFlag},
+			    type:'post',
+			    cache:false,
+			    timeout : 30000,
+			    dataType:'text',
+			    success:function(data){
+			    	showMessage("提示",data);
+			    	clearForm();
+			     }, 
+			     error : function(){
+			    	 showMessage("提示","下注异常！");
+			     }    
+			});
+			
+	        return true;
+	    },
+	    cancel: function(){
+	    	clearForm();
+	    }
+	});
+}
+
+
+
+
+</script>

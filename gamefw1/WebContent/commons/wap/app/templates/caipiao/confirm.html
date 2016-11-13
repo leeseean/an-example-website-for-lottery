@@ -1,0 +1,41 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<form name="confirmForm"><div class="confirm-content">
+	<div class="wrapper">
+		<div class="block user-info">
+			<div class="title">会员余额</div>
+			<div class="block-content">
+				<div class="clearfix">
+					<p>会员账号: {{account.user_name}}</p>
+					<p>余额: {{account.balance}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="block caipiao-info">
+			<div class="title">投注金额</div>
+			<div class="block-content">
+				<p>期数: <span>{{caipiaoInfo['nextResult']['next_qs']}}</span> 期</p>
+				<div ng-class="{'group-item':true}" ng-repeat="item in caipiaoItems track by $index">
+					<i class="icon icon-close" ng-click="removeCaipiaoItem($index)"></i>
+					<h3>{{item['label']}} {{item['label2']}}, {{item['number']}}</h3>
+					<div class="bg-4 w85p clearfix">
+						<span class="price-label">投注金额</span>
+						<input type="number" required min={{minBet}} max={{maxBet}} class="input input-caipiao-price" ng-model="item.xzje" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="block block-actions">
+			<div class="block-content">
+				<button class="btn btn-cancel" ng-click="back()">
+					<i class="icon icon-cancel"></i>
+					<span>取消</span>
+				</button>
+				<button ng-click="createOrder()" ng-disabled="confirmForm.$invalid" ng-class="{btn: true,  'btn-confirm-caipiao': true, 'btn-disabled': confirmForm.$invalid}">
+					<i class="icon icon-confirm"></i>
+					<span>确认投注</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div></form>

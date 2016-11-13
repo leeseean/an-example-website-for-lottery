@@ -1,0 +1,44 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content-wrapper">
+	<div class="user-info-wrapper white">
+		
+		<p ng-if="!userBank" class="warning">您还未绑定银行卡</p>
+		
+		<div class="block block-user-info white" ng-if="userBank">
+			<h3 class="block-title bg-header">●&nbsp;收款账号</h3>
+			<div class="block-content bg-4">
+				<table class="bank-list-table">
+					<tbody>
+						<tr>
+							<td class="text-left">收款银行:&nbsp;&nbsp;{{userBank.userBankType}}</td>
+						</tr>
+						<tr>
+							<td class="text-left">银行帐号:&nbsp;&nbsp;{{userBank.userBankCard}}</td>
+						</tr>
+						<tr>
+							<td class="text-left">银行户名&nbsp;:&nbsp;&nbsp;{{userBank.userRealName}}</td>
+						</tr>
+						<tr>
+							<td class="text-left">开户地址&nbsp;:&nbsp;&nbsp;{{userBank.userBankAddress}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<button ng-if="userBank" class="btn btn-submit bg-submit" ng-click="go('withdrawal')">
+			<i class="icon icon-btn-submit"></i>账户确认</button>
+			
+		<button ng-if="!userBank" class="btn btn-submit bg-submit" ng-click="go('bankcard')">
+			<i class="icon icon-btn-submit"></i>绑定银行卡</button>
+	</div>
+</div>
+
+
+
+
+
+
+
+

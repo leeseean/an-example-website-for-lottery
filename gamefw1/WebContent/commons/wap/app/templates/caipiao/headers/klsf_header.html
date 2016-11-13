@@ -1,0 +1,31 @@
+<div class="caipiao-select-header bg-2 ptb10">
+	<div class="wrapper">
+		<div class="qishu"><p>第<span class="color-orange">{{caipiaoInfo['lastResult']['last_qs']}}</span>期开奖结果</p></div>
+		<div class="kaijiang-result">
+			<span ng-class="['bg-rec-red',' white']" ng-repeat="value in caipiaoInfo['lastResult']['last_result'] track by $index">
+				{{value}}
+			</span>
+		</div>
+		<div class="stick-bottom"  set-class-when-at-bottom="scroll-out-view">
+			<div class="text-center">
+				<div class="inline-block">
+					<span class="white">当前期:&nbsp;</span><span class="color-orange inline-block">{{caipiaoInfo['nextResult']['next_qs']}}</span><span class="white">&nbsp;期</span> 
+				</div>  
+				<div class="inline-block">
+					<div class="inline-block" ng-style="{'display': ( kaijiangZhong == false || kaijiangZhong == undefined ) ? 'block': 'none' }">
+						<span class="white">距离封盘:&nbsp;</span>
+						<span class="color-orange "><timer format="cn" type="fengpan"/></span>
+					</div>
+					<div class="inline-block" ng-style="{'display': ( kaijiangZhong == true ) ? 'block': 'none' }">
+						<span class="white">距离开奖:&nbsp;</span>
+						<span class="color-orange "><timer format="cn" type="kaijiang"/></span>
+					</div>
+				</div>
+			</div>
+			<div class="btns-group pt10">
+				<button class="btn btn-red btn-reset" ng-click="reset()">重置</button>
+				<button class="btn btn-red btn-ok" ng-click="confirm()">确认注单</button>
+			</div>
+		</div>
+	</div>
+</div>

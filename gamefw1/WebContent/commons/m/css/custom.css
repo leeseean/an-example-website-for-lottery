@@ -1,0 +1,701 @@
+/**********************************************************
+ * Reset
+ */
+
+body {
+  font-size: 12px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+p {
+  -webkit-margin-before: 10px;
+  -webkit-margin-after: 10px;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+
+/**********************************************************
+ * Base
+ */
+
+.l {
+  float: left;
+}
+.r {
+  float: right;
+}
+.cf {
+  *zoom: 1;
+}
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.pt10 {
+  padding-top: 10px;
+}
+.fs12 {
+  font-size: 12px;
+}
+.ac {
+  text-align: center;
+}
+.b {
+  font-weight: bold;
+}
+.spr-common {
+  background-image: url(../img/spr_common.png);
+  background-size: 500px auto;
+  background-repeat: no-repeat;
+}
+.ui-btn {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 12px;
+}
+
+/*
+ * Class
+ */
+
+.f12 {
+  font-size: 12px;
+}
+.b {
+  font-weight: bold;
+}
+.tac {
+  text-align: center;
+}
+.red {
+  color: red;
+}
+
+/*
+ * Header
+ */
+
+
+/*
+ * 鐧婚寗
+ */
+
+.ybm-account {
+  position: relative;
+  margin-top: -30px;
+  height: 100%;
+  text-align: center;
+  background-image: url(../img/bg_main.jpg);
+  background-position: center 0;
+  background-size: cover;
+}
+.ybm-account::before {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+  content: '';
+}
+.ybm-account .ui-content {
+  position: relative;
+  padding: 15px;
+  display: inline-block;
+  width: 80%;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, .5);
+  box-shadow: 0 5px 10px #000;
+}
+.ybm-account .ybm-form .ui-field-contain {
+  padding: 0;
+  border: 0;
+}
+.ybm-account .ybm-form .item-vcode div.ui-input-text {
+  width: 60px;
+}
+.ybm-account .ybm-form label {
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-shadow: none;
+}
+.ybm-account .row-action span.ui-btn-inner {
+  border-top: 0;
+}
+
+/*
+ * YB Module Panel
+ */
+
+.yb-m-panel-top {
+  height: 40px;
+}
+.yb-m-panel-top .ui-btn {
+  margin: 4px 0 0 0;
+}
+.yb-m-panel-top .ui-btn-right {
+  color: #888;
+}
+.ybm-panel .ui-panel-inner {
+  padding-top: 0;
+}
+.ybm-panel-header {
+  margin: 5px 0;
+  height: 38px;
+}
+.ybm-panel-header .ui-btn-icon-notext {
+  background: none;
+}
+.ybm-panel-header .ui-btn-icon-notext .ui-btn-inner {
+  border-top: 0;
+}
+.ybm-panel .ui-listview-inset {
+  margin-top: 0;
+}
+
+/*.yb-m-panel-quick .ui-panel-inner{
+  padding-top: 0;
+}
+.yb-m-panel-quick .yb-content{
+  margin-top: 0;
+}*/
+
+
+/* Patch */
+
+
+/*.ui-btn {
+  margin: 0;
+}*/
+
+
+/*
+ * Home
+ */
+
+.ybm-nav-home {
+  margin-top: 20px;
+}
+.ybm-nav-home .nav-item {
+  position: relative;
+  margin-bottom: 35px;
+  background-repeat: no-repeat;
+  background-position: center 15px;
+}
+.ybm-nav-home .item-sport {
+  background-image: url(../img/sport.png);
+}
+.ybm-nav-home .nav-link {
+  height: 120px;
+}
+.ybm-nav-home .nav-quick-btn {
+  position: absolute;
+  top: 4px;
+  right: 0;
+}
+.ybm-qmc .ui-mini .ui-btn-icon-right .ui-btn-inner {
+  padding-right: 0;
+}
+
+/* fixed */
+
+.ybm-nav-home .nav-link .ui-btn-inner {
+  /*margin-top: 80px;*/
+  border-top: 0;
+}
+
+/**********************************************************
+ * Lott Type
+ */
+
+.ybb-mobile .lott .type {}
+.ybb-mobile .lott .type .ui-li-static {
+  padding: 0 8px 5px 8px;
+}
+.ybb-mobile .lott .type .ui-controlgroup-controls .ui-btn {
+  margin: 5px 5px 0 0;
+  border-right-width: 1px;
+}
+.ybb-mobile .lott .type li.ui-btn-up-x {
+  margin: 0;
+  border: 0;
+  background: #fff;
+}
+
+/* title */
+
+.ybb-mobile .lott {
+  padding: 0 15px;
+}
+.ybb-mobile .lott .type .ui-collapsible-heading .ui-btn-text {
+  font-size: 14px;
+  font-weight: normal;
+}
+.ybb-mobile .lott .type .ui-collapsible-heading .ui-icon {
+  background-color: #2395c5;
+}
+.ybb-mobile .lott .type .ui-collapsible-heading .ui-btn-up-x {
+  font-size: 12px;
+  color: #fff;
+  border: 0;
+  background: #2395c5;
+  text-shadow: none;
+}
+.ybb-mobile .lott .type .ui-controlgroup {
+  margin: 0;
+}
+.ybb-mobile .lott .type .ui-btn.ui-btn-up-b {
+  background: #444;
+}
+.ybb-mobile .lott .type .ui-btn.ui-btn-up-b .ui-btn-text {
+  font-weight: normal;
+}
+/*
+ * Sport
+ */
+
+
+/* match */
+
+.sport-match .match-info .title {
+  padding: 0;
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+}
+.sport-match .match-info .ui-li-static {
+  padding: 0;
+  font-size: 12px;
+  text-align: center;
+}
+.sport-match .match-info .row {
+  height: 30px;
+  line-height: 30px;
+}
+
+/* 閸狀喖绱�*/
+
+.sport-danshi .row>:nth-child(1),
+.sport-danshi .row>:nth-child(2) {
+  width: 12%;
+}
+.sport-danshi .row>:nth-child(3),
+.sport-danshi .row>:nth-child(4) {
+  width: 28%;
+}
+.sport-danshi .title .row>:nth-child(1) {
+  color: #fff;
+  background-color: #2395c5;
+  text-shadow: none;
+}
+
+/* 缁啰鎮�- 閸狀喖绱�*/
+
+.sport-bb-danshi .row>:nth-child(1) {
+  width: 10%;
+}
+.sport-bb-danshi .title .row>:nth-child(1) {
+  color: #fff;
+  background-color: #2395c5;
+  text-shadow: none;
+}
+.sport-bb-danshi .row>:nth-child(2),
+.sport-bb-danshi .row>:nth-child(3) {
+  width: 13%;
+}
+.sport-bb-danshi .row>:nth-child(5) {
+  width: 44%;
+}
+.sport-bb-danshi .ui-block-e .ui-grid-a div {
+  width: 50%;
+}
+
+/* 濞夈垼鍎�*/
+
+.sport-bodan .row>:nth-child(1),
+.sport-bodan .row>:nth-child(2) {
+  width: 12%;
+}
+.sport-bodan .row>:nth-child(3),
+.sport-bodan .row>:nth-child(4) {
+  width: 38%;
+}
+.sport-bodan .title .row>:nth-child(1) {
+  color: #fff;
+  background-color: #2395c5;
+  text-shadow: none;
+}
+.sport-bodan .merge .row>:nth-child(3) {
+  width: 76%;
+}
+
+/*
+ * Deposit
+ */
+
+.ybm-deposit .deposit-account .ui-block-a {
+  width: 30%;
+  text-align: right;
+}
+.ybm-deposit .deposit-form {
+  margin-top: 0;
+}
+.ybm-deposit .deposit-form .ui-field-contain {
+  margin: -5px 0;
+  padding: 0;
+}
+.ybm-deposit .deposit-form label {
+  font-size: 12px;
+}
+
+/*
+ * Form
+ */
+
+.ybm-form .ui-corner-all {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+/*
+ * Order
+ */
+
+.ybm-order {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ybm-order .user-detail {
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  text-align: center;
+}
+.ybm-order .order-item {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.ybm-order .order-item .ui-li-static {
+  padding: 0 0 0 15px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+}
+.ybm-order .order-tips.ui-li-static.ui-li {
+  padding-top: 0;
+  font-size: 14px;
+  border-top: 0;
+}
+.ybm-order .order-tips .ui-block-a,
+.ybm-order .order-tips .ui-block-c {
+  text-align: right;
+  font-weight: normal;
+  color: #666;
+}
+.ybm-order .order-tips-inner {
+  padding-top: 10px;
+}
+
+/* 娑撴煡妫�*/
+
+.ybm-order-cg .order-item .ui-li-divider a {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  display: block;
+  height: 31px;
+  line-height: 31px;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* 瑜扳晝銈ㄩ柆濠冨煇-閹舵洘鏁為崰锟�/
+
+.ybm-lott-order .r1 {
+  margin-bottom: 0;
+}
+.ybm-lott-order .r1 .ui-li {
+  padding: 10px 6px;
+  font-size: 12px;
+}
+.ybm-lott-order .r1 .ui-li-divider {
+  font-weight: normal;
+}
+
+/* confirm */
+
+.ybm-order-confirm .ui-li-divider {
+  padding: 0;
+  height: 50px;
+  line-height: 50px;
+  text-indent: 15px;
+}
+
+/* order success */
+
+.ybm-order-success {
+  padding-top: 15px;
+}
+
+/*
+ * 鐠ㄢ�瀚忔稉顓炵妇
+ */
+
+
+/*
+ * 閸忣剙寰冮崗銉︻儥
+ */
+
+.ybm-deposit {}
+
+/* 鐠╊剚鍩楅崚妤勩� */
+
+.accounts-list {
+  font-size: 12px;
+}
+.accounts-list .item {
+  margin-top: 0;
+}
+.accounts-list .item .ui-li-static {
+  padding: 0;
+  height: 30px;
+  line-height: 30px;
+}
+.accounts-list .item .ui-block-a {
+  padding-right: 5px;
+  width: 25%;
+  text-align: right;
+  text-indent: 15px;
+  font-weight: normal;
+  color: gray;
+}
+.accounts-list .item .ui-block-b {
+  width: 75%;
+}
+
+/*
+ * 閺堝啫鎽楁稉顓炵妇
+ */
+
+
+/* 閻厺淇婇幁锟�/
+
+.ybm-member-msg {
+  padding-top: 0;
+}
+
+/* 閸婂姹夌挬鍥ㄦ灐 */
+
+.ybm-member-info .ui-grid-a div {
+  padding: 5px 0;
+}
+.ybm-member-info .ui-block-a {
+  text-align: right;
+}
+.ybm-member-info .ui-block-b {
+  font-weight: bold;
+}
+
+/*
+ * Account
+ */
+
+.ybm-account h1 {
+  margin-top: 0;
+  font-size: 14px;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* reg */
+
+.ybm-reg .account-form .ui-field-contain {
+  position: relative;
+  padding: 6px 0;
+  height: 30px;
+}
+.ybm-reg .account-form label {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 70px;
+  font-size: 12px;
+  text-align: right;
+}
+.ybm-reg .account-form div.ui-input-text {
+  float: left;
+  margin-left: 70px;
+  width: 70%;
+}
+.ybb-m-slot-list ul {
+  margin: 0;
+  padding: 0;
+}
+.ybb-m-slot-list li {
+  float: left;
+  width: 50%;
+  text-align: center;
+  list-style: none;
+}
+.ybb-m-slot-list h6 {
+  margin: 0;
+}
+
+/**********************************************************
+ * YBB Theme
+ */
+
+.ui-body-x .ui-btn-up-x {
+  font-weight: bold;
+  border: 1px solid #111;
+  text-shadow: 0 1px 0 #111;
+  color: #bbb;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2e2e2e), to(#333));
+  background-image: -moz-linear-gradient(#2e2e2e, #333);
+  background-image: -ms-linear-gradient(#2e2e2e, #333);
+  background-image: -o-linear-gradient(#2e2e2e, #333);
+}
+.ui-body-x .ui-btn-inner {
+  border-top-color: #176281;
+}
+.ui-right {
+  float: right;
+}
+.ui-body-x {
+  color: #eee;
+  /*background: #242424;*/
+  background: #d3d6db;
+}
+.ui-btn-up-d {
+  color: #eee;
+  background: #242424;
+}
+.ybm-order .ui-btn-up-d {
+  color: #000;
+  background: #fff;
+}
+.ui-collapsible-set {
+  margin: 0;
+}
+
+/**********************************************************
+ * Customize
+ */
+
+.ui-page-theme-x {
+  color: #eee;
+  background: #242424;
+}
+.ui-page-theme-x .ui-bar-inherit {
+  border: 0;
+}
+
+/*
+ * Panel
+ */
+
+.ybb-mobile-sidemenu.ui-panel .ui-panel-inner {
+  padding-top: 0;
+}
+.ybb-mobile-sidemenu.ui-panel {
+  background: #414141;
+}
+.ybb-mobile-sidemenu.ui-panel .ui-listview {
+  margin-top: 0;
+}
+.ybb-mobile-sidemenu.ui-panel .ui-li {
+  font-weight: normal;
+  border: 0;
+  background: none;
+  text-shadow: none;
+}
+.ybb-mobile-sidemenu.ui-panel .ui-li.ui-li-divider {
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  background: #343434;
+}
+.ybb-mobile-sidemenu.ui-panel .ui-li.ui-li-has-arrow {
+  border-bottom: 1px solid #545450;
+}
+.ybb-mobile-sidemenu.ui-panel .ui-link-inherit {
+  font-size: 14px;
+  color: #fff;
+}
+
+/**********************************************************
+ * Member Center
+ */
+
+/* Menu */
+
+.member-nav a {
+  position: relative;
+  z-index: 7;
+  display: block;
+  overflow: hidden;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #2395c5;
+}
+.member-nav .nav-index {
+  margin-top: 10px;
+  height: 40px;
+  line-height: 40px;
+}
+.member-nav .nav-group {
+  padding: 20px;
+}
+.member-nav .nav-item {
+  position: relative;
+  float: left;
+  margin-top: 20px;
+  overflow: hidden;
+  width: 50%;
+}
+.member-nav .nav-item a {
+  height: 120px;
+  line-height: 50px;
+}
+.member-nav .item-a a {
+  margin-right: 10px;
+}
+.member-nav .item-b a {
+  margin-left: 10px;
+}
+.member-nav .nav-item i {
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  z-index: 6;
+  margin-left: -40px;
+  width: 100px;
+  font-size: 80px;
+  color: #2395c5;
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+
+
+

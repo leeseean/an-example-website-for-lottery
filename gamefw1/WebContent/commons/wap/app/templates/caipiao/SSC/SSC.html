@@ -1,0 +1,66 @@
+<div class="play caipiao-groups">
+		<ul class="clearfix">
+		<li>
+			<h3 class="f14 white"><a class="white" ui-sref="caipiao.play.pankou({pankou: 'zps', type: ''})">主盘式</a></h3>
+		</li>
+		<li>
+			<i ng-class="{icon: true, 'icon-expand': true, 'icon-expanded': currentExpand==0}"></i>
+			<h3 class="f14 white" ng-click="currentExpand==0 ? currentExpand =-1: currentExpand=0;">一字</h3>
+			<div ng-class="{'sub-groups': true, 'current-expand': currentExpand == 0}">
+				<ul class="clearfix">
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'yz', type: 'yzzh'})"><h4 class="f14 white">一字组合</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'yz', type: 'wdw'})"><h4 class="f14 white">万定位</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'yz', type: 'qdw'})"><h4 class="f14 white">千定位</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'yz', type: 'bdw'})"><h4 class="f14 white">百定位</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'yz', type: 'sdw'})"><h4 class="f14 white">拾定位</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'yz', type: 'gdw'})"><h4 class="f14 white">个定位</h4></a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<i ng-class="{icon: true, 'icon-expand': true, 'icon-expanded': currentExpand==1}"></i>
+			<h3 class="f14 white" ng-click="currentExpand==1 ? currentExpand =-1: currentExpand=1;">二字</h3>
+			<div ng-class="{'sub-groups': true, 'current-expand': currentExpand == 1}">
+				<ul class="clearfix">
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'ez', type: 'ezzh'})"><h4 class="f14 white">二字组合</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'ez', type: 'bsdw'})"><h4 class="f14 white">百拾定位</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'ez', type: 'bgdw'})"><h4 class="f14 white">百个定位</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'ez', type: 'sgdw'})"><h4 class="f14 white">拾个定位</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'ez', type: 'bshs'})"><h4 class="f14 white">百拾和数</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'ez', type: 'bghs'})"><h4 class="f14 white">百个和数</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'ez', type: 'sghs'})"><h4 class="f14 white">拾个和数</h4></a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<i ng-class="{icon: true, 'icon-expand': true, 'icon-expanded': currentExpand==2}"></i>
+			<h3 class="f14 white" ng-click="currentExpand==2 ? currentExpand =-1: currentExpand=2;">三字</h3>
+			<div ng-class="{'sub-groups': true, 'current-expand': currentExpand == 2}">
+				<ul class="clearfix">
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'sz', type: 'szzh'})"><h4 class="f14 white">三字组合</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'sz', type: 'bsgdw'})"><h4 class="f14 white">百拾个定位</h4></a></li>
+					<li><a ui-sref="caipiao.play.pankou({pankou: 'sz', type: 'bsghs'})"><h4 class="f14 white">百拾个和数</h4></a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<h3 class="f14 white"><a class="white" ui-sref="caipiao.play.pankou({pankou: 'yzgg', type: ''})">一字过关</a></h3>
+		</li>
+		<li>
+			<h3 class="f14 white"><a class="white" ui-sref="caipiao.play.pankou({pankou: 'kd', type: ''})">跨度</a></h3>
+		</li>
+		<li>
+			<h3 class="f14 white"><a ui-sref="caipiao.play.pankou({pankou: 'zxs', type: ''})" class="white">组选三</a></h3>
+		</li>
+		<li>
+			<h3 class="f14 white"><a ui-sref="caipiao.play.pankou({pankou: 'zxl', type: ''})" class="white">组选六</a></h3>
+		</li>
+		<li>
+			<h3 class="f14 white"><a ui-sref="caipiao.play.pankou({pankou: 'fszh', type: ''})" class="white">复式组合</a></h3>
+		</li>
+		<li>
+			<h3 class="f14 white"><a ui-sref="caipiao.play.pankou({pankou: 'qt', type: ''})" class="white">其他</a></h3>
+		</li>
+	</ul>
+ 
+</div>

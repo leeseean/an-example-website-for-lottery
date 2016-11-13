@@ -1,0 +1,50 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/hk6_header.html')"></div>
+
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-12-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-body-son" ng-init="numberGroup = [
+		[10, 20, 30, 40],
+		[01, 11, 21, 31, 41],
+		[02, 12, 22, 32, 42],
+		[03, 13, 23, 33, 43],
+		[04, 14, 24, 34, 44],
+		[05, 15, 25, 35, 45],
+		[06, 16, 26, 36, 46],
+		[07, 17, 27, 37, 47],
+		[08, 18, 28, 38, 48],
+		[09, 19, 29, 39, 49]
+	]">
+		<div class="pure-g" ng-repeat="numbers in numberGroup track by $index">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">{{$index}}尾</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span 
+						ng-click="selectedPeiyu['WSL-'+subType+'-'+$index] = selectedPeiyu['WSL-'+subType+'-'+$index]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu['WSL-'+subType+'-'+$index]}" 
+						ng-attr-id="{{'WSL-'+subType+'-'+$index}}" >{{peiyu['WSL-'+subType+'-'+$index]}}</span>
+				</div>
+			</div>
+			<div class="pure-u-12-24">
+				<div class="ui-item-son" >
+					<ball ng-repeat="number in numbers" number="number | ballnumber"></ball>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

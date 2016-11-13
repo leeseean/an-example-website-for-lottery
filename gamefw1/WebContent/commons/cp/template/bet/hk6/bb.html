@@ -1,0 +1,841 @@
+[{"1_7":1}]
+êêê
+<!-- 开奖结果 -->
+<div class="pure-g lotto-result">
+	<div class="pure-u-1-3">
+		<div class="info">
+			<div class="ui-row row-one">
+				<span id="gameBetName" >香港六合彩</span>&nbsp;<strong class="blue" id="typeBetName">半波</strong>
+			</div>
+			<p class="ui-row row-two">
+				当前期：<strong class="blue" id="currentQs">--</strong> 期&nbsp;
+			</p>
+		</div>
+	</div>
+	<!-- /left -->
+	<div class="pure-u-2-3">
+		<div class="result">
+			<div class="ui-row row-one cf">
+				<div class="ui-head">
+					<span class="b red" id="lastQs">--</span>期
+				</div>
+				<div class="ui-body">
+					<ul class="ball-group center" id="lastResult"></ul>
+				</div>
+			</div>
+			<div class="ui-row row-two">
+				<!-- 开奖or封盘时间 -->
+				<div class="result-time">
+					<!-- 六合彩 -->
+					<div class="ui-item item-hk6 item-ssc">
+						<ul class="cf">
+							<li class="ui-item-gson">距离封盘：<strong class="red" id="closeTime">--:--</strong></li>
+							<li class="ui-item-gson">距离开奖：<strong class="red" id="openTime">--:--</strong></li>
+						</ul>
+					</div>
+					<!-- / 六合彩 -->
+				</div>
+				<!-- / 开奖or封盘时间 -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /开奖结果 -->
+<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="fastbet_input" class="ui-input ui-hand" maxlength="11" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /快捷下注 -->
+
+<div id="betFormHk6BB">
+  <!-- 下注表单 -->
+  <div id="betForm" class="bet-form">
+    <div class="ui-form">
+      <div class="ui-mod ui-tabs">
+        <div class="ui-mod-head ui-tabs-head nav-mode-play">
+          <ul class="cf">
+            <li class="ui-item ui-item-first ui-active">
+              <a href="javascript:void(0);" data-url="#hk6BB1" class="ui-link">半波</a>
+            </li>
+            <li class="ui-item">
+              <a href="javascript:void(0);" data-url="#hk6BB2" class="ui-link">半半波</a>
+            </li>
+          </ul>
+        </div>
+        <div class="ui-mod-body ui-tabs-body mt10">
+          <div class="ui-mod-item ui-tabs-item" id="hk6BB1">
+            <div class="ui-table">
+              <div class="pure-g">
+                <div class="pure-u-1">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son ui-body-ball">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son red" id="num_BB-BB-RED_ODD">红单</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BB-RED_ODD">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BB-RED_ODD" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-red">01</span></li>
+                              <li class="ui-item"><span class="ball ball-red">07</span></li>
+                              <li class="ui-item"><span class="ball ball-red">13</span></li>
+                              <li class="ui-item"><span class="ball ball-red">19</span></li>
+                              <li class="ui-item"><span class="ball ball-red">23</span></li>
+                              <li class="ui-item"><span class="ball ball-red">29</span></li>
+                              <li class="ui-item"><span class="ball ball-red">35</span></li>
+                              <li class="ui-item"><span class="ball ball-red">45</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                      </div>
+                      <!-- / 循环行 -->
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son red" id="num_BB-BB-RED_EVEN">红双</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BB-RED_EVEN">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BB-RED_EVEN" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-red">02</span></li>
+                              <li class="ui-item"><span class="ball ball-red">08</span></li>
+                              <li class="ui-item"><span class="ball ball-red">12</span></li>
+                              <li class="ui-item"><span class="ball ball-red">18</span></li>
+                              <li class="ui-item"><span class="ball ball-red">24</span></li>
+                              <li class="ui-item"><span class="ball ball-red">30</span></li>
+                              <li class="ui-item"><span class="ball ball-red">34</span></li>
+                              <li class="ui-item"><span class="ball ball-red">40</span></li>
+                              <li class="ui-item"><span class="ball ball-red">46</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son red" id="num_BB-BB-RED_BIG">红大</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BB-RED_BIG">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BB-RED_BIG" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-red">29</span></li>
+                              <li class="ui-item"><span class="ball ball-red">30</span></li>
+                              <li class="ui-item"><span class="ball ball-red">34</span></li>
+                              <li class="ui-item"><span class="ball ball-red">35</span></li>
+                              <li class="ui-item"><span class="ball ball-red">40</span></li>
+                              <li class="ui-item"><span class="ball ball-red">45</span></li>
+                              <li class="ui-item"><span class="ball ball-red">46</span></li>
+                             
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son red" id="num_BB-BB-RED_SMALL">红小</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BB-RED_SMALL">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BB-RED_SMALL" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-red">01</span></li>
+                              <li class="ui-item"><span class="ball ball-red">02</span></li>
+                              <li class="ui-item"><span class="ball ball-red">07</span></li>
+                              <li class="ui-item"><span class="ball ball-red">08</span></li>
+                              <li class="ui-item"><span class="ball ball-red">12</span></li>
+                              <li class="ui-item"><span class="ball ball-red">13</span></li>
+                              <li class="ui-item"><span class="ball ball-red">18</span></li>
+                              <li class="ui-item"><span class="ball ball-red">19</span></li>
+                              <li class="ui-item"><span class="ball ball-red">23</span></li>
+                              <li class="ui-item"><span class="ball ball-red">24</span></li>
+                              
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son green" id="num_BB-BB-GREEN_ODD">绿单</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BB-GREEN_ODD">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BB-GREEN_ODD" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-green">05</span></li>
+                              <li class="ui-item"><span class="ball ball-green">11</span></li>
+                              <li class="ui-item"><span class="ball ball-green">17</span></li>
+                              <li class="ui-item"><span class="ball ball-green">21</span></li>
+                              <li class="ui-item"><span class="ball ball-green">27</span></li>
+                              <li class="ui-item"><span class="ball ball-green">33</span></li>
+                              <li class="ui-item"><span class="ball ball-green">39</span></li>
+                              <li class="ui-item"><span class="ball ball-green">43</span></li>
+                              <li class="ui-item"><span class="ball ball-green">49</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son green" id="num_BB-BB-GREEN_EVEN">绿双</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BB-GREEN_EVEN">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BB-GREEN_EVEN" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-green">06</span></li>
+                              <li class="ui-item"><span class="ball ball-green">16</span></li>
+                              <li class="ui-item"><span class="ball ball-green">22</span></li>
+                              <li class="ui-item"><span class="ball ball-green">28</span></li>
+                              <li class="ui-item"><span class="ball ball-green">32</span></li>
+                              <li class="ui-item"><span class="ball ball-green">38</span></li>
+                              <li class="ui-item"><span class="ball ball-green">44</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son green" id="num_BB-BB-GREEN_BIG">绿大</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BB-GREEN_BIG">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BB-GREEN_BIG" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-green">27</span></li>
+                              <li class="ui-item"><span class="ball ball-green">28</span></li>
+                              <li class="ui-item"><span class="ball ball-green">32</span></li>
+                              <li class="ui-item"><span class="ball ball-green">33</span></li>
+                              <li class="ui-item"><span class="ball ball-green">38</span></li>
+                              <li class="ui-item"><span class="ball ball-green">39</span></li>
+                              <li class="ui-item"><span class="ball ball-green">43</span></li>
+                              <li class="ui-item"><span class="ball ball-green">44</span></li>
+                              <li class="ui-item"><span class="ball ball-green">49</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son green" id="num_BB-BB-GREEN_SMALL">绿小</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BB-GREEN_SMALL">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BB-GREEN_SMALL" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-green">05</span></li>
+                              <li class="ui-item"><span class="ball ball-green">06</span></li>
+                              <li class="ui-item"><span class="ball ball-green">11</span></li>
+                              <li class="ui-item"><span class="ball ball-green">16</span></li>
+                              <li class="ui-item"><span class="ball ball-green">17</span></li>
+                              <li class="ui-item"><span class="ball ball-green">21</span></li>
+                              <li class="ui-item"><span class="ball ball-green">22</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son blue" id="num_BB-BB-BLUE_ODD">蓝单</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BB-BLUE_ODD">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BB-BLUE_ODD" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-blue">03</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">09</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">15</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">25</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">31</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">37</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">41</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">47</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son blue" id="num_BB-BB-BLUE_EVEN">蓝双</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BB-BLUE_EVEN">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BB-BLUE_EVEN" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-blue">04</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">10</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">14</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">20</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">26</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">36</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">42</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">48</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son blue" id="num_BB-BB-BLUE_BIG">蓝大</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BB-BLUE_BIG">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BB-BLUE_BIG" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-blue">25</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">26</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">31</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">36</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">37</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">41</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">42</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">47</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">48</span></li>
+                              
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son blue" id="num_BB-BB-BLUE_SMALL">蓝小</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BB-BLUE_SMALL">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BB-BLUE_SMALL" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-blue">03</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">04</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">09</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">10</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">14</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">15</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">20</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- / ui-table -->
+          </div>
+          <!-- / ui-mod-item -->
+          <div class="ui-mod-item ui-tabs-item" id="hk6BB2" style=" display: none;">
+            		<div class="ui-table">
+              <div class="pure-g">
+                <div class="pure-u-1">
+                  <div class="ui-table-loop">
+                    <div class="ui-head-son">
+                      <div class="pure-g">
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son">赔率</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">金额</div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">号码</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- / 表单标题 -->
+                    <div class="ui-body-son ui-body-ball">
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son red" id="num_BB-BBB-RED_BIG_ODD">红大单</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BBB-RED_BIG_ODD">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BBB-RED_BIG_ODD" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              
+                              <li class="ui-item"><span class="ball ball-red">29</span></li>
+                              <li class="ui-item"><span class="ball ball-red">35</span></li>
+                              <li class="ui-item"><span class="ball ball-red">45</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                      </div>
+                      <!-- / 循环行 -->
+                      <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son red" id="num_BB-BBB-RED_BIG_EVEN">红大双</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BBB-RED_BIG_EVEN">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BBB-RED_BIG_EVEN" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              
+                              <li class="ui-item"><span class="ball ball-red">30</span></li>
+                              <li class="ui-item"><span class="ball ball-red">34</span></li>
+                              <li class="ui-item"><span class="ball ball-red">40</span></li>
+                              <li class="ui-item"><span class="ball ball-red">46</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son red" id="num_BB-BBB-RED_SMALL_ODD">红小单</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BBB-RED_SMALL_ODD">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BBB-RED_SMALL_ODD" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-red">01</span></li>
+                              <li class="ui-item"><span class="ball ball-red">07</span></li>
+                              <li class="ui-item"><span class="ball ball-red">13</span></li>
+                              <li class="ui-item"><span class="ball ball-red">19</span></li>
+                              <li class="ui-item"><span class="ball ball-red">23</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son red" id="num_BB-BBB-RED_SMALL_EVEN">红小双</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BBB-RED_SMALL_EVEN">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BBB-RED_SMALL_EVEN" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-red">02</span></li>
+                              <li class="ui-item"><span class="ball ball-red">08</span></li>
+                              <li class="ui-item"><span class="ball ball-red">12</span></li>
+                              <li class="ui-item"><span class="ball ball-red">18</span></li>
+                              <li class="ui-item"><span class="ball ball-red">24</span></li>
+                              
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son green" id="num_BB-BBB-GREEN_BIG_ODD">绿大单</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BBB-GREEN_BIG_ODD">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BBB-GREEN_BIG_ODD" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-green">27</span></li>
+                              <li class="ui-item"><span class="ball ball-green">33</span></li>
+                              <li class="ui-item"><span class="ball ball-green">39</span></li>
+                              <li class="ui-item"><span class="ball ball-green">43</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son green" id="num_BB-BBB-GREEN_BIG_EVEN">绿大双</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BBB-GREEN_BIG_EVEN">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BBB-GREEN_BIG_EVEN" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-green">28</span></li>
+                              <li class="ui-item"><span class="ball ball-green">32</span></li>
+                              <li class="ui-item"><span class="ball ball-green">38</span></li>
+                              <li class="ui-item"><span class="ball ball-green">44</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son green" id="num_BB-BBB-GREEN_SMALL_ODD">绿小单</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BBB-GREEN_SMALL_ODD">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BBB-GREEN_SMALL_ODD" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-green">05</span></li>
+                              <li class="ui-item"><span class="ball ball-green">11</span></li>
+                              <li class="ui-item"><span class="ball ball-green">17</span></li>
+                              <li class="ui-item"><span class="ball ball-green">21</span></li>
+                             
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son green" id="num_BB-BBB-GREEN_SMALL_EVEN">绿小双</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BBB-GREEN_SMALL_EVEN">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BBB-GREEN_SMALL_EVEN" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-green">06</span></li>
+                              <li class="ui-item"><span class="ball ball-green">16</span></li>
+                              <li class="ui-item"><span class="ball ball-green">22</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son blue" id="num_BB-BBB-BLUE_BIG_ODD">蓝大单</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BBB-BLUE_BIG_ODD">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BBB-BLUE_BIG_ODD" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              
+                              <li class="ui-item"><span class="ball ball-blue">25</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">31</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">37</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">41</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">47</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son blue" id="num_BB-BBB-BLUE_BIG_EVEN">蓝大双</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BBB-BLUE_BIG_EVEN">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BBB-BLUE_BIG_EVEN" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              
+                              <li class="ui-item"><span class="ball ball-blue">26</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">36</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">42</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">48</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son blue" id="num_BB-BBB-BLUE_SMALL_ODD">蓝小单</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BBB-BLUE_SMALL_ODD">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BBB-BLUE_SMALL_ODD" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-blue">03</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">09</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">15</span></li>
+                              
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       <div class="pure-g">
+                        <!-- 循环行 -->
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son blue" id="num_BB-BBB-BLUE_SMALL_EVEN">蓝小双</div>
+                        </div>
+                        <div class="pure-u-2-24">
+                          <div class="ui-item-son ui-hand red" id="pl_BB-BBB-BLUE_SMALL_EVEN">-</div>
+                        </div>
+                        <div class="pure-u-3-24">
+                          <div class="ui-item-son">
+                            <input type="text" class="ui-input" name="number[]" id="BB-BBB-BLUE_SMALL_EVEN" />
+                          </div>
+                        </div>
+                        <div class="pure-u-17-24">
+                          <div class="ui-item-son">
+                            <ul class="ball-group">
+                              <li class="ui-item"><span class="ball ball-blue">04</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">10</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">14</span></li>
+                              <li class="ui-item"><span class="ball ball-blue">20</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- / 循环行 -->
+                       
+                    </div>
+                    <!-- / 表单主体 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- / ui-mod-item -->
+        </div>
+        <!-- / ui-mod-body -->
+      </div>
+      <!-- / ui-mod -->
+    </div>
+    <!-- / ui-form -->
+  </div>
+  <!-- / 下注表单 -->
+</div>
+
+<!-- 快捷下注 -->
+<div class="pure-g">
+	<div class="pure-u-1">
+		<div class="bet-form-action cf">
+			<ul class="order r cf">
+				<li class="ui-item">快速下注</li>
+				<li class="ui-item">
+					<input type="text"  id="back_fastbet_input"   class="ui-input ui-hand" maxlength="11" />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+				</li>
+				<li class="ui-item">
+					<input type="button" value="重填" onclick="clearBetForm();"  class="button button-small button-raised" />
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- /快捷下注 -->
+<script src="{resourceRoot}/cp/js/bet.js"></script>

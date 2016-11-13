@@ -1,0 +1,805 @@
+[{"1_9":1}]
+êêê
+<!-- 开奖结果 -->
+<div class="pure-g lotto-result">
+	<div class="pure-u-1-3">
+		<div class="info">
+			<div class="ui-row row-one">
+				<span id="gameBetName" >香港六合彩</span>&nbsp;<strong class="blue" id="typeBetName">特肖头尾</strong>
+			</div>
+			<p class="ui-row row-two">
+				当前期：<strong class="blue" id="currentQs">--</strong> 期&nbsp;
+			</p>
+		</div>
+	</div>
+	<!-- /left -->
+	<div class="pure-u-2-3">
+		<div class="result">
+			<div class="ui-row row-one cf">
+				<div class="ui-head">
+					<span class="b red" id="lastQs">--</span>期
+				</div>
+				<div class="ui-body">
+					<ul class="ball-group center" id="lastResult"></ul>
+				</div>
+			</div>
+			<div class="ui-row row-two">
+				<!-- 开奖or封盘时间 -->
+				<div class="result-time">
+					<!-- 六合彩 -->
+					<div class="ui-item item-hk6 item-ssc">
+						<ul class="cf">
+							<li class="ui-item-gson">距离封盘：<strong class="red" id="closeTime">--:--</strong></li>
+							<li class="ui-item-gson">距离开奖：<strong class="red" id="openTime">--:--</strong></li>
+						</ul>
+					</div>
+					<!-- / 六合彩 -->
+				</div>
+				<!-- / 开奖or封盘时间 -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /开奖结果 -->
+<!-- 六合彩 特码 -->
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="fastbet_input" class="ui-input ui-hand" maxlength="11" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();"  class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /快捷下注 -->
+	<!-- 下注表单 -->
+	<div  id="betForm" class="bet-form">
+		<div class="ui-form">
+			<div class="ui-mod ui-tabs">
+				<div class="ui-mod-head ui-tabs-head nav-mode-play">
+					<!--  <ul class="cf">
+			            <li class="ui-item ui-item-first ui-active">
+			              <a href="javascript:void(0);" data-url="#hk6TX1" class="ui-link">特肖</a>
+			            </li>
+			            <li class="ui-item">
+			              <a href="javascript:void(0);" data-url="#hk6TTW" class="ui-link">特头尾</a>
+			            </li>
+		           </ul>
+		           -->
+				</div>
+				<div class="ui-mod-body ui-tabs-body mt10">
+				
+		          <div class="ui-mod-item ui-tabs-item" id="hk6TX1">
+		            <div class="ui-table">
+		              <div class="pure-g">
+		                <div class="pure-u-1-2">
+		                  <div class="ui-table-loop">
+		                    <div class="ui-head-son">
+		                      <div class="pure-g">
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son">号码</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son">赔率</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">金额</div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">号码</div>
+		                        </div>
+		                      </div>
+		                    </div>
+		                    <!-- / 表单标题 -->
+		                    <div class="ui-body-son ui-body-ball">
+		                      <div class="pure-g">
+		                        <!-- 循环行 -->
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son" id="num_TXTW-TMSX-SHU">鼠</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son ui-hand red" id="pl_TXTW-TMSX-SHU">-</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">
+		                            <input type="text" class="ui-input" name="number[]" id="TXTW-TMSX-SHU" />
+		                          </div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">
+		                            <ul class="ball-group" id="UL_SHU">
+		                              <li class="ui-item"><span class="ball ball-red">08</span></li>
+		                              <li class="ui-item"><span class="ball ball-blue">20</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">32</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">44</span></li>
+		                            </ul>
+		                          </div>
+		                        </div>
+		                        <!-- / 循环行 -->
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son" id="num_TXTW-TMSX-HU">虎</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son ui-hand red" id="pl_TXTW-TMSX-HU">-</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">
+		                            <input type="text" class="ui-input" name="number[]" id="TXTW-TMSX-HU" />
+		                          </div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">
+		                            <ul class="ball-group" id="UL_HU">
+		                              <li class="ui-item"><span class="ball ball-green">06</span></li>
+		                              <li class="ui-item"><span class="ball ball-red">18</span></li>
+		                              <li class="ui-item"><span class="ball ball-red">30</span></li>
+		                              <li class="ui-item"><span class="ball ball-blue">42</span></li>
+		                            </ul>
+		                          </div>
+		                        </div>
+		                        <!-- / 循环行 -->
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son" id="num_TXTW-TMSX-LONG">龙</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son ui-hand red" id="pl_TXTW-TMSX-LONG">-</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">
+		                            <input type="text" class="ui-input" name="number[]" id="TXTW-TMSX-LONG" />
+		                          </div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">
+		                            <ul class="ball-group" id="UL_LONG">
+		                              <li class="ui-item"><span class="ball ball-blue">04</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">16</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">28</span></li>
+		                              <li class="ui-item"><span class="ball ball-red">40</span></li>
+		                            </ul>
+		                          </div>
+		                        </div>
+		                        <!-- / 循环行 -->
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son" id="num_TXTW-TMSX-MA">马</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son ui-hand red" id="pl_TXTW-TMSX-MA">-</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">
+		                            <input type="text" class="ui-input" name="number[]" id="TXTW-TMSX-MA" />
+		                          </div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">
+		                            <ul class="ball-group" id="UL_MA">
+		                              <li class="ui-item"><span class="ball ball-red">02</span></li>
+		                              <li class="ui-item"><span class="ball ball-blue">14</span></li>
+		                              <li class="ui-item"><span class="ball ball-blue">26</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">38</span></li>
+		                            </ul>
+		                          </div>
+		                        </div>
+		                        <!-- / 循环行 -->
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son" id="num_TXTW-TMSX-HOU">猴</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son ui-hand red" id="pl_TXTW-TMSX-HOU">-</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">
+		                            <input type="text" class="ui-input" name="number[]" id="TXTW-TMSX-HOU" />
+		                          </div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">
+		                            <ul class="ball-group" id="UL_HOU">
+		                              <li class="ui-item"><span class="ball ball-red">12</span></li>
+		                              <li class="ui-item"><span class="ball ball-red">24</span></li>
+		                              <li class="ui-item"><span class="ball ball-blue">36</span></li>
+		                              <li class="ui-item"><span class="ball ball-blue">48</span></li>
+		                            </ul>
+		                          </div>
+		                        </div>
+		                        <!-- / 循环行 -->
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son" id="num_TXTW-TMSX-GOU">狗</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son ui-hand red" id="pl_TXTW-TMSX-GOU">-</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">
+		                            <input type="text" class="ui-input" name="number[]" id="TXTW-TMSX-GOU" />
+		                          </div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">
+		                            <ul class="ball-group" id="UL_GOU">
+		                              <li class="ui-item"><span class="ball ball-blue">10</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">22</span></li>
+		                              <li class="ui-item"><span class="ball ball-red">34</span></li>
+		                              <li class="ui-item"><span class="ball ball-red">46</span></li>
+		                            </ul>
+		                          </div>
+		                        </div>
+		                        <!-- / 循环行 -->
+		                      </div>
+		                    </div>
+		                    <!-- / 表单主体 -->
+		                  </div>
+		                </div>
+		                
+		                <!-- 列 -->
+		                <div class="pure-u-1-2">
+		                  <div class="ui-table-loop">
+		                    <div class="ui-head-son">
+		                      <div class="pure-g">
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son">号码</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son">赔率</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">金额</div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">号码</div>
+		                        </div>
+		                      </div>
+		                    </div>
+		                    <!-- / 表单标题 -->
+		                    <div class="ui-body-son ui-body-ball">
+		                      <div class="pure-g">
+		                        <!-- 循环行 -->
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son" id="num_TXTW-TMSX-NIU">牛</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son ui-hand red" id="pl_TXTW-TMSX-NIU">-</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">
+		                            <input type="text" class="ui-input" name="number[]" id="TXTW-TMSX-NIU" />
+		                          </div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">
+		                            <ul class="ball-group" id="UL_NIU">
+		                              <li class="ui-item"><span class="ball ball-red">07</span></li>
+		                              <li class="ui-item"><span class="ball ball-red">19</span></li>
+		                              <li class="ui-item"><span class="ball ball-blue">31</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">43</span></li>
+		                            </ul>
+		                          </div>
+		                        </div>
+		                        <!-- / 循环行 -->
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son" id="num_TXTW-TMSX-TU">兔</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son ui-hand red" id="pl_TXTW-TMSX-TU">-</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">
+		                            <input type="text" class="ui-input" name="number[]" id="TXTW-TMSX-TU" />
+		                          </div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">
+		                            <ul class="ball-group" id="UL_TU">
+		                              <li class="ui-item"><span class="ball ball-green">05</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">17</span></li>
+		                              <li class="ui-item"><span class="ball ball-red">29</span></li>
+		                              <li class="ui-item"><span class="ball ball-blue">41</span></li>
+		                            </ul>
+		                          </div>
+		                        </div>
+		                        <!-- / 循环行 -->
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son" id="num_TXTW-TMSX-SHE">蛇</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son ui-hand red" id="pl_TXTW-TMSX-SHE">-</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">
+		                            <input type="text" class="ui-input" name="number[]" id="TXTW-TMSX-SHE" />
+		                          </div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">
+		                            <ul class="ball-group" id="UL_SHE">
+		                              <li class="ui-item"><span class="ball ball-blue">03</span></li>
+		                              <li class="ui-item"><span class="ball ball-blue">15</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">27</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">39</span></li>
+		                            </ul>
+		                          </div>
+		                        </div>
+		                        <!-- / 循环行 -->
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son" id="num_TXTW-TMSX-YANG">羊</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son ui-hand red" id="pl_TXTW-TMSX-YANG">-</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">
+		                            <input type="text" class="ui-input" name="number[]" id="TXTW-TMSX-YANG" />
+		                          </div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">
+		                            <ul class="ball-group" id="UL_YANG">
+		                              <li class="ui-item"><span class="ball ball-red">01</span></li>
+		                              <li class="ui-item"><span class="ball ball-red">13</span></li>
+		                              <li class="ui-item"><span class="ball ball-blue">25</span></li>
+		                              <li class="ui-item"><span class="ball ball-blue">37</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">49</span></li>
+		                            </ul>
+		                          </div>
+		                        </div>
+		                        <!-- / 循环行 -->
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son" id="num_TXTW-TMSX-JI">鸡</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son ui-hand red" id="pl_TXTW-TMSX-JI">-</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">
+		                            <input type="text" class="ui-input" name="number[]" id="TXTW-TMSX-JI" />
+		                          </div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">
+		                            <ul class="ball-group" id="UL_JI">
+		                              <li class="ui-item"><span class="ball ball-green">11</span></li>
+		                              <li class="ui-item"><span class="ball ball-red">23</span></li>
+		                              <li class="ui-item"><span class="ball ball-red">35</span></li>
+		                              <li class="ui-item"><span class="ball ball-blue">47</span></li>
+		                            </ul>
+		                          </div>
+		                        </div>
+		                        <!-- / 循环行 -->
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son" id="num_TXTW-TMSX-ZHU">猪</div>
+		                        </div>
+		                        <div class="pure-u-3-24">
+		                          <div class="ui-item-son ui-hand red" id="pl_TXTW-TMSX-ZHU">-</div>
+		                        </div>
+		                        <div class="pure-u-4-24">
+		                          <div class="ui-item-son">
+		                            <input type="text" class="ui-input" name="number[]" id="TXTW-TMSX-ZHU" />
+		                          </div>
+		                        </div>
+		                        <div class="pure-u-14-24">
+		                          <div class="ui-item-son">
+		                            <ul class="ball-group" id="UL_ZHU">
+		                              <li class="ui-item"><span class="ball ball-blue">09</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">21</span></li>
+		                              <li class="ui-item"><span class="ball ball-green">33</span></li>
+		                              <li class="ui-item"><span class="ball ball-red">45</span></li>
+		                            </ul>
+		                          </div>
+		                        </div>
+		                        <!-- / 循环行 -->
+		                      </div>
+		                    </div>
+		                    <!-- / 表单主体 -->
+		                  </div>
+		                </div>
+		                <!-- 列 -->
+		              </div>
+		            </div>
+		            <!-- / ui-table -->
+		          </div>
+          		  
+          		  <div class="ui-mod-item ui-tabs-item" id="hk6TTW">
+		            <div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1">
+                  					<div class="ui-head-son"><div class="ui-item-son">特码头数</div></div>
+                				</div>
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-HEAD0">0头</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-HEAD0">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-HEAD0">
+													</div>
+												</div>
+												
+												
+												
+										 		
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-HEAD1">1头</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-HEAD1">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-HEAD1">
+													</div>
+												</div>
+												
+												
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-HEAD2">2头</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-HEAD2">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-HEAD2">
+													</div>
+												</div>
+												
+												
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-HEAD3">3头</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-HEAD3">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-HEAD3">
+													</div>
+												</div>
+												
+												
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-HEAD4">4头</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-HEAD4">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-HEAD4">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<!-- -特尾 -->
+								<div class="pure-u-1">
+                  					<div class="ui-head-son"><div class="ui-item-son">特码尾数</div></div>
+                				</div>
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-TAIL0">0尾</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-TAIL0">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-TAIL0">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-TAIL5">5尾</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-TAIL5">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-TAIL5">
+													</div>
+												</div>
+												
+												
+										 		
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-TAIL1">1尾</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-TAIL1">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-TAIL1">
+													</div>
+												</div>
+												
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-TAIL6">6尾</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-TAIL6">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-TAIL6">
+													</div>
+												</div>
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-TAIL2">2尾</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-TAIL2">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-TAIL2">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-TAIL7">7尾</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-TAIL7">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-TAIL7">
+													</div>
+												</div>
+												
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-TAIL3">3尾</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-TAIL3">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-TAIL3">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-TAIL8">8尾</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-TAIL8">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-TAIL8">
+													</div>
+												</div>
+												
+												
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-10-24"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-TAIL4">4尾</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-TAIL4">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-TAIL4">
+													</div>
+												</div>
+												<div class="pure-u-7-24"><div class="ui-item-son"><span id="num_TXTW-TTW-TAIL9">9尾</span></div></div>
+												<div class="pure-u-7-24"><div class="ui-item-son ui-hand red" id="pl_TXTW-TTW-TAIL9">-</div></div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"  name="number[]" id="TXTW-TTW-TAIL9">
+													</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+							</div>
+							<!-- / 循环列 -->
+						</div>
+		            <!-- / ui-table -->
+		          </div>
+       			</div>
+			</div>
+			<!-- / ui-mod-body -->
+		</div>
+		<!-- / ui-mod -->
+	</div>
+	<!-- / ui-form -->
+	<!-- / 下注表单 -->
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="back_fastbet_input"  class="ui-input ui-hand" maxlength="11"/>
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();"  class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+ $(function(){
+ 	$.each(shengXiaoMap,function(key,val){
+    	
+    	var htmlStr = "";
+ 	 	$.each(val,function(index,number){
+ 	 	
+ 	 		htmlStr += "<li class=\"ui-item\"><span class=\"ball "+getHK6ColorClassName(number)+"\">"+number+"</span></li>";
+ 	 	});
+ 		$("#UL_"+key).html(htmlStr);
+ 	});
+ 
+ 
+ });
+ </script>
+ <script src="{resourceRoot}/cp/js/bet.js"></script>

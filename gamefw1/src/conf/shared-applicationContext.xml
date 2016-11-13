@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd	
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+ 
+	<!-- 配置数据源-->
+	<bean id="dataSource_shared" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${shared.jdbc.connection.driver_class}" />
+		<property name="jdbcUrl" value="${shared.jdbc.connection.url}" />
+		<property name="user" value="${shared.jdbc.connection.username}" />
+		<property name="password" value="${shared.jdbc.connection.password}" />
+		<property name="minPoolSize" value="${shared.jdbc.c3p0.minPoolSize}" />
+		<property name="maxPoolSize" value="${shared.jdbc.c3p0.maxPoolSize}" />
+		<property name="initialPoolSize" value="${shared.jdbc.c3p0.initialPoolSize}" />
+		<property name="maxIdleTime" value="${shared.jdbc.c3p0.maxIdleTime}" />
+		<property name="acquireIncrement" value="${shared.jdbc.c3p0.acquireIncrement}" />
+		<property name="maxStatements" value="${shared.jdbc.c3p0.maxStatements}" />
+		<property name="idleConnectionTestPeriod" value="${shared.jdbc.c3p0.idleConnectionTestPeriod}" />
+		<property name="acquireRetryAttempts" value="${shared.jdbc.c3p0.acquireRetryAttempts}" />
+		<property name="breakAfterAcquireFailure" value="${shared.jdbc.c3p0.breakAfterAcquireFailure}" />
+		<property name="testConnectionOnCheckout" value="${shared.jdbc.c3p0.testConnectionOnCheckout}" />
+	</bean>
+	
+ 
+ 
+	<bean id="sessionFactory_shared" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource_shared"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</prop>
+				<prop key="hibernate.c3p0.timeout">120</prop>
+				<prop key="hibernate.c3p0.min_size">5</prop>
+				<prop key="hibernate.c3p0.max_size">100</prop>
+				<prop key="hibernate.c3p0.idle_test_period">120</prop>
+		        <prop key="hibernate.c3p0.acquire_increment">2</prop>
+				<prop key="hibernate.show_sql">
+					${hibernate.show_sql}
+				</prop>
+				<prop key="hibernate.dialect">
+					${hibernate.dialect}
+				</prop>
+				<prop key="hibernate.max_fetch_depth">
+					${hibernate.max_fetch_depth}
+				</prop>
+				<prop key="hibernate.jdbc.fetch_size">
+					${hibernate.jdbc.fetch_size}
+				</prop>
+				<prop key="hibernate.jdbc.batch_size">
+					${hibernate.jdbc.batch_size}
+				</prop>
+				<prop key="hibernate.bytecode.use_reflection_optimizer">
+					${hibernate.bytecode.use_reflection_optimizer}
+				</prop>
+				<prop key="hibernate.hbm2ddl.auto">
+					${hibernate.hbm2dll}
+				</prop>
+				<prop key="hibernate.format_sql">
+				    ${hibernate.format_sql}
+				</prop>
+				<prop key="hibernate.c3p0.max_statements">
+				    ${hibernate.c3p0.max_statements}
+				</prop>
+				<prop key="hibernate.hbm2ddl.auto">none</prop> <!-- 自动根据PO更新表结构 -->
+			</props>
+		</property>
+		<!-- spring2.5.6才packagesToScan有属性  2.5.5使用annotatedClasses属性-->
+		<property name="packagesToScan" value="com.mh" />
+	</bean>
+ 
+
+	<!-- 配置事务管理器 -->
+    <bean id="transactionManager_shared"
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory_shared" />
+        </property>
+    </bean>
+    
+    <bean id="hibernateTemplate_shared" class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory_shared"/>
+        </property>
+   	</bean>
+   	
+   	<bean id="jdbcTemplate_shared" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource">
+            <ref bean="dataSource_shared"/>
+        </property>
+   	</bean>
+
+
+	<tx:advice id="txAdvice_shared" transaction-manager="transactionManager_shared">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true"/>
+			<tx:method name="find*" read-only="true"/>
+			<tx:method name="*"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="txPointcut_shared" expression="execution(* com.mh.service.*.*(..))"/>
+		<aop:advisor pointcut-ref="txPointcut_shared" advice-ref="txAdvice_shared"/>
+	</aop:config> 
+	
+</beans>

@@ -1,0 +1,20 @@
+<div class="wrapper">
+	<div class="kj-center-content">
+		<ul class="clearfix">
+			<li class="bg-2" ng-repeat="kaijiang in kaijiangList track by $index">
+				<a class="clearfix" ui-sref="caipiao.kaijiang.detail({game_code: kaijiang.game_code})">
+					<div class="left"><img class="w100p" ng-src="{{staticURL('/misc/icons/'+kaijiang.game_code+'.png')}}" alt="" /></div>
+					<div class="right">
+						<p class="gq white">
+							<span class="gname">{{kaijiang.game_name}}</span>
+							<span class="qs">第{{kaijiang.qs}}期</span>
+						</p>
+						<p class="kj-number white">
+							<span>{{kaijiang.formatOpenCode}}</span>
+						</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

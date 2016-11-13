@@ -1,0 +1,85 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/hk6_header.html')"></div>
+
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-body-son">
+		<div class="pure-g" ng-repeat="number in range(0, 10, 2) track by $index">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">{{number}}尾</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span 
+						ng-click="selectedPeiyu['YXYZTW-ZTWXZ-'+number] = selectedPeiyu['YXYZTW-ZTWXZ-'+number]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu['YXYZTW-ZTWXZ-'+number]}" 
+						ng-attr-id="{{'YXYZTW-ZTWXZ-'+number}}" >{{peiyu['YXYZTW-ZTWXZ-'+number]}}</span>
+				</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">{{number+1}}尾</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span 
+						ng-click="selectedPeiyu['YXYZTW-ZTWXZ-'+ ( number + 1)] = selectedPeiyu['YXYZTW-ZTWXZ-'+( number + 1)]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu['YXYZTW-ZTWXZ-'+( number + 1)]}" 
+						ng-attr-id="{{'YXYZTW-ZTWXZ-'+( number + 1)}}" >{{peiyu['YXYZTW-ZTWXZ-'+( number + 1)]}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-12-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+		</div> 
+	</div>
+	<div class="ui-body-son">
+		<div class="pure-g" ng-repeat="(key, name) in shengXiaoNames">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">{{name}}</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">
+					<span 
+						ng-click="selectedPeiyu['YXYZTW-YXXZ-'+ key.substr(1)] = selectedPeiyu['YXYZTW-YXXZ-'+ key.substr(1)]  == true ? false: true" 
+						ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu['YXYZTW-YXXZ-'+key.substr(1)]}" 
+						ng-attr-id="{{'YXYZTW-YXXZ-'+key.substr(1)}}" >{{peiyu['YXYZTW-YXXZ-'+key.substr(1)]}}</span>
+				
+				</div>
+			</div>
+			<div class="pure-u-12-24">
+				<div class="ui-item-son">
+					<ball ng-repeat="number in shengXiaoMap[key.substr(1)] track by $index" number="number"></ball>
+				</div>
+			</div>
+		</div> 
+	</div>
+</div>

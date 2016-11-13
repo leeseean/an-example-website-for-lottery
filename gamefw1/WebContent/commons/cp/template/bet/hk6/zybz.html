@@ -1,0 +1,4246 @@
+[{"1_10":1}]
+êêê
+<!-- 开奖结果 -->
+<div class="pure-g lotto-result">
+	<div class="pure-u-1-3">
+		<div class="info">
+			<div class="ui-row row-one">
+				<span id="gameBetName" >香港六合彩</span>&nbsp;<strong class="blue" id="typeBetName">中&不中</strong>
+			</div>
+			<p class="ui-row row-two">
+				当前期：<strong class="blue" id="currentQs">--</strong> 期&nbsp;
+			</p>
+		</div>
+	</div>
+	<!-- /left -->
+	<div class="pure-u-2-3">
+		<div class="result">
+			<div class="ui-row row-one cf">
+				<div class="ui-head">
+					<span class="b red" id="lastQs">--</span>期
+				</div>
+				<div class="ui-body">
+					<ul class="ball-group center" id="lastResult"></ul>
+				</div>
+			</div>
+			<div class="ui-row row-two">
+				<!-- 开奖or封盘时间 -->
+				<div class="result-time">
+					<!-- 六合彩 -->
+					<div class="ui-item item-hk6 item-ssc">
+						<ul class="cf">
+							<li class="ui-item-gson">距离封盘：<strong class="red" id="closeTime">--:--</strong></li>
+							<li class="ui-item-gson">距离开奖：<strong class="red" id="openTime">--:--</strong></li>
+						</ul>
+					</div>
+					<!-- / 六合彩 -->
+				</div>
+				<!-- / 开奖or封盘时间 -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /开奖结果 -->
+<!-- 六合彩 特码 -->
+<div>
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="fastbet_input" class="ui-input ui-hand" maxlength="11" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="checkOrder();" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /快捷下注 -->
+	<!-- 下注表单 -->
+	<div  id="betForm" class="bet-form mg-m4">
+		<div class="ui-form">
+			<div class="ui-mod ui-tabs">
+				<div   id="tab_bet" class="ui-mod-head ui-tabs-head nav-mode-play">
+					<ul class="cf">
+						<li class="ui-item ui-item-first ui-active">
+							<a href="javascript:void(0);" data-url="#hk5BZ" class="ui-link">五不中</a>
+						</li>
+						<li class="ui-item"><a href="javascript:void(0);" data-url="#hk7BZ" class="ui-link">七不中</a></li>
+						<li class="ui-item"><a href="javascript:void(0);" data-url="#hk9BZ" class="ui-link">九不中</a></li>
+						<li class="ui-item"><a href="javascript:void(0);" data-url="#hk4Z1" class="ui-link">四中一</a></li>
+						<li class="ui-item"><a href="javascript:void(0);" data-url="#hk6Z1" class="ui-link">六中一</a></li>
+					</ul>
+				</div>
+				<div class="ui-mod-body ui-tabs-body mt10">
+					<!-- 五不中 -->
+					<div class="ui-mod-item ui-tabs-item" id="hk5BZ">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-01">01</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-WBZ-01">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-01">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-02">02</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-WBZ-02">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-02">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-03">03</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-WBZ-03">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-03">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-04">04</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-WBZ-04">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-04">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-05">05</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-WBZ-05">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-05">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-06">06</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-WBZ-06">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-06">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-07">07</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-WBZ-07">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-07">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-08">08</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-WBZ-08">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-08">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-09">09</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-WBZ-09">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-09">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-10">10</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-WBZ-10">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-10">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-11">11</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-11">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-11">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-12">12</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-12">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-12">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-13">13</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-13">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-13">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-14">14</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-14">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-14">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-15">15</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-15">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-15">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-16">16</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-16">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-16">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-17">17</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-17">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-17">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-18">18</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-18">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-18">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-19">19</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-19">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-19">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-20">20</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-20">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-20">-</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-21">21</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-21">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-21">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-22">22</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-22">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-22">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+																
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-23">23</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-23">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-23">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+																				
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-24">24</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-24">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-24">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-25">25</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-25">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-25">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-26">26</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-26">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-26">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-27">27</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-27">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-27">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-28">28</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-28">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-28">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-29">29</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-29">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-29">-</div>
+												</div>
+												<!-- / 循环行 -->
+															
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-30">30</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-30">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-30">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-31">31</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-31">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-31">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-32">32</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-32">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-32">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-33">33</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-33">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-33">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-34">34</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-34">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-34">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-35">35</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-35">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-35">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-36">36</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-36">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-36">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-37">37</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-37">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-37">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+														
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-38">38</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-38">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-38">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-39">39</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-39">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-39">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-40">40</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-40">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-40">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-41">41</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-41">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-41">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-42">42</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-42">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-42">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-43">43</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-43">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-43">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-44">44</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-44">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-44">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-45">45</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-45">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-45">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-WBZ-46">46</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-46">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-46">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-47">47</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-47">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-47">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-WBZ-48">48</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-48">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-48">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-WBZ-49">49</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-WBZ-49">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-WBZ-49">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<div class="pure-u-1"><div class="ui-item-son"></div></div>
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+						</div>
+						<!-- / ui-table -->
+
+					</div>
+					<!--七不中 -->
+					<div class="ui-mod-item ui-tabs-item" id="hk7BZ" style=" display: none;">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-01">01</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-QBZ-01">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-01">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-02">02</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-QBZ-02">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-02">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-03">03</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-QBZ-03">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-03">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-04">04</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-QBZ-04">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-04">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-05">05</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-QBZ-05">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-05">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-06">06</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-QBZ-06">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-06">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-07">07</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-QBZ-07">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-07">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-08">08</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-QBZ-08">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-08">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-09">09</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-QBZ-09">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-09">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-10">10</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-QBZ-10">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-10">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-11">11</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-11">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-11">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-12">12</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-12">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-12">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-13">13</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-13">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-13">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-14">14</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-14">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-14">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-15">15</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-15">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-15">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-16">16</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-16">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-16">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-17">17</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-17">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-17">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-18">18</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-18">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-18">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-19">19</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-19">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-19">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-20">20</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-20">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-20">-</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-21">21</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-21">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-21">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-22">22</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-22">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-22">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+																
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-23">23</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-23">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-23">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+																				
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-24">24</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-24">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-24">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-25">25</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-25">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-25">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-26">26</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-26">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-26">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-27">27</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-27">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-27">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-28">28</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-28">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-28">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-29">29</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-29">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-29">-</div>
+												</div>
+												<!-- / 循环行 -->
+															
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-30">30</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-30">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-30">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-31">31</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-31">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-31">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-32">32</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-32">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-32">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-33">33</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-33">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-33">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-34">34</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-34">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-34">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-35">35</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-35">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-35">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-36">36</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-36">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-36">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-37">37</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-37">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-37">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+														
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-38">38</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-38">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-38">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-39">39</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-39">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-39">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-40">40</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-40">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-40">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-41">41</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-41">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-41">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-42">42</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-42">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-42">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-43">43</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-43">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-43">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-44">44</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-44">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-44">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-45">45</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-45">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-45">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-QBZ-46">46</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-46">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-46">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-47">47</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-47">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-47">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-QBZ-48">48</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-48">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-48">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-QBZ-49">49</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-QBZ-49">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-QBZ-49">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<div class="pure-u-1"><div class="ui-item-son"></div></div>
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+						</div>
+						<!-- / ui-table -->
+					
+					</div>
+					<!-- 九不中 -->
+					<div class="ui-mod-item ui-tabs-item" id="hk9BZ" style=" display: none;">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-01">01</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-JBZ-01">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-01">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-02">02</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-JBZ-02">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-02">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-03">03</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-JBZ-03">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-03">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-04">04</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-JBZ-04">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-04">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-05">05</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-JBZ-05">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-05">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-06">06</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-JBZ-06">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-06">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-07">07</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-JBZ-07">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-07">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-08">08</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-JBZ-08">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-08">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-09">09</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-JBZ-09">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-09">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-10">10</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-JBZ-10">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-10">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-11">11</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-11">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-11">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-12">12</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-12">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-12">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-13">13</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-13">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-13">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-14">14</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-14">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-14">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-15">15</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-15">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-15">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-16">16</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-16">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-16">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-17">17</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-17">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-17">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-18">18</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-18">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-18">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-19">19</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-19">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-19">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-20">20</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-20">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-20">-</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-21">21</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-21">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-21">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-22">22</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-22">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-22">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+																
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-23">23</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-23">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-23">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+																				
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-24">24</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-24">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-24">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-25">25</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-25">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-25">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-26">26</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-26">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-26">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-27">27</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-27">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-27">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-28">28</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-28">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-28">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-29">29</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-29">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-29">-</div>
+												</div>
+												<!-- / 循环行 -->
+															
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-30">30</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-30">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-30">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-31">31</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-31">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-31">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-32">32</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-32">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-32">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-33">33</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-33">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-33">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-34">34</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-34">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-34">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-35">35</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-35">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-35">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-36">36</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-36">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-36">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-37">37</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-37">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-37">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+														
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-38">38</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-38">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-38">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-39">39</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-39">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-39">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-40">40</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-40">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-40">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-41">41</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-41">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-41">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-42">42</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-42">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-42">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-43">43</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-43">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-43">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-44">44</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-44">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-44">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-45">45</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-45">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-45">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-JBZ-46">46</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-46">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-46">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-47">47</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-47">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-47">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-JBZ-48">48</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-48">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-48">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-JBZ-49">49</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-JBZ-49">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-JBZ-49">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<div class="pure-u-1"><div class="ui-item-son"></div></div>
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+						</div>
+						<!-- / ui-table -->
+					
+					</div>
+					<!-- 四中一 -->
+					<div class="ui-mod-item ui-tabs-item" id="hk4Z1" style=" display: none;">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-01">01</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-SZY-01">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-01">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-02">02</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-SZY-02">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-02">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-03">03</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-SZY-03">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-03">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-04">04</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-SZY-04">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-04">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-05">05</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-SZY-05">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-05">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-06">06</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-SZY-06">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-06">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-07">07</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-SZY-07">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-07">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-08">08</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-SZY-08">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-08">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-09">09</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-SZY-09">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-09">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-10">10</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-SZY-10">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-10">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-11">11</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-11">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-11">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-12">12</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-12">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-12">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-13">13</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-13">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-13">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-14">14</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-14">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-14">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-15">15</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-15">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-15">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-16">16</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-16">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-16">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-17">17</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-17">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-17">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-18">18</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-18">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-18">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-19">19</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-19">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-19">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-20">20</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-20">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-20">-</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-21">21</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-21">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-21">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-22">22</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-22">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-22">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+																
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-23">23</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-23">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-23">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+																				
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-24">24</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-24">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-24">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-25">25</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-25">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-25">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-26">26</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-26">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-26">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-27">27</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-27">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-27">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-28">28</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-28">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-28">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-29">29</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-29">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-29">-</div>
+												</div>
+												<!-- / 循环行 -->
+															
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-30">30</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-30">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-30">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-31">31</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-31">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-31">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-32">32</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-32">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-32">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-33">33</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-33">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-33">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-34">34</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-34">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-34">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-35">35</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-35">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-35">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-36">36</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-36">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-36">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-37">37</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-37">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-37">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+														
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-38">38</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-38">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-38">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-39">39</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-39">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-39">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-40">40</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-40">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-40">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-41">41</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-41">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-41">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-42">42</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-42">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-42">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-43">43</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-43">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-43">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-44">44</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-44">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-44">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-45">45</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-45">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-45">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-SZY-46">46</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-46">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-46">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-47">47</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-47">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-47">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-SZY-48">48</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-48">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-48">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-SZY-49">49</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-SZY-49">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-SZY-49">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<div class="pure-u-1"><div class="ui-item-son"></div></div>
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+						</div>
+						<!-- / ui-table -->
+					
+					</div>
+					<!-- 六中一 -->
+					<div class="ui-mod-item ui-tabs-item" id="hk6Z1" style=" display: none;">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-01">01</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-LZY-01">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-01">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-02">02</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-LZY-02">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-02">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-03">03</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-LZY-03">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-03">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-04">04</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-LZY-04">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-04">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-05">05</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-LZY-05">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-05">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-06">06</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-LZY-06">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-06">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-07">07</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-LZY-07">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-07">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-08">08</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-LZY-08">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-08">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-09">09</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-LZY-09">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-09">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-10">10</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox"  name="number[]" id="ZYBZ-LZY-10">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-10">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-11">11</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-11">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-11">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-12">12</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-12">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-12">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-13">13</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-13">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-13">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-14">14</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-14">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-14">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-15">15</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-15">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-15">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-16">16</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-16">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-16">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-17">17</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-17">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-17">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-18">18</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-18">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-18">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-19">19</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-19">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-19">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-20">20</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-20">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-20">-</div>
+												</div>
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-21">21</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-21">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-21">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-22">22</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-22">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-22">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+																
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-23">23</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-23">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-23">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+																				
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-24">24</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-24">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-24">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-25">25</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-25">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-25">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-26">26</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-26">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-26">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-27">27</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-27">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-27">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-28">28</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-28">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-28">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-29">29</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-29">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-29">-</div>
+												</div>
+												<!-- / 循环行 -->
+															
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-30">30</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-30">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-30">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-31">31</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-31">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-31">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-32">32</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-32">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-32">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-33">33</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-33">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-33">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-34">34</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-34">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-34">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-35">35</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-35">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-35">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-36">36</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-36">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-36">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-37">37</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-37">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-37">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+														
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-38">38</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-38">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-38">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-39">39</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-39">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-39">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-40">40</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-40">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-40">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+								
+								
+								<div class="pure-u-1-5">
+									<div class="ui-table-loop">
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">号码</div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">勾选</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son">赔率</div>
+												</div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-41">41</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-41">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-41">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-42">42</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-42">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-42">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-43">43</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-43">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-43">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-44">44</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-44">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-44">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-45">45</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-45">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-45">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-red" id="num_ZYBZ-LZY-46">46</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-46">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-46">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-47">47</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-47">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-47">-</div>
+												</div>
+												<!-- / 循环行 -->
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-blue" id="num_ZYBZ-LZY-48">48</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-48">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-48">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<!-- 循环行 -->
+												<div class="pure-u-7-24">
+													<div class="ui-item-son"><span class="ball ball-green" id="num_ZYBZ-LZY-49">49</span></div>
+												</div>
+												<div class="pure-u-7-24">
+													<div class="ui-item-son">
+														<input type="checkbox" class="ui-checkbox" name="number[]" id="ZYBZ-LZY-49">
+													</div>
+												</div>
+												<div class="pure-u-10-24">
+													<div class="ui-item-son ui-hand red" id="pl_ZYBZ-LZY-49">-</div>
+												</div>
+												<!-- / 循环行 -->
+												
+												<div class="pure-u-1"><div class="ui-item-son"></div></div>
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+						</div>
+						<!-- / ui-table -->
+					</div>
+					<!-- / ui-mod-item -->
+				</div>
+				<!-- / ui-mod-body -->
+			</div>
+			<!-- / ui-mod -->
+		</div>
+		<!-- / ui-form -->
+	</div>
+	<!-- / 下注表单 -->
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="back_fastbet_input"  class="ui-input ui-hand" maxlength="11"/>
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="checkOrder();" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+ function checkOrder(){
+ 	var _xzje = $("#fastbet_input").val();
+	if($.trim(_xzje)==''){
+		showMessage("提示","请输入下注金额！");
+		return;
+	}
+ 
+ 	var total=0;
+ 	$("#betForm input[type='checkbox']:checked").each(function(){
+		total++;
+	});
+ 	var type_min = 5;
+ 	var cpTypeCode="ZYBZ";
+ 	var cpCateCode="WBZ";
+ 	$("#tab_bet ul li.ui-active").each(function(index,value){
+		var data_url=$(this).find("a").attr("data-url");
+		if(data_url=="#hk5BZ"){
+			type_min=5;
+			cpCateCode="WBZ";
+		}else if(data_url=="#hk7BZ"){
+			type_min=7;
+			cpCateCode="QBZ";
+		}else if(data_url=="#hk9BZ"){
+			type_min=9;
+			cpCateCode="JBZ";
+		}else if(data_url=="#hk4Z1"){
+			type_min=4;
+			cpCateCode="SZY";
+		}else if(data_url=="#hk6Z1"){
+			type_min=6;
+			cpCateCode="LZY";
+		}
+	});
+	if (type_min > total) {
+		showMessage("提示","至少需要选择" + type_min + "个号码！");
+		return;
+	}
+ 	goMulitOrder(type_min,cpTypeCode,cpCateCode);
+ 
+ }
+</script>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<FunoWebSafe>
+	<!-- 容器类型  0:OMP  1:其他	-->
+	<WebContainer>1</WebContainer>
+	<!-- 需检测的特殊字符  -->
+	<SpecialCharList>
+		<Char>(</Char>
+		<Char>)</Char>
+		<Char>'</Char>
+		<Char>"</Char>
+		<Char>&lt;</Char>
+		<Char>&gt;</Char>
+		<Char>/</Char>
+		<Char>`</Char>
+		<Char>+</Char>
+		<Char>{</Char>
+		<Char>}</Char>
+		<Char>:</Char>
+		<Char>;</Char>
+		<Char>||</Char>
+		<Char>,</Char>
+		<Char>'%</Char>
+		<Char>%'</Char>
+		<Char>*</Char>
+	</SpecialCharList>
+	<!-- 全局参数白名单  -->
+	<GlobalParamWhiteList>
+		<!-- 可忽略特殊字符  -->
+		<Param name="backurl">
+			<Char>&amp;</Char>
+			<Char>=</Char>
+			<Char>/</Char>
+			<Char>:</Char>
+		</Param>
+	</GlobalParamWhiteList>
+	<!-- URL白名单  -->
+	<WhiteUrlList></WhiteUrlList>
+</FunoWebSafe>

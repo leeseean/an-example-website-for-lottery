@@ -1,0 +1,564 @@
+[{"1_4":1}]
+êêê
+<!-- 开奖结果 -->
+<div class="pure-g lotto-result">
+	<div class="pure-u-1-3">
+		<div class="info">
+			<div class="ui-row row-one">
+				<span id="gameBetName" >香港六合彩</span>&nbsp;<strong class="blue" id="typeBetName">正码1-6</strong>
+			</div>
+			<p class="ui-row row-two">
+				当前期：<strong class="blue" id="currentQs">--</strong> 期&nbsp;
+			</p>
+		</div>
+	</div>
+	<!-- /left -->
+	<div class="pure-u-2-3">
+		<div class="result">
+			<div class="ui-row row-one cf">
+				<div class="ui-head">
+					<span class="b red" id="lastQs">--</span>期
+				</div>
+				<div class="ui-body">
+					<ul class="ball-group center" id="lastResult"></ul>
+				</div>
+			</div>
+			<div class="ui-row row-two">
+				<!-- 开奖or封盘时间 -->
+				<div class="result-time">
+					<!-- 六合彩 -->
+					<div class="ui-item item-hk6 item-ssc">
+						<ul class="cf">
+							<li class="ui-item-gson">距离封盘：<strong class="red" id="closeTime">--:--</strong></li>
+							<li class="ui-item-gson">距离开奖：<strong class="red" id="openTime">--:--</strong></li>
+						</ul>
+					</div>
+					<!-- / 六合彩 -->
+				</div>
+				<!-- / 开奖or封盘时间 -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /开奖结果 -->
+<!-- 六合彩 特码 -->
+<div>
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text" id="fastbet_input" class="ui-input ui-hand" maxlength="11" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /快捷下注 -->
+
+	<!-- 下注表单 -->
+	<div  id="betForm" class="bet-form">
+		<div class="ui-form">
+			<div class="ui-mod ui-tabs">
+				
+				<div class="ui-mod-body ui-tabs-body mt10">
+					<div class="ui-mod-item ui-tabs-item" id="hk6ZM1">
+						<div class="ui-table">
+							<div class="pure-g">
+								<div class="pure-u-1-3">
+									<div class="ui-table-loop">
+										<div class="pure-u-1"><div class="ui-item-son"><span >正码1</span></div></div>
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-1-5"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-3-5"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM1-BIG">大</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM1-BIG">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="ZM1T6-ZM1-BIG">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM1-SMALL">小</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM1-SMALL">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM1-SMALL">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM1-ODD">单</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM1-ODD">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM1-ODD">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span  id="num_ZM1T6-ZM1-EVEN">双</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM1-EVEN">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM1-EVEN">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son red"><span id="num_ZM1T6-ZM1-RED">红波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM1-RED">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM1-RED">
+													</div>
+												</div>
+												<div class="pure-u-1-5"><div class="ui-item-son green"><span id="num_ZM1T6-ZM1-GREEN">绿波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM1-GREEN">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM1-GREEN">
+													</div>
+												</div>
+												<div class="pure-u-1-5"><div class="ui-item-son blue"><span id="num_ZM1T6-ZM1-BLUE">蓝波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM1-BLUE">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM1-BLUE">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-3">
+									<div class="ui-table-loop">
+										<div class="pure-u-1"><div class="ui-item-son"><span >正码2</span></div></div>
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-1-5"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-3-5"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM2-BIG">大</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM2-BIG">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="ZM1T6-ZM2-BIG">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM2-SMALL">小</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM2-SMALL">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM2-SMALL">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM2-ODD">单</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM2-ODD">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM2-ODD">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span  id="num_ZM1T6-ZM2-EVEN">双</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM2-EVEN">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM2-EVEN">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son red"><span id="num_ZM1T6-ZM2-RED">红波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM2-RED">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM2-RED">
+													</div>
+												</div>
+												<div class="pure-u-1-5"><div class="ui-item-son green"><span id="num_ZM1T6-ZM2-GREEN">绿波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM2-GREEN">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM2-GREEN">
+													</div>
+												</div>
+												<div class="pure-u-1-5"><div class="ui-item-son blue"><span id="num_ZM1T6-ZM2-BLUE">蓝波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM2-BLUE">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM2-BLUE">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-3">
+									<div class="ui-table-loop">
+										<div class="pure-u-1"><div class="ui-item-son"><span >正码3</span></div></div>
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-1-5"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-3-5"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM3-BIG">大</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM3-BIG">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="ZM1T6-ZM3-BIG">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM3-SMALL">小</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM3-SMALL">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM3-SMALL">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM3-ODD">单</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM3-ODD">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM3-ODD">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span  id="num_ZM1T6-ZM3-EVEN">双</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM3-EVEN">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM3-EVEN">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son red"><span id="num_ZM1T6-ZM3-RED">红波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM3-RED">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM3-RED">
+													</div>
+												</div>
+												<div class="pure-u-1-5"><div class="ui-item-son green"><span id="num_ZM1T6-ZM3-GREEN">绿波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM3-GREEN">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM3-GREEN">
+													</div>
+												</div>
+												<div class="pure-u-1-5"><div class="ui-item-son blue"><span id="num_ZM1T6-ZM3-BLUE">蓝波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM3-BLUE">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM3-BLUE">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<!-- / 循环列 -->
+								
+							</div>
+							<!-- 行 -->
+							<div class="pure-g">
+								<div class="pure-u-1-3">
+									<div class="ui-table-loop">
+										<div class="pure-u-1"><div class="ui-item-son"><span >正码4</span></div></div>
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-1-5"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-3-5"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM4-BIG">大</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM4-BIG">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="ZM1T6-ZM4-BIG">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM4-SMALL">小</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM4-SMALL">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM4-SMALL">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM4-ODD">单</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM4-ODD">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM4-ODD">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span  id="num_ZM1T6-ZM4-EVEN">双</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM4-EVEN">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM4-EVEN">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son red"><span id="num_ZM1T6-ZM4-RED">红波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM4-RED">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM4-RED">
+													</div>
+												</div>
+												<div class="pure-u-1-5"><div class="ui-item-son green"><span id="num_ZM1T6-ZM4-GREEN">绿波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM4-GREEN">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM4-GREEN">
+													</div>
+												</div>
+												<div class="pure-u-1-5"><div class="ui-item-son blue"><span id="num_ZM1T6-ZM4-BLUE">蓝波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM4-BLUE">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM4-BLUE">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-3">
+									<div class="ui-table-loop">
+										<div class="pure-u-1"><div class="ui-item-son"><span >正码5</span></div></div>
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-1-5"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-3-5"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM5-BIG">大</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM5-BIG">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="ZM1T6-ZM5-BIG">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM5-SMALL">小</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM5-SMALL">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM5-SMALL">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM5-ODD">单</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM5-ODD">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM5-ODD">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span  id="num_ZM1T6-ZM5-EVEN">双</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM5-EVEN">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM5-EVEN">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son red"><span id="num_ZM1T6-ZM5-RED">红波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM5-RED">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM5-RED">
+													</div>
+												</div>
+												<div class="pure-u-1-5"><div class="ui-item-son green"><span id="num_ZM1T6-ZM5-GREEN">绿波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM5-GREEN">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM5-GREEN">
+													</div>
+												</div>
+												<div class="pure-u-1-5"><div class="ui-item-son blue"><span id="num_ZM1T6-ZM5-BLUE">蓝波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM5-BLUE">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM5-BLUE">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								
+								<div class="pure-u-1-3">
+									<div class="ui-table-loop">
+										<div class="pure-u-1"><div class="ui-item-son"><span >正码6</span></div></div>
+										<div class="ui-head-son">
+											<div class="pure-g">
+												<div class="pure-u-1-5"><div class="ui-item-son">号码</div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son">赔率</div></div>
+												<div class="pure-u-3-5"><div class="ui-item-son">金额</div></div>
+											</div>
+										</div>
+										<!-- / 表单标题 -->
+										<div class="ui-body-son ui-body-ball">
+											<div class="pure-g">
+												<!-- 循环行 -->
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM6-BIG">大</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM6-BIG">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input"   name="number[]" id="ZM1T6-ZM6-BIG">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM6-SMALL">小</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM6-SMALL">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM6-SMALL">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span id="num_ZM1T6-ZM6-ODD">单</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM6-ODD">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM6-ODD">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son"><span  id="num_ZM1T6-ZM6-EVEN">双</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM6-EVEN">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM6-EVEN">
+													</div>
+												</div>
+												
+												<div class="pure-u-1-5"><div class="ui-item-son red"><span id="num_ZM1T6-ZM6-RED">红波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM6-RED">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM6-RED">
+													</div>
+												</div>
+												<div class="pure-u-1-5"><div class="ui-item-son green"><span id="num_ZM1T6-ZM6-GREEN">绿波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM6-GREEN">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM6-GREEN">
+													</div>
+												</div>
+												<div class="pure-u-1-5"><div class="ui-item-son blue"><span id="num_ZM1T6-ZM6-BLUE">蓝波</span></div></div>
+												<div class="pure-u-1-5"><div class="ui-item-son ui-hand red" id="pl_ZM1T6-ZM6-BLUE">-</div></div>
+												<div class="pure-u-3-5">
+													<div class="ui-item-son">
+														<input type="text" class="ui-input" name="number[]" id="ZM1T6-ZM6-BLUE">
+													</div>
+												</div>
+												
+												<!-- / 循环行 -->
+											</div>
+										</div>
+										<!-- / 表单主体 -->
+									</div>
+								</div>
+								<!-- / 循环列 -->
+							</div>
+							
+						</div>
+					</div>
+					<!-- / ui-mod-item -->
+				</div>
+				<!-- / ui-mod-body -->
+			</div>
+			<!-- / ui-mod -->
+		</div>
+		<!-- / ui-form -->
+	</div>
+	<!-- / 下注表单 -->
+	<!-- 快捷下注 -->
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<div class="bet-form-action cf">
+				<ul class="order r cf">
+					<li class="ui-item">快速下注</li>
+					<li class="ui-item">
+						<input type="text"  id="back_fastbet_input" class="ui-input ui-hand" maxlength="11"/>
+					</li>
+					<li class="ui-item">
+						<input type="button" value="下注" onclick="createWebOrder()" class="button button-small button-raised button-primary" />
+					</li>
+					<li class="ui-item">
+						<input type="button" value="重填" onclick="clearBetForm();" class="button button-small button-raised" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="{resourceRoot}/cp/js/bet.js"></script>

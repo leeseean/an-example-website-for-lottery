@@ -1,0 +1,107 @@
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-24-24"><div class="ui-item-son">万定位</div></div>
+		</div>
+	</div>
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-body-son">
+		<div class="pure-g" ng-repeat="number in range(0, 10, 2)">
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span>{{number}}</span>
+					</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span 
+							ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-'+number] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-'+number]  == true ? false: true" 
+							ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-'+number]}" 
+							ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+'-'+number}}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-'+number]}}</span>
+					</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span>{{number+1}}</span>
+					</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span 
+							ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-' + (number + 1)] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-'+ (number + 1)]  == true ? false: true" 
+							ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-' + (number + 1)]}" 
+							ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+'-' + (number + 1)}}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-' + (number + 1)]}}</span>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+<div class="ui-table">
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-24-24"><div class="ui-item-son">万</div></div>
+		</div>
+	</div>
+	<div class="ui-head-son">
+		<div class="pure-g">
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">号码</div>
+			</div>
+			<div class="pure-u-6-24">
+				<div class="ui-item-son">赔率</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-body-son" ng-init="ids = ['BIG', 'SMALL', 'ODD', 'EVEN', 'ZHI', 'HE']; names = ['大', '小', '单', '双', '质', '合'];">
+		<div class="pure-g" ng-repeat="number in range(0, 6, 2)">
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span>{{ names[number] }}</span>
+					</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span 
+							ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-'+ ids[number]] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-'+ ids[number] ]  == true ? false: true" 
+							ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-'+ ids[number] ]}" 
+							ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+'-'+ ids[number] }}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-'+ ids[number] ]}}</span>
+					</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span>{{names[number+1]}}</span>
+					</div>
+				</div>
+				<div class="pure-u-6-24">
+					<div class="ui-item-son">
+						<span 
+							ng-click="selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-' + ( ids[number+1] )] = selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-'+ ( ids[number+1] )]  == true ? false: true" 
+							ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-' + ( ids[number + 1] ) ]}" 
+							ng-attr-id="{{( code2 | uppercase )+'-'+ (subType | uppercase)+'-' + ( ids[number + 1] ) }}" >{{peiyu[( code2 | uppercase )+'-'+ (subType | uppercase)+'-' + ( ids[number + 1])]}}</span>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>

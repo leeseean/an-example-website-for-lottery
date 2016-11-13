@@ -1,0 +1,2 @@
+// fake 
+angular.module('AppTemplate', []);

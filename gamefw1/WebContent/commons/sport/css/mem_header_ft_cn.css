@@ -1,0 +1,219 @@
+/*----------------------------------------*/
+/*2010-10-01-For NewSI2*/
+/*----------------------------------------*/
+@charset "UTF-8";
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~ Logout (Link1) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@import url("mem_header_navi_cn.css");
+
+iframe { border:none;}
+/*back*/
+div#back { width:279px;	position: absolute;float: left;top:1px; margin-left: 700px;font-family: Arial, Helvetica, SimSun, sans-serif;z-index:1000;}
+
+
+body.bodyset {margin: 0px;padding: 0px;background: #8A4102 url(../images/head_bg_ft.jpg) repeat-x left top;behavior:url(/style/csshover.htc);}
+#container { /*position: relative;*/font-family: Arial, Helvetica, SimSun, sans-serif;}
+#header {	margin: 0px;	padding: 0px;}
+#header h1 {/*behavior: url(png-opacity.htc);*/	/*background: transparent url(../images/inda_head_l.png) no-repeat left top;margin: 0px;	display: block;	height: 56px;	padding: 0px;*/}
+#header span {	/*background: transparent url(../images/inda_head_r.jpg) no-repeat right top;	display: block;height: 56px;*/}
+ul {	margin: 0;	padding: 0;}
+a { text-decoration: none;}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~ Welcome (Link2) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#welcome {position: absolute; top:27px; margin:0; padding:0; width:980px; color:#FFF; clear:left;}
+#welcome li {list-style: none; float: left; margin-right: 3px; text-align:center;  font-size: 14px; line-height: 34px; padding-top:3px; white-space: nowrap;/*background: url(../images/head_focus_btn_out.gif) no-repeat left top;*/}
+#welcome a {display: block; /*float: left; *//* width: .1em;*/ padding: 0; /*width:130px;*/ font-weight: bold;  color: #E7B565;}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#welcome a {float: none;}            /* End IE5-Mac hack */
+#welcome a:link, #welcome a:visited { color: #E7B565;}
+#welcome a:hover {color: #F8C100;}
+#welcome li.name { display:block; width:240px; margin-right: 0;	height:34px; line-height:16px; font:12px Arial, Helvetica, sans-serif; font-weight:bold; background:none;}
+#welcome .pass { position: absolute; right:0px; padding-top:2px; padding-right:0px; text-align:right;font:12px Arial, Helvetica, sans-serif;}
+#welcome .pass a { font-weight:normal!important; }
+.rb_sum { font:12px  Arial, Helvetica, sans-serif; font-weight:bold;}
+/*閿熺惮閿熺当閿熸枻鎷�//**//**/
+#welcome li.rb {width:107px;background: url(../images/head_rb_btn.gif) no-repeat left top;}
+#welcome li.today {width:128px;background: url(../images/head_today_btn.gif) no-repeat left top;}
+#welcome li.early { width:114px;background: url(../images/head_early_btn.gif) no-repeat left top;}
+/*#HFT #welcome li.rb .ball {display: block;background: url(../images/head_ball_ft.gif) no-repeat 13px 50%;}
+/*閿熸枻鎷烽敓鏂ゆ嫹甯介敓鏂ゆ嫹閿熸枻鎷�/
+/*~~~~~~~~~~~~~~~~~Notice! Don't delete this note, For IE hack~~~~~~~~~~~~~~~~~*/
+#welcome li.rb_on  { width:107px; color: #F8C100; background: url(../images/head_rb_btn.gif) 0 -40px no-repeat;}
+#welcome li.today_on  { width:128px; color: #F8C100; background: url(../images/head_today_btn.gif) 0 -40px no-repeat;}
+#welcome li.early_on { width:114px; color: #F8C100; background: url(../images/head_early_btn.gif) 0 -40px no-repeat;}
+#welcome li.rb_on a:link, #welcome li.rb_on a:visited, #welcome li.today_on a:link, #welcome li.today_on a:visited,  #welcome li.early_on a:link, #welcome li.early_on a:visited{ color: #F8C100;}
+#welcome li.live_tv {  margin-left:2px; width:28px; height:29px;background: url(../images/live_tv_m.gif) 0 0 no-repeat;}
+/*~~~~~~~~~~~~~~~~~閿熺祪閿熺当閿熸枻鎷穨~~~~~~~~~~~~~~~~*//**/
+#welcome li.rb_null  { width:107px; color: #7D6342; font-weight:bold; background: url(../images/head_rb_btn.gif) 0 -80px no-repeat;}
+#welcome li.today_null  { width:128px; color: #7D6342; font-weight:bold;  background: url(../images/head_today_btn.gif) 0 -80px no-repeat;}
+#welcome li.early_null { width:114px; color: #7D6342; font-weight:bold;  background: url(../images/head_early_btn.gif) 0 -80px no-repeat;}
+#welcome li.rb_null a:link, #welcome li.rb_null a:visited, #welcome li.today_null a:link, #welcome li.today_null a:visited,  #welcome li.early_null a:link, #welcome li.early_null a:visited{ color: #7D6342;}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~Game Type ( link 3) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#nav_today,#nav_early, #nav_re {position: absolute; top:61px; margin:0 0 0 240px; padding:0; width:100%; clear:left; background: #D7D7C1 url(../images/head_nav_bg_ft.gif) 0 0 repeat-x;border: solid 1px #FFF; white-space: nowrap;z-index:99;}
+#nav_today li,#nav_early li, #nav_re li {list-style: none; float: left; text-align:center;  font-size: 0.75em; line-height: 22px; white-space: nowrap; background:url(../images/head_nav_arr.gif) no-repeat 0 50%;}
+#nav_today a,#nav_early a, #nav_re a {display: block; float: left; clear:left;  width: .1em; padding: 4px 13px 4px 13px;  color: #FFF;}
+/**/
+html>body #nav_today a,html>body #nav_early a, html>body #nav_re a {width: auto;}    /* fixes IE6 hack */
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#nav_today a,#nav_early a, #nav_re a {float: none;}            /* End IE5-Mac hack */
+
+#nav_today a:link, #nav_early a:visited, #nav_re a:link, #nav_re a:visited { color: #FFF;}
+#nav_today a:hover,#nav_early a:hover, #nav_re a:hover {color: #FF0;}
+/*======閿熺当閿熸枻鎷穒con================*/
+#nav_today li.ft,#nav_early li.ft, #nav_re li.ft { background: none; margin-left:-4px;}
+#nav_today li.ft a,#nav_early li.ft a, #nav_re li.ft a { padding-left:15px;}
+#nav_today li.op a,#nav_early li.op a, #nav_re li.op a { padding-left:11px;}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~ Type (Link4) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#type_today,#type_early, #type_re {position: absolute; top:93px; margin:0 0 0 240px; padding:0 10px; width:100%; clear:left; background: #260707 url(../images/head_type_bg_ft.gif) 0 0 repeat-x;border-left: solid 1px #FFF; white-space: nowrap;z-index:90;}
+#type_re .re { background-image: none;}
+#type_today li,#type_early li, #type_re li {list-style: none; float: left; text-align:center;  font-size: 0.75em; line-height: 26px; white-space: nowrap; background:url(../images/head_nav_arr.gif) no-repeat 0 50%;}
+#type_today a,#type_early a,  #type_re a {display: block; float: left;  width: .1em; padding: 0px 15px 0px 15px; }
+html>body #type_today a,html>body #type_early a,  html>body #type_re a {width: auto;}    /* fixes IE6 hack */
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#type_today a,#type_early a, #type_re a {float: none;}            /* End IE5-Mac hack */
+#type_today a:link, #type_early a:visited, #type_re a:link, #type_re a:visited { color: #FFF;}
+#type_today a:hover,#type_early a:hover,  #type_re a:hover {color: #FF0;}
+#type_today ul,#type_today ul,  #type_re ul { margin-left:-11px; width:751px;}/*閿熺即鐙﹂敓绲敓鏂ゆ嫹 閿熸枻鎷烽敓鏂ゆ嫹閿熺禑閿熺祻閿熺氮*/
+#type_today .result,#type_early .result, #type_re .result{ float:right; padding-right:8px; background: none;}/*閿熺即鐙﹂敓绲橀敓绲�/
+/*----閿熸枻鎷烽敓绲㈤敓鏂ゆ嫹閿熸枻鎷�---*//**/
+#type_today .type_on:link, #type_today .type_on:visited,#type_early .type_on:link, #type_early .type_on:visited, #type_re .type_on:link, #type_re .type_on:visited { color: #F9C100;}
+/*----閿熸枻鎷烽敓绲㈤敓绲敓绲�---*//**/
+#type_today .type_out:link, #type_today .type_out:visited,#type_early .type_out:link, #type_early .type_out:visited, #type_re .type_out:link, #type_re .type_out:visited { color: #FFF;}
+
+/*----閿熸枻鎷烽敓绲㈤敓鏂ゆ嫹閿熸枻鎷�---*//**/
+#nav_today .type_on:link, #nav_today .type_on:visited,#nav_early .type_on:link, #nav_early .type_on:visited, #type_re .type_on:link, #type_re .type_on:visited { color: #F9C100;}
+/*----閿熸枻鎷烽敓绲㈤敓绲敓绲�---*//**/
+#nav_today .type_out:link, #nav_today .type_out:visited,#nav_early .type_out:link, #nav_early .type_out:visited, #type_re .type_out:link, #type_re .type_out:visited { color: #FFF;}
+
+/*----閿熸枻鎷烽敓绲㈤敓鏂ゆ嫹閿熸枻鎷�---*//**/
+#nav_re .type_on:link, #nav_re .type_on:visited,#nav_re .type_on:link, #nav_re .type_on:visited, #type_re .type_on:link, #type_re .type_on:visited { color: #F9C100;}
+/*----閿熸枻鎷烽敓绲㈤敓绲敓绲�---*//**/
+#nav_re .type_out:link, #nav_re .type_out:visited,#nav_re .type_out:link, #nav_re .type_out:visited, #type_re .type_out:link, #type_re .type_out:visited { color: #FFF;}
+
+.tseled_on{color: red}
+.tseled_out{color: white}
+
+#mem_box {	clear: both;	position: absolute;	top: 61px;	width:240px;	height: 57px;	padding-top:9px;	text-align:center;	color:#FFF;	border-top: 1px solid #FFF;	background-color:  #493721;	font: 0.75em Arial, Helvetica, sans-serif;}
+#mem_box a:link, #mem_box a:visited { color: #FFF;}
+#mem_box a:hover {color: #F8C100;}
+#mem_box #mem_main .his {	padding-right: 25px;}
+#mem_box #mem_main .wag {	padding-left: 25px;}
+#mem_box #credit_main {	text-align: left;	height: 24px;margin-top: 8px;	padding: 0 12px;	line-height: 24px;font-weight: bold;	background: url(../images/head_credit_icon.gif) no-repeat 12px top;}
+#mem_box #credit {	margin-left: 29px;}
+#mem_box .re_credit { position: relative; top:4px \0;margin: 2px 0 0 10px; height: 16px;	width: 16px;border: none;	*cursor: hand; cursor:pointer;background: url(../images/head_credit_refresh.gif) no-repeat 0 0;}
+html>body #mem_box .re_credit { background-image: url(../images/head_credit_refresh.gif);} /*mac hack*/
+/*閿熺嫛绛侀敓鏉帮讣鎷�//**/
+div#mem_box input.re_credit:hover  {background: url(../images/head_credit_refresh.gif) no-repeat 0 -20px;}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 閿熸枻鎷烽敓鏂ゆ嫹 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#head_date {	color: #FFF; font-weight:normal;}
+
+/*#head_date {	position: absolute;	top: 37px;	left: 856px;	color: #FFF;font: 0.75em Arial, Helvetica, sans-serif;}*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~ RB Menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+div#welcome li.rb, div#welcome li.rb_on { position:relative;}
+div#welcome .level2 a { display:block; float:left; /*padding:5px 4px 5px;*/ height:36px;text-decoration:none;}
+#welcome li.rb_on .level2 a:link, #welcome li.rb_on .level2 a:visited, #welcome ul.level2 a:link, #welcome ul.level2 a:visited  { color: #44321C;}
+
+div#welcome .level2 a:hover {color: #900;}
+div#welcome ul ul li { list-style:none;margin-right: 0px; padding-top:0; background-color:#FEF7E7;}
+div#welcome ul.level1 li.rb:hover ul.level2, div#welcome ul.level1 li.rb_on:hover ul.level2 { display:block; height:36px;}
+div#welcome ul.level2 {position:absolute; height:36px;line-height:36px;width: 800px; top:34px!important;	z-index:1000;	left:0px; font-family:Arial, Helvetica, sans-serif;
+	display:none;
+	visibility: visible;
+}
+html > body div#welcome ul ul { white-space:nowrap;}
+html > body div#welcome ul.level2 {top: -27px;}
+html > body .rb:hover .level2, html > body .rb_on:hover .level2 { display:block;}
+
+#RB_MENU li.rb_bg_right { width:4px; height:36px; margin-left:-1px; background:url(../images/head_rb_menu_r.gif) no-repeat 100% 100%;}
+#RB_MENU li.rb_bg_left { width:4px; height:36px; background:url(../images/head_rb_menu_l.gif) no-repeat 0 100%;}
+
+#RB_FT, #RB_BK, #RB_TN, #RB_VB, #RB_BS, #RB_OP {padding:0 10px; background:url(../images/head_rb_menu_line.gif) no-repeat 100% 0;}
+/* 閿熺祤閿熸枻鎷烽敓鎺ョ皫閿熺当閿熸枻鎷�-- 閿熸枻鎷烽敓鏂ゆ嫹閿熺春閿熸枻鎷�rb_menu_on */
+#welcome .level2 .rb_menu_on a:link , #welcome .level2 .rb_menu_on a:visited { color:#900!important;}
+/* 閿熺祤閿熸枻鎷烽敓鎺ョ皫閿熺当閿熸枻鎷�-- 閿熸枻鎷烽敓绲冮敓鐙＄瓉閿熸枻鎷�rb_out */
+#welcome .level2 .rb_out a:hover { color:#900!important;}
+
+
+#topMenu{width: 980px;position:relative;margin-top: 1px;z-index: 999;}
+#back {	position: absolute;top: -12px; right:5px;height:26px;}
+#mose a ,#back a {display: block;height: 26px;text-decoration: none;color: #FFF;line-height: 26px;}
+#back li {display: block;font-size: 12px;clear: right;height: 26px;line-height: 26px;line-height:20px;float:left;width: 70px;}
+#back li.exit a:hover {	background-position: 0 -25px;	color: #303030;}
+#back li.help {	white-space: nowrap;	}
+#back li.rul {position: absolute;background: url(/cl/tpl/commonFile/images/member/inda_all.gif?=593) no-repeat;margin-left: 90px;}
+
+#back .est2 {
+	white-space: nowrap;
+	color: #FFFFFF;
+	margin-left: -75px;
+}
+#back .time {
+	margin-left: -45px;
+	margin-top: -18px;
+}
+#back span {float: right;text-decoration: none;color: #FFF;width: 0.1em;padding: 0 12px 0 0; top: 0px;position: absolute;height: 24px;}
+div#back a:link, div#back a:visited { color:#FFF;}
+
+#back .help a {
+/*background: url(../images/head_qa.gif?=593) no-repeat;*/
+padding-left: 24px;
+}
+
+#topMenu .info {
+	font-size:12px;
+	white-space: nowrap;
+	position: absolute;
+	right: -10px;
+	top: -12px;
+	visibility: visible;
+	z-index: 3;
+	text-align:left;
+	display:none;
+
+}
+
+
+#mose a:link, #mose a:visited {color:#000}
+#mose a:hover {color:#CC6600}
+
+#mose li {width: 85px;height: 23px;line-height: 23px;position: relative;text-align:center}
+#mose li.help_on a{width:70px;background:url(../images/head_qa.gif?=593) no-repeat 0 -25px;text-align: center;}
+
+
+#mose li.msg a, #mose li.roul a, #mose li.wap a , #mose li.uImfo a ,#mose li.odd a {
+width: 112px;
+height: 23px;
+padding-left: 12px;
+text-align: left;
+}
+#mose li.msg a {
+background: url(../images/head_qa_sub.gif?=593) no-repeat;
+}
+#mose li.roul a, #mose li.uImfo a ,#mose li.roul a,#mose li.odd a{
+background: url(../images/head_qa_sub.gif?=593) no-repeat 0 -70px;
+}
+
+#mose li.odd a {
+background: url(../images/head_qa_sub.gif?=593) no-repeat 0 -140px;
+width: 112px;
+height: 24px;
+padding-left: 12px;
+text-align: left;
+}
+#mose li.msg a:hover {
+background-position: 0 -23px;
+}
+#mose li.roul a:hover, #mose li.wap a:hover, #mose li.uImfo a:hover {
+background-position: 0 -93px;
+}
+#mose li.odd a:hover {
+background-position: 0 -164px;
+}
+/*氓鈥β泵ヂ惻捗ヂヂ郝γヂ�/
+#mose .msg a , #mose .roul a , #mose .wap a
+{ width:112px; height:23px; padding-left:12px; text-align: left;}
+
+/*2013/07/31 hide */
+/*#type_re .pd, #type_re .to, #type_re .hf { display:none;}*/

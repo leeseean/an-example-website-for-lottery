@@ -1,0 +1,37 @@
+<div ng-include="templateURL('/caipiao/disabled.html')"></div>
+
+<div ng-include="templateURL('/caipiao/headers/klsf_header.html')"></div>
+
+<div class="ui-table">
+	<div class="ui-body-son" ng-init="codeGroup = [ 
+				['BIG', 'BIG', 'SMALL', 'SMALL'], 
+				['ODD' ,'ODD' , 'EVEN', 'EVEN'],
+				['TAIL_BIG' ,'TAIL_BIG' , 'TAIL_SMALL', 'TAIL_SMALL'],
+				['LONG' ,'LONG' , 'HU', 'HU']
+				 
+				
+			]; codeNames= {BIG: '大', 
+					'SMALL': '小', 
+					'ODD': '单', 
+					'EVEN': '双', 
+					'TAIL_BIG': '尾大', 
+					'TAIL_SMALL': '尾小', 
+					'LONG': '龙', 
+					'HU': '虎'
+				 
+					}">
+ 
+	<div class="pure-g" ng-repeat="numbers in codeGroup">
+		<div class="pure-u-6-24" ng-repeat="number in numbers track by $index">
+			
+			<div class="ui-item-son" ng-if="$index % 2 == 0 "><span class=" fbold">{{codeNames[number]}}</span></div>
+			<div class="ui-item-son" ng-if="$index % 2 != 0">
+				<span 
+					ng-class="{'bg-hrec-gray':true, 'bg-hrec-red': selectedPeiyu[pankou+'-'+pankou++'-'+number] == true}" 
+					ng-click="selectedPeiyu[pankou+'-'+pankou++'-'+number] = selectedPeiyu[pankou+'-'+pankou++'-'+number] == true ? false: true" 
+					ng-attr-id="{{ pankou+'-'+pankou++'-'+number}}" >{{peiyu[pankou+ '-'+pankou+'-'+number]}}</span>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

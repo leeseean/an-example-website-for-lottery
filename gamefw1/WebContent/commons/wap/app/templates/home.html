@@ -1,0 +1,33 @@
+<ng-include src="templateURL('/header.html')"></ng-include>
+
+<div class="main-content">
+	<div class="wrapper">
+		<div class="bg-2 nav-top">
+			<carousel images="images"></carousel>
+			<appmarquee data="newsList"></appmarquee>
+		</div>
+		<div class="content">
+			<div class="wrapper">
+				<div class="cp-icon-items">
+					<ul class="clearfix">
+						
+						<li ng-class="['cp-item', 'cp-item-'+ ( $index + 1)]" ng-repeat="game in gameList track by $index">
+							
+							<a ng-if="game.type_code == 'KL8' " ui-sref="caipiao.play.pankou({game_code: game.game_code, type_code: game.type_code, pankou: 'tm', type: 1})">
+								<img ng-src="{{staticURL('/misc/icons/'+game.game_code+'.png')}}" alt="" />
+								<span>{{game.game_name}}</span> 
+							</a>
+							
+							<a ng-if="game.type_code != 'KL8'" ui-sref="caipiao.play({game_code: game.game_code, type_code: game.type_code})">
+								<img ng-src="{{staticURL('/misc/icons/'+game.game_code+'.png')}}" alt="" />
+								<span>{{game.game_name}}</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<ng-include src="templateURL('/footer.html')"></ng-include>

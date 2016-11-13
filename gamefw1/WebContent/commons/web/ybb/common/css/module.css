@@ -1,0 +1,631 @@
+/*
+ * YBB Tech (c)
+ * yingbobet.com
+ * - Modules
+ */
+/*
+ * Sidebar
+ */
+.module-sidebar {
+	float: left;
+	padding: 50px 0;
+	width: 210px;
+	border-top: 1px solid #481c13;
+}
+
+.module-sidebar .title {
+	padding-bottom: 30px;
+}
+
+.module-sidebar .title h2 {
+	font-size: 24px;
+	color: #fff;
+}
+
+.module-sidebar .title h6 {
+	padding-top: 5px;
+	font-size: 16px;
+	color: #999;
+}
+
+.module-sidebar .body li {
+	overflow: hidden;
+	height: 26px;
+	line-height: 26px;
+	font-size: 14px;
+}
+
+.module-sidebar .body li a {
+	color: #ccc;
+	transition: all .5s ease;
+}
+
+.module-sidebar .body li a:hover {
+	color: #fff;
+}
+/* 內容 */
+.module-content {
+	text-align: left;
+	color: #fff;
+}
+/* 分類索引 */
+.module-sort {
+	height: 50px;
+}
+
+.module-sort ul {
+	font-size: 0;
+	text-align: center;
+}
+
+.module-sort li {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	height: 50px;
+	line-height: 50px;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all .5s ease;
+}
+
+.module-sort li a {
+	padding: 0 20px;
+	display: block;
+	height: 100%;
+	color: #fff;
+}
+
+.module-sort li a:hover,.module-sort .on {
+	color: #222;
+	background-color: #eee;
+}
+/*
+ *  YBB Tech Modules
+ *  - Slot
+ */
+.ybb-slot-bd {
+	
+}
+
+.ybb-slot-bd .hall ul {
+	font-size: 0;
+	text-align: center;
+}
+
+.ybb-slot-bd .hall li {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	overflow: hidden;
+	width: 120px;
+	height: 50px;
+	line-height: 50px;
+	text-transform: uppercase;
+}
+
+.ybb-slot-bd .hall a {
+	display: block;
+	height: 100%;
+	font-family: Arial;
+	font-size: 20px;
+	color: #bbb;
+}
+
+.ybb-slot-bd .hall .active a {
+	font-weight: 400;
+	color: #f96f00;
+}
+
+.ybb-slot-bd .sort li {
+	float: left;
+	margin-left: 15px;
+}
+
+.ybb-slot-bd .sort a {
+	padding: 0 15px;
+	display: block;
+	overflow: hidden;
+	height: 26px;
+	line-height: 26px;
+	border-radius: 15px;
+	border: 2px solid #1aa;
+	background-color: #1aa;
+	color: #fff;
+}
+
+.ybb-slot-bd .sort .active,.ybb-slot-bd .sort a:hover {
+	color: #ff0;
+}
+
+.ybb-slot-bd .section {
+	padding-top: 14px;
+}
+
+.ybb-slot-bd .item {
+	position: relative;
+	float: left;
+	margin: 0 0 14px 14px;
+	overflow: hidden;
+	width: 230px;
+	height: 148px;
+	text-align: center;
+	border: 1px solid #144;
+	/* background-color: #0D1528; */
+	cursor: pointer;
+	transition: all .5s ease;
+}
+
+.ybb-slot-bd .title {
+	z-index: 6;
+	overflow: hidden;
+	height: 30px;
+	line-height: 30px;
+	transition: all .4s;
+}
+
+.ybb-slot-bd .title h6 {
+	position: relative;
+	z-index: 7;
+	color: #fff;
+}
+
+.ybb-slot-bd .title .bg-black {
+	opacity: 0.8;
+	filter: alpha(opacity = 80);
+	-webkit-opacity: 0.8;
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	transition: all .4s ease;
+}
+
+.ybb-slot-bd .overlay {
+	top: 100%;
+	/*z-index: 7;
+    background-color: #000;
+    opacity: 0;
+    transition: all .4s ease;*/
+	z-index: 7;
+	/*opacity: 0;*/
+	/*transition: all 1s ease;*/
+}
+
+.ybb-slot-bd .overlay i {
+	margin: 55px 0 0 56px;
+	display: block;
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	font-weight: bold;
+	border-radius: 20px;
+	color: #000;
+	background-color: #1aa;
+	transition: all .5s ease;
+}
+
+.ybb-slot-bd .overlay i:hover {
+	color: #1aa;
+	box-shadow: 0 0 15px #1aa;
+	background-color: #000;
+}
+
+.ybb-slot-bd .group .item .overlay a {
+	color: #fff;
+}
+
+.ybb-slot-bd img {
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	transition: all .4s ease;
+}
+
+.ybb-slot-bd .group .item .gm-ic-mg {
+	margin: 14px 0 0 42px;
+	display: block;
+	width: 145px;
+	height: 136px;
+}
+
+.ybb-slot-bd .current {
+	border-color: #1cc;
+	box-shadow: 0 0 8px #1cc;
+}
+
+.ybb-slot-bd .current .title { /*height: 150px;*/
+	opacity: 0.7;
+}
+
+.ybb-slot-bd .current h6 {
+	color: #fff;
+}
+
+.ybb-slot-bd .current img {
+	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+}
+
+.ybb-slot-bd .current a.gm-ic-mg {
+	background-position: -145px 0;
+}
+
+.ybb-slot-bd.ybb-slot-ttg .current a.gm-ic-mg {
+	background-position: -220px 0;
+}
+
+.ybb-slot-bd .no-results {
+	margin: 0;
+	padding: 50px 0;
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+	border: 0;
+	color: #1aa;
+}
+/*
+ * YBB Tech Modules
+ * - Promos
+ */
+.page-discount {
+	
+}
+
+.discount-hot {
+	position: relative;
+	height: 236px;
+}
+
+.discount-hot-body {
+	padding: 20px 0 20px 60px;
+}
+
+.discount-hot-item {
+	position: relative;
+	margin-right: 20px;
+	width: 280px;
+	color: #fff;
+}
+
+.discount-hot-head {
+	padding: 10px 0 10px 30px;
+	overflow: hidden;
+	height: 30px;
+	line-height: 30px;
+	font-size: 30px;
+	text-align: left;
+	color: #fff;
+}
+
+.discount-hot-head span {
+	position: absolute;
+	padding-left: 10px;
+	font-size: 14px;
+}
+
+.discount-hot-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 7;
+	overflow: hidden;
+	width: 100%;
+	height: 0;
+	background-color: #481c13;
+}
+
+.discount-hot-content a {
+	margin: 52px 0 0 90px;
+	display: block;
+	overflow: hidden;
+	width: 96px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 14px;
+	border: 2px solid #fff;
+}
+
+.discount-hot .ctrl {
+	position: absolute;
+	top: 65px;
+	font-size: 40px;
+	color: #fff;
+}
+
+.discount-hot .prev {
+	left: 20px;
+}
+
+.discount-hot .next {
+	right: 20px;
+}
+
+.discount-sticker {
+	width: 210px;
+}
+
+.discount-sticker.stick {
+	top: 150px;
+}
+
+.module-promos {
+	float: left;
+	padding-right: 20px;
+	width: 767px;
+}
+
+.promos-group {
+	padding-bottom: 20px;
+}
+
+.promos-section {
+	padding: 20px 20px 0 15px;
+	color: #77571A;
+}
+
+.promos-section-head {
+	position: relative;
+	text-align: left;
+	cursor: pointer;
+	transition: all .5s ease;
+}
+
+.promos-section-head .time {
+	position: absolute;
+	top: 0;
+	left: -80px;
+	padding-top: 15px;
+	display: block;
+	width: 60px;
+	height: 45px;
+	font-size: 14px;
+	text-align: center;
+	border: 1px solid #999;
+	border-radius: 12px;
+	transition: all .5s ease-out;
+}
+
+.promos-section-head .text {
+	padding-bottom: 10px;
+	overflow: hidden;
+	height: 30px;
+	line-height: 30px;
+	color: #77571A;
+}
+
+.promos-section-head h2 {
+	float: left;
+	font-size: 22px;
+}
+
+.promos-section-head h3 {
+	float: left;
+	padding-left: 15px;
+	font-size: 14px;
+	color: #A57B2B;
+}
+
+.promos-section-head .thumb {
+	opacity: 0.6;
+	transition: all .5s ease;
+}
+
+.promos-section-head .thumb img {
+	width: 940px;
+	height: 160px;
+}
+
+.promos-section-content {
+	line-height: 1.7;
+	text-align: left;
+}
+
+.promos-section-content table {
+	border-top: 1px solid #77571A;
+	border-left: 1px solid #77571A;
+}
+
+.promos-section-content td {
+	padding: 3px 6px;
+	border-right: 1px solid #77571A;
+	border-bottom: 1px solid #77571A;
+}
+
+.promos-section .ui-state-hover .time { /*color: #208888;*/
+	
+}
+
+.promos-section .ui-state-active { /*color: #208888;*/
+	
+}
+
+.promos-section .ui-state-active .time { /*top: 40px;*/
+	
+}
+
+.promos-section .ui-state-active h6 {
+	color: #fff;
+}
+
+.promos-section .ui-state-hover .thumb,.promos-section .ui-state-active .thumb
+	{
+	opacity: 1;
+}
+/* easy */
+.promos-easy {
+	float: none;
+	margin: 15px auto;
+	padding: 0;
+	width: 1035px;
+	border: 6px solid #D9BD7C;
+	background-color: #0c182d;
+}
+/*
+ * 註冊
+ * Singup
+ */
+.signup-agm {
+	color: red;
+}
+
+.module-signup {
+	margin: auto;
+	padding: 0;
+	width: 96%;
+	color: #313131;
+}
+
+.signup-form .section-title {
+	overflow: hidden;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	border-bottom: 1px solid #777;
+	color: #313131;
+}
+
+.form-section-item {
+	position: relative;
+	/*z-index: -1;*/
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+.form-section-item label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 140px;
+	text-align: right;
+	color: #FED778;
+}
+
+.form-section-content {
+	padding-left: 150px;
+	text-align: left;
+}
+
+.form-section-content input {
+	padding: 0 5px;
+	color: #111;
+}
+.inner-game{
+	margin:10px 5px;
+	padding:4px 5px !important; 
+	font-size: 16px;
+    font-weight: 600;
+}
+
+.form-section-content .ybb-ui-in {
+	overflow: hidden;
+	width: 170px;
+	height: 22px;
+	line-height: 22px;
+	border: 1px solid #666;
+	background-color: #ddd;
+}
+
+.form-section-content p {
+	line-height: 20px;
+	color: #999;
+}
+
+.signup-agm-content {
+	text-align: left;
+}
+
+.signup-agm-content ol {
+	padding: 5px 0;
+}
+
+.signup-agm-content li {
+	padding-top: 10px;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.signup-notice {
+	margin: 15px 15px 0 30px;
+	padding: 30px 0;
+	line-height: 1.5;
+	border-top: 1px solid #313131;
+	color: #aaa;
+}
+
+.signup-notice h3 {
+	font-weight: bold;
+}
+/*
+ * Help
+ */
+.ybb-help .article .tab-title {
+	font-size: 0;
+	text-align: left;
+	border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+
+.ybb-help .article .tab-title li {
+	margin-right: 10px;
+	padding: 0 10px;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	min-width: 50px;
+	height: 26px;
+	line-height: 26px;
+	font-size: 12px;
+	text-align: center;
+	background-color: rgba(0, 0, 0, .2);
+}
+
+.ybb-help .article .tab-title a {
+	display: block;
+	height: 100%;
+}
+
+.ybb-help .article .tab-title .active {
+	font-weight: bold;
+	color: #E9D9B4;
+	background-color: #523704;
+}
+
+.ybb-help .article .tab-title .active a {
+	color: #ccc;
+}
+
+.ybb-help .article .tab-content {
+	padding: 15px 0;
+}
+
+.ybb-try .ybb-md-tt {
+	overflow: hidden;
+	height: 28px;
+	border-bottom: 1px solid #AB8541;
+}
+
+.ybb-try .ybb-md-tt li {
+	float: left;
+	padding: 0 15px;
+	line-height: 28px;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 5px 5px 0 0;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+
+.ybb-try .ybb-md-tt .on {
+	color: #000;
+	background-color: #AB8541;
+}
+
+.ybb-slot-bd .ybb-slot-jp-total {
+	color: #fff;
+}
+
+.ybb-slot-bd .ybb-slot-jp-total #jackpotstotal {
+	color: #fff !important;
+}
